@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SERP Snippet Preview Tool: Free Google Result Checker</title>
+<meta name="description" content="Free SERP snippet preview tool. See how your title and meta description look in Google on desktop and mobile, with real pixel limits.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://brandella.in/tools/seo-tools/serp-snippet-preview/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="SERP Snippet Preview Tool: Free Google Result Checker">
+<meta property="og:description" content="Free SERP snippet preview tool. See how your title and meta description look in Google on desktop and mobile, with real pixel limits.">
+<meta property="og:url" content="https://brandella.in/tools/seo-tools/serp-snippet-preview/">
+<meta property="og:site_name" content="Brandella Journal">
+<meta property="og:image" content="https://brandella.in/tools/assets/og-serp-snippet-preview.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://brandella.in/tools/assets/og-serp-snippet-preview.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3931314195561246" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "SERP Snippet Preview",
+      "url": "https://brandella.in/tools/seo-tools/serp-snippet-preview/",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Any (web browser)",
+      "description": "Free SERP snippet preview tool. See how your title and meta description look in Google on desktop and mobile, with real pixel limits.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Brandella Journal",
+        "url": "https://brandella.in/"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://brandella.in/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Tools",
+          "item": "https://brandella.in/tools/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "SEO Tools",
+          "item": "https://brandella.in/tools/seo-tools/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "SERP Snippet Preview",
+          "item": "https://brandella.in/tools/seo-tools/serp-snippet-preview/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How long should a title tag be for Google?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Google truncates titles by pixel width, not character count. On desktop the limit is roughly 600 pixels, which is usually around 50 to 60 characters depending on the letters used."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long should a meta description be?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Aim for roughly 920 pixels on desktop and about 680 pixels on mobile. In practice that is around 120 to 155 characters, with the key message placed in the first 120 characters."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Google always show my meta description?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Google often rewrites snippets using text from the page when it believes that text better matches the search query. A clear, relevant meta description still improves the chance it is used."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is this SERP snippet preview tool free?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. The tool is completely free, needs no signup, and runs entirely in your browser, so nothing you type is sent to any server."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+<style>
+:root{
+  --green:#6cc82a; --lime:#a6ef39; --ink:#111; --gray:#555; --muted:#6b6b6b;
+  --line:#e3e3e3; --bg:#fff; --soft:#f6faf1; --footer:#0a0a0a;
+  --g-title:#1a0dab; --g-url:#202124; --g-desc:#4d5156;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Open Sans',Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6}
+a{color:inherit}
+.wrap{max-width:1140px;margin:0 auto;padding:0 16px}
+
+/* ===== HEADER ===== */
+.site-top{border-bottom:1px solid #d9d9d9}
+.site-top .wrap{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding-top:34px;padding-bottom:34px}
+.site-date{font-size:20px;font-weight:600;line-height:1.1}
+.site-date small{display:block;font-size:13px;font-weight:600;margin-top:2px}
+.site-logo{font-size:40px;font-weight:700;text-decoration:none;color:#555;letter-spacing:.2px;white-space:nowrap}
+.site-logo span{color:var(--green)}
+.menu-btn{display:none;justify-self:end;background:none;border:0;cursor:pointer;padding:6px}
+.menu-btn i{display:block;width:26px;height:3px;background:#111;margin:5px 0;border-radius:2px}
+
+.site-nav{border-bottom:2px solid var(--lime)}
+.site-nav ul{list-style:none;display:flex;justify-content:center;flex-wrap:wrap;gap:0 4px}
+.site-nav > .wrap > ul > li{position:relative}
+.site-nav a{display:block;padding:12px 13px;font-size:17px;font-weight:700;text-decoration:none;color:#111}
+.site-nav a:hover,.site-nav a.active{color:var(--green)}
+.has-sub > a::after{content:"";display:inline-block;width:6px;height:6px;border-right:1.6px solid currentColor;border-bottom:1.6px solid currentColor;transform:rotate(45deg);margin:0 0 4px 7px}
+.sub{display:none !important;position:absolute;top:100%;left:0;width:240px;background:#fff;border-radius:6px;padding:14px 0;box-shadow:0 10px 30px rgba(0,0,0,.18);z-index:50;flex-direction:column}
+.sub a{font-size:17px;font-weight:700;line-height:1.35;padding:5px 30px;color:#111}
+.sub a:hover{color:var(--green)}
+.has-sub:hover .sub,.has-sub:focus-within .sub{display:flex !important}
+
+/* ===== BREADCRUMB + HERO ===== */
+.crumbs{font-size:13.5px;color:var(--muted);padding:18px 0 0}
+.crumbs a{text-decoration:none;color:var(--muted)}
+.crumbs a:hover{color:var(--green)}
+.hero{text-align:center;padding:26px 0 8px}
+.pill{display:inline-block;background:var(--soft);color:#3d7f12;border:1px solid #cfeab4;font-size:12.5px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;padding:4px 12px;border-radius:20px;margin-bottom:14px}
+.hero h1{font-size:44px;font-weight:300;line-height:1.2}
+.hero p{max-width:760px;margin:14px auto 0;color:var(--muted);font-size:17px}
+
+/* ===== TOOL ===== */
+.tool{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin:34px 0 10px}
+.card{border:1px solid var(--line);border-radius:12px;padding:24px;background:#fff}
+.card h2{font-size:19px;font-weight:700;margin-bottom:16px}
+.field{margin-bottom:18px}
+.field label{display:flex;justify-content:space-between;font-weight:700;font-size:14.5px;margin-bottom:6px}
+.field label em{font-style:normal;font-weight:600;color:var(--muted);font-size:13px}
+.field input,.field textarea{width:100%;border:1px solid #cfcfcf;border-radius:8px;padding:11px 12px;font:inherit;font-size:15px;color:#111;outline:none;transition:border-color .15s}
+.field input:focus,.field textarea:focus{border-color:var(--green);box-shadow:0 0 0 3px rgba(108,200,42,.15)}
+.field textarea{resize:vertical;min-height:96px}
+.meter{height:7px;background:#eee;border-radius:6px;margin-top:8px;overflow:hidden}
+.meter b{display:block;height:100%;width:0;background:var(--green);border-radius:6px;transition:width .15s,background .15s}
+.meter b.warn{background:#f0a020}.meter b.bad{background:#e0442c}
+.stat{font-size:13px;color:var(--muted);margin-top:5px;display:flex;justify-content:space-between}
+.stat .ok{color:#3d8f12;font-weight:700}.stat .warn{color:#c47a00;font-weight:700}.stat .bad{color:#d1351f;font-weight:700}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.check{display:flex;align-items:center;gap:8px;font-size:14.5px;font-weight:600;margin-bottom:6px;cursor:pointer}
+.check input{accent-color:var(--green);width:16px;height:16px}
+
+.tabs{display:inline-flex;border:1px solid #cfcfcf;border-radius:30px;padding:3px;margin-bottom:18px}
+.tabs button{border:0;background:none;font:inherit;font-weight:700;font-size:14px;padding:7px 18px;border-radius:30px;cursor:pointer;color:#333}
+.tabs button.on{background:#111;color:#fff}
+
+/* Google result mock */
+.serp{border:1px solid var(--line);border-radius:10px;padding:20px 18px;background:#fff;font-family:Arial,sans-serif}
+.serp.mobile{max-width:400px;margin:0 auto;border-radius:16px;box-shadow:0 2px 10px rgba(0,0,0,.08)}
+.g-site{display:flex;align-items:center;gap:10px;margin-bottom:6px}
+.g-fav{width:28px;height:28px;border-radius:50%;background:#f1f3f4;border:1px solid #dadce0;display:grid;place-items:center;font-weight:700;font-size:13px;color:var(--green)}
+.g-name{font-size:14px;color:var(--g-url);line-height:1.3}
+.g-url{font-size:12px;color:#4d5156;line-height:1.3;word-break:break-all}
+.g-title{font-size:20px;line-height:1.3;color:var(--g-title);margin:2px 0 4px;font-weight:400;cursor:pointer}
+.g-title:hover{text-decoration:underline}
+.serp.mobile .g-title{font-size:18px;color:#1558d6}
+.g-desc{font-size:14px;line-height:1.58;color:var(--g-desc)}
+.g-desc .g-date{color:#70757a}
+.g-desc strong{color:#5f6368;font-weight:700}
+
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+.btn{border:2px solid var(--green);background:#fff;color:#111;font:inherit;font-weight:700;font-size:14px;padding:9px 18px;border-radius:30px;cursor:pointer;transition:all .15s}
+.btn:hover{background:var(--green);color:#fff}
+.btn.dark{background:#111;border-color:#111;color:#fff}
+.btn.dark:hover{background:var(--green);border-color:var(--green)}
+.code-out{margin-top:14px;background:#1e1e1e;color:#d4d4d4;border-radius:8px;padding:14px;font:14px/1.5 Consolas,Monaco,monospace;white-space:pre-wrap;word-break:break-all;display:none}
+.toast{font-size:13px;color:#3d8f12;font-weight:700;align-self:center;opacity:0;transition:opacity .2s}
+.toast.show{opacity:1}
+
+.tips{margin-top:18px;border-left:4px solid var(--green);background:var(--soft);border-radius:0 8px 8px 0;padding:12px 14px;font-size:14px}
+.tips ul{margin:6px 0 0 18px}
+.tips li{margin:2px 0}
+
+/* ===== CONTENT ===== */
+.content{max-width:820px;margin:40px auto 0}
+.content h2{font-size:28px;font-weight:700;margin:36px 0 12px;line-height:1.3}
+.content h3{font-size:20px;font-weight:700;margin:22px 0 8px}
+.content p{font-size:17px;color:#2c2c2c;margin-bottom:12px}
+.content ol,.content ul{margin:0 0 14px 22px;font-size:17px;color:#2c2c2c}
+.content li{margin:6px 0}
+.content a{color:#3d8f12;font-weight:600}
+.content code{background:#f1f1f1;padding:1px 6px;border-radius:4px;font-size:15px}
+table.lim{width:100%;border-collapse:collapse;margin:10px 0 18px;font-size:15.5px}
+table.lim th{background:#2b2b2b;color:#fff;text-align:left;padding:10px 12px}
+table.lim td{border-bottom:1px solid var(--line);padding:10px 12px}
+
+.faq-item{border:1px solid var(--line);border-radius:10px;margin-bottom:12px;overflow:hidden}
+.faq-item summary{list-style:none;cursor:pointer;padding:14px 16px;font-weight:700;font-size:16.5px;display:flex;gap:12px;align-items:flex-start}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-num{flex:0 0 26px;height:26px;border-radius:50%;background:var(--green);color:#fff;font-size:13px;display:grid;place-items:center}
+.faq-item p{padding:0 16px 14px 54px;color:#3a5a20;font-size:16px;margin:0}
+
+.related{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:12px 0 10px}
+.related a{display:flex;justify-content:space-between;align-items:center;gap:10px;border:1px solid var(--line);border-left:4px solid var(--green);border-radius:8px;padding:13px 14px;text-decoration:none;color:#111 !important;font-weight:700;font-size:15px}
+.related a:hover{border-color:var(--green)}
+
+.bx-ad{margin:34px 0;min-height:90px}
+
+/* ===== FOOTER ===== */
+.site-footer{background:var(--footer);color:#fff;margin-top:70px;padding:52px 0 44px}
+.foot-links{list-style:none;display:flex;flex-wrap:wrap;gap:8px 28px}
+.foot-links a{text-decoration:none;font-weight:700;font-size:14.5px;text-transform:uppercase;color:#fff}
+.foot-links a:hover{color:var(--lime)}
+.copy{color:#a8a8a8;font-size:16px;margin-top:12px}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width:900px){
+  .tool{grid-template-columns:1fr}
+  .hero h1{font-size:34px}
+}
+@media (max-width:760px){
+  .site-top .wrap{grid-template-columns:1fr auto;padding-top:18px;padding-bottom:18px}
+  .site-date{display:none}
+  .site-logo{font-size:28px}
+  .menu-btn{display:block}
+  .site-nav ul{display:none;flex-direction:column}
+  .site-nav.open > .wrap > ul{display:flex}
+  .site-nav a{padding:11px 4px;border-bottom:1px solid #f0f0f0}
+  .sub{position:static;box-shadow:none;border:0;padding-left:14px}
+  .has-sub:hover .sub,.has-sub:focus-within .sub{display:flex !important}
+  .related,.row2{grid-template-columns:1fr}
+  .content h2{font-size:24px}
+}
+
+/* ===== SHARED TOOL EXTRAS ===== */
+.full{grid-column:1/-1}
+.field select{width:100%;border:1px solid #cfcfcf;border-radius:8px;padding:10px 12px;font:inherit;font-size:15px;background:#fff;color:#111}
+.field textarea.big{min-height:230px;font-size:14.5px}
+.mono{font-family:Consolas,Monaco,monospace !important;font-size:13.5px !important}
+.btn-sm{padding:5px 12px;font-size:13px;border-width:1.5px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(105px,1fr));gap:10px;margin-bottom:16px}
+.stat-box{background:var(--soft);border:1px solid #dbefc8;border-radius:10px;padding:10px 8px;text-align:center}
+.stat-box b{display:block;font-size:22px;line-height:1.2}
+.stat-box span{font-size:12.5px;color:var(--muted);font-weight:600}
+.rtable{width:100%;border-collapse:collapse;font-size:14.5px}
+.rtable th{background:#2b2b2b;color:#fff;text-align:left;padding:8px 10px;font-weight:700}
+.rtable td{border-bottom:1px solid var(--line);padding:7px 10px}
+.rtable td.num,.rtable th.num{text-align:right;font-variant-numeric:tabular-nums}
+.rtable tr.hit td{background:#eef8e6;font-weight:700}
+.empty{color:var(--muted);font-size:14.5px;padding:14px 0}
+.kw-result{border-radius:10px;padding:12px 14px;margin-bottom:16px;font-size:14.5px;border:1px solid var(--line);background:#fafafa}
+.kw-result.ok{background:#eef8e6;border-color:#cfeab4}
+.kw-result.warn{background:#fff6e5;border-color:#f3d79b}
+.kw-result.bad{background:#fdecea;border-color:#f5c2bb}
+.slug-row{border:1px solid var(--line);border-radius:8px;padding:10px 12px;margin-bottom:8px;display:flex;justify-content:space-between;gap:10px;align-items:center}
+.slug-row .s{font:600 15px/1.4 Consolas,Monaco,monospace;color:#111;word-break:break-all}
+.slug-row small{display:block;color:var(--muted);font-size:12.5px;word-break:break-all;margin-top:2px}
+.slug-row small.warn{color:#c47a00;font-weight:700}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
+.chip{border:1px solid var(--line);border-radius:20px;padding:4px 12px;font-size:13.5px;font-weight:700;background:#fff}
+.chip.zero{color:#aaa}
+.outline{max-height:460px;overflow:auto;border:1px solid var(--line);border-radius:10px;padding:6px 12px}
+.o-row{display:flex;gap:10px;align-items:flex-start;padding:7px 0;border-bottom:1px dashed #eee;font-size:14.5px}
+.o-row:last-child{border-bottom:0}
+.o-tag{flex:0 0 auto;font:700 12px/1 Consolas,Monaco,monospace;padding:5px 7px;border-radius:5px;color:#fff;background:#111}
+.o-tag.h1{background:#2f7a0c}.o-tag.h2{background:#4fa61d}.o-tag.h3{background:#6cc82a}.o-tag.h4{background:#8a8a8a}.o-tag.h5{background:#a5a5a5}.o-tag.h6{background:#bdbdbd}
+.o-issue{display:inline-block;font-size:12px;color:#d1351f;font-weight:700;margin-left:6px}
+.tgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:18px;margin:30px 0 10px}
+.tcard{border:1px solid var(--line);border-radius:12px;padding:22px;text-decoration:none;display:flex;flex-direction:column;gap:10px;transition:all .15s;background:#fff;color:#111}
+.tcard:hover{border-color:var(--green);box-shadow:0 8px 22px rgba(0,0,0,.07);transform:translateY(-2px)}
+.tbadge{width:48px;height:48px;border-radius:12px;background:#111;color:var(--lime);display:grid;place-items:center;font-weight:800;font-size:16px}
+.tcard h2,.tcard h3{font-size:18px;line-height:1.3;margin:0}
+.tcard p{font-size:14.5px;color:var(--muted);flex:1;line-height:1.55}
+.tcard .go{font-weight:700;color:#3d8f12;font-size:14px}
+.tcard.soon{opacity:.55;pointer-events:none}
+.tcard.soon .tbadge{background:#ddd;color:#777}
+.tcard.soon .go{color:var(--muted)}
+.more-tools{margin-top:10px}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="site-top">
+    <div class="wrap">
+      <div class="site-date" id="siteDate">Today<small>&nbsp;</small></div>
+      <a class="site-logo" href="https://brandella.in/">Brandella <span>Journal</span></a>
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false"><i></i><i></i><i></i></button>
+    </div>
+  </div>
+  <nav class="site-nav" id="siteNav" aria-label="Main">
+    <div class="wrap">
+      <ul>
+        <li><a href="https://brandella.in/">Home</a></li>
+        <li class="has-sub"><a href="https://brandella.in/category/seo/">SEO</a>
+          <ul class="sub">
+            <li><a href="https://brandella.in/category/seo/technical-seo/">Technical SEO</a></li>
+            <li><a href="https://brandella.in/category/seo/local-seo/">Local SEO</a></li>
+            <li><a href="https://brandella.in/category/seo/mobile-seo/">Mobile SEO</a></li>
+            <li><a href="https://brandella.in/category/seo/on-page-seo/">On-Page SEO</a></li>
+            <li><a href="https://brandella.in/category/seo/off-page-seo/">Off-Page SEO</a></li>
+            <li><a href="https://brandella.in/category/seo/seo-tools/">SEO Tools</a></li>
+            <li><a href="https://brandella.in/category/seo/core-web-vitals/">Core Web Vitals</a></li>
+            <li><a href="https://brandella.in/category/seo/keyword-research/">Keyword Research</a></li>
+            <li><a href="https://brandella.in/category/seo/link-building/">Link Building</a></li>
+            <li><a href="https://brandella.in/category/seo/google-search-console/">Google Search Console</a></li>
+            <li><a href="https://brandella.in/category/seo/seo-basics/">SEO Basics</a></li>
+          </ul>
+        </li>
+        <li class="has-sub"><a href="https://brandella.in/category/paid-media/">Paid Media</a>
+          <ul class="sub">
+            <li><a href="https://brandella.in/category/paid-media/display-advertising/">Display Advertising</a></li>
+            <li><a href="https://brandella.in/category/paid-media/google-ads/">Google Ads</a></li>
+            <li><a href="https://brandella.in/category/paid-media/linkedin-ads/">LinkedIn Ads</a></li>
+            <li><a href="https://brandella.in/category/paid-media/meta-ads/">Meta Ads</a></li>
+            <li><a href="https://brandella.in/category/paid-media/paid-media-analytics/">Paid Media Analytics</a></li>
+            <li><a href="https://brandella.in/category/paid-media/ppc-strategy/">PPC Strategy</a></li>
+          </ul>
+        </li>
+        <li><a href="https://brandella.in/category/content/">Content</a></li>
+        <li><a href="https://brandella.in/category/social/">Social</a></li>
+        <li><a href="https://brandella.in/category/digital-marketing/">Digital Marketing</a></li>
+        <li><a href="https://brandella.in/category/artificial-intelligence/">Artificial Intelligence</a></li>
+        <li class="has-sub"><a href="https://brandella.in/category/development/">Development</a>
+          <ul class="sub">
+            <li><a href="https://brandella.in/category/development/php/">PHP</a></li>
+            <li><a href="https://brandella.in/category/development/javascript/">JavaScript</a></li>
+            <li><a href="https://brandella.in/category/development/python/">Python</a></li>
+          </ul>
+        </li>
+        <li class="has-sub"><a class="active" href="https://brandella.in/tools/">Tools</a>
+          <ul class="sub">
+            <li><a href="https://brandella.in/tools/seo-tools/">SEO Tools</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<main class="wrap">
+
+  <div class="crumbs"><a href="https://brandella.in/">Home</a> &rsaquo; <a href="https://brandella.in/tools/">Tools</a> &rsaquo; <a href="https://brandella.in/tools/seo-tools/">SEO Tools</a> &rsaquo; SERP Snippet Preview</div>
+
+  <section class="hero">
+    <span class="pill">Free SEO Tool</span>
+    <h1>SERP Snippet Preview Tool</h1>
+    <p>See exactly how your page will look in Google search results on desktop and mobile. Real pixel width limits, live truncation, and ready to copy meta tags.</p>
+  </section>
+
+  <section class="tool" aria-label="SERP snippet preview tool">
+    <div class="card">
+      <h2>Enter Your Page Details</h2>
+
+      <div class="field">
+        <label for="inTitle">Page Title <em id="titleChars">0 chars</em></label>
+        <input id="inTitle" type="text" value="SERP Snippet Preview Tool: Free Google Search Result Checker">
+        <div class="meter"><b id="titleBar"></b></div>
+        <div class="stat"><span id="titlePx">0 / 600 px</span><span id="titleMsg"></span></div>
+      </div>
+
+      <div class="field">
+        <label for="inDesc">Meta Description <em id="descChars">0 chars</em></label>
+        <textarea id="inDesc">Free SERP snippet preview tool. See how your title and meta description look in Google on desktop and mobile, with real pixel limits.</textarea>
+        <div class="meter"><b id="descBar"></b></div>
+        <div class="stat"><span id="descPx">0 / 920 px</span><span id="descMsg"></span></div>
+      </div>
+
+      <div class="field">
+        <label for="inUrl">Page URL</label>
+        <input id="inUrl" type="text" value="https://brandella.in/tools/seo-tools/serp-snippet-preview/">
+      </div>
+
+      <div class="row2">
+        <div class="field">
+          <label for="inSite">Site Name</label>
+          <input id="inSite" type="text" value="Brandella Journal">
+        </div>
+        <div class="field">
+          <label for="inKw">Focus Keyword <em>optional</em></label>
+          <input id="inKw" type="text" value="snippet preview" placeholder="bold in description">
+        </div>
+      </div>
+
+      <label class="check"><input id="inDate" type="checkbox"> Show publish date in snippet</label>
+    </div>
+
+    <div class="card">
+      <h2>Google Preview</h2>
+      <div class="tabs" role="tablist">
+        <button id="tabDesk" class="on" role="tab" aria-selected="true">Desktop</button>
+        <button id="tabMob" role="tab" aria-selected="false">Mobile</button>
+      </div>
+
+      <div class="serp" id="serp">
+        <div class="g-site">
+          <div class="g-fav" id="gFav">B</div>
+          <div>
+            <div class="g-name" id="gName"></div>
+            <div class="g-url" id="gUrl"></div>
+          </div>
+        </div>
+        <div class="g-title" id="gTitle" role="presentation"></div>
+        <div class="g-desc" id="gDesc"></div>
+      </div>
+
+      <div class="actions">
+        <button class="btn dark" id="btnCopy">Copy Meta Tags</button>
+        <button class="btn" id="btnReset">Clear</button>
+        <span class="toast" id="toast">Copied!</span>
+      </div>
+      <pre class="code-out" id="codeOut"></pre>
+
+      <div class="tips" id="tips"><strong>Quick checks</strong><ul id="tipList"></ul></div>
+    </div>
+  </section>
+
+  <div class="bx-ad">
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3931314195561246" data-ad-slot="4249015278" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+
+  <article class="content">
+
+
+    <h2>What Is a SERP Snippet Preview?</h2>
+    <p>A SERP snippet is the block Google shows for your page in search results: the site name, URL, blue clickable title, and the short description below it.</p>
+    <p>A SERP snippet preview tool lets you see that block before you publish. You can catch a cut off title or a rambling description while it is still easy to fix.</p>
+    <p>This matters because the snippet is your first impression. A clean, complete title and a clear description earn more clicks from the same ranking position.</p>
+
+    <h2>How to Use This Tool</h2>
+    <ol>
+      <li><strong>Type your page title.</strong> The bar turns orange near the limit and red once Google would cut it off.</li>
+      <li><strong>Add your meta description.</strong> Keep the main message early, since mobile shows less text than desktop.</li>
+      <li><strong>Enter the URL and site name.</strong> The preview shows them in Google's breadcrumb style.</li>
+      <li><strong>Add a focus keyword.</strong> Google often bolds words that match the search, so the preview bolds it too.</li>
+      <li><strong>Switch between Desktop and Mobile.</strong> Check both, then click Copy Meta Tags and paste them into your page or SEO plugin.</li>
+    </ol>
+
+    <h2>Why Pixels Matter More Than Characters</h2>
+    <p>Google does not cut titles at a fixed number of characters. It cuts them when they run out of display width, measured in pixels.</p>
+    <p>Wide letters like W and M take far more space than narrow ones like i and l. Two titles with the same character count can end up very different in length.</p>
+    <p>This tool measures your text in the same font Google uses, so the warning reflects real width rather than a rough character guess.</p>
+
+    <table class="lim">
+      <thead><tr style="background:#2b2b2b !important;"><th style="background:#2b2b2b !important; color:#ffffff !important;">Element</th><th style="background:#2b2b2b !important; color:#ffffff !important;">Approx. Limit</th><th style="background:#2b2b2b !important; color:#ffffff !important;">Rough Characters</th></tr></thead>
+      <tbody>
+        <tr><td>Title (desktop and mobile)</td><td>600 px</td><td>50 to 60</td></tr>
+        <tr><td>Description (desktop)</td><td>920 px</td><td>140 to 160</td></tr>
+        <tr><td>Description (mobile)</td><td>680 px</td><td>110 to 120</td></tr>
+      </tbody>
+    </table>
+    <p>These limits are close approximations. Google adjusts its layout from time to time, so treat them as safe targets rather than exact rules.</p>
+
+    <h2>Tips for Snippets That Get More Clicks</h2>
+    <ul>
+      <li>Put your main keyword near the start of the title.</li>
+      <li>Make every title unique across your site.</li>
+      <li>Write the description as a short promise of what the reader will get.</li>
+      <li>Use numbers or the current year when they are genuinely accurate.</li>
+      <li>Avoid stuffing keywords. Write for people first.</li>
+    </ul>
+    <p>For a deeper guide on titles, read our article on <a href="https://brandella.in/title-tag-optimization/">title tag optimization</a>. If you build sites in PHP, see how to generate <a href="https://brandella.in/dynamic-meta-tags-php/">dynamic meta tags in PHP</a>. To check how your snippets actually perform, use the <a href="https://brandella.in/search-console-performance-report/">Search Console performance report</a> and watch click through rate per page.</p>
+
+    <div class="bx-ad">
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3931314195561246" data-ad-slot="4249015278" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+
+    <h2>Frequently Asked Questions</h2>
+    <details class="faq-item" open><summary><span class="faq-num">1</span>How long should a title tag be for Google?</summary><p>Google truncates titles by pixel width, not character count. On desktop the limit is roughly 600 pixels, which is usually around 50 to 60 characters depending on the letters used.</p></details>
+    <details class="faq-item" open><summary><span class="faq-num">2</span>How long should a meta description be?</summary><p>Aim for roughly 920 pixels on desktop and about 680 pixels on mobile. In practice that is around 120 to 155 characters, with the key message placed in the first 120 characters.</p></details>
+    <details class="faq-item" open><summary><span class="faq-num">3</span>Does Google always show my meta description?</summary><p>No. Google often rewrites snippets using text from the page when it believes that text better matches the search query. A clear, relevant meta description still improves the chance it is used.</p></details>
+    <details class="faq-item" open><summary><span class="faq-num">4</span>Is this SERP snippet preview tool free?</summary><p>Yes. The tool is completely free, needs no signup, and runs entirely in your browser, so nothing you type is sent to any server.</p></details>
+
+    <h2>Related Articles</h2>
+    <div class="related">
+      <a href="https://brandella.in/title-tag-optimization/">Title Tag Optimization <span>&rarr;</span></a>
+      <a href="https://brandella.in/dynamic-meta-tags-php/">Dynamic Meta Tags in PHP <span>&rarr;</span></a>
+      <a href="https://brandella.in/search-console-performance-report/">Search Console Performance Report <span>&rarr;</span></a>
+      <a href="https://brandella.in/how-to-write-seo-friendly-blog/">How to Write an SEO Friendly Blog <span>&rarr;</span></a>
+    </div>
+  </article>
+
+  <section class="content more-tools" style="max-width:1140px">
+    <h2>More Free SEO Tools</h2>
+    <div class="tgrid">
+      <a class="tcard" href="https://brandella.in/tools/seo-tools/keyword-density-checker/"><div class="tbadge">KD</div><h3>Keyword Density Checker</h3><p>Paste any text or HTML and see the most used 1, 2 and 3 word phrases with their exact density.</p><span class="go">Open tool &rarr;</span></a>
+<a class="tcard" href="https://brandella.in/tools/seo-tools/seo-slug-generator/"><div class="tbadge">SG</div><h3>SEO Slug Generator</h3><p>Turn any title into a short, clean, search friendly URL slug. Works in bulk, one title per line.</p><span class="go">Open tool &rarr;</span></a>
+<a class="tcard" href="https://brandella.in/tools/seo-tools/meta-tag-generator/"><div class="tbadge">MT</div><h3>Meta Tag Generator</h3><p>Generate title, description, robots, canonical, Open Graph and Twitter tags ready to paste into your page.</p><span class="go">Open tool &rarr;</span></a>
+<a class="tcard" href="https://brandella.in/tools/seo-tools/heading-structure-checker/"><div class="tbadge">HS</div><h3>Heading Structure Checker</h3><p>Paste page HTML to see its H1 to H6 outline and catch missing H1s, duplicates and skipped levels.</p><span class="go">Open tool &rarr;</span></a>
+    </div>
+    <p><a href="https://brandella.in/tools/seo-tools/">See all SEO tools &rarr;</a></p>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <ul class="foot-links">
+      <li><a href="https://brandella.in/">Home</a></li>
+      <li><a href="https://brandella.in/about-us/">About Us</a></li>
+      <li><a href="https://brandella.in/contact-us/">Contact Us</a></li>
+      <li><a href="https://brandella.in/privacy-policy/">Privacy Policy</a></li>
+      <li><a href="https://brandella.in/terms-and-conditions/">Terms and Conditions</a></li>
+    </ul>
+    <p class="copy">Copyright &copy; <span id="yr">2026</span> Brandella Journal. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+
+  var d = new Date();
+  var days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+  var months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+  document.getElementById('siteDate').innerHTML = days[d.getDay()] + ',<small>' + months[d.getMonth()] + ' ' + d.getDate() + ', ' + d.getFullYear() + '</small>';
+  document.getElementById('yr').textContent = d.getFullYear();
+  var nav = document.getElementById('siteNav'), mb = document.getElementById('menuBtn');
+  mb.addEventListener('click', function(){ var open = nav.classList.toggle('open'); mb.setAttribute('aria-expanded', open); });
+  var $ = function(id){ return document.getElementById(id); };
+  function esc(s){ return String(s).replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+  function copyText(text, toastId){
+    var done = function(){ var t = $(toastId); if(!t) return; t.classList.add('show'); setTimeout(function(){ t.classList.remove('show'); }, 1600); };
+    if (navigator.clipboard && navigator.clipboard.writeText){ navigator.clipboard.writeText(text).then(done, function(){ fallback(); done(); }); }
+    else { fallback(); done(); }
+    function fallback(){ var ta=document.createElement('textarea'); ta.value=text; document.body.appendChild(ta); ta.select(); try{document.execCommand('copy');}catch(e){} document.body.removeChild(ta); }
+  }
+
+
+  var $ = function(id){ return document.getElementById(id); };
+  var inTitle=$('inTitle'), inDesc=$('inDesc'), inUrl=$('inUrl'), inSite=$('inSite'), inKw=$('inKw'), inDate=$('inDate');
+  var mode = 'desktop';
+  var LIMITS = { desktop:{title:600, desc:920}, mobile:{title:600, desc:680} };
+
+  var cv = document.createElement('canvas').getContext('2d');
+  function width(text, font){ cv.font = font; return Math.round(cv.measureText(text).width); }
+  var TITLE_FONT = '20px Arial', DESC_FONT = '14px Arial';
+
+  function truncate(text, font, max){
+    if (width(text, font) <= max) return { text:text, cut:false };
+    var words = text.split(' '), out = '';
+    for (var i=0;i<words.length;i++){
+      var next = out ? out + ' ' + words[i] : words[i];
+      if (width(next + ' ...', font) > max) break;
+      out = next;
+    }
+    if (!out){ // single very long word
+      out = text;
+      while (out.length && width(out + '...', font) > max) out = out.slice(0,-1);
+      return { text: out + '...', cut:true };
+    }
+    return { text: out.replace(/[\s,.;:|]+$/,'') + ' ...', cut:true };
+  }
+
+  function escOld(s){ return s.replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+
+  function bold(html, kw){
+    kw = kw.trim();
+    if (!kw) return html;
+    var safe = esc(kw).replace(/[.*+?^${}()|[\]\\]/g,'\\$&');
+    return html.replace(new RegExp('(' + safe + ')', 'gi'), '<strong>$1</strong>');
+  }
+
+  function crumbUrl(raw){
+    var u = raw.trim();
+    if (!u) return { host:'example.com', path:'' };
+    if (!/^https?:\/\//i.test(u)) u = 'https://' + u;
+    try{
+      var p = new URL(u);
+      var parts = p.pathname.split('/').filter(Boolean);
+      return { host: p.protocol + '//' + p.hostname.replace(/^www\./,''), path: parts.length ? ' \u203A ' + parts.join(' \u203A ') : '' };
+    }catch(e){ return { host: raw, path:'' }; }
+  }
+
+  function setMeter(bar, msgEl, pxEl, px, max){
+    var pct = Math.min(100, px / max * 100);
+    bar.style.width = pct + '%';
+    bar.className = px > max ? 'bad' : (px > max * 0.9 ? 'warn' : '');
+    pxEl.textContent = px + ' / ' + max + ' px';
+    if (px === 0){ msgEl.textContent=''; msgEl.className=''; }
+    else if (px > max){ msgEl.textContent='Too long, will be cut'; msgEl.className='bad'; }
+    else if (px > max * 0.9){ msgEl.textContent='Near the limit'; msgEl.className='warn'; }
+    else if (px < max * 0.5){ msgEl.textContent='Could be longer'; msgEl.className='warn'; }
+    else { msgEl.textContent='Good length'; msgEl.className='ok'; }
+  }
+
+  function render(){
+    var L = LIMITS[mode];
+    var t = inTitle.value.trim(), ds = inDesc.value.trim().replace(/\s+/g,' ');
+    var tPx = width(t, TITLE_FONT), dPx = width(ds, DESC_FONT);
+
+    $('titleChars').textContent = t.length + ' chars';
+    $('descChars').textContent = ds.length + ' chars';
+    setMeter($('titleBar'), $('titleMsg'), $('titlePx'), tPx, L.title);
+    setMeter($('descBar'), $('descMsg'), $('descPx'), dPx, L.desc);
+
+    var tt = truncate(t || 'Your page title will appear here', TITLE_FONT, L.title);
+    var dd = truncate(ds || 'Your meta description will appear here. Write a short, clear summary of the page.', DESC_FONT, L.desc);
+
+    var site = inSite.value.trim();
+    var cu = crumbUrl(inUrl.value);
+    $('gName').textContent = site || cu.host.replace(/^https?:\/\//,'');
+    $('gUrl').textContent = cu.host + cu.path;
+    $('gFav').textContent = (site || cu.host.replace(/^https?:\/\//,'') || 'B').charAt(0).toUpperCase();
+    $('gTitle').textContent = tt.text;
+
+    var dateHtml = '';
+    if (inDate.checked){
+      var n = new Date();
+      dateHtml = '<span class="g-date">' + n.toLocaleDateString('en-US',{month:'short', day:'numeric', year:'numeric'}) + ' \u2014 </span>';
+    }
+    $('gDesc').innerHTML = dateHtml + bold(esc(dd.text), inKw.value);
+
+    /* Quick checks */
+    var tips = [], kw = inKw.value.trim().toLowerCase();
+    if (t && tPx > L.title) tips.push('Shorten the title by about ' + (tPx - L.title) + ' px so it is not cut off.');
+    if (ds && dPx > L.desc) tips.push('Trim the description so the end of your message is visible.');
+    if (kw && t && t.toLowerCase().indexOf(kw) === -1) tips.push('Your focus keyword is not in the title.');
+    if (kw && t && t.toLowerCase().indexOf(kw) > 40) tips.push('Move the focus keyword closer to the start of the title.');
+    if (kw && ds && ds.toLowerCase().indexOf(kw) === -1) tips.push('Consider adding the focus keyword to the description.');
+    if (!ds) tips.push('Add a meta description, or Google will pick text from the page.');
+    if (t && t === t.toUpperCase() && /[A-Z]/.test(t)) tips.push('Avoid writing the title in all capitals.');
+    if (!tips.length) tips.push('Looks good. Title and description fit within the limits.');
+    $('tipList').innerHTML = tips.map(function(x){ return '<li>' + esc(x) + '</li>'; }).join('');
+
+    $('codeOut').style.display = 'none';
+  }
+
+  function setMode(m){
+    mode = m;
+    $('serp').classList.toggle('mobile', m === 'mobile');
+    $('tabDesk').classList.toggle('on', m === 'desktop');
+    $('tabMob').classList.toggle('on', m === 'mobile');
+    $('tabDesk').setAttribute('aria-selected', m === 'desktop');
+    $('tabMob').setAttribute('aria-selected', m === 'mobile');
+    render();
+  }
+  $('tabDesk').onclick = function(){ setMode('desktop'); };
+  $('tabMob').onclick = function(){ setMode('mobile'); };
+
+  [inTitle, inDesc, inUrl, inSite, inKw].forEach(function(el){ el.addEventListener('input', render); });
+  inDate.addEventListener('change', render);
+
+  $('btnCopy').onclick = function(){
+    var code = '<title>' + esc(inTitle.value.trim()) + '</title>\n' +
+               '<meta name="description" content="' + esc(inDesc.value.trim().replace(/\s+/g,' ')) + '">';
+    if (inUrl.value.trim()) code += '\n<link rel="canonical" href="' + esc(inUrl.value.trim()) + '">';
+    var out = $('codeOut'); out.textContent = code; out.style.display = 'block';
+    var done = function(){ var t=$('toast'); t.classList.add('show'); setTimeout(function(){ t.classList.remove('show'); }, 1600); };
+    if (navigator.clipboard && navigator.clipboard.writeText){ navigator.clipboard.writeText(code).then(done, done); }
+    else { done(); }
+  };
+  $('btnReset').onclick = function(){
+    inTitle.value=''; inDesc.value=''; inUrl.value=''; inKw.value=''; inDate.checked=false;
+    render(); inTitle.focus();
+  };
+
+  render();
+
+})();
+</script>
+</body>
+</html>

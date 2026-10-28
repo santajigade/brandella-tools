@@ -1,0 +1,35 @@
+name: Check and deploy tools
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'tools/**'
+      - '.github/workflows/deploy.yml'
+  workflow_dispatch:
+
+concurrency:
+  group: deploy
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: SEO check (blocks deploy on failure)
+        run: python3 src/seo_check.py tools
+
+      - name: Upload to Hostinger (public_html/tools)
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: ./tools/
+          server-dir: ./
