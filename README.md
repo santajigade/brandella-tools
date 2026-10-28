@@ -9,6 +9,8 @@ Static tool pages served at https://brandella.in/tools/
 Secrets required: `FTP_SERVER`, `FTP_USERNAME`, `FTP_PASSWORD`.
 
 ## Add tools
-1. Add a tool definition to `src/build.py`
-2. `python3 src/build.py && python3 src/seo_check.py tools`
-3. Commit and push
+See `CLAUDE.md` for the full daily playbook.
+
+```
+python3 src/build.py && python3 src/seo_check.py tools && node src/browser_test.js tools
+```

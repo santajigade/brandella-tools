@@ -35,6 +35,20 @@ class P(HTMLParser):
         if not any(x in s.stack for x in ('script','style','head','textarea','pre','code','nav','select')):
             s.text.append(d)
 
+SLUGS = set(l.strip() for l in open(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'docs', 'article-slugs.txt')) if l.strip() and not l.startswith('#'))
+BUILT = set()
+for dp_,_,fs_ in os.walk(ROOT):
+    if 'index.html' in fs_: BUILT.add('https://brandella.in/' + os.path.relpath(dp_, os.path.dirname(ROOT)).rstrip('.') + '/')
+def bad_links(src):
+    main = src.split('<main', 1)[-1].split('</main>', 1)[0]
+    out = []
+    for h in re.findall(r'href="(https://brandella\.in/[^"#?]*)"', main):
+        if h.startswith('https://brandella.in/tools/'):
+            if h not in BUILT: out.append(h)
+        elif h != 'https://brandella.in/':
+            slug = h[len('https://brandella.in/'):].strip('/')
+            if slug not in SLUGS: out.append(h)
+    return sorted(set(out))
 results=[]; titles={}; descs={}
 for dp,_,fs in os.walk(ROOT):
     for f in fs:
@@ -68,6 +82,8 @@ for dp,_,fs in os.walk(ROOT):
         internal=[l for l in p.links if 'brandella.in' in l]
         chk(len(set(internal))>=8, f'Internal links {len(set(internal))}')
         chk(all(i.get('alt') for i in p.imgs), 'All images have alt')
+        bl = bad_links(src)
+        chk(not bl, f'All brandella.in links in main point to real pages {bl[:4] if bl else ""}')
         vis=' '.join(p.text); dash=re.findall(r'\w[—–]\w|\w—|—\w|\b[a-z]+-[a-z]+\b', vis)
         chk(not dash, f'No dashes in visible text {dash[:3] if dash else ""}', 'WARN')
         if t in titles: chk(False, f'Duplicate title with {titles[t]}')

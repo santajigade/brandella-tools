@@ -1,6 +1,7 @@
 """Batch 2 (2026-10-28): 7 more SEO tools. Completes the SEO Tools category (12 tools)."""
 
 def add(TOOLS, STOP_JS):
+    _n = len(TOOLS)
 
     # ---------- 6. READABILITY SCORE CHECKER ----------
     TOOLS.append(dict(
@@ -837,3 +838,6 @@ backlink checker</textarea>
         related=[("Google Ads Negative Keywords", "google-ads-negative-keywords"), ("Best Keyword Research Tools Compared", "best-keyword-research-tools-compared"),
                  ("Python Keyword Research Automation", "python-keyword-research-automation"), ("Content Audit Explained", "content-audit-explained-improve-rankings")],
     ))
+
+    for t in TOOLS[_n:]:
+        t['cat'] = 'seo-tools'; t['updated'] = '2026-10-28'

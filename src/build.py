@@ -81,7 +81,7 @@ AD = '''<div class="bx-ad">
     <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
   </div>'''
 
-HUB = BASE + '/tools/seo-tools/'
+HUB = BASE + '/tools/seo-tools/'  # legacy, used only by SEO hub intro
 
 def page(title, desc, url, schema, main, js='', og='tools'):
     ogimg = BASE + '/tools/assets/og-' + og + '.png'
@@ -760,37 +760,57 @@ TOOLS.append(dict(
              ("Structuring HTML for AI Crawlability", "structuring-html-for-ai-crawlability"), ("How to Write an SEO Friendly Blog", "how-to-write-seo-friendly-blog")],
 ))
 
-import batch2
-batch2.add(TOOLS, STOP_JS)
 
-# ======================= BUILD TOOL PAGES =======================
-def more_tools(current):
-    cards = []
-    for t in TOOLS:
-        if t['slug'] == current: continue
-        cards.append(f'<a class="tcard" href="{HUB}{t["slug"]}/"><div class="tbadge">{t["short"]}</div><h3>{t["name"]}</h3><p>{t["card"]}</p><span class="go">Open tool &rarr;</span></a>')
-    return f'''<section class="content more-tools" style="max-width:1140px">
-    <h2>More Free SEO Tools</h2>
+# ======================= LOAD BATCHES AND CATEGORIES =======================
+import glob, importlib, datetime
+from categories import CATEGORIES
+for t in TOOLS:
+    t.setdefault('cat', 'seo-tools'); t.setdefault('updated', '2026-10-28')
+for f in sorted(glob.glob(os.path.join(HERE, 'batch*.py'))):
+    importlib.import_module(os.path.basename(f)[:-3]).add(TOOLS, STOP_JS)
+for t in TOOLS:
+    t.setdefault('cat', 'seo-tools'); t.setdefault('updated', '2026-10-28')
+CAT = {c['slug']: c for c in CATEGORIES}
+for t in TOOLS: assert t['cat'] in CAT, 'unknown category ' + t['cat']
+slugs = [t['cat'] + '/' + t['slug'] for t in TOOLS]; assert len(slugs) == len(set(slugs)), 'duplicate tool slug'
+def tools_in(cat): return [t for t in TOOLS if t['cat'] == cat]
+LIVE = [c for c in CATEGORIES if tools_in(c['slug'])]
+def caturl(c): return BASE + '/tools/' + c + '/'
+def turl(t): return caturl(t['cat']) + t['slug'] + '/'
+
+# Tools dropdown in header lists every live category
+_sub = ''.join(f'\n            <li><a href="{caturl(c["slug"])}">{c["name"]}</a></li>' for c in LIVE)
+HEADER = re.sub(r'(<a class="active" href="https://brandella.in/tools/">Tools</a>\s*<ul class="sub">).*?(\n\s*</ul>)', lambda m: m.group(1) + _sub + m.group(2), HEADER, flags=re.S)
+
+def card(t, h='h3'):
+    return f'<a class="tcard" href="{turl(t)}"><div class="tbadge">{t["short"]}</div><{h}>{t["name"]}</{h}><p>{t["card"]}</p><span class="go">Open tool &rarr;</span></a>'
+
+def more_tools(t):
+    c = CAT[t['cat']]
+    same = [x for x in tools_in(t['cat']) if x['slug'] != t['slug']]
+    other = [x for x in TOOLS if x['cat'] != t['cat']][:max(0, 3 - len(same))]
+    return f"""<section class="content more-tools" style="max-width:1140px">
+    <h2>More Free {c['name']}</h2>
     <div class="tgrid">
-      {chr(10).join(cards)}
+      {chr(10).join(card(x) for x in same + other)}
     </div>
-    <p><a href="{HUB}">See all SEO tools &rarr;</a></p>
-  </section>'''
+    <p><a href="{caturl(c['slug'])}">See all {c['name'].lower()} &rarr;</a> &nbsp;|&nbsp; <a href="{BASE}/tools/">Browse every free tool &rarr;</a></p>
+  </section>"""
 
 def build_tool(t):
-    url = HUB + t['slug'] + '/'
-    bc = [("Home", BASE + '/'), ("Tools", BASE + '/tools/'), ("SEO Tools", HUB), (t['name'], url)]
+    c = CAT[t['cat']]; url = turl(t)
+    bc = [("Home", BASE + '/'), ("Tools", BASE + '/tools/'), (c['name'], caturl(c['slug'])), (t['name'], url)]
     schema = {"@context": "https://schema.org", "@graph": [
-        {"@type": "SoftwareApplication", "name": t['name'], "url": url, "applicationCategory": "BusinessApplication",
+        {"@type": "SoftwareApplication", "name": t['name'], "url": url, "applicationCategory": c.get('app_category', 'BusinessApplication'),
          "operatingSystem": "Any (web browser)", "description": t['desc'],
          "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
          "publisher": {"@type": "Organization", "name": "Brandella Journal", "url": BASE + '/'}},
         bc_schema(bc), faq_schema(t['faqs'])]}
-    main = f'''
+    main = f"""
   {crumbs([(n, u) for n, u in bc[:-1]] + [(t['name'], None)])}
 
   <section class="hero">
-    <span class="pill">Free SEO Tool</span>
+    <span class="pill">Free {c['pill']} Tool</span>
     <h1>{t['h1']}</h1>
     <p>{t['lead']}</p>
   </section>
@@ -808,96 +828,68 @@ def build_tool(t):
     {related_html(t['related'])}
   </article>
 
-  {more_tools(t['slug'])}
-'''
+  {more_tools(t)}
+"""
     return page(t['title'], t['desc'], url, schema, main, t['js'], og=t['slug'])
 
-# ======================= HUB: /tools/seo-tools/ =======================
-SOON = []
-
-def build_hub():
-    url = HUB
-    bc = [("Home", BASE + '/'), ("Tools", BASE + '/tools/'), ("SEO Tools", url)]
-    faqs = [("Are these SEO tools really free?", "Yes. Every tool on this page is free, needs no signup, and has no usage limits."),
-            ("Is my data safe?", "All tools run entirely in your browser. Text, HTML and URLs you enter are never uploaded or stored on our servers."),
-            ("Will you add more tools?", "Yes. New free tools are added regularly, including schema generators, technical SEO tools and PPC calculators.")]
+def build_hub(c):
+    url = caturl(c['slug']); ts = tools_in(c['slug'])
+    bc = [("Home", BASE + '/'), ("Tools", BASE + '/tools/'), (c['name'], url)]
+    faqs = c.get('faqs') or [
+        (f"Are these {c['name'].lower()} free?", "Yes. Every tool on this page is free, needs no signup, and has no usage limits."),
+        ("Is my data safe?", "All tools run entirely in your browser. Anything you type or paste is never uploaded or stored on our servers."),
+        ("Will you add more tools?", "Yes. New free tools are added to Brandella Journal regularly across SEO, paid media, analytics, content and development.")]
     schema = {"@context": "https://schema.org", "@graph": [
-        {"@type": "CollectionPage", "name": "Free SEO Tools", "url": url, "description": "Free browser based SEO tools by Brandella Journal.",
+        {"@type": "CollectionPage", "name": "Free " + c['name'], "url": url, "description": c['hub_desc'],
          "mainEntity": {"@type": "ItemList", "itemListElement": [
-             {"@type": "ListItem", "position": i + 1, "name": t['name'], "url": HUB + t['slug'] + '/'} for i, t in enumerate(TOOLS)]}},
+             {"@type": "ListItem", "position": i + 1, "name": t['name'], "url": turl(t)} for i, t in enumerate(ts)]}},
         bc_schema(bc), faq_schema(faqs)]}
-    cards = [f'<a class="tcard" href="{HUB}{t["slug"]}/"><div class="tbadge">{t["short"]}</div><h2>{t["name"]}</h2><p>{t["card"]}</p><span class="go">Open tool &rarr;</span></a>' for t in TOOLS]
-    cards += [f'<div class="tcard soon"><div class="tbadge">{s}</div><h2>{n}</h2><p>{html.escape(d)}</p><span class="go">Coming soon</span></div>' for s, n, d in SOON]
-    main = f'''
-  {crumbs([("Home", BASE + '/'), ("Tools", BASE + '/tools/'), ("SEO Tools", None)])}
+    intro = c.get('hub_intro') or (f"<h2>About These {c['name']}</h2>\n    <p>{c['hub_lead']}</p>\n    <ul>\n" +
+        '\n'.join(f'      <li><a href="{turl(t)}"><strong>{t["name"]}</strong></a>: {t["card"]}</li>' for t in ts) + '\n    </ul>')
+    main = f"""
+  {crumbs([("Home", BASE + '/'), ("Tools", BASE + '/tools/'), (c['name'], None)])}
 
   <section class="hero">
     <span class="pill">Free Tools</span>
-    <h1>Free SEO Tools</h1>
-    <p>Simple, fast SEO tools that run right in your browser. No signup, no limits, and nothing you type ever leaves your device.</p>
+    <h1>Free {c['name']}</h1>
+    <p>{c['hub_lead']}</p>
   </section>
 
   <div class="tgrid">
-    {chr(10).join(cards)}
+    {chr(10).join(card(t, 'h2') for t in ts)}
   </div>
 
   {AD}
 
   <article class="content">
-    <h2>Practical SEO Tools for Everyday Work</h2>
-    <p>These free SEO tools cover the small but important jobs that come up on almost every page you publish: checking how a result will look in Google, keeping keyword use natural and readable, writing clean URLs and meta tags, fixing headings, alt text and internal links, and building keyword lists.</p>
-    <p>Each tool is built by the team behind Brandella Journal and links to an in depth guide, so you can understand the why as well as the how.</p>
-
-    <h2>Which Tool Should You Use?</h2>
-    <ul>
-      <li><strong>Writing a new page?</strong> Start with the <a href="{HUB}seo-slug-generator/">SEO Slug Generator</a>, then the <a href="{HUB}meta-tag-generator/">Meta Tag Generator</a>.</li>
-      <li><strong>Before publishing?</strong> Check your result in the <a href="{HUB}serp-snippet-preview/">SERP Snippet Preview</a> and your outline in the <a href="{HUB}heading-structure-checker/">Heading Structure Checker</a>.</li>
-      <li><strong>Auditing content?</strong> Paste it into the <a href="{HUB}keyword-density-checker/">Keyword Density Checker</a> and the <a href="{HUB}readability-score-checker/">Readability Score Checker</a>.</li>
-      <li><strong>Checking a live page?</strong> Run its HTML through the <a href="{HUB}internal-link-checker/">Internal Link Checker</a> and the <a href="{HUB}alt-text-checker/">Alt Text Checker</a>.</li>
-      <li><strong>Building keyword lists?</strong> Use the <a href="{HUB}keyword-combiner/">Keyword Combiner</a>, then tidy up with the <a href="{HUB}duplicate-line-remover/">Duplicate Line Remover</a>.</li>
-    </ul>
-    <p>New to SEO? Read our beginner guide, <a href="https://brandella.in/what-is-seo/">What Is SEO</a>, or compare paid platforms in <a href="https://brandella.in/best-seo-tools-comparison/">our SEO tools comparison</a>.</p>
+    {intro}
 
     {faq_html(faqs)}
   </article>
-'''
-    return page('Free SEO Tools: SERP Preview, Keyword Density and More',
-                '12 free browser based SEO tools: SERP preview, keyword density, readability, slug generator, meta tags, alt text, internal links and more.',
-                url, schema, main, og='seo-tools')
-
-# ======================= /tools/ INDEX =======================
-CATS = [("SEO", "SEO Tools", "SERP preview, keyword density, slugs, meta tags and headings.", True),
-        ("SC", "Schema Generators", "FAQ, LocalBusiness, Article and Product JSON LD.", False),
-        ("TS", "Technical SEO", "Robots.txt, hreflang and XML sitemap generators.", False),
-        ("SP", "Meta and Social Preview", "Open Graph and social card previews.", False),
-        ("GA", "Google Ads Tools", "Ad copy counters and keyword match type tools.", False),
-        ("PPC", "PPC Calculators", "ROAS, CPA, CPC, CTR and break even calculators.", False),
-        ("UT", "Analytics and Tracking", "UTM builder and GA4 event code generators.", False),
-        ("CW", "Content Writing Tools", "Word counter, readability and headline tools.", False),
-        ("SM", "Social Media Tools", "Character counters and image size guides.", False),
-        ("EM", "Email Marketing Tools", "Subject line and preheader preview tools.", False),
-        ("AI", "AI Tools", "Prompt generators and llms.txt builder.", False),
-        ("DEV", "Developer Tools", "HTML minifier, JSON formatter and more.", False)]
+"""
+    return page(c['hub_title'], c['hub_desc'], url, schema, main, og='cat-' + c['slug'])
 
 def build_index():
     url = BASE + '/tools/'
     bc = [("Home", BASE + '/'), ("Tools", url)]
     schema = {"@context": "https://schema.org", "@graph": [
-        {"@type": "CollectionPage", "name": "Free Marketing Tools", "url": url, "description": "Free SEO and digital marketing tools by Brandella Journal."},
+        {"@type": "CollectionPage", "name": "Free Marketing Tools", "url": url, "description": "Free SEO and digital marketing tools by Brandella Journal.",
+         "mainEntity": {"@type": "ItemList", "itemListElement": [
+             {"@type": "ListItem", "position": i + 1, "name": c['name'], "url": caturl(c['slug'])} for i, c in enumerate(LIVE)]}},
         bc_schema(bc)]}
     cards = []
-    for s, n, d, live in CATS:
-        if live:
-            cards.append(f'<a class="tcard" href="{HUB}"><div class="tbadge">{s}</div><h2>{n}</h2><p>{d}</p><span class="go">{len(TOOLS)} tools &rarr;</span></a>')
-        else:
-            cards.append(f'<div class="tcard soon"><div class="tbadge">{s}</div><h2>{n}</h2><p>{d}</p><span class="go">Coming soon</span></div>')
-    main = f'''
+    for c in CATEGORIES:
+        n = len(tools_in(c['slug']))
+        if n: cards.append(f'<a class="tcard" href="{caturl(c["slug"])}"><div class="tbadge">{c["short"]}</div><h2>{c["name"]}</h2><p>{c["card"]}</p><span class="go">{n} tools &rarr;</span></a>')
+        else: cards.append(f'<div class="tcard soon"><div class="tbadge">{c["short"]}</div><h2>{c["name"]}</h2><p>{c["card"]}</p><span class="go">Coming soon</span></div>')
+    total = len(TOOLS)
+    main = f"""
   {crumbs([("Home", BASE + '/'), ("Tools", None)])}
 
   <section class="hero">
     <span class="pill">Free Tools</span>
     <h1>Free Marketing Tools</h1>
-    <p>Free, browser based tools for SEO, paid media, content and analytics. Built by Brandella Journal to make everyday marketing tasks faster.</p>
+    <p>{total} free, browser based tools for SEO, paid media, content and analytics. Built by Brandella Journal to make everyday marketing tasks faster.</p>
   </section>
 
   <div class="tgrid">
@@ -905,9 +897,9 @@ def build_index():
   </div>
 
   {AD}
-'''
+"""
     return page('Free Marketing Tools: SEO, PPC and Content Tools',
-                'Free browser based marketing tools from Brandella Journal for SEO, PPC, content, social media and analytics. No signup needed.',
+                f'{total} free browser based marketing tools from Brandella Journal for SEO, PPC, content, social media and analytics. No signup needed.',
                 url, schema, main)
 
 # ======================= WRITE =======================
@@ -915,42 +907,45 @@ if os.path.exists(OUT): shutil.rmtree(OUT)
 def w(path, s):
     os.makedirs(os.path.dirname(path), exist_ok=True); open(path, 'w').write(s)
 w(OUT + '/index.html', build_index())
-w(OUT + '/seo-tools/index.html', build_hub())
+for c in LIVE:
+    w(OUT + '/' + c['slug'] + '/index.html', build_hub(c))
 for t in TOOLS:
-    w(OUT + '/seo-tools/' + t['slug'] + '/index.html', build_tool(t))
-print('built', len(TOOLS), 'tools')
+    w(OUT + '/' + t['cat'] + '/' + t['slug'] + '/index.html', build_tool(t))
+print('built', len(TOOLS), 'tools in', len(LIVE), 'categories')
 
 # ======================= OG IMAGES =======================
 from PIL import Image, ImageDraw, ImageFont
 def font(size, bold=True):
-    for f in (['/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf'] if bold else ['/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf']):
-        if os.path.exists(f): return ImageFont.truetype(f, size)
-    return ImageFont.load_default()
-def og_image(slug, title, sub):
+    f = '/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf' if bold else '/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf'
+    return ImageFont.truetype(f, size) if os.path.exists(f) else ImageFont.load_default()
+def og_image(name, title, sub, badge):
     im = Image.new('RGB', (1200, 630), '#0a0a0a'); d = ImageDraw.Draw(im)
     d.rectangle([0, 600, 1200, 630], fill='#a6ef39')
     d.text((70, 60), 'Brandella ', font=font(40), fill='#bbbbbb')
     d.text((70 + d.textlength('Brandella ', font=font(40)), 60), 'Journal', font=font(40), fill='#6cc82a')
-    d.rounded_rectangle([70, 150, 330, 200], radius=25, outline='#6cc82a', width=3)
-    d.text((95, 160), 'FREE SEO TOOL' if slug not in ('tools',) else 'FREE TOOLS', font=font(24), fill='#a6ef39')
-    words, lines, cur = title.split(), [], ''
-    for w_ in words:
+    bw = d.textlength(badge, font=font(24))
+    d.rounded_rectangle([70, 150, 70 + bw + 50, 200], radius=25, outline='#6cc82a', width=3)
+    d.text((95, 160), badge, font=font(24), fill='#a6ef39')
+    lines, cur = [], ''
+    for w_ in title.split():
         if d.textlength((cur + ' ' + w_).strip(), font=font(78)) > 1060: lines.append(cur); cur = w_
         else: cur = (cur + ' ' + w_).strip()
     lines.append(cur)
     y = 240
     for l in lines[:2]: d.text((70, y), l, font=font(78), fill='#ffffff'); y += 95
     d.text((70, y + 20), sub, font=font(30, False), fill='#b5b5b5')
-    os.makedirs(OUT + '/assets', exist_ok=True); im.save(OUT + f'/assets/og-{slug}.png', optimize=True)
-for t in TOOLS: og_image(t['slug'], t['name'], 'No signup. Runs in your browser.')
-og_image('seo-tools', 'Free SEO Tools', f'{len(TOOLS)} free tools. No signup needed.')
-og_image('tools', 'Free Marketing Tools', 'SEO, PPC, content and analytics tools.')
+    os.makedirs(OUT + '/assets', exist_ok=True); im.save(OUT + f'/assets/og-{name}.png', optimize=True)
+for t in TOOLS: og_image(t['slug'], t['name'], 'No signup. Runs in your browser.', 'FREE ' + CAT[t['cat']]['pill'].upper() + ' TOOL')
+for c in LIVE: og_image('cat-' + c['slug'], 'Free ' + c['name'], f"{len(tools_in(c['slug']))} free tools. No signup needed.", 'FREE TOOLS')
+og_image('tools', 'Free Marketing Tools', f'{len(TOOLS)} free tools for SEO, PPC, content and analytics.', 'FREE TOOLS')
 
 # ======================= SITEMAP =======================
-import datetime
-today = datetime.date.today().isoformat()
-urls = [(BASE + '/tools/', '0.8'), (HUB, '0.9')] + [(HUB + t['slug'] + '/', '0.8') for t in TOOLS]
+def mx(ds): return max(ds) if ds else '2026-10-28'
+urls = [(BASE + '/tools/', mx([t['updated'] for t in TOOLS]))]
+for c in LIVE:
+    urls.append((caturl(c['slug']), mx([t['updated'] for t in tools_in(c['slug'])])))
+    urls += [(turl(t), t['updated']) for t in tools_in(c['slug'])]
 sm = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + \
-     ''.join(f'  <url>\n    <loc>{u}</loc>\n    <lastmod>{today}</lastmod>\n  </url>\n' for u, _ in urls) + '</urlset>\n'
+     ''.join(f'  <url>\n    <loc>{u}</loc>\n    <lastmod>{d}</lastmod>\n  </url>\n' for u, d in urls) + '</urlset>\n'
 w(OUT + '/sitemap.xml', sm)
 print('og images + sitemap with', len(urls), 'urls')
