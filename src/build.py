@@ -760,6 +760,9 @@ TOOLS.append(dict(
              ("Structuring HTML for AI Crawlability", "structuring-html-for-ai-crawlability"), ("How to Write an SEO Friendly Blog", "how-to-write-seo-friendly-blog")],
 ))
 
+import batch2
+batch2.add(TOOLS, STOP_JS)
+
 # ======================= BUILD TOOL PAGES =======================
 def more_tools(current):
     cards = []
@@ -810,19 +813,14 @@ def build_tool(t):
     return page(t['title'], t['desc'], url, schema, main, t['js'], og=t['slug'])
 
 # ======================= HUB: /tools/seo-tools/ =======================
-SOON = [("RS", "Readability Score Checker", "Flesch reading ease score with long sentence and passive voice flags."),
-        ("KC", "Keyword Combiner", "Mix up to three keyword lists into every possible combination."),
-        ("AT", "Alt Text Checker", "Find images with missing or weak alt text in any page HTML."),
-        ("IL", "Internal Link Checker", "List every link and flag generic anchors like \"click here\"."),
-        ("WC", "Word and Character Counter", "Words, characters, sentences, paragraphs and reading time."),
-        ("CC", "Title Case Converter", "Switch text between title case, sentence case and more.")]
+SOON = []
 
 def build_hub():
     url = HUB
     bc = [("Home", BASE + '/'), ("Tools", BASE + '/tools/'), ("SEO Tools", url)]
     faqs = [("Are these SEO tools really free?", "Yes. Every tool on this page is free, needs no signup, and has no usage limits."),
             ("Is my data safe?", "All tools run entirely in your browser. Text, HTML and URLs you enter are never uploaded or stored on our servers."),
-            ("Will you add more SEO tools?", "Yes. New tools are added regularly, including a readability checker, keyword combiner and alt text checker.")]
+            ("Will you add more tools?", "Yes. New free tools are added regularly, including schema generators, technical SEO tools and PPC calculators.")]
     schema = {"@context": "https://schema.org", "@graph": [
         {"@type": "CollectionPage", "name": "Free SEO Tools", "url": url, "description": "Free browser based SEO tools by Brandella Journal.",
          "mainEntity": {"@type": "ItemList", "itemListElement": [
@@ -847,14 +845,16 @@ def build_hub():
 
   <article class="content">
     <h2>Practical SEO Tools for Everyday Work</h2>
-    <p>These free SEO tools cover the small but important jobs that come up on almost every page you publish: checking how a result will look in Google, keeping keyword use natural, writing clean URLs, generating meta tags, and fixing heading structure.</p>
+    <p>These free SEO tools cover the small but important jobs that come up on almost every page you publish: checking how a result will look in Google, keeping keyword use natural and readable, writing clean URLs and meta tags, fixing headings, alt text and internal links, and building keyword lists.</p>
     <p>Each tool is built by the team behind Brandella Journal and links to an in depth guide, so you can understand the why as well as the how.</p>
 
     <h2>Which Tool Should You Use?</h2>
     <ul>
       <li><strong>Writing a new page?</strong> Start with the <a href="{HUB}seo-slug-generator/">SEO Slug Generator</a>, then the <a href="{HUB}meta-tag-generator/">Meta Tag Generator</a>.</li>
       <li><strong>Before publishing?</strong> Check your result in the <a href="{HUB}serp-snippet-preview/">SERP Snippet Preview</a> and your outline in the <a href="{HUB}heading-structure-checker/">Heading Structure Checker</a>.</li>
-      <li><strong>Auditing content?</strong> Paste it into the <a href="{HUB}keyword-density-checker/">Keyword Density Checker</a> to see what the page is really about.</li>
+      <li><strong>Auditing content?</strong> Paste it into the <a href="{HUB}keyword-density-checker/">Keyword Density Checker</a> and the <a href="{HUB}readability-score-checker/">Readability Score Checker</a>.</li>
+      <li><strong>Checking a live page?</strong> Run its HTML through the <a href="{HUB}internal-link-checker/">Internal Link Checker</a> and the <a href="{HUB}alt-text-checker/">Alt Text Checker</a>.</li>
+      <li><strong>Building keyword lists?</strong> Use the <a href="{HUB}keyword-combiner/">Keyword Combiner</a>, then tidy up with the <a href="{HUB}duplicate-line-remover/">Duplicate Line Remover</a>.</li>
     </ul>
     <p>New to SEO? Read our beginner guide, <a href="https://brandella.in/what-is-seo/">What Is SEO</a>, or compare paid platforms in <a href="https://brandella.in/best-seo-tools-comparison/">our SEO tools comparison</a>.</p>
 
@@ -862,7 +862,7 @@ def build_hub():
   </article>
 '''
     return page('Free SEO Tools: SERP Preview, Keyword Density and More',
-                'Free browser based SEO tools: SERP snippet preview, keyword density checker, slug generator, meta tag generator and heading structure checker.',
+                '12 free browser based SEO tools: SERP preview, keyword density, readability, slug generator, meta tags, alt text, internal links and more.',
                 url, schema, main, og='seo-tools')
 
 # ======================= /tools/ INDEX =======================
