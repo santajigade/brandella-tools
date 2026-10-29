@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Organization Schema Generator: Logo and sameAs JSON LD</title>
+<meta name="description" content="Free organization schema generator. Create Organization JSON LD with logo, sameAs social profiles, contact details, address, founding date and IDs.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://brandella.in/tools/schema-generators/organization-schema-generator/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Organization Schema Generator: Logo and sameAs JSON LD">
+<meta property="og:description" content="Free organization schema generator. Create Organization JSON LD with logo, sameAs social profiles, contact details, address, founding date and IDs.">
+<meta property="og:url" content="https://brandella.in/tools/schema-generators/organization-schema-generator/">
+<meta property="og:site_name" content="Brandella Journal">
+<meta property="og:image" content="https://brandella.in/tools/assets/og-organization-schema-generator.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://brandella.in/tools/assets/og-organization-schema-generator.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3931314195561246" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "Organization Schema Generator",
+      "url": "https://brandella.in/tools/schema-generators/organization-schema-generator/",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Any (web browser)",
+      "description": "Free organization schema generator. Create Organization JSON LD with logo, sameAs social profiles, contact details, address, founding date and IDs.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Brandella Journal",
+        "url": "https://brandella.in/"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://brandella.in/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Tools",
+          "item": "https://brandella.in/tools/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Schema Generators",
+          "item": "https://brandella.in/tools/schema-generators/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Organization Schema Generator",
+          "item": "https://brandella.in/tools/schema-generators/organization-schema-generator/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Which page should have organization schema?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Your home page or a single page about your company, such as the About page. Google says it does not need to be on every page of your site."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is sameAs in organization schema?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "sameAs is a list of URLs for your profiles on other websites, such as LinkedIn, Instagram, YouTube or Wikipedia. It helps search engines confirm those profiles belong to you."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What size should my logo be?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "At least 112 x 112 pixels, in a format Google Images supports such as PNG, JPG or WebP. Check that it still looks good on a plain white background."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is my company data sent to a server?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. This organization schema generator works fully in your browser. Nothing you type is uploaded."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+<style>
+:root{
+  --green:#6cc82a; --lime:#a6ef39; --ink:#111; --gray:#555; --muted:#6b6b6b;
+  --line:#e3e3e3; --bg:#fff; --soft:#f6faf1; --footer:#0a0a0a;
+  --g-title:#1a0dab; --g-url:#202124; --g-desc:#4d5156;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Open Sans',Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6}
+a{color:inherit}
+.wrap{max-width:1140px;margin:0 auto;padding:0 16px}
+
+/* ===== HEADER ===== */
+.site-top{border-bottom:1px solid #d9d9d9}
+.site-top .wrap{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding-top:34px;padding-bottom:34px}
+.site-date{font-size:20px;font-weight:600;line-height:1.1}
+.site-date small{display:block;font-size:13px;font-weight:600;margin-top:2px}
+.site-logo{font-size:40px;font-weight:700;text-decoration:none;color:#555;letter-spacing:.2px;white-space:nowrap}
+.site-logo span{color:var(--green)}
+.menu-btn{display:none;justify-self:end;background:none;border:0;cursor:pointer;padding:6px}
+.menu-btn i{display:block;width:26px;height:3px;background:#111;margin:5px 0;border-radius:2px}
+
+.site-nav{border-bottom:2px solid var(--lime)}
+.site-nav ul{list-style:none;display:flex;justify-content:center;flex-wrap:wrap;gap:0 4px}
+.site-nav > .wrap > ul > li{position:relative}
+.site-nav a{display:block;padding:12px 13px;font-size:17px;font-weight:700;text-decoration:none;color:#111}
+.site-nav a:hover,.site-nav a.active{color:var(--green)}
+.has-sub > a::after{content:"";display:inline-block;width:6px;height:6px;border-right:1.6px solid currentColor;border-bottom:1.6px solid currentColor;transform:rotate(45deg);margin:0 0 4px 7px}
+.sub{display:none !important;position:absolute;top:100%;left:0;width:240px;background:#fff;border-radius:6px;padding:14px 0;box-shadow:0 10px 30px rgba(0,0,0,.18);z-index:50;flex-direction:column}
+.sub a{font-size:17px;font-weight:700;line-height:1.35;padding:5px 30px;color:#111}
+.sub a:hover{color:var(--green)}
+.has-sub:hover .sub,.has-sub:focus-within .sub{display:flex !important}
+
+/* ===== BREADCRUMB + HERO ===== */
+.crumbs{font-size:13.5px;color:var(--muted);padding:18px 0 0}
+.crumbs a{text-decoration:none;color:var(--muted)}
+.crumbs a:hover{color:var(--green)}
+.hero{text-align:center;padding:26px 0 8px}
+.pill{display:inline-block;background:var(--soft);color:#3d7f12;border:1px solid #cfeab4;font-size:12.5px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;padding:4px 12px;border-radius:20px;margin-bottom:14px}
+.hero h1{font-size:44px;font-weight:300;line-height:1.2}
+.hero p{max-width:760px;margin:14px auto 0;color:var(--muted);font-size:17px}
+
+/* ===== TOOL ===== */
+.tool{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin:34px 0 10px}
+.card{border:1px solid var(--line);border-radius:12px;padding:24px;background:#fff}
+.card h2{font-size:19px;font-weight:700;margin-bottom:16px}
+.field{margin-bottom:18px}
+.field label{display:flex;justify-content:space-between;font-weight:700;font-size:14.5px;margin-bottom:6px}
+.field label em{font-style:normal;font-weight:600;color:var(--muted);font-size:13px}
+.field input,.field textarea{width:100%;border:1px solid #cfcfcf;border-radius:8px;padding:11px 12px;font:inherit;font-size:15px;color:#111;outline:none;transition:border-color .15s}
+.field input:focus,.field textarea:focus{border-color:var(--green);box-shadow:0 0 0 3px rgba(108,200,42,.15)}
+.field textarea{resize:vertical;min-height:96px}
+.meter{height:7px;background:#eee;border-radius:6px;margin-top:8px;overflow:hidden}
+.meter b{display:block;height:100%;width:0;background:var(--green);border-radius:6px;transition:width .15s,background .15s}
+.meter b.warn{background:#f0a020}.meter b.bad{background:#e0442c}
+.stat{font-size:13px;color:var(--muted);margin-top:5px;display:flex;justify-content:space-between}
+.stat .ok{color:#3d8f12;font-weight:700}.stat .warn{color:#c47a00;font-weight:700}.stat .bad{color:#d1351f;font-weight:700}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.check{display:flex;align-items:center;gap:8px;font-size:14.5px;font-weight:600;margin-bottom:6px;cursor:pointer}
+.check input{accent-color:var(--green);width:16px;height:16px}
+
+.tabs{display:inline-flex;border:1px solid #cfcfcf;border-radius:30px;padding:3px;margin-bottom:18px}
+.tabs button{border:0;background:none;font:inherit;font-weight:700;font-size:14px;padding:7px 18px;border-radius:30px;cursor:pointer;color:#333}
+.tabs button.on{background:#111;color:#fff}
+
+/* Google result mock */
+.serp{border:1px solid var(--line);border-radius:10px;padding:20px 18px;background:#fff;font-family:Arial,sans-serif}
+.serp.mobile{max-width:400px;margin:0 auto;border-radius:16px;box-shadow:0 2px 10px rgba(0,0,0,.08)}
+.g-site{display:flex;align-items:center;gap:10px;margin-bottom:6px}
+.g-fav{width:28px;height:28px;border-radius:50%;background:#f1f3f4;border:1px solid #dadce0;display:grid;place-items:center;font-weight:700;font-size:13px;color:var(--green)}
+.g-name{font-size:14px;color:var(--g-url);line-height:1.3}
+.g-url{font-size:12px;color:#4d5156;line-height:1.3;word-break:break-all}
+.g-title{font-size:20px;line-height:1.3;color:var(--g-title);margin:2px 0 4px;font-weight:400;cursor:pointer}
+.g-title:hover{text-decoration:underline}
+.serp.mobile .g-title{font-size:18px;color:#1558d6}
+.g-desc{font-size:14px;line-height:1.58;color:var(--g-desc)}
+.g-desc .g-date{color:#70757a}
+.g-desc strong{color:#5f6368;font-weight:700}
+
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+.btn{border:2px solid var(--green);background:#fff;color:#111;font:inherit;font-weight:700;font-size:14px;padding:9px 18px;border-radius:30px;cursor:pointer;transition:all .15s}
+.btn:hover{background:var(--green);color:#fff}
+.btn.dark{background:#111;border-color:#111;color:#fff}
+.btn.dark:hover{background:var(--green);border-color:var(--green)}
+.code-out{margin-top:14px;background:#1e1e1e;color:#d4d4d4;border-radius:8px;padding:14px;font:14px/1.5 Consolas,Monaco,monospace;white-space:pre-wrap;word-break:break-all;display:none}
+.toast{font-size:13px;color:#3d8f12;font-weight:700;align-self:center;opacity:0;transition:opacity .2s}
+.toast.show{opacity:1}
+
+.tips{margin-top:18px;border-left:4px solid var(--green);background:var(--soft);border-radius:0 8px 8px 0;padding:12px 14px;font-size:14px}
+.tips ul{margin:6px 0 0 18px}
+.tips li{margin:2px 0}
+
+/* ===== CONTENT ===== */
+.content{max-width:820px;margin:40px auto 0}
+.content h2{font-size:28px;font-weight:700;margin:36px 0 12px;line-height:1.3}
+.content h3{font-size:20px;font-weight:700;margin:22px 0 8px}
+.content p{font-size:17px;color:#2c2c2c;margin-bottom:12px}
+.content ol,.content ul{margin:0 0 14px 22px;font-size:17px;color:#2c2c2c}
+.content li{margin:6px 0}
+.content a{color:#3d8f12;font-weight:600}
+.content code{background:#f1f1f1;padding:1px 6px;border-radius:4px;font-size:15px}
+table.lim{width:100%;border-collapse:collapse;margin:10px 0 18px;font-size:15.5px}
+table.lim th{background:#2b2b2b;color:#fff;text-align:left;padding:10px 12px}
+table.lim td{border-bottom:1px solid var(--line);padding:10px 12px}
+
+.faq-item{border:1px solid var(--line);border-radius:10px;margin-bottom:12px;overflow:hidden}
+.faq-item summary{list-style:none;cursor:pointer;padding:14px 16px;font-weight:700;font-size:16.5px;display:flex;gap:12px;align-items:flex-start}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-num{flex:0 0 26px;height:26px;border-radius:50%;background:var(--green);color:#fff;font-size:13px;display:grid;place-items:center}
+.faq-item p{padding:0 16px 14px 54px;color:#3a5a20;font-size:16px;margin:0}
+
+.related{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:12px 0 10px}
+.related a{display:flex;justify-content:space-between;align-items:center;gap:10px;border:1px solid var(--line);border-left:4px solid var(--green);border-radius:8px;padding:13px 14px;text-decoration:none;color:#111 !important;font-weight:700;font-size:15px}
+.related a:hover{border-color:var(--green)}
+
+.bx-ad{margin:34px 0;min-height:90px}
+
+/* ===== FOOTER ===== */
+.site-footer{background:var(--footer);color:#fff;margin-top:70px;padding:52px 0 44px}
+.foot-links{list-style:none;display:flex;flex-wrap:wrap;gap:8px 28px}
+.foot-links a{text-decoration:none;font-weight:700;font-size:14.5px;text-transform:uppercase;color:#fff}
+.foot-links a:hover{color:var(--lime)}
+.copy{color:#a8a8a8;font-size:16px;margin-top:12px}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width:900px){
+  .tool{grid-template-columns:1fr}
+  .hero h1{font-size:34px}
+}
+@media (max-width:760px){
+  .site-top .wrap{grid-template-columns:1fr auto;padding-top:18px;padding-bottom:18px}
+  .site-date{display:none}
+  .site-logo{font-size:28px}
+  .menu-btn{display:block}
+  .site-nav ul{display:none;flex-direction:column}
+  .site-nav.open > .wrap > ul{display:flex}
+  .site-nav a{padding:11px 4px;border-bottom:1px solid #f0f0f0}
+  .sub{position:static;box-shadow:none;border:0;padding-left:14px}
+  .has-sub:hover .sub,.has-sub:focus-within .sub{display:flex !important}
+  .related,.row2{grid-template-columns:1fr}
+  .content h2{font-size:24px}
+}
+
+/* ===== SHARED TOOL EXTRAS ===== */
+.full{grid-column:1/-1}
+.field select{width:100%;border:1px solid #cfcfcf;border-radius:8px;padding:10px 12px;font:inherit;font-size:15px;background:#fff;color:#111}
+.field textarea.big{min-height:230px;font-size:14.5px}
+.mono{font-family:Consolas,Monaco,monospace !important;font-size:13.5px !important}
+.btn-sm{padding:5px 12px;font-size:13px;border-width:1.5px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(105px,1fr));gap:10px;margin-bottom:16px}
+.stat-box{background:var(--soft);border:1px solid #dbefc8;border-radius:10px;padding:10px 8px;text-align:center}
+.stat-box b{display:block;font-size:22px;line-height:1.2}
+.stat-box span{font-size:12.5px;color:var(--muted);font-weight:600}
+.rtable{width:100%;border-collapse:collapse;font-size:14.5px}
+.rtable th{background:#2b2b2b;color:#fff;text-align:left;padding:8px 10px;font-weight:700}
+.rtable td{border-bottom:1px solid var(--line);padding:7px 10px}
+.rtable td.num,.rtable th.num{text-align:right;font-variant-numeric:tabular-nums}
+.rtable tr.hit td{background:#eef8e6;font-weight:700}
+.empty{color:var(--muted);font-size:14.5px;padding:14px 0}
+.kw-result{border-radius:10px;padding:12px 14px;margin-bottom:16px;font-size:14.5px;border:1px solid var(--line);background:#fafafa}
+.kw-result.ok{background:#eef8e6;border-color:#cfeab4}
+.kw-result.warn{background:#fff6e5;border-color:#f3d79b}
+.kw-result.bad{background:#fdecea;border-color:#f5c2bb}
+.slug-row{border:1px solid var(--line);border-radius:8px;padding:10px 12px;margin-bottom:8px;display:flex;justify-content:space-between;gap:10px;align-items:center}
+.slug-row .s{font:600 15px/1.4 Consolas,Monaco,monospace;color:#111;word-break:break-all}
+.slug-row small{display:block;color:var(--muted);font-size:12.5px;word-break:break-all;margin-top:2px}
+.slug-row small.warn{color:#c47a00;font-weight:700}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
+.chip{border:1px solid var(--line);border-radius:20px;padding:4px 12px;font-size:13.5px;font-weight:700;background:#fff}
+.chip.zero{color:#aaa}
+.outline{max-height:460px;overflow:auto;border:1px solid var(--line);border-radius:10px;padding:6px 12px}
+.o-row{display:flex;gap:10px;align-items:flex-start;padding:7px 0;border-bottom:1px dashed #eee;font-size:14.5px}
+.o-row:last-child{border-bottom:0}
+.o-tag{flex:0 0 auto;font:700 12px/1 Consolas,Monaco,monospace;padding:5px 7px;border-radius:5px;color:#fff;background:#111}
+.o-tag.h1{background:#2f7a0c}.o-tag.h2{background:#4fa61d}.o-tag.h3{background:#6cc82a}.o-tag.h4{background:#8a8a8a}.o-tag.h5{background:#a5a5a5}.o-tag.h6{background:#bdbdbd}
+.o-issue{display:inline-block;font-size:12px;color:#d1351f;font-weight:700;margin-left:6px}
+.tgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:18px;margin:30px 0 10px}
+.tcard{border:1px solid var(--line);border-radius:12px;padding:22px;text-decoration:none;display:flex;flex-direction:column;gap:10px;transition:all .15s;background:#fff;color:#111}
+.tcard:hover{border-color:var(--green);box-shadow:0 8px 22px rgba(0,0,0,.07);transform:translateY(-2px)}
+.tbadge{width:48px;height:48px;border-radius:12px;background:#111;color:var(--lime);display:grid;place-items:center;font-weight:800;font-size:16px}
+.tcard h2,.tcard h3{font-size:18px;line-height:1.3;margin:0}
+.tcard p{font-size:14.5px;color:var(--muted);flex:1;line-height:1.55}
+.tcard .go{font-weight:700;color:#3d8f12;font-size:14px}
+.tcard.soon{opacity:.55;pointer-events:none}
+.tcard.soon .tbadge{background:#ddd;color:#777}
+.tcard.soon .go{color:var(--muted)}
+.more-tools{margin-top:10px}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="site-top">
+    <div class="wrap">
+      <div class="site-date" id="siteDate">Today<small>&nbsp;</small></div>
+      <a class="site-logo" href="https://brandella.in/">Brandella <span>Journal</span></a>
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false"><i></i><i></i><i></i></button>
+    </div>
+  </div>
+  <nav class="site-nav" id="siteNav" aria-label="Main">
+    <div class="wrap">
+      <ul>
+        <li><a href="https://brandella.in/">Home</a></li>
+        <li class="has-sub"><a href="https://brandella.in/category/seo/">SEO</a>
+          <ul class="sub">
+            <li><a href="https://brandella.in/category/seo/technical-seo/">Technical SEO</a></li>
+            <li><a href="https://brandella.in/category/seo/local-seo/">Local SEO</a></li>
+            <li><a href="https://brandella.in/category/seo/mobile-seo/">Mobile SEO</a></li>
+            <li><a href="https://brandella.in/category/seo/on-page-seo/">On-Page SEO</a></li>
+            <li><a href="https://brandella.in/category/seo/off-page-seo/">Off-Page SEO</a></li>
+            <li><a href="https://brandella.in/category/seo/seo-tools/">SEO Tools</a></li>
+            <li><a href="https://brandella.in/category/seo/core-web-vitals/">Core Web Vitals</a></li>
+            <li><a href="https://brandella.in/category/seo/keyword-research/">Keyword Research</a></li>
+            <li><a href="https://brandella.in/category/seo/link-building/">Link Building</a></li>
+            <li><a href="https://brandella.in/category/seo/google-search-console/">Google Search Console</a></li>
+            <li><a href="https://brandella.in/category/seo/seo-basics/">SEO Basics</a></li>
+          </ul>
+        </li>
+        <li class="has-sub"><a href="https://brandella.in/category/paid-media/">Paid Media</a>
+          <ul class="sub">
+            <li><a href="https://brandella.in/category/paid-media/display-advertising/">Display Advertising</a></li>
+            <li><a href="https://brandella.in/category/paid-media/google-ads/">Google Ads</a></li>
+            <li><a href="https://brandella.in/category/paid-media/linkedin-ads/">LinkedIn Ads</a></li>
+            <li><a href="https://brandella.in/category/paid-media/meta-ads/">Meta Ads</a></li>
+            <li><a href="https://brandella.in/category/paid-media/paid-media-analytics/">Paid Media Analytics</a></li>
+            <li><a href="https://brandella.in/category/paid-media/ppc-strategy/">PPC Strategy</a></li>
+          </ul>
+        </li>
+        <li><a href="https://brandella.in/category/content/">Content</a></li>
+        <li><a href="https://brandella.in/category/social/">Social</a></li>
+        <li><a href="https://brandella.in/category/digital-marketing/">Digital Marketing</a></li>
+        <li><a href="https://brandella.in/category/artificial-intelligence/">Artificial Intelligence</a></li>
+        <li class="has-sub"><a href="https://brandella.in/category/development/">Development</a>
+          <ul class="sub">
+            <li><a href="https://brandella.in/category/development/php/">PHP</a></li>
+            <li><a href="https://brandella.in/category/development/javascript/">JavaScript</a></li>
+            <li><a href="https://brandella.in/category/development/python/">Python</a></li>
+          </ul>
+        </li>
+        <li class="has-sub"><a class="active" href="https://brandella.in/tools/">Tools</a>
+          <ul class="sub">
+            <li><a href="https://brandella.in/tools/seo-tools/">SEO Tools</a></li>
+            <li><a href="https://brandella.in/tools/schema-generators/">Schema Generators</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<main class="wrap">
+
+  <div class="crumbs"><a href="https://brandella.in/">Home</a> &rsaquo; <a href="https://brandella.in/tools/">Tools</a> &rsaquo; <a href="https://brandella.in/tools/schema-generators/">Schema Generators</a> &rsaquo; Organization Schema Generator</div>
+
+  <section class="hero">
+    <span class="pill">Free Schema Tool</span>
+    <h1>Organization Schema Generator</h1>
+    <p>Tell Google who you are. Create Organization JSON LD with your logo, social profiles, contact details and business identifiers for your home page or About page.</p>
+  </section>
+
+  <section class="tool" aria-label="Organization schema generator" id="orForm">
+    <div class="card" style="min-width:0">
+      <h2>Organization Details</h2>
+      <div class="field"><label for="orType">Organization Type</label><select id="orType"><option value="Organization" selected>Organization</option><option value="Corporation">Corporation</option><option value="OnlineStore">OnlineStore</option><option value="NewsMediaOrganization">NewsMediaOrganization</option><option value="EducationalOrganization">EducationalOrganization</option><option value="NGO">NGO</option><option value="MedicalOrganization">MedicalOrganization</option><option value="SportsOrganization">SportsOrganization</option></select></div>
+      <div class="row2"><div class="field"><label for="orName">Name</label><input id="orName" type="text" value="Brightpath Digital" placeholder=""></div><div class="field"><label for="orAlt">Other Name <em>optional</em></label><input id="orAlt" type="text" value="Brightpath" placeholder=""></div></div>
+      <div class="row2"><div class="field"><label for="orLegal">Legal Name <em>if different</em></label><input id="orLegal" type="text" value="Brightpath Digital Private Limited" placeholder=""></div><div class="field"><label for="orUrl">Website URL</label><input id="orUrl" type="text" value="https://www.example.com/" placeholder=""></div></div>
+      <div class="field"><label for="orLogo">Logo URL <em>112 x 112 px or larger</em></label><input id="orLogo" type="text" value="https://www.example.com/images/logo-512.png" placeholder=""></div>
+      <div class="field"><label for="orDesc">Description <em>optional</em></label><textarea id="orDesc" placeholder="">Brightpath Digital is a performance marketing agency helping D2C brands grow through search and social.</textarea></div>
+      <div class="row2"><div class="field"><label for="orEmail">Email</label><input id="orEmail" type="text" value="hello@example.com" placeholder=""></div><div class="field"><label for="orPhone">Phone</label><input id="orPhone" type="text" value="+91 22 4000 1234" placeholder=""></div></div>
+      <div class="field"><label for="orStreet">Street Address</label><input id="orStreet" type="text" value="4th Floor, Sunrise Towers, Andheri East" placeholder=""></div>
+      <div class="row2"><div class="field"><label for="orCity">City</label><input id="orCity" type="text" value="Mumbai" placeholder=""></div><div class="field"><label for="orRegion">State or Region</label><input id="orRegion" type="text" value="Maharashtra" placeholder=""></div></div>
+      <div class="row2"><div class="field"><label for="orZip">Postal Code</label><input id="orZip" type="text" value="400069" placeholder=""></div><div class="field"><label for="orCountry">Country Code <em>2 letters</em></label><input id="orCountry" type="text" value="IN" placeholder=""></div></div>
+      <div class="row2"><div class="field"><label for="orFound">Founding Date</label><input id="orFound" type="date" value="2018-04-01" placeholder=""></div><div class="field"><label for="orStaff">Number of Employees <em>optional</em></label><input id="orStaff" type="text" value="45" placeholder=""></div></div>
+      <div class="field"><label for="orSame">Social and Profile Links (sameAs) <em>one URL per line</em></label><textarea id="orSame" placeholder="">https://www.linkedin.com/company/example
+https://www.instagram.com/example
+https://www.youtube.com/@example</textarea></div>
+      <h2 style="margin-top:8px">Customer Contact <em style="font-size:13px;font-weight:600;color:#777">optional</em></h2>
+      <div class="row2"><div class="field"><label for="orCpType">Contact Type</label><select id="orCpType"><option value="customer support" selected>customer support</option><option value="customer service">customer service</option><option value="sales">sales</option><option value="technical support">technical support</option><option value="billing support">billing support</option></select></div><div class="field"><label for="orCpPhone">Contact Phone</label><input id="orCpPhone" type="text" value="+91 22 4000 1200" placeholder=""></div></div>
+      <div class="row2"><div class="field"><label for="orCpEmail">Contact Email</label><input id="orCpEmail" type="text" value="support@example.com" placeholder=""></div><div class="field"><label for="orCpLang">Languages <em>comma separated</em></label><input id="orCpLang" type="text" value="English, Hindi" placeholder=""></div></div>
+      <div class="row2"><div class="field"><label for="orVat">VAT or GST ID <em>optional</em></label><input id="orVat" type="text" value="" placeholder=""></div><div class="field"><label for="orTax">Tax ID <em>optional</em></label><input id="orTax" type="text" value="" placeholder=""></div></div>
+    </div>
+    <div class="card" style="min-width:0">
+      <h2>Your JSON LD Code</h2>
+      <div class="kw-result" id="orCheck"></div>
+      <pre class="code-out" id="orCode" style="display:block;margin-top:0;max-height:620px;overflow:auto;word-break:normal;overflow-wrap:anywhere"></pre>
+      <label class="check" style="margin-top:12px"><input id="orWrap" type="checkbox" checked> Wrap in a <code>&lt;script&gt;</code> tag</label>
+      <div class="actions">
+        <button class="btn dark" id="orCopy">Copy Code</button>
+        <a class="btn" style="text-decoration:none" href="https://search.google.com/test/rich-results" target="_blank" rel="noopener">Open Rich Results Test</a>
+        <span class="toast" id="toast">Copied!</span>
+      </div>
+      <div class="tips"><strong>Before you publish</strong><ul><li>Add it to your home page or About page only</li><li>Check that your logo looks good on a white background</li><li>Use full profile URLs in sameAs, not handles</li></ul></div>
+    </div>
+  </section>
+
+  <div class="bx-ad">
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3931314195561246" data-ad-slot="4249015278" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+
+  <article class="content">
+
+    <h2>What Is Organization Schema?</h2>
+    <p>Organization schema is structured data that describes your company or brand: its official name, logo, website, contact details and the profiles that belong to it. Google can use it in knowledge panels and to pick the logo shown for your site.</p>
+    <p>It also helps search engines and AI assistants connect your brand to your social profiles, which supports entity understanding.</p>
+
+    <h2>How to Use This Tool</h2>
+    <ol>
+      <li><strong>Choose the most specific type.</strong> An online shop can use <code>OnlineStore</code>. A shop with a physical address should use the <a href="https://brandella.in/tools/schema-generators/local-business-schema-generator/">local business schema generator</a> instead.</li>
+      <li><strong>Enter your name, website and logo.</strong> The logo should be square or close to it and at least 112 x 112 pixels.</li>
+      <li><strong>Add your social profiles</strong> in sameAs, one full URL per line.</li>
+      <li><strong>Add contact details and IDs</strong> if you want, then copy the code into your home page.</li>
+    </ol>
+
+    <h2>Useful Organization Properties</h2>
+    <div style="overflow-x:auto"><table class="lim">
+      <thead><tr style="background:#2b2b2b !important;"><th style="background:#2b2b2b !important; color:#ffffff !important;">Property</th><th style="background:#2b2b2b !important; color:#ffffff !important;">What it does</th></tr></thead>
+      <tbody>
+        <tr><td><code>name</code>, <code>alternateName</code></td><td>Your main name and a common short name</td></tr>
+        <tr><td><code>legalName</code></td><td>Registered company name, if different</td></tr>
+        <tr><td><code>logo</code></td><td>Logo image, at least 112 x 112 px, crawlable</td></tr>
+        <tr><td><code>sameAs</code></td><td>Links to your profiles on other sites</td></tr>
+        <tr><td><code>contactPoint</code></td><td>Support or sales phone and email</td></tr>
+        <tr><td><code>address</code></td><td>Your registered or main office address</td></tr>
+        <tr><td><code>vatID</code>, <code>taxID</code></td><td>Business identifiers that match your country</td></tr>
+      </tbody>
+    </table></div>
+    <p>Google lists every supported field in its <a href="https://developers.google.com/search/docs/appearance/structured-data/organization" target="_blank" rel="noopener">organization structured data documentation</a>. None are strictly required, so add what applies.</p>
+
+    <h2>Tips</h2>
+    <ul>
+      <li>One page is enough. Google says you do not need this markup on every page.</li>
+      <li>Use full URLs in sameAs, such as your LinkedIn company page, not just a handle.</li>
+      <li>The <code>@id</code> the tool adds lets other schema on your site refer to the same organization.</li>
+      <li>Keep details identical to your website footer and profiles.</li>
+    </ul>
+    <p>Want to go deeper on brand signals? Read <a href="https://brandella.in/what-is-entity-seo-who-vs-what-2026/">what is entity SEO</a> and <a href="https://brandella.in/brand-authority-vs-domain-authority/">brand authority vs domain authority</a>.</p>
+
+    <div class="bx-ad">
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3931314195561246" data-ad-slot="4249015278" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+
+    <h2>Frequently Asked Questions</h2>
+    <details class="faq-item" open><summary><span class="faq-num">1</span>Which page should have organization schema?</summary><p>Your home page or a single page about your company, such as the About page. Google says it does not need to be on every page of your site.</p></details>
+    <details class="faq-item" open><summary><span class="faq-num">2</span>What is sameAs in organization schema?</summary><p>sameAs is a list of URLs for your profiles on other websites, such as LinkedIn, Instagram, YouTube or Wikipedia. It helps search engines confirm those profiles belong to you.</p></details>
+    <details class="faq-item" open><summary><span class="faq-num">3</span>What size should my logo be?</summary><p>At least 112 x 112 pixels, in a format Google Images supports such as PNG, JPG or WebP. Check that it still looks good on a plain white background.</p></details>
+    <details class="faq-item" open><summary><span class="faq-num">4</span>Is my company data sent to a server?</summary><p>No. This organization schema generator works fully in your browser. Nothing you type is uploaded.</p></details>
+
+    <h2>Related Articles</h2>
+    <div class="related">
+      <a href="https://brandella.in/what-is-entity-seo-who-vs-what-2026/">What Is Entity SEO <span>&rarr;</span></a>
+      <a href="https://brandella.in/brand-authority-vs-domain-authority/">Brand Authority vs Domain Authority <span>&rarr;</span></a>
+      <a href="https://brandella.in/what-is-schema-markup/">What Is Schema Markup <span>&rarr;</span></a>
+      <a href="https://brandella.in/how-google-ai-mode-decides-cite-websites/">How Google AI Mode Decides to Cite Websites <span>&rarr;</span></a>
+    </div>
+  </article>
+
+  <section class="content more-tools" style="max-width:1140px">
+    <h2>More Free Schema Generators</h2>
+    <div class="tgrid">
+      <a class="tcard" href="https://brandella.in/tools/schema-generators/local-business-schema-generator/"><div class="tbadge">LB</div><h3>Local Business Schema Generator</h3><p>Create LocalBusiness JSON LD with address, map coordinates, phone, price range and opening hours.</p><span class="go">Open tool &rarr;</span></a>
+<a class="tcard" href="https://brandella.in/tools/schema-generators/product-schema-generator/"><div class="tbadge">PS</div><h3>Product Schema Generator</h3><p>Build Product JSON LD with price, availability, brand, GTIN, ratings and a review.</p><span class="go">Open tool &rarr;</span></a>
+<a class="tcard" href="https://brandella.in/tools/schema-generators/article-schema-generator/"><div class="tbadge">AS</div><h3>Article Schema Generator</h3><p>Generate Article, BlogPosting or NewsArticle JSON LD with authors, dates, images and publisher.</p><span class="go">Open tool &rarr;</span></a>
+<a class="tcard" href="https://brandella.in/tools/schema-generators/breadcrumb-schema-generator/"><div class="tbadge">BS</div><h3>Breadcrumb Schema Generator</h3><p>Turn a page URL or a list of links into valid BreadcrumbList JSON LD in one click.</p><span class="go">Open tool &rarr;</span></a>
+<a class="tcard" href="https://brandella.in/tools/schema-generators/event-schema-generator/"><div class="tbadge">ES</div><h3>Event Schema Generator</h3><p>Create Event JSON LD with dates, venue, tickets, organizer, performers and event status.</p><span class="go">Open tool &rarr;</span></a>
+<a class="tcard" href="https://brandella.in/tools/schema-generators/video-schema-generator/"><div class="tbadge">VS</div><h3>Video Schema Generator</h3><p>Create VideoObject JSON LD with thumbnail, duration, embed URL and key moments, with a YouTube helper.</p><span class="go">Open tool &rarr;</span></a>
+    </div>
+    <p><a href="https://brandella.in/tools/schema-generators/">See all schema generators &rarr;</a> &nbsp;|&nbsp; <a href="https://brandella.in/tools/">Browse every free tool &rarr;</a></p>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <ul class="foot-links">
+      <li><a href="https://brandella.in/">Home</a></li>
+      <li><a href="https://brandella.in/about-us/">About Us</a></li>
+      <li><a href="https://brandella.in/contact-us/">Contact Us</a></li>
+      <li><a href="https://brandella.in/privacy-policy/">Privacy Policy</a></li>
+      <li><a href="https://brandella.in/terms-and-conditions/">Terms and Conditions</a></li>
+    </ul>
+    <p class="copy">Copyright &copy; <span id="yr">2026</span> Brandella Journal. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+
+  var d = new Date();
+  var days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+  var months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+  document.getElementById('siteDate').innerHTML = days[d.getDay()] + ',<small>' + months[d.getMonth()] + ' ' + d.getDate() + ', ' + d.getFullYear() + '</small>';
+  document.getElementById('yr').textContent = d.getFullYear();
+  var nav = document.getElementById('siteNav'), mb = document.getElementById('menuBtn');
+  mb.addEventListener('click', function(){ var open = nav.classList.toggle('open'); mb.setAttribute('aria-expanded', open); });
+  var $ = function(id){ return document.getElementById(id); };
+  function esc(s){ return String(s).replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+  function copyText(text, toastId){
+    var done = function(){ var t = $(toastId); if(!t) return; t.classList.add('show'); setTimeout(function(){ t.classList.remove('show'); }, 1600); };
+    if (navigator.clipboard && navigator.clipboard.writeText){ navigator.clipboard.writeText(text).then(done, function(){ fallback(); done(); }); }
+    else { fallback(); done(); }
+    function fallback(){ var ta=document.createElement('textarea'); ta.value=text; document.body.appendChild(ta); ta.select(); try{document.execCommand('copy');}catch(e){} document.body.removeChild(ta); }
+  }
+
+
+  function v(id){ var e = $(id); return e ? String(e.value).trim() : ''; }
+  function lines(id){ return v(id).split(/\n/).map(function(s){ return s.trim(); }).filter(Boolean); }
+  function isUrl(s){ return /^https?:\/\/[^\s\/.]+\.[^\s]+$/i.test(s); }
+  function clean(o){
+    if (Array.isArray(o)){ var a = o.map(clean).filter(function(x){ return x !== undefined; }); return a.length ? a : undefined; }
+    if (o && typeof o === 'object'){
+      var r = {}, n = 0;
+      for (var k in o){ var c = clean(o[k]); if (c !== undefined){ r[k] = c; if (k !== '@type') n++; } }
+      return n ? r : undefined;
+    }
+    if (o === '' || o === null || o === undefined || (typeof o === 'number' && isNaN(o))) return undefined;
+    return o;
+  }
+  function num(s){ s = String(s).replace(/,/g,'').trim(); if (!/^\d+(\.\d+)?$/.test(s)) return undefined; return parseFloat(s); }
+  function dt(d, t, z){ d = v(d); if (!d) return ''; t = v(t); return t ? d + 'T' + (t.length === 5 ? t + ':00' : t) + v(z) : d; }
+  function pairs(id){ return lines(id).map(function(l){ var p = l.split('|'); return { name: p[0].trim(), url: (p[1] || '').trim() }; }); }
+  function addr(P){ return { '@type':'PostalAddress', streetAddress: v(P+'Street'), addressLocality: v(P+'City'), addressRegion: v(P+'Region'), postalCode: v(P+'Zip'), addressCountry: v(P+'Country').toUpperCase() }; }
+  function phoneCheck(p, label, issues){ if (p && !/^\+\d/.test(p)) issues.push(['warn', label + ' should start with + and the country code, for example +91 or +1.']); }
+  function urlCheck(u, label, issues, lvl){ if (u && !isUrl(u)) issues.push([lvl || 'bad', label + ' must be a full URL starting with https://']); }
+  function render(P, obj, issues){
+    var data = clean(obj) || {};
+    var json = JSON.stringify(data, null, 2).replace(/<\//g, '<\\/');
+    var code = $(P+'Wrap').checked ? '<script type="application/ld+json">\n' + json + '\n<\/script>' : json;
+    $(P+'Code').textContent = code;
+    var bad = issues.filter(function(i){ return i[0] === 'bad'; }), warn = issues.filter(function(i){ return i[0] === 'warn'; });
+    var box = $(P+'Check'), li = function(a){ return '<ul style="margin:6px 0 0 18px">' + a.map(function(i){ return '<li>' + esc(i[1]) + '</li>'; }).join('') + '</ul>'; };
+    if (bad.length){ box.className = 'kw-result bad'; box.innerHTML = '<strong>Fix ' + bad.length + ' issue' + (bad.length > 1 ? 's' : '') + ' before publishing.</strong>' + li(bad.concat(warn)); }
+    else if (warn.length){ box.className = 'kw-result warn'; box.innerHTML = '<strong>Required properties are in place.</strong> Suggestions:' + li(warn); }
+    else { box.className = 'kw-result ok'; box.innerHTML = '<strong>Looks good.</strong> All required and recommended properties are filled in.'; }
+  }
+  function wire(P, run){
+    $(P+'Form').addEventListener('input', run); $(P+'Form').addEventListener('change', run);
+    $(P+'Copy').onclick = function(){ copyText($(P+'Code').textContent, 'toast'); };
+    run();
+  }
+
+  function run(){
+    var I = [], P = 'or', url = v('orUrl');
+    if (!v('orName')) I.push(['warn', 'Add your organization name.']);
+    if (!url) I.push(['warn', 'Add your website URL.']); urlCheck(url, 'Website URL', I);
+    if (!v('orLogo')) I.push(['warn', 'Add a logo URL so Google can show your logo. It must be at least 112 x 112 pixels.']); urlCheck(v('orLogo'), 'Logo URL', I);
+    if (/\.svg(\?|$)/i.test(v('orLogo'))) I.push(['warn', 'Use a PNG, JPG or WebP logo. Check that the format is supported by Google Images.']);
+    phoneCheck(v('orPhone'), 'Phone', I); phoneCheck(v('orCpPhone'), 'Contact phone', I);
+    var em = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (v('orEmail') && !em.test(v('orEmail'))) I.push(['bad', 'Email does not look valid.']);
+    if (v('orCpEmail') && !em.test(v('orCpEmail'))) I.push(['bad', 'Contact email does not look valid.']);
+    var same = lines('orSame'); same.forEach(function(s){ urlCheck(s, 'Profile link "' + s + '"', I); });
+    if (!same.length) I.push(['warn', 'Add links to your social and review profiles in sameAs.']);
+    if (v('orLegal') && v('orLegal') === v('orName')) I.push(['warn', 'Legal name is only needed when it differs from the name.']);
+    if (v('orCountry') && !/^[A-Za-z]{2}$/.test(v('orCountry'))) I.push(['warn', 'Use a 2 letter ISO country code such as IN, US or GB.']);
+    var staff = num(v('orStaff')); if (v('orStaff') && staff === undefined) I.push(['bad', 'Number of employees must be a number.']);
+    var cp = (v('orCpPhone') || v('orCpEmail')) ? { '@type':'ContactPoint', contactType: v('orCpType'), telephone: v('orCpPhone'), email: v('orCpEmail'),
+      availableLanguage: v('orCpLang').split(',').map(function(s){ return s.trim(); }).filter(Boolean) } : '';
+    var o = { '@context':'https://schema.org', '@type': v('orType'), '@id': url ? url.replace(/\/?$/, '/') + '#organization' : '', name: v('orName'),
+      alternateName: v('orAlt'), legalName: v('orLegal') !== v('orName') ? v('orLegal') : '', url: url, logo: v('orLogo'), description: v('orDesc'),
+      email: v('orEmail'), telephone: v('orPhone'), address: addr(P), foundingDate: v('orFound'),
+      numberOfEmployees: staff !== undefined ? { '@type':'QuantitativeValue', value: Math.round(staff) } : '',
+      sameAs: same, contactPoint: cp, vatID: v('orVat'), taxID: v('orTax') };
+    render(P, o, I);
+  }
+  wire('or', run);
+
+})();
+</script>
+</body>
+</html>

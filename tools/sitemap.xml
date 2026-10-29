@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://brandella.in/tools/</loc>
-    <lastmod>2026-10-28</lastmod>
+    <lastmod>2026-10-29</lastmod>
   </url>
   <url>
     <loc>https://brandella.in/tools/seo-tools/</loc>
@@ -55,5 +55,37 @@
   <url>
     <loc>https://brandella.in/tools/seo-tools/duplicate-line-remover/</loc>
     <lastmod>2026-10-28</lastmod>
+  </url>
+  <url>
+    <loc>https://brandella.in/tools/schema-generators/</loc>
+    <lastmod>2026-10-29</lastmod>
+  </url>
+  <url>
+    <loc>https://brandella.in/tools/schema-generators/local-business-schema-generator/</loc>
+    <lastmod>2026-10-29</lastmod>
+  </url>
+  <url>
+    <loc>https://brandella.in/tools/schema-generators/product-schema-generator/</loc>
+    <lastmod>2026-10-29</lastmod>
+  </url>
+  <url>
+    <loc>https://brandella.in/tools/schema-generators/article-schema-generator/</loc>
+    <lastmod>2026-10-29</lastmod>
+  </url>
+  <url>
+    <loc>https://brandella.in/tools/schema-generators/organization-schema-generator/</loc>
+    <lastmod>2026-10-29</lastmod>
+  </url>
+  <url>
+    <loc>https://brandella.in/tools/schema-generators/breadcrumb-schema-generator/</loc>
+    <lastmod>2026-10-29</lastmod>
+  </url>
+  <url>
+    <loc>https://brandella.in/tools/schema-generators/event-schema-generator/</loc>
+    <lastmod>2026-10-29</lastmod>
+  </url>
+  <url>
+    <loc>https://brandella.in/tools/schema-generators/video-schema-generator/</loc>
+    <lastmod>2026-10-29</lastmod>
   </url>
 </urlset>

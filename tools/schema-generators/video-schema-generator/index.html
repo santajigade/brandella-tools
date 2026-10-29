@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Video Schema Generator: VideoObject and Key Moments</title>
+<meta name="description" content="Free video schema generator. Create VideoObject JSON LD with thumbnail, upload date, duration, embed URL and key moments. Paste a YouTube link to start.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://brandella.in/tools/schema-generators/video-schema-generator/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Video Schema Generator: VideoObject and Key Moments">
+<meta property="og:description" content="Free video schema generator. Create VideoObject JSON LD with thumbnail, upload date, duration, embed URL and key moments. Paste a YouTube link to start.">
+<meta property="og:url" content="https://brandella.in/tools/schema-generators/video-schema-generator/">
+<meta property="og:site_name" content="Brandella Journal">
+<meta property="og:image" content="https://brandella.in/tools/assets/og-video-schema-generator.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://brandella.in/tools/assets/og-video-schema-generator.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3931314195561246" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "Video Schema Generator",
+      "url": "https://brandella.in/tools/schema-generators/video-schema-generator/",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Any (web browser)",
+      "description": "Free video schema generator. Create VideoObject JSON LD with thumbnail, upload date, duration, embed URL and key moments. Paste a YouTube link to start.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Brandella Journal",
+        "url": "https://brandella.in/"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://brandella.in/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Tools",
+          "item": "https://brandella.in/tools/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Schema Generators",
+          "item": "https://brandella.in/tools/schema-generators/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Video Schema Generator",
+          "item": "https://brandella.in/tools/schema-generators/video-schema-generator/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Do I need video schema for embedded YouTube videos?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It is not strictly needed, since Google can often detect embeds, but markup makes the title, thumbnail, date and chapters explicit and can help your own page appear for the video."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the difference between contentUrl and embedUrl?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "contentUrl points to the video file itself, such as an MP4. embedUrl points to the player, usually the src of an iframe. Google prefers contentUrl when you can provide it."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I write video duration in ISO 8601?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Use PT, then hours with H, minutes with M and seconds with S. For example, 5 minutes 42 seconds is PT5M42S. This tool converts it for you."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is my video information uploaded?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. The video schema generator works only in your browser. Even the YouTube helper just reads the video ID from the link you paste, without contacting YouTube."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+<style>
+:root{
+  --green:#6cc82a; --lime:#a6ef39; --ink:#111; --gray:#555; --muted:#6b6b6b;
+  --line:#e3e3e3; --bg:#fff; --soft:#f6faf1; --footer:#0a0a0a;
+  --g-title:#1a0dab; --g-url:#202124; --g-desc:#4d5156;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Open Sans',Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6}
+a{color:inherit}
+.wrap{max-width:1140px;margin:0 auto;padding:0 16px}
+
+/* ===== HEADER ===== */
+.site-top{border-bottom:1px solid #d9d9d9}
+.site-top .wrap{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding-top:34px;padding-bottom:34px}
+.site-date{font-size:20px;font-weight:600;line-height:1.1}
+.site-date small{display:block;font-size:13px;font-weight:600;margin-top:2px}
+.site-logo{font-size:40px;font-weight:700;text-decoration:none;color:#555;letter-spacing:.2px;white-space:nowrap}
+.site-logo span{color:var(--green)}
+.menu-btn{display:none;justify-self:end;background:none;border:0;cursor:pointer;padding:6px}
+.menu-btn i{display:block;width:26px;height:3px;background:#111;margin:5px 0;border-radius:2px}
+
+.site-nav{border-bottom:2px solid var(--lime)}
+.site-nav ul{list-style:none;display:flex;justify-content:center;flex-wrap:wrap;gap:0 4px}
+.site-nav > .wrap > ul > li{position:relative}
+.site-nav a{display:block;padding:12px 13px;font-size:17px;font-weight:700;text-decoration:none;color:#111}
+.site-nav a:hover,.site-nav a.active{color:var(--green)}
+.has-sub > a::after{content:"";display:inline-block;width:6px;height:6px;border-right:1.6px solid currentColor;border-bottom:1.6px solid currentColor;transform:rotate(45deg);margin:0 0 4px 7px}
+.sub{display:none !important;position:absolute;top:100%;left:0;width:240px;background:#fff;border-radius:6px;padding:14px 0;box-shadow:0 10px 30px rgba(0,0,0,.18);z-index:50;flex-direction:column}
+.sub a{font-size:17px;font-weight:700;line-height:1.35;padding:5px 30px;color:#111}
+.sub a:hover{color:var(--green)}
+.has-sub:hover .sub,.has-sub:focus-within .sub{display:flex !important}
+
+/* ===== BREADCRUMB + HERO ===== */
+.crumbs{font-size:13.5px;color:var(--muted);padding:18px 0 0}
+.crumbs a{text-decoration:none;color:var(--muted)}
+.crumbs a:hover{color:var(--green)}
+.hero{text-align:center;padding:26px 0 8px}
+.pill{display:inline-block;background:var(--soft);color:#3d7f12;border:1px solid #cfeab4;font-size:12.5px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;padding:4px 12px;border-radius:20px;margin-bottom:14px}
+.hero h1{font-size:44px;font-weight:300;line-height:1.2}
+.hero p{max-width:760px;margin:14px auto 0;color:var(--muted);font-size:17px}
+
+/* ===== TOOL ===== */
+.tool{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin:34px 0 10px}
+.card{border:1px solid var(--line);border-radius:12px;padding:24px;background:#fff}
+.card h2{font-size:19px;font-weight:700;margin-bottom:16px}
+.field{margin-bottom:18px}
+.field label{display:flex;justify-content:space-between;font-weight:700;font-size:14.5px;margin-bottom:6px}
+.field label em{font-style:normal;font-weight:600;color:var(--muted);font-size:13px}
+.field input,.field textarea{width:100%;border:1px solid #cfcfcf;border-radius:8px;padding:11px 12px;font:inherit;font-size:15px;color:#111;outline:none;transition:border-color .15s}
+.field input:focus,.field textarea:focus{border-color:var(--green);box-shadow:0 0 0 3px rgba(108,200,42,.15)}
+.field textarea{resize:vertical;min-height:96px}
+.meter{height:7px;background:#eee;border-radius:6px;margin-top:8px;overflow:hidden}
+.meter b{display:block;height:100%;width:0;background:var(--green);border-radius:6px;transition:width .15s,background .15s}
+.meter b.warn{background:#f0a020}.meter b.bad{background:#e0442c}
+.stat{font-size:13px;color:var(--muted);margin-top:5px;display:flex;justify-content:space-between}
+.stat .ok{color:#3d8f12;font-weight:700}.stat .warn{color:#c47a00;font-weight:700}.stat .bad{color:#d1351f;font-weight:700}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.check{display:flex;align-items:center;gap:8px;font-size:14.5px;font-weight:600;margin-bottom:6px;cursor:pointer}
+.check input{accent-color:var(--green);width:16px;height:16px}
+
+.tabs{display:inline-flex;border:1px solid #cfcfcf;border-radius:30px;padding:3px;margin-bottom:18px}
+.tabs button{border:0;background:none;font:inherit;font-weight:700;font-size:14px;padding:7px 18px;border-radius:30px;cursor:pointer;color:#333}
+.tabs button.on{background:#111;color:#fff}
+
+/* Google result mock */
+.serp{border:1px solid var(--line);border-radius:10px;padding:20px 18px;background:#fff;font-family:Arial,sans-serif}
+.serp.mobile{max-width:400px;margin:0 auto;border-radius:16px;box-shadow:0 2px 10px rgba(0,0,0,.08)}
+.g-site{display:flex;align-items:center;gap:10px;margin-bottom:6px}
+.g-fav{width:28px;height:28px;border-radius:50%;background:#f1f3f4;border:1px solid #dadce0;display:grid;place-items:center;font-weight:700;font-size:13px;color:var(--green)}
+.g-name{font-size:14px;color:var(--g-url);line-height:1.3}
+.g-url{font-size:12px;color:#4d5156;line-height:1.3;word-break:break-all}
+.g-title{font-size:20px;line-height:1.3;color:var(--g-title);margin:2px 0 4px;font-weight:400;cursor:pointer}
+.g-title:hover{text-decoration:underline}
+.serp.mobile .g-title{font-size:18px;color:#1558d6}
+.g-desc{font-size:14px;line-height:1.58;color:var(--g-desc)}
+.g-desc .g-date{color:#70757a}
+.g-desc strong{color:#5f6368;font-weight:700}
+
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+.btn{border:2px solid var(--green);background:#fff;color:#111;font:inherit;font-weight:700;font-size:14px;padding:9px 18px;border-radius:30px;cursor:pointer;transition:all .15s}
+.btn:hover{background:var(--green);color:#fff}
+.btn.dark{background:#111;border-color:#111;color:#fff}
+.btn.dark:hover{background:var(--green);border-color:var(--green)}
+.code-out{margin-top:14px;background:#1e1e1e;color:#d4d4d4;border-radius:8px;padding:14px;font:14px/1.5 Consolas,Monaco,monospace;white-space:pre-wrap;word-break:break-all;display:none}
+.toast{font-size:13px;color:#3d8f12;font-weight:700;align-self:center;opacity:0;transition:opacity .2s}
+.toast.show{opacity:1}
+
+.tips{margin-top:18px;border-left:4px solid var(--green);background:var(--soft);border-radius:0 8px 8px 0;padding:12px 14px;font-size:14px}
+.tips ul{margin:6px 0 0 18px}
+.tips li{margin:2px 0}
+
+/* ===== CONTENT ===== */
+.content{max-width:820px;margin:40px auto 0}
+.content h2{font-size:28px;font-weight:700;margin:36px 0 12px;line-height:1.3}
+.content h3{font-size:20px;font-weight:700;margin:22px 0 8px}
+.content p{font-size:17px;color:#2c2c2c;margin-bottom:12px}
+.content ol,.content ul{margin:0 0 14px 22px;font-size:17px;color:#2c2c2c}
+.content li{margin:6px 0}
+.content a{color:#3d8f12;font-weight:600}
+.content code{background:#f1f1f1;padding:1px 6px;border-radius:4px;font-size:15px}
+table.lim{width:100%;border-collapse:collapse;margin:10px 0 18px;font-size:15.5px}
+table.lim th{background:#2b2b2b;color:#fff;text-align:left;padding:10px 12px}
+table.lim td{border-bottom:1px solid var(--line);padding:10px 12px}
+
+.faq-item{border:1px solid var(--line);border-radius:10px;margin-bottom:12px;overflow:hidden}
+.faq-item summary{list-style:none;cursor:pointer;padding:14px 16px;font-weight:700;font-size:16.5px;display:flex;gap:12px;align-items:flex-start}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-num{flex:0 0 26px;height:26px;border-radius:50%;background:var(--green);color:#fff;font-size:13px;display:grid;place-items:center}
+.faq-item p{padding:0 16px 14px 54px;color:#3a5a20;font-size:16px;margin:0}
+
+.related{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:12px 0 10px}
+.related a{display:flex;justify-content:space-between;align-items:center;gap:10px;border:1px solid var(--line);border-left:4px solid var(--green);border-radius:8px;padding:13px 14px;text-decoration:none;color:#111 !important;font-weight:700;font-size:15px}
+.related a:hover{border-color:var(--green)}
+
+.bx-ad{margin:34px 0;min-height:90px}
+
+/* ===== FOOTER ===== */
+.site-footer{background:var(--footer);color:#fff;margin-top:70px;padding:52px 0 44px}
+.foot-links{list-style:none;display:flex;flex-wrap:wrap;gap:8px 28px}
+.foot-links a{text-decoration:none;font-weight:700;font-size:14.5px;text-transform:uppercase;color:#fff}
+.foot-links a:hover{color:var(--lime)}
+.copy{color:#a8a8a8;font-size:16px;margin-top:12px}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width:900px){
+  .tool{grid-template-columns:1fr}
+  .hero h1{font-size:34px}
+}
+@media (max-width:760px){
+  .site-top .wrap{grid-template-columns:1fr auto;padding-top:18px;padding-bottom:18px}
+  .site-date{display:none}
+  .site-logo{font-size:28px}
+  .menu-btn{display:block}
+  .site-nav ul{display:none;flex-direction:column}
+  .site-nav.open > .wrap > ul{display:flex}
+  .site-nav a{padding:11px 4px;border-bottom:1px solid #f0f0f0}
+  .sub{position:static;box-shadow:none;border:0;padding-left:14px}
+  .has-sub:hover .sub,.has-sub:focus-within .sub{display:flex !important}
+  .related,.row2{grid-template-columns:1fr}
+  .content h2{font-size:24px}
+}
+
+/* ===== SHARED TOOL EXTRAS ===== */
+.full{grid-column:1/-1}
+.field select{width:100%;border:1px solid #cfcfcf;border-radius:8px;padding:10px 12px;font:inherit;font-size:15px;background:#fff;color:#111}
+.field textarea.big{min-height:230px;font-size:14.5px}
+.mono{font-family:Consolas,Monaco,monospace !important;font-size:13.5px !important}
+.btn-sm{padding:5px 12px;font-size:13px;border-width:1.5px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(105px,1fr));gap:10px;margin-bottom:16px}
+.stat-box{background:var(--soft);border:1px solid #dbefc8;border-radius:10px;padding:10px 8px;text-align:center}
+.stat-box b{display:block;font-size:22px;line-height:1.2}
+.stat-box span{font-size:12.5px;color:var(--muted);font-weight:600}
+.rtable{width:100%;border-collapse:collapse;font-size:14.5px}
+.rtable th{background:#2b2b2b;color:#fff;text-align:left;padding:8px 10px;font-weight:700}
+.rtable td{border-bottom:1px solid var(--line);padding:7px 10px}
+.rtable td.num,.rtable th.num{text-align:right;font-variant-numeric:tabular-nums}
+.rtable tr.hit td{background:#eef8e6;font-weight:700}
+.empty{color:var(--muted);font-size:14.5px;padding:14px 0}
+.kw-result{border-radius:10px;padding:12px 14px;margin-bottom:16px;font-size:14.5px;border:1px solid var(--line);background:#fafafa}
+.kw-result.ok{background:#eef8e6;border-color:#cfeab4}
+.kw-result.warn{background:#fff6e5;border-color:#f3d79b}
+.kw-result.bad{background:#fdecea;border-color:#f5c2bb}
+.slug-row{border:1px solid var(--line);border-radius:8px;padding:10px 12px;margin-bottom:8px;display:flex;justify-content:space-between;gap:10px;align-items:center}
+.slug-row .s{font:600 15px/1.4 Consolas,Monaco,monospace;color:#111;word-break:break-all}
+.slug-row small{display:block;color:var(--muted);font-size:12.5px;word-break:break-all;margin-top:2px}
+.slug-row small.warn{color:#c47a00;font-weight:700}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
+.chip{border:1px solid var(--line);border-radius:20px;padding:4px 12px;font-size:13.5px;font-weight:700;background:#fff}
+.chip.zero{color:#aaa}
+.outline{max-height:460px;overflow:auto;border:1px solid var(--line);border-radius:10px;padding:6px 12px}
+.o-row{display:flex;gap:10px;align-items:flex-start;padding:7px 0;border-bottom:1px dashed #eee;font-size:14.5px}
+.o-row:last-child{border-bottom:0}
+.o-tag{flex:0 0 auto;font:700 12px/1 Consolas,Monaco,monospace;padding:5px 7px;border-radius:5px;color:#fff;background:#111}
+.o-tag.h1{background:#2f7a0c}.o-tag.h2{background:#4fa61d}.o-tag.h3{background:#6cc82a}.o-tag.h4{background:#8a8a8a}.o-tag.h5{background:#a5a5a5}.o-tag.h6{background:#bdbdbd}
+.o-issue{display:inline-block;font-size:12px;color:#d1351f;font-weight:700;margin-left:6px}
+.tgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:18px;margin:30px 0 10px}
+.tcard{border:1px solid var(--line);border-radius:12px;padding:22px;text-decoration:none;display:flex;flex-direction:column;gap:10px;transition:all .15s;background:#fff;color:#111}
+.tcard:hover{border-color:var(--green);box-shadow:0 8px 22px rgba(0,0,0,.07);transform:translateY(-2px)}
+.tbadge{width:48px;height:48px;border-radius:12px;background:#111;color:var(--lime);display:grid;place-items:center;font-weight:800;font-size:16px}
+.tcard h2,.tcard h3{font-size:18px;line-height:1.3;margin:0}
+.tcard p{font-size:14.5px;color:var(--muted);flex:1;line-height:1.55}
+.tcard .go{font-weight:700;color:#3d8f12;font-size:14px}
+.tcard.soon{opacity:.55;pointer-events:none}
+.tcard.soon .tbadge{background:#ddd;color:#777}
+.tcard.soon .go{color:var(--muted)}
+.more-tools{margin-top:10px}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="site-top">
+    <div class="wrap">
+      <div class="site-date" id="siteDate">Today<small>&nbsp;</small></div>
+      <a class="site-logo" href="https://brandella.in/">Brandella <span>Journal</span></a>
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false"><i></i><i></i><i></i></button>
+    </div>
+  </div>
+  <nav class="site-nav" id="siteNav" aria-label="Main">
+    <div class="wrap">
+      <ul>
+        <li><a href="https://brandella.in/">Home</a></li>
+        <li class="has-sub"><a href="https://brandella.in/category/seo/">SEO</a>
+          <ul class="sub">
+            <li><a href="https://brandella.in/category/seo/technical-seo/">Technical SEO</a></li>
+            <li><a href="https://brandella.in/category/seo/local-seo/">Local SEO</a></li>
+            <li><a href="https://brandella.in/category/seo/mobile-seo/">Mobile SEO</a></li>
+            <li><a href="https://brandella.in/category/seo/on-page-seo/">On-Page SEO</a></li>
+            <li><a href="https://brandella.in/category/seo/off-page-seo/">Off-Page SEO</a></li>
+            <li><a href="https://brandella.in/category/seo/seo-tools/">SEO Tools</a></li>
+            <li><a href="https://brandella.in/category/seo/core-web-vitals/">Core Web Vitals</a></li>
+            <li><a href="https://brandella.in/category/seo/keyword-research/">Keyword Research</a></li>
+            <li><a href="https://brandella.in/category/seo/link-building/">Link Building</a></li>
+            <li><a href="https://brandella.in/category/seo/google-search-console/">Google Search Console</a></li>
+            <li><a href="https://brandella.in/category/seo/seo-basics/">SEO Basics</a></li>
+          </ul>
+        </li>
+        <li class="has-sub"><a href="https://brandella.in/category/paid-media/">Paid Media</a>
+          <ul class="sub">
+            <li><a href="https://brandella.in/category/paid-media/display-advertising/">Display Advertising</a></li>
+            <li><a href="https://brandella.in/category/paid-media/google-ads/">Google Ads</a></li>
+            <li><a href="https://brandella.in/category/paid-media/linkedin-ads/">LinkedIn Ads</a></li>
+            <li><a href="https://brandella.in/category/paid-media/meta-ads/">Meta Ads</a></li>
+            <li><a href="https://brandella.in/category/paid-media/paid-media-analytics/">Paid Media Analytics</a></li>
+            <li><a href="https://brandella.in/category/paid-media/ppc-strategy/">PPC Strategy</a></li>
+          </ul>
+        </li>
+        <li><a href="https://brandella.in/category/content/">Content</a></li>
+        <li><a href="https://brandella.in/category/social/">Social</a></li>
+        <li><a href="https://brandella.in/category/digital-marketing/">Digital Marketing</a></li>
+        <li><a href="https://brandella.in/category/artificial-intelligence/">Artificial Intelligence</a></li>
+        <li class="has-sub"><a href="https://brandella.in/category/development/">Development</a>
+          <ul class="sub">
+            <li><a href="https://brandella.in/category/development/php/">PHP</a></li>
+            <li><a href="https://brandella.in/category/development/javascript/">JavaScript</a></li>
+            <li><a href="https://brandella.in/category/development/python/">Python</a></li>
+          </ul>
+        </li>
+        <li class="has-sub"><a class="active" href="https://brandella.in/tools/">Tools</a>
+          <ul class="sub">
+            <li><a href="https://brandella.in/tools/seo-tools/">SEO Tools</a></li>
+            <li><a href="https://brandella.in/tools/schema-generators/">Schema Generators</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<main class="wrap">
+
+  <div class="crumbs"><a href="https://brandella.in/">Home</a> &rsaquo; <a href="https://brandella.in/tools/">Tools</a> &rsaquo; <a href="https://brandella.in/tools/schema-generators/">Schema Generators</a> &rsaquo; Video Schema Generator</div>
+
+  <section class="hero">
+    <span class="pill">Free Schema Tool</span>
+    <h1>Video Schema Generator</h1>
+    <p>Create VideoObject JSON LD for any video on your page. Paste a YouTube link to fill the embed and thumbnail, add chapters, and get key moments markup too.</p>
+  </section>
+
+  <section class="tool" aria-label="Video schema generator" id="vdForm">
+    <div class="card" style="min-width:0">
+      <h2>Video Details</h2>
+      <div class="field"><label for="vdYt">YouTube Link <em>optional shortcut</em></label><input id="vdYt" type="text" value="" placeholder="https://www.youtube.com/watch?v=..."></div>
+      <div class="field"><label for="vdName">Video Title</label><input id="vdName" type="text" value="How to Add Schema Markup to WordPress in 5 Minutes" placeholder=""></div>
+      <div class="field"><label for="vdDesc">Description</label><textarea id="vdDesc" placeholder="">A quick walkthrough of adding JSON LD schema markup to a WordPress page and testing it in the Rich Results Test.</textarea></div>
+      <div class="field"><label for="vdThumb">Thumbnail URLs <em>one per line</em></label><textarea id="vdThumb" placeholder="">https://www.example.com/videos/schema-wordpress-thumb.jpg</textarea></div>
+      <div class="row2"><div class="field"><label for="vdUD">Upload Date</label><input id="vdUD" type="date" value="2026-10-15" placeholder=""></div><div class="field"><label for="vdUT">Upload Time</label><input id="vdUT" type="time" value="10:00" placeholder=""></div></div>
+      <div class="row2"><div class="field"><label for="vdTz">Time Zone</label><select id="vdTz"><option value="+05:30" selected>+05:30 India (IST)</option><option value="+00:00">+00:00 UTC, London winter</option><option value="+01:00">+01:00 London summer, Paris winter</option><option value="+02:00">+02:00 Paris summer, Johannesburg</option><option value="+03:00">+03:00 Riyadh, Nairobi</option><option value="+04:00">+04:00 Dubai</option><option value="+05:00">+05:00 Karachi</option><option value="+05:45">+05:45 Kathmandu</option><option value="+06:00">+06:00 Dhaka</option><option value="+07:00">+07:00 Bangkok, Jakarta</option><option value="+08:00">+08:00 Singapore, Perth</option><option value="+09:00">+09:00 Tokyo</option><option value="+10:00">+10:00 Sydney winter</option><option value="+11:00">+11:00 Sydney summer</option><option value="+12:00">+12:00 Auckland winter</option><option value="-03:00">-03:00 Sao Paulo</option><option value="-04:00">-04:00 New York summer</option><option value="-05:00">-05:00 New York winter</option><option value="-06:00">-06:00 Chicago winter</option><option value="-07:00">-07:00 Los Angeles summer</option><option value="-08:00">-08:00 Los Angeles winter</option><option value="">No time zone</option></select></div><div class="field"><label for="vdDur">Duration <em>h:mm:ss or m:ss</em></label><input id="vdDur" type="text" value="5:42" placeholder=""></div></div>
+      <div class="field"><label for="vdContent">Video File URL (contentUrl) <em>optional</em></label><input id="vdContent" type="text" value="https://www.example.com/videos/schema-wordpress.mp4" placeholder=""></div>
+      <div class="field"><label for="vdEmbed">Player URL (embedUrl) <em>optional</em></label><input id="vdEmbed" type="text" value="https://www.example.com/embed/schema-wordpress" placeholder=""></div>
+      <div class="row2"><div class="field"><label for="vdViews">View Count <em>optional</em></label><input id="vdViews" type="text" value="" placeholder=""></div><div class="field"><label for="vdExp">Expires On <em>optional</em></label><input id="vdExp" type="date" value="" placeholder=""></div></div>
+      <h2 style="margin-top:8px">Key Moments <em style="font-size:13px;font-weight:600;color:#777">optional</em></h2>
+      <div class="field"><label for="vdWatch">Watch Page URL <em>where the video plays</em></label><input id="vdWatch" type="text" value="https://www.example.com/videos/schema-wordpress/" placeholder=""></div>
+      <div class="row2"><div class="field"><label for="vdParam">Time Parameter <em>e.g. t</em></label><input id="vdParam" type="text" value="t" placeholder=""></div><div class="field"><label for="vdCreator">Creator Name <em>optional</em></label><input id="vdCreator" type="text" value="Example Media" placeholder=""></div></div>
+      <div class="field"><label for="vdClips">Chapters <em>start time then label, one per line</em></label><textarea id="vdClips" placeholder="" class="mono" style="min-height:130px">0:00 Introduction
+0:35 Choosing a schema type
+2:10 Adding the code in WordPress
+4:05 Testing in Google</textarea></div>
+    </div>
+    <div class="card" style="min-width:0">
+      <h2>Your JSON LD Code</h2>
+      <div class="kw-result" id="vdCheck"></div>
+      <pre class="code-out" id="vdCode" style="display:block;margin-top:0;max-height:620px;overflow:auto;word-break:normal;overflow-wrap:anywhere"></pre>
+      <label class="check" style="margin-top:12px"><input id="vdWrap" type="checkbox" checked> Wrap in a <code>&lt;script&gt;</code> tag</label>
+      <div class="actions">
+        <button class="btn dark" id="vdCopy">Copy Code</button>
+        <a class="btn" style="text-decoration:none" href="https://search.google.com/test/rich-results" target="_blank" rel="noopener">Open Rich Results Test</a>
+        <span class="toast" id="toast">Copied!</span>
+      </div>
+      <div class="tips"><strong>Before you publish</strong><ul><li>Each video needs its own unique title</li><li>Use a thumbnail that actually shows the video</li><li>Key moments need a video of at least 30 seconds that can start at any time</li></ul></div>
+    </div>
+  </section>
+
+  <div class="bx-ad">
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3931314195561246" data-ad-slot="4249015278" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+
+  <article class="content">
+
+    <h2>What Is Video Schema?</h2>
+    <p>Video schema is structured data that describes a video on your page using the <code>VideoObject</code> type. It gives Google the title, thumbnail, upload date, length and where to find the video file or player.</p>
+    <p>With it, your page can appear in video results and the Videos tab, and with chapters added, Google can show key moments that let people jump straight to a section.</p>
+
+    <h2>How to Use the Video Schema Generator</h2>
+    <ol>
+      <li><strong>Got a YouTube video?</strong> Paste the link at the top. The tool fills the player URL, a thumbnail and the watch page for you.</li>
+      <li><strong>Add the title, description and upload date</strong> with time and time zone.</li>
+      <li><strong>Enter the duration</strong> as minutes and seconds, such as 5:42. The tool converts it to ISO 8601, like <code>PT5M42S</code>.</li>
+      <li><strong>Add chapters</strong> as a start time then a label, one per line, to create key moments.</li>
+      <li><strong>Copy the code</strong> into the page where the video is embedded.</li>
+    </ol>
+
+    <h2>VideoObject Properties</h2>
+    <div style="overflow-x:auto"><table class="lim">
+      <thead><tr style="background:#2b2b2b !important;"><th style="background:#2b2b2b !important; color:#ffffff !important;">Property</th><th style="background:#2b2b2b !important; color:#ffffff !important;">Status</th><th style="background:#2b2b2b !important; color:#ffffff !important;">Notes</th></tr></thead>
+      <tbody>
+        <tr><td><code>name</code></td><td>Required</td><td>A unique title for each video</td></tr>
+        <tr><td><code>thumbnailUrl</code></td><td>Required</td><td>A unique thumbnail image for the video</td></tr>
+        <tr><td><code>uploadDate</code></td><td>Required</td><td>ISO 8601 with a time zone</td></tr>
+        <tr><td><code>contentUrl</code></td><td>Recommended</td><td>The actual video file, the best way for Google to fetch it</td></tr>
+        <tr><td><code>embedUrl</code></td><td>Recommended</td><td>The player URL, used when there is no file URL</td></tr>
+        <tr><td><code>duration</code></td><td>Recommended</td><td>ISO 8601 duration, such as PT1H2M30S</td></tr>
+        <tr><td><code>hasPart</code></td><td>Recommended</td><td>Clip items with start and end seconds for key moments</td></tr>
+      </tbody>
+    </table></div>
+    <p>Full details are in <a href="https://developers.google.com/search/docs/appearance/structured-data/video" target="_blank" rel="noopener">Google's video structured data guide</a>.</p>
+
+    <h2>Key Moments Tips</h2>
+    <ul>
+      <li>The video must be at least 30 seconds long and support starting at a set time through the URL.</li>
+      <li>Each chapter needs a unique start time. The tool works out end times for you.</li>
+      <li>On YouTube, adding timestamps in the video description also creates chapters on YouTube itself.</li>
+      <li>Put the markup on the page where the video plays, not on a page that only links to it.</li>
+    </ul>
+    <p>Get more from video with our <a href="https://brandella.in/7-creative-video-marketing-ideas/">creative video marketing ideas</a> and <a href="https://brandella.in/optimize-images-for-seo-without-losing-quality/">image optimization guide</a> for better thumbnails. Writing the post around the video? Add the <a href="https://brandella.in/tools/schema-generators/article-schema-generator/">article schema generator</a> output too.</p>
+
+    <div class="bx-ad">
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3931314195561246" data-ad-slot="4249015278" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+
+    <h2>Frequently Asked Questions</h2>
+    <details class="faq-item" open><summary><span class="faq-num">1</span>Do I need video schema for embedded YouTube videos?</summary><p>It is not strictly needed, since Google can often detect embeds, but markup makes the title, thumbnail, date and chapters explicit and can help your own page appear for the video.</p></details>
+    <details class="faq-item" open><summary><span class="faq-num">2</span>What is the difference between contentUrl and embedUrl?</summary><p>contentUrl points to the video file itself, such as an MP4. embedUrl points to the player, usually the src of an iframe. Google prefers contentUrl when you can provide it.</p></details>
+    <details class="faq-item" open><summary><span class="faq-num">3</span>How do I write video duration in ISO 8601?</summary><p>Use PT, then hours with H, minutes with M and seconds with S. For example, 5 minutes 42 seconds is PT5M42S. This tool converts it for you.</p></details>
+    <details class="faq-item" open><summary><span class="faq-num">4</span>Is my video information uploaded?</summary><p>No. The video schema generator works only in your browser. Even the YouTube helper just reads the video ID from the link you paste, without contacting YouTube.</p></details>
+
+    <h2>Related Articles</h2>
+    <div class="related">
+      <a href="https://brandella.in/7-creative-video-marketing-ideas/">7 Creative Video Marketing Ideas <span>&rarr;</span></a>
+      <a href="https://brandella.in/youtube-monetization-2025/">YouTube Monetization Guide <span>&rarr;</span></a>
+      <a href="https://brandella.in/what-is-schema-markup/">What Is Schema Markup <span>&rarr;</span></a>
+      <a href="https://brandella.in/optimize-images-for-seo-without-losing-quality/">Optimize Images for SEO <span>&rarr;</span></a>
+    </div>
+  </article>
+
+  <section class="content more-tools" style="max-width:1140px">
+    <h2>More Free Schema Generators</h2>
+    <div class="tgrid">
+      <a class="tcard" href="https://brandella.in/tools/schema-generators/local-business-schema-generator/"><div class="tbadge">LB</div><h3>Local Business Schema Generator</h3><p>Create LocalBusiness JSON LD with address, map coordinates, phone, price range and opening hours.</p><span class="go">Open tool &rarr;</span></a>
+<a class="tcard" href="https://brandella.in/tools/schema-generators/product-schema-generator/"><div class="tbadge">PS</div><h3>Product Schema Generator</h3><p>Build Product JSON LD with price, availability, brand, GTIN, ratings and a review.</p><span class="go">Open tool &rarr;</span></a>
+<a class="tcard" href="https://brandella.in/tools/schema-generators/article-schema-generator/"><div class="tbadge">AS</div><h3>Article Schema Generator</h3><p>Generate Article, BlogPosting or NewsArticle JSON LD with authors, dates, images and publisher.</p><span class="go">Open tool &rarr;</span></a>
+<a class="tcard" href="https://brandella.in/tools/schema-generators/organization-schema-generator/"><div class="tbadge">OS</div><h3>Organization Schema Generator</h3><p>Create Organization JSON LD with logo, social profiles, contact point, address and business IDs.</p><span class="go">Open tool &rarr;</span></a>
+<a class="tcard" href="https://brandella.in/tools/schema-generators/breadcrumb-schema-generator/"><div class="tbadge">BS</div><h3>Breadcrumb Schema Generator</h3><p>Turn a page URL or a list of links into valid BreadcrumbList JSON LD in one click.</p><span class="go">Open tool &rarr;</span></a>
+<a class="tcard" href="https://brandella.in/tools/schema-generators/event-schema-generator/"><div class="tbadge">ES</div><h3>Event Schema Generator</h3><p>Create Event JSON LD with dates, venue, tickets, organizer, performers and event status.</p><span class="go">Open tool &rarr;</span></a>
+    </div>
+    <p><a href="https://brandella.in/tools/schema-generators/">See all schema generators &rarr;</a> &nbsp;|&nbsp; <a href="https://brandella.in/tools/">Browse every free tool &rarr;</a></p>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <ul class="foot-links">
+      <li><a href="https://brandella.in/">Home</a></li>
+      <li><a href="https://brandella.in/about-us/">About Us</a></li>
+      <li><a href="https://brandella.in/contact-us/">Contact Us</a></li>
+      <li><a href="https://brandella.in/privacy-policy/">Privacy Policy</a></li>
+      <li><a href="https://brandella.in/terms-and-conditions/">Terms and Conditions</a></li>
+    </ul>
+    <p class="copy">Copyright &copy; <span id="yr">2026</span> Brandella Journal. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+
+  var d = new Date();
+  var days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+  var months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+  document.getElementById('siteDate').innerHTML = days[d.getDay()] + ',<small>' + months[d.getMonth()] + ' ' + d.getDate() + ', ' + d.getFullYear() + '</small>';
+  document.getElementById('yr').textContent = d.getFullYear();
+  var nav = document.getElementById('siteNav'), mb = document.getElementById('menuBtn');
+  mb.addEventListener('click', function(){ var open = nav.classList.toggle('open'); mb.setAttribute('aria-expanded', open); });
+  var $ = function(id){ return document.getElementById(id); };
+  function esc(s){ return String(s).replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+  function copyText(text, toastId){
+    var done = function(){ var t = $(toastId); if(!t) return; t.classList.add('show'); setTimeout(function(){ t.classList.remove('show'); }, 1600); };
+    if (navigator.clipboard && navigator.clipboard.writeText){ navigator.clipboard.writeText(text).then(done, function(){ fallback(); done(); }); }
+    else { fallback(); done(); }
+    function fallback(){ var ta=document.createElement('textarea'); ta.value=text; document.body.appendChild(ta); ta.select(); try{document.execCommand('copy');}catch(e){} document.body.removeChild(ta); }
+  }
+
+
+  function v(id){ var e = $(id); return e ? String(e.value).trim() : ''; }
+  function lines(id){ return v(id).split(/\n/).map(function(s){ return s.trim(); }).filter(Boolean); }
+  function isUrl(s){ return /^https?:\/\/[^\s\/.]+\.[^\s]+$/i.test(s); }
+  function clean(o){
+    if (Array.isArray(o)){ var a = o.map(clean).filter(function(x){ return x !== undefined; }); return a.length ? a : undefined; }
+    if (o && typeof o === 'object'){
+      var r = {}, n = 0;
+      for (var k in o){ var c = clean(o[k]); if (c !== undefined){ r[k] = c; if (k !== '@type') n++; } }
+      return n ? r : undefined;
+    }
+    if (o === '' || o === null || o === undefined || (typeof o === 'number' && isNaN(o))) return undefined;
+    return o;
+  }
+  function num(s){ s = String(s).replace(/,/g,'').trim(); if (!/^\d+(\.\d+)?$/.test(s)) return undefined; return parseFloat(s); }
+  function dt(d, t, z){ d = v(d); if (!d) return ''; t = v(t); return t ? d + 'T' + (t.length === 5 ? t + ':00' : t) + v(z) : d; }
+  function pairs(id){ return lines(id).map(function(l){ var p = l.split('|'); return { name: p[0].trim(), url: (p[1] || '').trim() }; }); }
+  function addr(P){ return { '@type':'PostalAddress', streetAddress: v(P+'Street'), addressLocality: v(P+'City'), addressRegion: v(P+'Region'), postalCode: v(P+'Zip'), addressCountry: v(P+'Country').toUpperCase() }; }
+  function phoneCheck(p, label, issues){ if (p && !/^\+\d/.test(p)) issues.push(['warn', label + ' should start with + and the country code, for example +91 or +1.']); }
+  function urlCheck(u, label, issues, lvl){ if (u && !isUrl(u)) issues.push([lvl || 'bad', label + ' must be a full URL starting with https://']); }
+  function render(P, obj, issues){
+    var data = clean(obj) || {};
+    var json = JSON.stringify(data, null, 2).replace(/<\//g, '<\\/');
+    var code = $(P+'Wrap').checked ? '<script type="application/ld+json">\n' + json + '\n<\/script>' : json;
+    $(P+'Code').textContent = code;
+    var bad = issues.filter(function(i){ return i[0] === 'bad'; }), warn = issues.filter(function(i){ return i[0] === 'warn'; });
+    var box = $(P+'Check'), li = function(a){ return '<ul style="margin:6px 0 0 18px">' + a.map(function(i){ return '<li>' + esc(i[1]) + '</li>'; }).join('') + '</ul>'; };
+    if (bad.length){ box.className = 'kw-result bad'; box.innerHTML = '<strong>Fix ' + bad.length + ' issue' + (bad.length > 1 ? 's' : '') + ' before publishing.</strong>' + li(bad.concat(warn)); }
+    else if (warn.length){ box.className = 'kw-result warn'; box.innerHTML = '<strong>Required properties are in place.</strong> Suggestions:' + li(warn); }
+    else { box.className = 'kw-result ok'; box.innerHTML = '<strong>Looks good.</strong> All required and recommended properties are filled in.'; }
+  }
+  function wire(P, run){
+    $(P+'Form').addEventListener('input', run); $(P+'Form').addEventListener('change', run);
+    $(P+'Copy').onclick = function(){ copyText($(P+'Code').textContent, 'toast'); };
+    run();
+  }
+
+  function secs(s){ s = String(s).trim(); if (!s) return NaN; if (/^\d+$/.test(s)) return +s;
+    if (!/^\d+(:\d{1,2}){1,2}$/.test(s)) return NaN; return s.split(':').reduce(function(a, x){ return a * 60 + (+x); }, 0); }
+  function iso(t){ var h = Math.floor(t/3600), m = Math.floor(t%3600/60), s = t%60; return 'PT' + (h ? h + 'H' : '') + (m ? m + 'M' : '') + (s || (!h && !m) ? s + 'S' : ''); }
+  $('vdYt').addEventListener('input', function(){
+    var m = v('vdYt').match(/(?:youtu\.be\/|[?&]v=|\/embed\/|\/shorts\/|\/live\/)([\w-]{11})/);
+    if (!m) return;
+    $('vdEmbed').value = 'https://www.youtube.com/embed/' + m[1];
+    $('vdThumb').value = 'https://i.ytimg.com/vi/' + m[1] + '/hqdefault.jpg';
+    $('vdWatch').value = 'https://www.youtube.com/watch?v=' + m[1];
+    $('vdContent').value = ''; $('vdParam').value = 't';
+  });
+  function run(){
+    var I = [], P = 'vd';
+    if (!v('vdName')) I.push(['bad', 'Video title is required.']);
+    var th = lines('vdThumb'); if (!th.length) I.push(['bad', 'A thumbnail URL is required.']);
+    th.forEach(function(u){ urlCheck(u, 'Thumbnail "' + u + '"', I); });
+    var up = dt('vdUD','vdUT','vdTz'); if (!up) I.push(['bad', 'Upload date is required.']);
+    else if (!v('vdUT') || !v('vdTz')) I.push(['warn', 'Add a time and time zone to the upload date. Otherwise Google assumes the time zone of Googlebot.']);
+    if (!v('vdDesc')) I.push(['warn', 'Add a description of the video.']);
+    var d = secs(v('vdDur')); if (v('vdDur') && isNaN(d)) I.push(['bad', 'Duration should look like 5:42 or 1:05:30.']);
+    if (!v('vdDur')) I.push(['warn', 'Add the duration.']);
+    if (!v('vdContent') && !v('vdEmbed')) I.push(['warn', 'Add a video file URL or a player URL so Google can fetch the video.']);
+    urlCheck(v('vdContent'), 'Video file URL', I); urlCheck(v('vdEmbed'), 'Player URL', I);
+    var views = num(v('vdViews')); if (v('vdViews') && views === undefined) I.push(['bad', 'View count must be a whole number.']);
+    var raw = lines('vdClips'), clips = [], seen = {};
+    raw.forEach(function(l){
+      var m = l.match(/^(\d+(?::\d{1,2}){0,2})\s*[|.)]?\s*(.+)$/);
+      if (!m){ I.push(['bad', 'Could not read chapter line "' + l + '". Use a start time then a label, like 1:30 Setup.']); return; }
+      var s = secs(m[1]); if (seen[s]){ I.push(['bad', 'Two chapters start at ' + m[1] + '. Each start time must be unique.']); return; }
+      seen[s] = 1; clips.push({ s: s, name: m[2].trim() });
+    });
+    clips.sort(function(a, b){ return a.s - b.s; });
+    var parts = '';
+    if (clips.length){
+      var w = v('vdWatch'), par = v('vdParam') || 't';
+      if (!isUrl(w)) I.push(['bad', 'Key moments need a watch page URL starting with https://']);
+      if (!isNaN(d) && d < 30) I.push(['bad', 'Key moments need a video of at least 30 seconds.']);
+      if (!isNaN(d) && clips[clips.length-1].s >= d) I.push(['bad', 'A chapter starts after the video ends. Check the duration.']);
+      parts = clips.map(function(c, i){
+        var end = i < clips.length - 1 ? clips[i+1].s : (isNaN(d) ? undefined : d);
+        return { '@type':'Clip', name: c.name, startOffset: c.s, endOffset: end, url: w + (w.indexOf('?') > -1 ? '&' : '?') + par + '=' + c.s };
+      });
+    }
+    var o = { '@context':'https://schema.org', '@type':'VideoObject', name: v('vdName'), description: v('vdDesc'), thumbnailUrl: th,
+      uploadDate: up, duration: isNaN(d) ? '' : iso(d), contentUrl: v('vdContent'), embedUrl: v('vdEmbed'),
+      expires: v('vdExp') ? v('vdExp') + 'T00:00:00' + v('vdTz') : '',
+      creator: v('vdCreator') ? { '@type':'Organization', name: v('vdCreator') } : '',
+      interactionStatistic: views !== undefined ? { '@type':'InteractionCounter', interactionType: { '@type':'WatchAction' }, userInteractionCount: Math.round(views) } : '',
+      hasPart: parts };
+    render(P, o, I);
+  }
+  wire('vd', run);
+
+})();
+</script>
+</body>
+</html>

@@ -2,6 +2,7 @@
 Order here = order on /tools/. Slugs are permanent URLs: never rename a live one."""
 
 H = 'https://brandella.in/tools/seo-tools/'
+S = 'https://brandella.in/tools/schema-generators/'
 
 CATEGORIES = [
     dict(slug='seo-tools', short='SEO', name='SEO Tools', pill='SEO',
@@ -28,9 +29,26 @@ CATEGORIES = [
 
     # ---------- ROADMAP (built one per day, in this order) ----------
     dict(slug='schema-generators', short='SC', name='Schema Generators', pill='Schema',
-         card='FAQ, LocalBusiness, Article, Product, HowTo and Organization JSON LD.',
+         card='LocalBusiness, Product, Article, Organization, Breadcrumb, Event and Video JSON LD.',
          hub_title='Free Schema Markup Generators: JSON LD for Google',
-         hub_desc='Free schema markup generators for FAQ, LocalBusiness, Article, Product, Organization and more. Create valid JSON LD for rich results in seconds.',
+         hub_desc='Free schema markup generators for LocalBusiness, Product, Article, Organization, Breadcrumb, Event and Video. Create valid JSON LD in seconds.',
+         hub_intro=f'''<h2>Which Schema Generator Do You Need?</h2>
+    <ul>
+      <li><strong>A shop, clinic, cafe or office?</strong> Use the <a href="{S}local-business-schema-generator/">Local Business Schema Generator</a>.</li>
+      <li><strong>Selling products?</strong> Use the <a href="{S}product-schema-generator/">Product Schema Generator</a> for price, stock and ratings.</li>
+      <li><strong>Publishing posts or news?</strong> Use the <a href="{S}article-schema-generator/">Article Schema Generator</a>, plus the <a href="{S}breadcrumb-schema-generator/">Breadcrumb Schema Generator</a>.</li>
+      <li><strong>Your brand and home page?</strong> Use the <a href="{S}organization-schema-generator/">Organization Schema Generator</a>.</li>
+      <li><strong>Running a concert, workshop or conference?</strong> Use the <a href="{S}event-schema-generator/">Event Schema Generator</a>.</li>
+      <li><strong>Got a video on the page?</strong> Use the <a href="{S}video-schema-generator/">Video Schema Generator</a> to add key moments too.</li>
+    </ul>
+    <p>Every generator checks your input against Google's current structured data rules as you type, and outputs clean JSON LD you can paste into any page or CMS.</p>
+
+    <h2>Why Is There No FAQ Schema Generator?</h2>
+    <p>Google stopped showing FAQ rich results in May 2026, after limiting them to a few government and health sites in 2023. HowTo rich results were removed in 2023 too. FAQPage is still a valid schema.org type, but it no longer earns a special result in Google, so we focus on the types that still do.</p>
+    <p>New to structured data? Start with <a href="https://brandella.in/what-is-schema-markup/">what is schema markup</a> and <a href="https://brandella.in/how-to-add-schema-markup-json-ld/">how to add schema markup with JSON LD</a>.</p>''',
+         faqs=[("Are these schema generators free?", "Yes. Every generator is free, needs no signup, and has no usage limits."),
+               ("Where do I paste the JSON LD code?", "Paste it anywhere in the HTML of the page it describes, usually in the head. In WordPress you can use a custom HTML block or a header code plugin. Then test the page in Google's Rich Results Test."),
+               ("Is my data safe?", "Yes. All generators run entirely in your browser. Nothing you type is uploaded or stored.")],
          hub_lead='Create valid JSON LD schema markup for rich results in seconds. Fill in a form, copy the code, and paste it into your page.'),
     dict(slug='ppc-calculators', short='PPC', name='PPC Calculators', pill='PPC',
          card='ROAS, CPA, CPC, CTR, break even ROAS and ad budget calculators.',
