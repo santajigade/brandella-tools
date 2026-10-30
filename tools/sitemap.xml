@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://brandella.in/tools/</loc>
-    <lastmod>2026-10-29</lastmod>
+    <lastmod>2026-10-30</lastmod>
   </url>
   <url>
     <loc>https://brandella.in/tools/seo-tools/</loc>
@@ -87,5 +87,37 @@
   <url>
     <loc>https://brandella.in/tools/schema-generators/video-schema-generator/</loc>
     <lastmod>2026-10-29</lastmod>
+  </url>
+  <url>
+    <loc>https://brandella.in/tools/ppc-calculators/</loc>
+    <lastmod>2026-10-30</lastmod>
+  </url>
+  <url>
+    <loc>https://brandella.in/tools/ppc-calculators/roas-calculator/</loc>
+    <lastmod>2026-10-30</lastmod>
+  </url>
+  <url>
+    <loc>https://brandella.in/tools/ppc-calculators/break-even-roas-calculator/</loc>
+    <lastmod>2026-10-30</lastmod>
+  </url>
+  <url>
+    <loc>https://brandella.in/tools/ppc-calculators/cpa-calculator/</loc>
+    <lastmod>2026-10-30</lastmod>
+  </url>
+  <url>
+    <loc>https://brandella.in/tools/ppc-calculators/cpc-calculator/</loc>
+    <lastmod>2026-10-30</lastmod>
+  </url>
+  <url>
+    <loc>https://brandella.in/tools/ppc-calculators/cpm-calculator/</loc>
+    <lastmod>2026-10-30</lastmod>
+  </url>
+  <url>
+    <loc>https://brandella.in/tools/ppc-calculators/ctr-calculator/</loc>
+    <lastmod>2026-10-30</lastmod>
+  </url>
+  <url>
+    <loc>https://brandella.in/tools/ppc-calculators/ppc-budget-calculator/</loc>
+    <lastmod>2026-10-30</lastmod>
   </url>
 </urlset>
