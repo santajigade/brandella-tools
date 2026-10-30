@@ -3,6 +3,7 @@ Order here = order on /tools/. Slugs are permanent URLs: never rename a live one
 
 H = 'https://brandella.in/tools/seo-tools/'
 S = 'https://brandella.in/tools/schema-generators/'
+PP = 'https://brandella.in/tools/ppc-calculators/'
 
 CATEGORIES = [
     dict(slug='seo-tools', short='SEO', name='SEO Tools', pill='SEO',
@@ -51,10 +52,24 @@ CATEGORIES = [
                ("Is my data safe?", "Yes. All generators run entirely in your browser. Nothing you type is uploaded or stored.")],
          hub_lead='Create valid JSON LD schema markup for rich results in seconds. Fill in a form, copy the code, and paste it into your page.'),
     dict(slug='ppc-calculators', short='PPC', name='PPC Calculators', pill='PPC',
-         card='ROAS, CPA, CPC, CTR, break even ROAS and ad budget calculators.',
+         card='ROAS, break even ROAS, CPA, CPC, CPM, CTR and PPC budget calculators.',
          hub_title='Free PPC Calculators: ROAS, CPA, CPC, CTR and Budget',
-         hub_desc='Free PPC calculators for ROAS, CPA, CPC, CTR, conversion rate, break even ROAS and ad budgets. Plan and evaluate Google and Meta campaigns.',
-         hub_lead='Quick, accurate calculators for planning and judging paid campaigns on Google Ads, Meta, LinkedIn and more.'),
+         hub_desc='Free PPC calculators for ROAS, break even ROAS, CPA, CPC, CPM, CTR and ad budgets. Plan and judge Google Ads and Meta campaigns in seconds.',
+         hub_lead='Quick, accurate calculators for planning and judging paid campaigns on Google Ads, Meta, LinkedIn and more.',
+         hub_intro=f'''<h2>Which PPC Calculator Do You Need?</h2>
+    <ul>
+      <li><strong>Is my campaign making money?</strong> Use the <a href="{PP}roas-calculator/">ROAS Calculator</a> and the <a href="{PP}cpa-calculator/">CPA Calculator</a>.</li>
+      <li><strong>What ROAS do I need?</strong> Find your floor with the <a href="{PP}break-even-roas-calculator/">Break Even ROAS Calculator</a>.</li>
+      <li><strong>How much can I bid?</strong> The <a href="{PP}cpc-calculator/">CPC Calculator</a> turns your target CPA into a max CPC.</li>
+      <li><strong>Buying display, video or social?</strong> Use the <a href="{PP}cpm-calculator/">CPM Calculator</a> to compare CPM and CPC prices.</li>
+      <li><strong>Testing ads?</strong> The <a href="{PP}ctr-calculator/">CTR Calculator</a> tells you if a winner is real.</li>
+      <li><strong>Planning next month?</strong> Turn a goal into a daily budget with the <a href="{PP}ppc-budget-calculator/">PPC Budget Calculator</a>.</li>
+    </ul>
+    <p>Every calculator uses the same formulas Google Ads uses in its own reports, supports rupees and other currencies, and shows a plain English verdict, not just a number.</p>
+    <p>New to paid search? Read <a href="https://brandella.in/how-google-ads-auction-works/">how the Google Ads auction works</a> and our <a href="https://brandella.in/25-google-ads-optimization-tips/">Google Ads optimization tips</a>.</p>''',
+         faqs=[("Are these PPC calculators free?", "Yes. Every calculator is free, needs no signup, and has no usage limits."),
+               ("Do they work for Meta, LinkedIn and Microsoft Ads?", "Yes. ROAS, CPA, CPC, CPM and CTR are calculated the same way on every ad platform. Only the budget pacing rules in the PPC budget calculator are specific to Google Ads."),
+               ("Is my campaign data safe?", "Yes. All calculators run entirely in your browser. Your spend, revenue and costs are never uploaded or stored.")]),
     dict(slug='analytics-tools', short='UT', name='Analytics and Tracking Tools', pill='Analytics',
          card='UTM builder, GA4 event code, regex tester and tracking helpers.',
          hub_title='Free Analytics Tools: UTM Builder, GA4 and Tracking',
