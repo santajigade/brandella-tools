@@ -4,6 +4,7 @@ Order here = order on /tools/. Slugs are permanent URLs: never rename a live one
 H = 'https://brandella.in/tools/seo-tools/'
 S = 'https://brandella.in/tools/schema-generators/'
 PP = 'https://brandella.in/tools/ppc-calculators/'
+AN = 'https://brandella.in/tools/analytics-tools/'
 
 CATEGORIES = [
     dict(slug='seo-tools', short='SEO', name='SEO Tools', pill='SEO',
@@ -71,10 +72,24 @@ CATEGORIES = [
                ("Do they work for Meta, LinkedIn and Microsoft Ads?", "Yes. ROAS, CPA, CPC, CPM and CTR are calculated the same way on every ad platform. Only the budget pacing rules in the PPC budget calculator are specific to Google Ads."),
                ("Is my campaign data safe?", "Yes. All calculators run entirely in your browser. Your spend, revenue and costs are never uploaded or stored.")]),
     dict(slug='analytics-tools', short='UT', name='Analytics and Tracking Tools', pill='Analytics',
-         card='UTM builder, GA4 event code, regex tester and tracking helpers.',
+         card='UTM builders, GA4 event code, consent mode, regex tester and A/B test sample size.',
          hub_title='Free Analytics Tools: UTM Builder, GA4 and Tracking',
-         hub_desc='Free analytics and tracking tools: UTM link builder, GA4 event code generator, regex tester for filters, and more. No signup needed.',
-         hub_lead='Build clean campaign links, generate tracking code and test filters for Google Analytics 4, all in your browser.'),
+         hub_desc='Free analytics and tracking tools: UTM builder, bulk UTM links, GA4 event code, consent mode v2 code, GA4 regex tester and A/B test sample size calculator.',
+         hub_lead='Build clean campaign links, generate tracking code and test filters for Google Analytics 4, all in your browser.',
+         hub_intro=f'''<h2>Which Analytics Tool Do You Need?</h2>
+    <ul>
+      <li><strong>Tagging a campaign link?</strong> Use the <a href="{AN}utm-builder/">UTM Builder</a>, or the <a href="{AN}bulk-utm-builder/">Bulk UTM Builder</a> for many pages and channels at once.</li>
+      <li><strong>Sharing a link full of tracking codes?</strong> Clean it with the <a href="{AN}utm-parameter-remover/">UTM Parameter Remover</a>.</li>
+      <li><strong>Tracking leads, sign ups or sales?</strong> Write the code with the <a href="{AN}ga4-event-generator/">GA4 Event Code Generator</a>.</li>
+      <li><strong>Serving visitors in Europe?</strong> Set up Google tags correctly with the <a href="{AN}consent-mode-v2-generator/">Consent Mode v2 Generator</a>.</li>
+      <li><strong>Filtering reports?</strong> Check your pattern in the <a href="{AN}ga4-regex-tester/">GA4 Regex Tester</a> before you save it.</li>
+      <li><strong>Planning an experiment?</strong> Work out visitors and days with the <a href="{AN}ab-test-sample-size-calculator/">A/B Test Sample Size Calculator</a>.</li>
+    </ul>
+    <p>Every tool follows Google's current GA4 documentation and checks your input as you type, so you catch problems before they reach your reports.</p>
+    <p>New to campaign tracking? Read <a href="https://brandella.in/utm-parameters-explained/">UTM parameters explained</a> and <a href="https://brandella.in/google-analytics-4-metrics-explained-beginners/">GA4 metrics explained for beginners</a>.</p>''',
+         faqs=[("Are these analytics tools free?", "Yes. Every tool is free, needs no signup, and has no usage limits."),
+               ("Do I need a Google Analytics account to use them?", "No. The tools build links and code you can use anywhere. You only need GA4 or Google Tag Manager when you put the code or links to work."),
+               ("Is my data safe?", "Yes. All tools run entirely in your browser. URLs, event names and numbers you enter are never uploaded or stored.")]),
     dict(slug='social-media-tools', short='SM', name='Social Media Tools', pill='Social',
          card='Post previews, character counters, image sizes and hashtag tools.',
          hub_title='Free Social Media Tools: Previews, Counters and Sizes',

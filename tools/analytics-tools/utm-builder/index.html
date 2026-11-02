@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>UTM Builder: Free Campaign URL Builder for GA4</title>
+<meta name="description" content="Free UTM builder for GA4. Add source, medium, campaign and all nine UTM parameters, fix case and spaces, and preview the GA4 channel your link lands in.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://brandella.in/tools/analytics-tools/utm-builder/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="UTM Builder: Free Campaign URL Builder for GA4">
+<meta property="og:description" content="Free UTM builder for GA4. Add source, medium, campaign and all nine UTM parameters, fix case and spaces, and preview the GA4 channel your link lands in.">
+<meta property="og:url" content="https://brandella.in/tools/analytics-tools/utm-builder/">
+<meta property="og:site_name" content="Brandella Journal">
+<meta property="og:image" content="https://brandella.in/tools/assets/og-utm-builder.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://brandella.in/tools/assets/og-utm-builder.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3931314195561246" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "UTM Builder",
+      "url": "https://brandella.in/tools/analytics-tools/utm-builder/",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Any (web browser)",
+      "description": "Free UTM builder for GA4. Add source, medium, campaign and all nine UTM parameters, fix case and spaces, and preview the GA4 channel your link lands in.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Brandella Journal",
+        "url": "https://brandella.in/"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://brandella.in/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Tools",
+          "item": "https://brandella.in/tools/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Analytics and Tracking Tools",
+          "item": "https://brandella.in/tools/analytics-tools/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "UTM Builder",
+          "item": "https://brandella.in/tools/analytics-tools/utm-builder/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Which UTM parameters are required?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Google recommends always setting utm_source, utm_medium and utm_campaign. GA4 still records a visit without them, but reports show (not set) for any parameter you leave out."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are UTM parameters case sensitive?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. GA4 treats utm_source=Facebook and utm_source=facebook as two different sources. Using lowercase for every value is the easiest way to keep reports clean."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why does my traffic show as Unassigned in GA4?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Your source and medium did not match any default channel rule. For example a medium of print or qr does not fit a channel. Use a standard medium such as cpc, email, social or referral, or set up a custom channel group."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is my campaign data sent anywhere?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. This UTM builder runs entirely in your browser. The links you build are never uploaded or stored."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+<style>
+:root{
+  --green:#6cc82a; --lime:#a6ef39; --ink:#111; --gray:#555; --muted:#6b6b6b;
+  --line:#e3e3e3; --bg:#fff; --soft:#f6faf1; --footer:#0a0a0a;
+  --g-title:#1a0dab; --g-url:#202124; --g-desc:#4d5156;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Open Sans',Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6}
+a{color:inherit}
+.wrap{max-width:1140px;margin:0 auto;padding:0 16px}
+
+/* ===== HEADER ===== */
+.site-top{border-bottom:1px solid #d9d9d9}
+.site-top .wrap{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding-top:34px;padding-bottom:34px}
+.site-date{font-size:20px;font-weight:600;line-height:1.1}
+.site-date small{display:block;font-size:13px;font-weight:600;margin-top:2px}
+.site-logo{font-size:40px;font-weight:700;text-decoration:none;color:#555;letter-spacing:.2px;white-space:nowrap}
+.site-logo span{color:var(--green)}
+.menu-btn{display:none;justify-self:end;background:none;border:0;cursor:pointer;padding:6px}
+.menu-btn i{display:block;width:26px;height:3px;background:#111;margin:5px 0;border-radius:2px}
+
+.site-nav{border-bottom:2px solid var(--lime)}
+.site-nav ul{list-style:none;display:flex;justify-content:center;flex-wrap:wrap;gap:0 4px}
+.site-nav > .wrap > ul > li{position:relative}
+.site-nav a{display:block;padding:12px 13px;font-size:17px;font-weight:700;text-decoration:none;color:#111}
+.site-nav a:hover,.site-nav a.active{color:var(--green)}
+.has-sub > a::after{content:"";display:inline-block;width:6px;height:6px;border-right:1.6px solid currentColor;border-bottom:1.6px solid currentColor;transform:rotate(45deg);margin:0 0 4px 7px}
+.sub{display:none !important;position:absolute;top:100%;left:0;width:240px;background:#fff;border-radius:6px;padding:14px 0;box-shadow:0 10px 30px rgba(0,0,0,.18);z-index:50;flex-direction:column}
+.sub a{font-size:17px;font-weight:700;line-height:1.35;padding:5px 30px;color:#111}
+.sub a:hover{color:var(--green)}
+.has-sub:hover .sub,.has-sub:focus-within .sub{display:flex !important}
+
+/* ===== BREADCRUMB + HERO ===== */
+.crumbs{font-size:13.5px;color:var(--muted);padding:18px 0 0}
+.crumbs a{text-decoration:none;color:var(--muted)}
+.crumbs a:hover{color:var(--green)}
+.hero{text-align:center;padding:26px 0 8px}
+.pill{display:inline-block;background:var(--soft);color:#3d7f12;border:1px solid #cfeab4;font-size:12.5px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;padding:4px 12px;border-radius:20px;margin-bottom:14px}
+.hero h1{font-size:44px;font-weight:300;line-height:1.2}
+.hero p{max-width:760px;margin:14px auto 0;color:var(--muted);font-size:17px}
+
+/* ===== TOOL ===== */
+.tool{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin:34px 0 10px}
+.card{border:1px solid var(--line);border-radius:12px;padding:24px;background:#fff}
+.card h2{font-size:19px;font-weight:700;margin-bottom:16px}
+.field{margin-bottom:18px}
+.field label{display:flex;justify-content:space-between;font-weight:700;font-size:14.5px;margin-bottom:6px}
+.field label em{font-style:normal;font-weight:600;color:var(--muted);font-size:13px}
+.field input,.field textarea{width:100%;border:1px solid #cfcfcf;border-radius:8px;padding:11px 12px;font:inherit;font-size:15px;color:#111;outline:none;transition:border-color .15s}
+.field input:focus,.field textarea:focus{border-color:var(--green);box-shadow:0 0 0 3px rgba(108,200,42,.15)}
+.field textarea{resize:vertical;min-height:96px}
+.meter{height:7px;background:#eee;border-radius:6px;margin-top:8px;overflow:hidden}
+.meter b{display:block;height:100%;width:0;background:var(--green);border-radius:6px;transition:width .15s,background .15s}
+.meter b.warn{background:#f0a020}.meter b.bad{background:#e0442c}
+.stat{font-size:13px;color:var(--muted);margin-top:5px;display:flex;justify-content:space-between}
+.stat .ok{color:#3d8f12;font-weight:700}.stat .warn{color:#c47a00;font-weight:700}.stat .bad{color:#d1351f;font-weight:700}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.check{display:flex;align-items:center;gap:8px;font-size:14.5px;font-weight:600;margin-bottom:6px;cursor:pointer}
+.check input{accent-color:var(--green);width:16px;height:16px}
+
+.tabs{display:inline-flex;border:1px solid #cfcfcf;border-radius:30px;padding:3px;margin-bottom:18px}
+.tabs button{border:0;background:none;font:inherit;font-weight:700;font-size:14px;padding:7px 18px;border-radius:30px;cursor:pointer;color:#333}
+.tabs button.on{background:#111;color:#fff}
+
+/* Google result mock */
+.serp{border:1px solid var(--line);border-radius:10px;padding:20px 18px;background:#fff;font-family:Arial,sans-serif}
+.serp.mobile{max-width:400px;margin:0 auto;border-radius:16px;box-shadow:0 2px 10px rgba(0,0,0,.08)}
+.g-site{display:flex;align-items:center;gap:10px;margin-bottom:6px}
+.g-fav{width:28px;height:28px;border-radius:50%;background:#f1f3f4;border:1px solid #dadce0;display:grid;place-items:center;font-weight:700;font-size:13px;color:var(--green)}
+.g-name{font-size:14px;color:var(--g-url);line-height:1.3}
+.g-url{font-size:12px;color:#4d5156;line-height:1.3;word-break:break-all}
+.g-title{font-size:20px;line-height:1.3;color:var(--g-title);margin:2px 0 4px;font-weight:400;cursor:pointer}
+.g-title:hover{text-decoration:underline}
+.serp.mobile .g-title{font-size:18px;color:#1558d6}
+.g-desc{font-size:14px;line-height:1.58;color:var(--g-desc)}
+.g-desc .g-date{color:#70757a}
+.g-desc strong{color:#5f6368;font-weight:700}
+
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+.btn{border:2px solid var(--green);background:#fff;color:#111;font:inherit;font-weight:700;font-size:14px;padding:9px 18px;border-radius:30px;cursor:pointer;transition:all .15s}
+.btn:hover{background:var(--green);color:#fff}
+.btn.dark{background:#111;border-color:#111;color:#fff}
+.btn.dark:hover{background:var(--green);border-color:var(--green)}
+.code-out{margin-top:14px;background:#1e1e1e;color:#d4d4d4;border-radius:8px;padding:14px;font:14px/1.5 Consolas,Monaco,monospace;white-space:pre-wrap;word-break:break-all;display:none}
+.toast{font-size:13px;color:#3d8f12;font-weight:700;align-self:center;opacity:0;transition:opacity .2s}
+.toast.show{opacity:1}
+
+.tips{margin-top:18px;border-left:4px solid var(--green);background:var(--soft);border-radius:0 8px 8px 0;padding:12px 14px;font-size:14px}
+.tips ul{margin:6px 0 0 18px}
+.tips li{margin:2px 0}
+
+/* ===== CONTENT ===== */
+.content{max-width:820px;margin:40px auto 0}
+.content h2{font-size:28px;font-weight:700;margin:36px 0 12px;line-height:1.3}
+.content h3{font-size:20px;font-weight:700;margin:22px 0 8px}
+.content p{font-size:17px;color:#2c2c2c;margin-bottom:12px}
+.content ol,.content ul{margin:0 0 14px 22px;font-size:17px;color:#2c2c2c}
+.content li{margin:6px 0}
+.content a{color:#3d8f12;font-weight:600}
+.content code{background:#f1f1f1;padding:1px 6px;border-radius:4px;font-size:15px}
+table.lim{width:100%;border-collapse:collapse;margin:10px 0 18px;font-size:15.5px}
+table.lim th{background:#2b2b2b;color:#fff;text-align:left;padding:10px 12px}
+table.lim td{border-bottom:1px solid var(--line);padding:10px 12px}
+
+.faq-item{border:1px solid var(--line);border-radius:10px;margin-bottom:12px;overflow:hidden}
+.faq-item summary{list-style:none;cursor:pointer;padding:14px 16px;font-weight:700;font-size:16.5px;display:flex;gap:12px;align-items:flex-start}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-num{flex:0 0 26px;height:26px;border-radius:50%;background:var(--green);color:#fff;font-size:13px;display:grid;place-items:center}
+.faq-item p{padding:0 16px 14px 54px;color:#3a5a20;font-size:16px;margin:0}
+
+.related{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:12px 0 10px}
+.related a{display:flex;justify-content:space-between;align-items:center;gap:10px;border:1px solid var(--line);border-left:4px solid var(--green);border-radius:8px;padding:13px 14px;text-decoration:none;color:#111 !important;font-weight:700;font-size:15px}
+.related a:hover{border-color:var(--green)}
+
+.bx-ad{margin:34px 0;min-height:90px}
+
+/* ===== FOOTER ===== */
+.site-footer{background:var(--footer);color:#fff;margin-top:70px;padding:52px 0 44px}
+.foot-links{list-style:none;display:flex;flex-wrap:wrap;gap:8px 28px}
+.foot-links a{text-decoration:none;font-weight:700;font-size:14.5px;text-transform:uppercase;color:#fff}
+.foot-links a:hover{color:var(--lime)}
+.copy{color:#a8a8a8;font-size:16px;margin-top:12px}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width:900px){
+  .tool{grid-template-columns:1fr}
+  .hero h1{font-size:34px}
+}
+@media (max-width:760px){
+  .site-top .wrap{grid-template-columns:1fr auto;padding-top:18px;padding-bottom:18px}
+  .site-date{display:none}
+  .site-logo{font-size:28px}
+  .menu-btn{display:block}
+  .site-nav ul{display:none;flex-direction:column}
+  .site-nav.open > .wrap > ul{display:flex}
+  .site-nav a{padding:11px 4px;border-bottom:1px solid #f0f0f0}
+  .sub{position:static;box-shadow:none;border:0;padding-left:14px}
+  .has-sub:hover .sub,.has-sub:focus-within .sub{display:flex !important}
+  .related,.row2{grid-template-columns:1fr}
+  .content h2{font-size:24px}
+}
+
+/* ===== SHARED TOOL EXTRAS ===== */
+.full{grid-column:1/-1}
+.field select{width:100%;border:1px solid #cfcfcf;border-radius:8px;padding:10px 12px;font:inherit;font-size:15px;background:#fff;color:#111}
+.field textarea.big{min-height:230px;font-size:14.5px}
+.mono{font-family:Consolas,Monaco,monospace !important;font-size:13.5px !important}
+.btn-sm{padding:5px 12px;font-size:13px;border-width:1.5px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(105px,1fr));gap:10px;margin-bottom:16px}
+.stat-box{background:var(--soft);border:1px solid #dbefc8;border-radius:10px;padding:10px 8px;text-align:center}
+.stat-box b{display:block;font-size:22px;line-height:1.2}
+.stat-box span{font-size:12.5px;color:var(--muted);font-weight:600}
+.rtable{width:100%;border-collapse:collapse;font-size:14.5px}
+.rtable th{background:#2b2b2b;color:#fff;text-align:left;padding:8px 10px;font-weight:700}
+.rtable td{border-bottom:1px solid var(--line);padding:7px 10px}
+.rtable td.num,.rtable th.num{text-align:right;font-variant-numeric:tabular-nums}
+.rtable tr.hit td{background:#eef8e6;font-weight:700}
+.empty{color:var(--muted);font-size:14.5px;padding:14px 0}
+.kw-result{border-radius:10px;padding:12px 14px;margin-bottom:16px;font-size:14.5px;border:1px solid var(--line);background:#fafafa}
+.kw-result.ok{background:#eef8e6;border-color:#cfeab4}
+.kw-result.warn{background:#fff6e5;border-color:#f3d79b}
+.kw-result.bad{background:#fdecea;border-color:#f5c2bb}
+.slug-row{border:1px solid var(--line);border-radius:8px;padding:10px 12px;margin-bottom:8px;display:flex;justify-content:space-between;gap:10px;align-items:center}
+.slug-row .s{font:600 15px/1.4 Consolas,Monaco,monospace;color:#111;word-break:break-all}
+.slug-row small{display:block;color:var(--muted);font-size:12.5px;word-break:break-all;margin-top:2px}
+.slug-row small.warn{color:#c47a00;font-weight:700}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
+.chip{border:1px solid var(--line);border-radius:20px;padding:4px 12px;font-size:13.5px;font-weight:700;background:#fff}
+.chip.zero{color:#aaa}
+.outline{max-height:460px;overflow:auto;border:1px solid var(--line);border-radius:10px;padding:6px 12px}
+.o-row{display:flex;gap:10px;align-items:flex-start;padding:7px 0;border-bottom:1px dashed #eee;font-size:14.5px}
+.o-row:last-child{border-bottom:0}
+.o-tag{flex:0 0 auto;font:700 12px/1 Consolas,Monaco,monospace;padding:5px 7px;border-radius:5px;color:#fff;background:#111}
+.o-tag.h1{background:#2f7a0c}.o-tag.h2{background:#4fa61d}.o-tag.h3{background:#6cc82a}.o-tag.h4{background:#8a8a8a}.o-tag.h5{background:#a5a5a5}.o-tag.h6{background:#bdbdbd}
+.o-issue{display:inline-block;font-size:12px;color:#d1351f;font-weight:700;margin-left:6px}
+.tgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:18px;margin:30px 0 10px}
+.tcard{border:1px solid var(--line);border-radius:12px;padding:22px;text-decoration:none;display:flex;flex-direction:column;gap:10px;transition:all .15s;background:#fff;color:#111}
+.tcard:hover{border-color:var(--green);box-shadow:0 8px 22px rgba(0,0,0,.07);transform:translateY(-2px)}
+.tbadge{width:48px;height:48px;border-radius:12px;background:#111;color:var(--lime);display:grid;place-items:center;font-weight:800;font-size:16px}
+.tcard h2,.tcard h3{font-size:18px;line-height:1.3;margin:0}
+.tcard p{font-size:14.5px;color:var(--muted);flex:1;line-height:1.55}
+.tcard .go{font-weight:700;color:#3d8f12;font-size:14px}
+.tcard.soon{opacity:.55;pointer-events:none}
+.tcard.soon .tbadge{background:#ddd;color:#777}
+.tcard.soon .go{color:var(--muted)}
+.more-tools{margin-top:10px}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="site-top">
+    <div class="wrap">
+      <div class="site-date" id="siteDate">Today<small>&nbsp;</small></div>
+      <a class="site-logo" href="https://brandella.in/">Brandella <span>Journal</span></a>
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false"><i></i><i></i><i></i></button>
+    </div>
+  </div>
+  <nav class="site-nav" id="siteNav" aria-label="Main">
+    <div class="wrap">
+      <ul>
+        <li><a href="https://brandella.in/">Home</a></li>
+        <li class="has-sub"><a href="https://brandella.in/category/seo/">SEO</a>
+          <ul class="sub">
+            <li><a href="https://brandella.in/category/seo/technical-seo/">Technical SEO</a></li>
+            <li><a href="https://brandella.in/category/seo/local-seo/">Local SEO</a></li>
+            <li><a href="https://brandella.in/category/seo/mobile-seo/">Mobile SEO</a></li>
+            <li><a href="https://brandella.in/category/seo/on-page-seo/">On-Page SEO</a></li>
+            <li><a href="https://brandella.in/category/seo/off-page-seo/">Off-Page SEO</a></li>
+            <li><a href="https://brandella.in/category/seo/seo-tools/">SEO Tools</a></li>
+            <li><a href="https://brandella.in/category/seo/core-web-vitals/">Core Web Vitals</a></li>
+            <li><a href="https://brandella.in/category/seo/keyword-research/">Keyword Research</a></li>
+            <li><a href="https://brandella.in/category/seo/link-building/">Link Building</a></li>
+            <li><a href="https://brandella.in/category/seo/google-search-console/">Google Search Console</a></li>
+            <li><a href="https://brandella.in/category/seo/seo-basics/">SEO Basics</a></li>
+          </ul>
+        </li>
+        <li class="has-sub"><a href="https://brandella.in/category/paid-media/">Paid Media</a>
+          <ul class="sub">
+            <li><a href="https://brandella.in/category/paid-media/display-advertising/">Display Advertising</a></li>
+            <li><a href="https://brandella.in/category/paid-media/google-ads/">Google Ads</a></li>
+            <li><a href="https://brandella.in/category/paid-media/linkedin-ads/">LinkedIn Ads</a></li>
+            <li><a href="https://brandella.in/category/paid-media/meta-ads/">Meta Ads</a></li>
+            <li><a href="https://brandella.in/category/paid-media/paid-media-analytics/">Paid Media Analytics</a></li>
+            <li><a href="https://brandella.in/category/paid-media/ppc-strategy/">PPC Strategy</a></li>
+          </ul>
+        </li>
+        <li><a href="https://brandella.in/category/content/">Content</a></li>
+        <li><a href="https://brandella.in/category/social/">Social</a></li>
+        <li><a href="https://brandella.in/category/digital-marketing/">Digital Marketing</a></li>
+        <li><a href="https://brandella.in/category/artificial-intelligence/">Artificial Intelligence</a></li>
+        <li class="has-sub"><a href="https://brandella.in/category/development/">Development</a>
+          <ul class="sub">
+            <li><a href="https://brandella.in/category/development/php/">PHP</a></li>
+            <li><a href="https://brandella.in/category/development/javascript/">JavaScript</a></li>
+            <li><a href="https://brandella.in/category/development/python/">Python</a></li>
+          </ul>
+        </li>
+        <li class="has-sub"><a class="active" href="https://brandella.in/tools/">Tools</a>
+          <ul class="sub">
+            <li><a href="https://brandella.in/tools/seo-tools/">SEO Tools</a></li>
+            <li><a href="https://brandella.in/tools/schema-generators/">Schema Generators</a></li>
+            <li><a href="https://brandella.in/tools/ppc-calculators/">PPC Calculators</a></li>
+            <li><a href="https://brandella.in/tools/analytics-tools/">Analytics and Tracking Tools</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<main class="wrap">
+
+  <div class="crumbs"><a href="https://brandella.in/">Home</a> &rsaquo; <a href="https://brandella.in/tools/">Tools</a> &rsaquo; <a href="https://brandella.in/tools/analytics-tools/">Analytics and Tracking Tools</a> &rsaquo; UTM Builder</div>
+
+  <section class="hero">
+    <span class="pill">Free Analytics Tool</span>
+    <h1>UTM Builder</h1>
+    <p>Fill in your landing page and campaign details to get a clean tracking link. The builder fixes case and spaces, keeps your existing parameters, and shows which GA4 channel the visit will be counted under.</p>
+  </section>
+
+  <section class="tool" aria-label="UTM builder" id="ubForm">
+    <div class="card" style="min-width:0">
+      <h2>Campaign Details</h2>
+      <div class="field"><label for="ubUrl">Website URL <em>landing page</em></label><input id="ubUrl" class="mono" type="text" autocomplete="off" spellcheck="false" value="https://www.example.com/shoes/running?color=blue" placeholder=""></div>
+      <p style="font-size:13.5px;color:#666;margin:-8px 0 8px">Quick fill source and medium:</p>
+      <div class="chips" id="ubPresets"><button type="button" class="btn btn-sm" data-p="google|cpc">Google Ads</button><button type="button" class="btn btn-sm" data-p="facebook|paid_social">Meta Ads</button><button type="button" class="btn btn-sm" data-p="instagram|social">Instagram Post</button><button type="button" class="btn btn-sm" data-p="linkedin|social">LinkedIn Post</button><button type="button" class="btn btn-sm" data-p="newsletter|email">Newsletter</button><button type="button" class="btn btn-sm" data-p="whatsapp|social">WhatsApp</button><button type="button" class="btn btn-sm" data-p="youtube|video">YouTube Video</button><button type="button" class="btn btn-sm" data-p="qr_code|print">Print QR Code</button></div>
+      <div class="row2"><div class="field"><label for="ubSrc">Campaign Source <em>utm_source *</em></label><input id="ubSrc" type="text" autocomplete="off" spellcheck="false" value="facebook" placeholder="google, newsletter"></div><div class="field"><label for="ubMed">Campaign Medium <em>utm_medium *</em></label><input id="ubMed" type="text" autocomplete="off" spellcheck="false" value="paid_social" placeholder="cpc, email, social"></div></div>
+      <div class="row2"><div class="field"><label for="ubCamp">Campaign Name <em>utm_campaign *</em></label><input id="ubCamp" type="text" autocomplete="off" spellcheck="false" value="Diwali Sale 2026" placeholder="spring_sale"></div><div class="field"><label for="ubId">Campaign ID <em>utm_id</em></label><input id="ubId" type="text" autocomplete="off" spellcheck="false" value="" placeholder="abc.123"></div></div>
+      <div class="row2"><div class="field"><label for="ubTerm">Campaign Term <em>utm_term</em></label><input id="ubTerm" type="text" autocomplete="off" spellcheck="false" value="" placeholder="running shoes"></div><div class="field"><label for="ubCont">Campaign Content <em>utm_content</em></label><input id="ubCont" type="text" autocomplete="off" spellcheck="false" value="carousel v1" placeholder="blue_button"></div></div>
+      <div class="row2"><div class="field"><label for="ubPlat">Source Platform <em>utm_source_platform</em></label><input id="ubPlat" type="text" autocomplete="off" spellcheck="false" value="" placeholder="Search Ads 360"></div><div class="field"><label for="ubFmt">Creative Format <em>utm_creative_format</em></label><input id="ubFmt" type="text" autocomplete="off" spellcheck="false" value="" placeholder="video"></div></div>
+      <div class="field"><label for="ubTac">Marketing Tactic <em>utm_marketing_tactic</em></label><input id="ubTac" type="text" autocomplete="off" spellcheck="false" value="" placeholder="remarketing, prospecting"></div>
+      <label class="check"><input id="ubLow" type="checkbox" checked> <span>Convert values to lowercase (recommended)</span></label>
+      <div class="field"><label for="ubSp">Replace Spaces With</label><select id="ubSp"><option value="_" selected>Underscore _</option><option value="-">Hyphen -</option><option value="">Keep spaces (encoded as %20)</option></select></div>
+    </div>
+    <div class="card" style="min-width:0">
+      <h2>Your Tracking Link</h2>
+      <pre class="code-out" id="ubOut" style="display:block;margin-top:0;max-height:520px;overflow:auto;word-break:normal;overflow-wrap:anywhere"></pre>
+      <div class="actions"><button class="btn dark" id="ubCopy">Copy Link</button><span class="toast" id="toast">Copied!</span></div>
+      <div class="stats" style="margin-top:16px"><div class="stat-box"><b id="ubCh">0</b><span>Likely GA4 Channel</span></div><div class="stat-box"><b id="ubN">0</b><span>UTM Parameters</span></div><div class="stat-box"><b id="ubLen">0</b><span>URL Length</span></div></div>
+      <div class="kw-result" id="ubCheck"></div>
+      <div style="overflow-x:auto"><table class="rtable" id="ubTable"></table></div>
+      <div class="tips"><strong>Good to know</strong><ul><li>Source, medium and campaign should always be set</li><li>GA4 treats <code>Facebook</code> and <code>facebook</code> as two different sources</li><li>Never add UTM tags to links inside your own site</li></ul></div>
+    </div>
+  </section>
+
+  <div class="bx-ad">
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3931314195561246" data-ad-slot="4249015278" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+
+  <article class="content">
+
+    <h2>What Is a UTM Builder?</h2>
+    <p>A UTM builder adds tracking tags to the end of a link so Google Analytics 4 can tell where a visitor came from. Without them, a click from your newsletter or an Instagram story often shows up as Direct or Referral, and you cannot tell which campaign worked.</p>
+    <p>This builder supports all nine UTM parameters listed in Google's <a href="https://support.google.com/analytics/answer/10917952" target="_blank" rel="noopener">URL builder guide for GA4</a>, cleans up your values as you type, and predicts the default channel the visit will be counted under using the rules in the <a href="https://support.google.com/analytics/answer/9756891" target="_blank" rel="noopener">GA4 default channel group</a>.</p>
+
+    <h2>How to Use the UTM Builder</h2>
+    <ol>
+      <li><strong>Paste the landing page URL.</strong> Existing parameters such as a product colour are kept, and old UTM tags are replaced.</li>
+      <li><strong>Pick a quick fill button</strong> or type your own source and medium.</li>
+      <li><strong>Name the campaign</strong> in a way your whole team will reuse, for example <code>diwali_sale_2026</code>.</li>
+      <li><strong>Add content or term</strong> if you want to compare two ads, buttons or keywords inside the same campaign.</li>
+      <li><strong>Check the channel and warnings</strong>, then copy the link into your ad, email or post.</li>
+    </ol>
+
+    <h2>The Nine UTM Parameters in GA4</h2>
+    <div style="overflow-x:auto"><table class="lim">
+      <thead><tr style="background:#2b2b2b !important;"><th style="background:#2b2b2b !important; color:#ffffff !important;">Parameter</th><th style="background:#2b2b2b !important; color:#ffffff !important;">What it means</th><th style="background:#2b2b2b !important; color:#ffffff !important;">Example</th></tr></thead>
+      <tbody>
+        <tr><td><code>utm_source</code></td><td>Where the visit came from. Always set it.</td><td>google, newsletter</td></tr>
+        <tr><td><code>utm_medium</code></td><td>The type of traffic. Always set it.</td><td>cpc, email, social</td></tr>
+        <tr><td><code>utm_campaign</code></td><td>The campaign, product or promo. Always set it.</td><td>spring_sale</td></tr>
+        <tr><td><code>utm_id</code></td><td>Campaign ID, used to join data you import into GA4</td><td>abc.123</td></tr>
+        <tr><td><code>utm_term</code></td><td>Paid keyword</td><td>running shoes</td></tr>
+        <tr><td><code>utm_content</code></td><td>Tells apart two links or creatives in one campaign</td><td>top_banner</td></tr>
+        <tr><td><code>utm_source_platform</code></td><td>The platform that sent the traffic, such as a buying tool</td><td>Search Ads 360</td></tr>
+        <tr><td><code>utm_creative_format</code></td><td>Type of creative. Not yet shown in GA4 reports.</td><td>video, native</td></tr>
+        <tr><td><code>utm_marketing_tactic</code></td><td>Targeting used. Not yet shown in GA4 reports.</td><td>remarketing</td></tr>
+      </tbody>
+    </table></div>
+
+    <h2>Tips for Clean Campaign Data</h2>
+    <ul>
+      <li><strong>Use lowercase everywhere.</strong> GA4 values are case sensitive, so <code>Email</code> and <code>email</code> split your data into two rows.</li>
+      <li><strong>Match the medium to a channel.</strong> Paid traffic needs a medium like <code>cpc</code>, <code>ppc</code> or one starting with <code>paid</code>. Organic posts should use <code>social</code>. Mediums like <code>print</code> land in Unassigned unless you build a custom channel group.</li>
+      <li><strong>Keep a naming sheet.</strong> Agree on source and campaign names once and reuse them for every link.</li>
+      <li><strong>Skip Google Ads if auto tagging is on.</strong> GA4 reads the Google Ads click ID, so manual tags are rarely needed there.</li>
+      <li><strong>Never tag internal links.</strong> A UTM tag on a link inside your own site starts a new session and wipes out the real source.</li>
+    </ul>
+
+    <h2>Learn More About Campaign Tracking</h2>
+    <p>Read <a href="https://brandella.in/utm-parameters-explained/">UTM parameters explained</a> for a deeper guide, see how campaign data feeds <a href="https://brandella.in/attribution-models-explained-digital-marketers/">attribution models</a>, and learn the basics in <a href="https://brandella.in/google-analytics-4-metrics-explained-beginners/">GA4 metrics explained</a>. Tagging many links at once? Use the <a href="https://brandella.in/tools/analytics-tools/bulk-utm-builder/">bulk UTM builder</a>.</p>
+
+    <div class="bx-ad">
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3931314195561246" data-ad-slot="4249015278" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+
+    <h2>Frequently Asked Questions</h2>
+    <details class="faq-item" open><summary><span class="faq-num">1</span>Which UTM parameters are required?</summary><p>Google recommends always setting utm_source, utm_medium and utm_campaign. GA4 still records a visit without them, but reports show (not set) for any parameter you leave out.</p></details>
+    <details class="faq-item" open><summary><span class="faq-num">2</span>Are UTM parameters case sensitive?</summary><p>Yes. GA4 treats utm_source=Facebook and utm_source=facebook as two different sources. Using lowercase for every value is the easiest way to keep reports clean.</p></details>
+    <details class="faq-item" open><summary><span class="faq-num">3</span>Why does my traffic show as Unassigned in GA4?</summary><p>Your source and medium did not match any default channel rule. For example a medium of print or qr does not fit a channel. Use a standard medium such as cpc, email, social or referral, or set up a custom channel group.</p></details>
+    <details class="faq-item" open><summary><span class="faq-num">4</span>Is my campaign data sent anywhere?</summary><p>No. This UTM builder runs entirely in your browser. The links you build are never uploaded or stored.</p></details>
+
+    <h2>Related Articles</h2>
+    <div class="related">
+      <a href="https://brandella.in/utm-parameters-explained/">UTM Parameters Explained <span>&rarr;</span></a>
+      <a href="https://brandella.in/google-analytics-4-metrics-explained-beginners/">GA4 Metrics Explained for Beginners <span>&rarr;</span></a>
+      <a href="https://brandella.in/attribution-models-explained-digital-marketers/">Attribution Models Explained <span>&rarr;</span></a>
+      <a href="https://brandella.in/email-marketing-strategy/">Email Marketing Strategy <span>&rarr;</span></a>
+    </div>
+  </article>
+
+  <section class="content more-tools" style="max-width:1140px">
+    <h2>More Free Analytics and Tracking Tools</h2>
+    <div class="tgrid">
+      <a class="tcard" href="https://brandella.in/tools/analytics-tools/bulk-utm-builder/"><div class="tbadge">BU</div><h3>Bulk UTM Builder</h3><p>Tag many landing pages for many sources at once and download every link as a CSV.</p><span class="go">Open tool &rarr;</span></a>
+<a class="tcard" href="https://brandella.in/tools/analytics-tools/utm-parameter-remover/"><div class="tbadge">UR</div><h3>UTM Parameter Remover</h3><p>Strip UTM tags, click IDs and other tracking codes from links while keeping the parameters that matter.</p><span class="go">Open tool &rarr;</span></a>
+<a class="tcard" href="https://brandella.in/tools/analytics-tools/ga4-event-generator/"><div class="tbadge">GE</div><h3>GA4 Event Code Generator</h3><p>Write GA4 event code for gtag.js or the GTM data layer, checked against Google naming rules and limits.</p><span class="go">Open tool &rarr;</span></a>
+<a class="tcard" href="https://brandella.in/tools/analytics-tools/consent-mode-v2-generator/"><div class="tbadge">CM</div><h3>Consent Mode v2 Generator</h3><p>Generate Google consent mode v2 default and update code with regions, wait time and privacy settings.</p><span class="go">Open tool &rarr;</span></a>
+<a class="tcard" href="https://brandella.in/tools/analytics-tools/ga4-regex-tester/"><div class="tbadge">RX</div><h3>GA4 Regex Tester</h3><p>Test regular expressions for GA4 and Search Console filters, with full and partial match modes.</p><span class="go">Open tool &rarr;</span></a>
+<a class="tcard" href="https://brandella.in/tools/analytics-tools/ab-test-sample-size-calculator/"><div class="tbadge">AB</div><h3>A/B Test Sample Size Calculator</h3><p>Find how many visitors and how many days your A/B test needs before you can trust the result.</p><span class="go">Open tool &rarr;</span></a>
+    </div>
+    <p><a href="https://brandella.in/tools/analytics-tools/">See all analytics and tracking tools &rarr;</a> &nbsp;|&nbsp; <a href="https://brandella.in/tools/">Browse every free tool &rarr;</a></p>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <ul class="foot-links">
+      <li><a href="https://brandella.in/">Home</a></li>
+      <li><a href="https://brandella.in/about-us/">About Us</a></li>
+      <li><a href="https://brandella.in/contact-us/">Contact Us</a></li>
+      <li><a href="https://brandella.in/privacy-policy/">Privacy Policy</a></li>
+      <li><a href="https://brandella.in/terms-and-conditions/">Terms and Conditions</a></li>
+    </ul>
+    <p class="copy">Copyright &copy; <span id="yr">2026</span> Brandella Journal. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+
+  var d = new Date();
+  var days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+  var months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+  document.getElementById('siteDate').innerHTML = days[d.getDay()] + ',<small>' + months[d.getMonth()] + ' ' + d.getDate() + ', ' + d.getFullYear() + '</small>';
+  document.getElementById('yr').textContent = d.getFullYear();
+  var nav = document.getElementById('siteNav'), mb = document.getElementById('menuBtn');
+  mb.addEventListener('click', function(){ var open = nav.classList.toggle('open'); mb.setAttribute('aria-expanded', open); });
+  var $ = function(id){ return document.getElementById(id); };
+  function esc(s){ return String(s).replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+  function copyText(text, toastId){
+    var done = function(){ var t = $(toastId); if(!t) return; t.classList.add('show'); setTimeout(function(){ t.classList.remove('show'); }, 1600); };
+    if (navigator.clipboard && navigator.clipboard.writeText){ navigator.clipboard.writeText(text).then(done, function(){ fallback(); done(); }); }
+    else { fallback(); done(); }
+    function fallback(){ var ta=document.createElement('textarea'); ta.value=text; document.body.appendChild(ta); ta.select(); try{document.execCommand('copy');}catch(e){} document.body.removeChild(ta); }
+  }
+
+
+  function v(id){ var e = $(id); return e ? String(e.value).trim() : ''; }
+  function lines(id){ return String($(id).value).split(/\n/).map(function(s){ return s.trim(); }).filter(Boolean); }
+  function say(id, cls, h){ var e = $(id); e.className = 'kw-result' + (cls ? ' ' + cls : ''); e.innerHTML = h; }
+  function issues(id, list, okMsg){
+    var bad = list.filter(function(i){ return i[0] === 'bad'; }), warn = list.filter(function(i){ return i[0] === 'warn'; });
+    var li = function(a){ return '<ul style="margin:6px 0 0 18px">' + a.map(function(i){ return '<li>' + i[1] + '</li>'; }).join('') + '</ul>'; };
+    if (bad.length) say(id, 'bad', '<strong>Fix ' + bad.length + ' issue' + (bad.length > 1 ? 's' : '') + '.</strong>' + li(bad.concat(warn)));
+    else if (warn.length) say(id, 'warn', '<strong>Works, with ' + warn.length + ' suggestion' + (warn.length > 1 ? 's' : '') + '.</strong>' + li(warn));
+    else say(id, 'ok', okMsg);
+  }
+  function c(s){ return '<code>' + esc(s) + '</code>'; }
+
+  function norm(s, low, sp){
+    s = String(s).trim(); if (low) s = s.toLowerCase();
+    if (sp === '_') s = s.replace(/\s+/g, '_'); else if (sp === '-') s = s.replace(/\s+/g, '-');
+    return s;
+  }
+  function enc(s){ return encodeURIComponent(s).replace(/%2F/gi, '/').replace(/%3A/gi, ':'); }
+  function fixUrl(u){ u = String(u).trim(); if (u && !/^[a-z][a-z0-9+.\-]*:\/\//i.test(u)) u = 'https://' + u.replace(/^\/+/, ''); return u; }
+  function validUrl(u){ try { var x = new URL(u); return /^https?:$/.test(x.protocol) && /\./.test(x.hostname); } catch(e){ return false; } }
+  function tag(base, pairs){
+    var hash = '', i = base.indexOf('#'); if (i > -1){ hash = base.slice(i); base = base.slice(0, i); }
+    var q = '', j = base.indexOf('?'); if (j > -1){ q = base.slice(j + 1); base = base.slice(0, j); }
+    var kept = q.split('&').filter(function(p){ return p && !/^utm_/i.test(p.split('=')[0]); });
+    var add = pairs.filter(function(p){ return p[1] !== ''; }).map(function(p){ return p[0] + '=' + enc(p[1]); });
+    var all = kept.concat(add);
+    return base + (all.length ? '?' + all.join('&') : '') + hash;
+  }
+  var SE = ['google','bing','yahoo','duckduckgo','baidu','yandex','ecosia','naver','seznam'];
+  var SO = ['facebook','fb','instagram','ig','linkedin','lnkd.in','twitter','t.co','pinterest','reddit','quora','snapchat','tiktok','tumblr'];
+  var VI = ['youtube','vimeo','twitch','dailymotion'];
+  function channel(src, med, camp){
+    var s = src.toLowerCase(), m = med.toLowerCase(), cp = camp.toLowerCase();
+    var sn = s.replace(/^(www\.|m\.|l\.|lm\.)/, '').replace(/\.(com|co\.in|co\.uk|in|net|org)$/, '');
+    var paid = /^(.*cp.*|ppc|retargeting|paid.*)$/.test(m), shop = /^(.*(([^a-df-z]|^)shop|shopping).*)$/.test(cp);
+    var se = SE.indexOf(sn) > -1, so = SO.indexOf(sn) > -1, vi = VI.indexOf(sn) > -1, em = /^(email|e-mail|e_mail|e mail)$/;
+    if (!s && !m) return 'Direct';
+    if (cp.indexOf('cross-network') > -1) return 'Cross network';
+    if (shop && paid) return 'Paid Shopping';
+    if (se && paid) return 'Paid Search';
+    if (so && paid) return 'Paid Social';
+    if (vi && paid) return 'Paid Video';
+    if (['display','banner','expandable','interstitial','cpm'].indexOf(m) > -1) return 'Display';
+    if (paid) return 'Paid Other';
+    if (shop) return 'Organic Shopping';
+    if (so || ['social','social-network','social-media','sm','social network','social media'].indexOf(m) > -1) return 'Organic Social';
+    if (vi || /video/.test(m)) return 'Organic Video';
+    if (se || m === 'organic') return 'Organic Search';
+    if (['referral','app','link'].indexOf(m) > -1) return 'Referral';
+    if (em.test(s) || em.test(m)) return 'Email';
+    if (m === 'affiliate') return 'Affiliates';
+    if (m === 'audio') return 'Audio';
+    if (s === 'sms' || m === 'sms') return 'SMS';
+    if (/push$/.test(m) || /mobile|notification/.test(m) || s === 'firebase') return 'Mobile Push';
+    return 'Unassigned';
+  }
+
+  var F = [['utm_source','ubSrc'],['utm_medium','ubMed'],['utm_campaign','ubCamp'],['utm_id','ubId'],['utm_term','ubTerm'],['utm_content','ubCont'],['utm_source_platform','ubPlat'],['utm_creative_format','ubFmt'],['utm_marketing_tactic','ubTac']];
+  function run(){
+    var low = $('ubLow').checked, sp = $('ubSp').value, raw = v('ubUrl'), url = fixUrl(raw), iss = [];
+    var pairs = F.map(function(f){ return [f[0], norm($(f[1]).value, low, sp)]; });
+    var get = function(k){ return pairs.filter(function(p){ return p[0] === k; })[0][1]; };
+    if (!raw){ $('ubOut').textContent = 'Enter your landing page URL to build a link.'; say('ubCheck', 'bad', 'Enter the page you want to send people to.'); $('ubTable').innerHTML = ''; ['ubCh','ubN','ubLen'].forEach(function(i){ $(i).textContent = '…'; }); return; }
+    if (raw !== url) iss.push(['warn', 'Added ' + c('https://') + ' to the start of your URL.']);
+    if (!validUrl(url)) iss.push(['bad', 'The website URL does not look valid. Use a full address like ' + c('https://www.example.com/page') + '.']);
+    ['utm_source','utm_medium','utm_campaign'].forEach(function(k){ if (!get(k)) iss.push(['bad', c(k) + ' is empty. GA4 will show (not set) for it.']); });
+    if (/[?&]utm_/i.test(raw)) iss.push(['warn', 'Your URL already had UTM tags. They were replaced with the new ones.']);
+    if (/[?&](gclid|gbraid|wbraid|dclid)=/i.test(raw)) iss.push(['warn', 'Your URL contains a Google Ads click ID. Remove it, as it belongs to one past click only.']);
+    pairs.forEach(function(p){
+      var orig = $(F.filter(function(f){ return f[0] === p[0]; })[0][1]).value.trim();
+      if (!low && /[A-Z]/.test(p[1])) iss.push(['warn', c(p[0]) + ' has capital letters. Values are case sensitive in GA4, so pick one style and stick to it.']);
+      if (sp === '' && /\s/.test(orig)) iss.push(['warn', c(p[0]) + ' has spaces, which become ' + c('%20') + ' in the link.']);
+      if (/[&#?=]/.test(orig)) iss.push(['warn', c(p[0]) + ' contains ' + c('& # ? =') + '. They are encoded safely, but plain words are easier to read in reports.']);
+    });
+    var ch = channel(get('utm_source'), get('utm_medium'), get('utm_campaign'));
+    if (ch === 'Unassigned') iss.push(['warn', 'This source and medium do not match any GA4 default channel rule, so the traffic will show as Unassigned. Use a standard medium like ' + c('cpc') + ', ' + c('email') + ', ' + c('social') + ' or ' + c('referral') + ', or create a custom channel group.']);
+    var out = validUrl(url) ? tag(url, pairs) : '';
+    $('ubOut').textContent = out || 'Fix the URL to see your link.';
+    var n = pairs.filter(function(p){ return p[1]; }).length;
+    $('ubCh').textContent = ch; $('ubN').textContent = n + ' of 9'; $('ubLen').textContent = out ? out.length : '…';
+    if (out.length > 2000) iss.push(['warn', 'The link is over 2,000 characters. Shorten some values.']);
+    issues('ubCheck', iss, '<strong>Ready to use.</strong> Source, medium and campaign are set and the link is clean.');
+    $('ubTable').innerHTML = '<thead><tr><th>Parameter</th><th>Value in link</th></tr></thead><tbody>' + pairs.filter(function(p){ return p[1]; }).map(function(p){ return '<tr><td><code>' + p[0] + '</code></td><td style="word-break:break-all">' + esc(enc(p[1])) + '</td></tr>'; }).join('') + '</tbody>';
+  }
+  $('ubPresets').addEventListener('click', function(e){
+    var b = e.target.closest('button'); if (!b) return;
+    var p = b.getAttribute('data-p').split('|'); $('ubSrc').value = p[0]; $('ubMed').value = p[1]; run();
+  });
+  $('ubForm').addEventListener('input', run); $('ubForm').addEventListener('change', run);
+  $('ubCopy').onclick = function(){ if ($('ubOut').textContent.indexOf('http') === 0) copyText($('ubOut').textContent, 'toast'); };
+  run();
+
+})();
+</script>
+</body>
+</html>

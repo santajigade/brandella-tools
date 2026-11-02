@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://brandella.in/tools/</loc>
-    <lastmod>2026-10-30</lastmod>
+    <lastmod>2026-11-02</lastmod>
   </url>
   <url>
     <loc>https://brandella.in/tools/seo-tools/</loc>
@@ -119,5 +119,37 @@
   <url>
     <loc>https://brandella.in/tools/ppc-calculators/ppc-budget-calculator/</loc>
     <lastmod>2026-10-30</lastmod>
+  </url>
+  <url>
+    <loc>https://brandella.in/tools/analytics-tools/</loc>
+    <lastmod>2026-11-02</lastmod>
+  </url>
+  <url>
+    <loc>https://brandella.in/tools/analytics-tools/utm-builder/</loc>
+    <lastmod>2026-11-02</lastmod>
+  </url>
+  <url>
+    <loc>https://brandella.in/tools/analytics-tools/bulk-utm-builder/</loc>
+    <lastmod>2026-11-02</lastmod>
+  </url>
+  <url>
+    <loc>https://brandella.in/tools/analytics-tools/utm-parameter-remover/</loc>
+    <lastmod>2026-11-02</lastmod>
+  </url>
+  <url>
+    <loc>https://brandella.in/tools/analytics-tools/ga4-event-generator/</loc>
+    <lastmod>2026-11-02</lastmod>
+  </url>
+  <url>
+    <loc>https://brandella.in/tools/analytics-tools/consent-mode-v2-generator/</loc>
+    <lastmod>2026-11-02</lastmod>
+  </url>
+  <url>
+    <loc>https://brandella.in/tools/analytics-tools/ga4-regex-tester/</loc>
+    <lastmod>2026-11-02</lastmod>
+  </url>
+  <url>
+    <loc>https://brandella.in/tools/analytics-tools/ab-test-sample-size-calculator/</loc>
+    <lastmod>2026-11-02</lastmod>
   </url>
 </urlset>
