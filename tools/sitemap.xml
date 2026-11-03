@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://brandella.in/tools/</loc>
-    <lastmod>2026-11-02</lastmod>
+    <lastmod>2026-11-03</lastmod>
   </url>
   <url>
     <loc>https://brandella.in/tools/seo-tools/</loc>
@@ -151,5 +151,37 @@
   <url>
     <loc>https://brandella.in/tools/analytics-tools/ab-test-sample-size-calculator/</loc>
     <lastmod>2026-11-02</lastmod>
+  </url>
+  <url>
+    <loc>https://brandella.in/tools/social-media-tools/</loc>
+    <lastmod>2026-11-03</lastmod>
+  </url>
+  <url>
+    <loc>https://brandella.in/tools/social-media-tools/social-media-image-resizer/</loc>
+    <lastmod>2026-11-03</lastmod>
+  </url>
+  <url>
+    <loc>https://brandella.in/tools/social-media-tools/open-graph-preview/</loc>
+    <lastmod>2026-11-03</lastmod>
+  </url>
+  <url>
+    <loc>https://brandella.in/tools/social-media-tools/social-media-character-counter/</loc>
+    <lastmod>2026-11-03</lastmod>
+  </url>
+  <url>
+    <loc>https://brandella.in/tools/social-media-tools/bold-text-generator/</loc>
+    <lastmod>2026-11-03</lastmod>
+  </url>
+  <url>
+    <loc>https://brandella.in/tools/social-media-tools/whatsapp-link-generator/</loc>
+    <lastmod>2026-11-03</lastmod>
+  </url>
+  <url>
+    <loc>https://brandella.in/tools/social-media-tools/engagement-rate-calculator/</loc>
+    <lastmod>2026-11-03</lastmod>
+  </url>
+  <url>
+    <loc>https://brandella.in/tools/social-media-tools/youtube-chapters-generator/</loc>
+    <lastmod>2026-11-03</lastmod>
   </url>
 </urlset>

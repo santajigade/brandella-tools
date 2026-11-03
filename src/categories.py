@@ -5,6 +5,7 @@ H = 'https://brandella.in/tools/seo-tools/'
 S = 'https://brandella.in/tools/schema-generators/'
 PP = 'https://brandella.in/tools/ppc-calculators/'
 AN = 'https://brandella.in/tools/analytics-tools/'
+SMU = 'https://brandella.in/tools/social-media-tools/'
 
 CATEGORIES = [
     dict(slug='seo-tools', short='SEO', name='SEO Tools', pill='SEO',
@@ -91,10 +92,25 @@ CATEGORIES = [
                ("Do I need a Google Analytics account to use them?", "No. The tools build links and code you can use anywhere. You only need GA4 or Google Tag Manager when you put the code or links to work."),
                ("Is my data safe?", "Yes. All tools run entirely in your browser. URLs, event names and numbers you enter are never uploaded or stored.")]),
     dict(slug='social-media-tools', short='SM', name='Social Media Tools', pill='Social',
-         card='Post previews, character counters, image sizes and hashtag tools.',
+         card='Image resizer, link previews, character counter, bold text, WhatsApp links, engagement rate and YouTube chapters.',
          hub_title='Free Social Media Tools: Previews, Counters and Sizes',
-         hub_desc='Free social media tools: Open Graph preview, post character counters, image size guide, hashtag formatter and more for every major network.',
-         hub_lead='Preview, size and format your posts for Facebook, Instagram, LinkedIn, X, YouTube and TikTok before you publish.'),
+         hub_desc='Free social media tools: image resizer, Open Graph preview, character counter, bold text, WhatsApp link generator, engagement rate and YouTube chapters.',
+         hub_lead='Resize, preview, count and format your posts for Instagram, Facebook, LinkedIn, X, YouTube and WhatsApp before you publish.',
+         hub_intro=f'''<h2>Which Social Media Tool Do You Need?</h2>
+    <ul>
+      <li><strong>Posting a photo?</strong> Crop it to the exact size with the <a href="{SMU}social-media-image-resizer/">Social Media Image Resizer</a>.</li>
+      <li><strong>Sharing a link?</strong> See the card each app will show with the <a href="{SMU}open-graph-preview/">Open Graph Preview</a>.</li>
+      <li><strong>Writing a caption or post?</strong> Check every limit at once with the <a href="{SMU}social-media-character-counter/">Social Media Character Counter</a>.</li>
+      <li><strong>Want words to stand out?</strong> Add bold and italic with the <a href="{SMU}bold-text-generator/">Bold Text Generator</a>.</li>
+      <li><strong>Getting leads on WhatsApp?</strong> Make a click to chat link with the <a href="{SMU}whatsapp-link-generator/">WhatsApp Link Generator</a>.</li>
+      <li><strong>Reporting results?</strong> Work out your numbers with the <a href="{SMU}engagement-rate-calculator/">Engagement Rate Calculator</a>.</li>
+      <li><strong>Uploading a video?</strong> Build valid timestamps with the <a href="{SMU}youtube-chapters-generator/">YouTube Chapters Generator</a>.</li>
+    </ul>
+    <p>Every tool follows the current rules published by each platform, such as X's character counting and YouTube's chapter requirements, and checks your work as you type.</p>
+    <p>Planning your social content? Read our <a href="https://brandella.in/instagram-marketing-guide-businesses/">Instagram marketing guide</a> and <a href="https://brandella.in/social-media-kpis-every-marketer-should-track/">social media KPIs every marketer should track</a>.</p>''',
+         faqs=[("Are these social media tools free?", "Yes. Every tool is free, needs no signup, and has no usage limits."),
+               ("Do I need to log in to my social accounts?", "No. The tools never connect to your accounts. You copy the result and paste it into the app yourself."),
+               ("Is my data safe?", "Yes. All tools run entirely in your browser. Photos, posts and phone numbers you enter are never uploaded or stored.")]),
     dict(slug='technical-seo-tools', short='TS', name='Technical SEO Tools', pill='Technical SEO',
          card='Robots.txt, hreflang, XML sitemap, redirect and canonical tools.',
          hub_title='Free Technical SEO Tools: Robots.txt, Hreflang, Sitemaps',

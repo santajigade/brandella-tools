@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bold Text Generator for LinkedIn, Instagram and X</title>
+<meta name="description" content="Free bold text generator. Turn plain words into bold, italic, script and monospace text you can copy into LinkedIn, Instagram, X and Facebook posts.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://brandella.in/tools/social-media-tools/bold-text-generator/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Bold Text Generator for LinkedIn, Instagram and X">
+<meta property="og:description" content="Free bold text generator. Turn plain words into bold, italic, script and monospace text you can copy into LinkedIn, Instagram, X and Facebook posts.">
+<meta property="og:url" content="https://brandella.in/tools/social-media-tools/bold-text-generator/">
+<meta property="og:site_name" content="Brandella Journal">
+<meta property="og:image" content="https://brandella.in/tools/assets/og-bold-text-generator.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://brandella.in/tools/assets/og-bold-text-generator.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3931314195561246" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "Bold Text Generator",
+      "url": "https://brandella.in/tools/social-media-tools/bold-text-generator/",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Any (web browser)",
+      "description": "Free bold text generator. Turn plain words into bold, italic, script and monospace text you can copy into LinkedIn, Instagram, X and Facebook posts.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Brandella Journal",
+        "url": "https://brandella.in/"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://brandella.in/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Tools",
+          "item": "https://brandella.in/tools/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Social Media Tools",
+          "item": "https://brandella.in/tools/social-media-tools/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Bold Text Generator",
+          "item": "https://brandella.in/tools/social-media-tools/bold-text-generator/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do I write in bold on LinkedIn?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "LinkedIn posts have no bold button. Write your post here, put double stars around the words you want in bold, copy the formatted post and paste it into LinkedIn. The bold letters are Unicode characters, so they stay bold."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does bold text work on Instagram, X and Facebook?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. The styled letters are standard Unicode characters that work in captions, bios, comments and posts on all major apps. A few very old phones may show empty boxes instead."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is styled text bad for accessibility?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It can be. Screen readers may spell out styled letters one by one or skip them entirely. Use styling for a few words of emphasis rather than whole sentences, and never for hashtags."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is my text saved?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Everything happens in your browser and nothing you type is uploaded or stored."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+<style>
+:root{
+  --green:#6cc82a; --lime:#a6ef39; --ink:#111; --gray:#555; --muted:#6b6b6b;
+  --line:#e3e3e3; --bg:#fff; --soft:#f6faf1; --footer:#0a0a0a;
+  --g-title:#1a0dab; --g-url:#202124; --g-desc:#4d5156;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Open Sans',Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6}
+a{color:inherit}
+.wrap{max-width:1140px;margin:0 auto;padding:0 16px}
+
+/* ===== HEADER ===== */
+.site-top{border-bottom:1px solid #d9d9d9}
+.site-top .wrap{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding-top:34px;padding-bottom:34px}
+.site-date{font-size:20px;font-weight:600;line-height:1.1}
+.site-date small{display:block;font-size:13px;font-weight:600;margin-top:2px}
+.site-logo{font-size:40px;font-weight:700;text-decoration:none;color:#555;letter-spacing:.2px;white-space:nowrap}
+.site-logo span{color:var(--green)}
+.menu-btn{display:none;justify-self:end;background:none;border:0;cursor:pointer;padding:6px}
+.menu-btn i{display:block;width:26px;height:3px;background:#111;margin:5px 0;border-radius:2px}
+
+.site-nav{border-bottom:2px solid var(--lime)}
+.site-nav ul{list-style:none;display:flex;justify-content:center;flex-wrap:wrap;gap:0 4px}
+.site-nav > .wrap > ul > li{position:relative}
+.site-nav a{display:block;padding:12px 13px;font-size:17px;font-weight:700;text-decoration:none;color:#111}
+.site-nav a:hover,.site-nav a.active{color:var(--green)}
+.has-sub > a::after{content:"";display:inline-block;width:6px;height:6px;border-right:1.6px solid currentColor;border-bottom:1.6px solid currentColor;transform:rotate(45deg);margin:0 0 4px 7px}
+.sub{display:none !important;position:absolute;top:100%;left:0;width:240px;background:#fff;border-radius:6px;padding:14px 0;box-shadow:0 10px 30px rgba(0,0,0,.18);z-index:50;flex-direction:column}
+.sub a{font-size:17px;font-weight:700;line-height:1.35;padding:5px 30px;color:#111}
+.sub a:hover{color:var(--green)}
+.has-sub:hover .sub,.has-sub:focus-within .sub{display:flex !important}
+
+/* ===== BREADCRUMB + HERO ===== */
+.crumbs{font-size:13.5px;color:var(--muted);padding:18px 0 0}
+.crumbs a{text-decoration:none;color:var(--muted)}
+.crumbs a:hover{color:var(--green)}
+.hero{text-align:center;padding:26px 0 8px}
+.pill{display:inline-block;background:var(--soft);color:#3d7f12;border:1px solid #cfeab4;font-size:12.5px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;padding:4px 12px;border-radius:20px;margin-bottom:14px}
+.hero h1{font-size:44px;font-weight:300;line-height:1.2}
+.hero p{max-width:760px;margin:14px auto 0;color:var(--muted);font-size:17px}
+
+/* ===== TOOL ===== */
+.tool{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin:34px 0 10px}
+.card{border:1px solid var(--line);border-radius:12px;padding:24px;background:#fff}
+.card h2{font-size:19px;font-weight:700;margin-bottom:16px}
+.field{margin-bottom:18px}
+.field label{display:flex;justify-content:space-between;font-weight:700;font-size:14.5px;margin-bottom:6px}
+.field label em{font-style:normal;font-weight:600;color:var(--muted);font-size:13px}
+.field input,.field textarea{width:100%;border:1px solid #cfcfcf;border-radius:8px;padding:11px 12px;font:inherit;font-size:15px;color:#111;outline:none;transition:border-color .15s}
+.field input:focus,.field textarea:focus{border-color:var(--green);box-shadow:0 0 0 3px rgba(108,200,42,.15)}
+.field textarea{resize:vertical;min-height:96px}
+.meter{height:7px;background:#eee;border-radius:6px;margin-top:8px;overflow:hidden}
+.meter b{display:block;height:100%;width:0;background:var(--green);border-radius:6px;transition:width .15s,background .15s}
+.meter b.warn{background:#f0a020}.meter b.bad{background:#e0442c}
+.stat{font-size:13px;color:var(--muted);margin-top:5px;display:flex;justify-content:space-between}
+.stat .ok{color:#3d8f12;font-weight:700}.stat .warn{color:#c47a00;font-weight:700}.stat .bad{color:#d1351f;font-weight:700}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.check{display:flex;align-items:center;gap:8px;font-size:14.5px;font-weight:600;margin-bottom:6px;cursor:pointer}
+.check input{accent-color:var(--green);width:16px;height:16px}
+
+.tabs{display:inline-flex;border:1px solid #cfcfcf;border-radius:30px;padding:3px;margin-bottom:18px}
+.tabs button{border:0;background:none;font:inherit;font-weight:700;font-size:14px;padding:7px 18px;border-radius:30px;cursor:pointer;color:#333}
+.tabs button.on{background:#111;color:#fff}
+
+/* Google result mock */
+.serp{border:1px solid var(--line);border-radius:10px;padding:20px 18px;background:#fff;font-family:Arial,sans-serif}
+.serp.mobile{max-width:400px;margin:0 auto;border-radius:16px;box-shadow:0 2px 10px rgba(0,0,0,.08)}
+.g-site{display:flex;align-items:center;gap:10px;margin-bottom:6px}
+.g-fav{width:28px;height:28px;border-radius:50%;background:#f1f3f4;border:1px solid #dadce0;display:grid;place-items:center;font-weight:700;font-size:13px;color:var(--green)}
+.g-name{font-size:14px;color:var(--g-url);line-height:1.3}
+.g-url{font-size:12px;color:#4d5156;line-height:1.3;word-break:break-all}
+.g-title{font-size:20px;line-height:1.3;color:var(--g-title);margin:2px 0 4px;font-weight:400;cursor:pointer}
+.g-title:hover{text-decoration:underline}
+.serp.mobile .g-title{font-size:18px;color:#1558d6}
+.g-desc{font-size:14px;line-height:1.58;color:var(--g-desc)}
+.g-desc .g-date{color:#70757a}
+.g-desc strong{color:#5f6368;font-weight:700}
+
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+.btn{border:2px solid var(--green);background:#fff;color:#111;font:inherit;font-weight:700;font-size:14px;padding:9px 18px;border-radius:30px;cursor:pointer;transition:all .15s}
+.btn:hover{background:var(--green);color:#fff}
+.btn.dark{background:#111;border-color:#111;color:#fff}
+.btn.dark:hover{background:var(--green);border-color:var(--green)}
+.code-out{margin-top:14px;background:#1e1e1e;color:#d4d4d4;border-radius:8px;padding:14px;font:14px/1.5 Consolas,Monaco,monospace;white-space:pre-wrap;word-break:break-all;display:none}
+.toast{font-size:13px;color:#3d8f12;font-weight:700;align-self:center;opacity:0;transition:opacity .2s}
+.toast.show{opacity:1}
+
+.tips{margin-top:18px;border-left:4px solid var(--green);background:var(--soft);border-radius:0 8px 8px 0;padding:12px 14px;font-size:14px}
+.tips ul{margin:6px 0 0 18px}
+.tips li{margin:2px 0}
+
+/* ===== CONTENT ===== */
+.content{max-width:820px;margin:40px auto 0}
+.content h2{font-size:28px;font-weight:700;margin:36px 0 12px;line-height:1.3}
+.content h3{font-size:20px;font-weight:700;margin:22px 0 8px}
+.content p{font-size:17px;color:#2c2c2c;margin-bottom:12px}
+.content ol,.content ul{margin:0 0 14px 22px;font-size:17px;color:#2c2c2c}
+.content li{margin:6px 0}
+.content a{color:#3d8f12;font-weight:600}
+.content code{background:#f1f1f1;padding:1px 6px;border-radius:4px;font-size:15px}
+table.lim{width:100%;border-collapse:collapse;margin:10px 0 18px;font-size:15.5px}
+table.lim th{background:#2b2b2b;color:#fff;text-align:left;padding:10px 12px}
+table.lim td{border-bottom:1px solid var(--line);padding:10px 12px}
+
+.faq-item{border:1px solid var(--line);border-radius:10px;margin-bottom:12px;overflow:hidden}
+.faq-item summary{list-style:none;cursor:pointer;padding:14px 16px;font-weight:700;font-size:16.5px;display:flex;gap:12px;align-items:flex-start}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-num{flex:0 0 26px;height:26px;border-radius:50%;background:var(--green);color:#fff;font-size:13px;display:grid;place-items:center}
+.faq-item p{padding:0 16px 14px 54px;color:#3a5a20;font-size:16px;margin:0}
+
+.related{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:12px 0 10px}
+.related a{display:flex;justify-content:space-between;align-items:center;gap:10px;border:1px solid var(--line);border-left:4px solid var(--green);border-radius:8px;padding:13px 14px;text-decoration:none;color:#111 !important;font-weight:700;font-size:15px}
+.related a:hover{border-color:var(--green)}
+
+.bx-ad{margin:34px 0;min-height:90px}
+
+/* ===== FOOTER ===== */
+.site-footer{background:var(--footer);color:#fff;margin-top:70px;padding:52px 0 44px}
+.foot-links{list-style:none;display:flex;flex-wrap:wrap;gap:8px 28px}
+.foot-links a{text-decoration:none;font-weight:700;font-size:14.5px;text-transform:uppercase;color:#fff}
+.foot-links a:hover{color:var(--lime)}
+.copy{color:#a8a8a8;font-size:16px;margin-top:12px}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width:900px){
+  .tool{grid-template-columns:1fr}
+  .hero h1{font-size:34px}
+}
+@media (max-width:760px){
+  .site-top .wrap{grid-template-columns:1fr auto;padding-top:18px;padding-bottom:18px}
+  .site-date{display:none}
+  .site-logo{font-size:28px}
+  .menu-btn{display:block}
+  .site-nav ul{display:none;flex-direction:column}
+  .site-nav.open > .wrap > ul{display:flex}
+  .site-nav a{padding:11px 4px;border-bottom:1px solid #f0f0f0}
+  .sub{position:static;box-shadow:none;border:0;padding-left:14px}
+  .has-sub:hover .sub,.has-sub:focus-within .sub{display:flex !important}
+  .related,.row2{grid-template-columns:1fr}
+  .content h2{font-size:24px}
+}
+
+/* ===== SHARED TOOL EXTRAS ===== */
+.full{grid-column:1/-1}
+.field select{width:100%;border:1px solid #cfcfcf;border-radius:8px;padding:10px 12px;font:inherit;font-size:15px;background:#fff;color:#111}
+.field textarea.big{min-height:230px;font-size:14.5px}
+.mono{font-family:Consolas,Monaco,monospace !important;font-size:13.5px !important}
+.btn-sm{padding:5px 12px;font-size:13px;border-width:1.5px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(105px,1fr));gap:10px;margin-bottom:16px}
+.stat-box{background:var(--soft);border:1px solid #dbefc8;border-radius:10px;padding:10px 8px;text-align:center}
+.stat-box b{display:block;font-size:22px;line-height:1.2}
+.stat-box span{font-size:12.5px;color:var(--muted);font-weight:600}
+.rtable{width:100%;border-collapse:collapse;font-size:14.5px}
+.rtable th{background:#2b2b2b;color:#fff;text-align:left;padding:8px 10px;font-weight:700}
+.rtable td{border-bottom:1px solid var(--line);padding:7px 10px}
+.rtable td.num,.rtable th.num{text-align:right;font-variant-numeric:tabular-nums}
+.rtable tr.hit td{background:#eef8e6;font-weight:700}
+.empty{color:var(--muted);font-size:14.5px;padding:14px 0}
+.kw-result{border-radius:10px;padding:12px 14px;margin-bottom:16px;font-size:14.5px;border:1px solid var(--line);background:#fafafa}
+.kw-result.ok{background:#eef8e6;border-color:#cfeab4}
+.kw-result.warn{background:#fff6e5;border-color:#f3d79b}
+.kw-result.bad{background:#fdecea;border-color:#f5c2bb}
+.slug-row{border:1px solid var(--line);border-radius:8px;padding:10px 12px;margin-bottom:8px;display:flex;justify-content:space-between;gap:10px;align-items:center}
+.slug-row .s{font:600 15px/1.4 Consolas,Monaco,monospace;color:#111;word-break:break-all}
+.slug-row small{display:block;color:var(--muted);font-size:12.5px;word-break:break-all;margin-top:2px}
+.slug-row small.warn{color:#c47a00;font-weight:700}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
+.chip{border:1px solid var(--line);border-radius:20px;padding:4px 12px;font-size:13.5px;font-weight:700;background:#fff}
+.chip.zero{color:#aaa}
+.outline{max-height:460px;overflow:auto;border:1px solid var(--line);border-radius:10px;padding:6px 12px}
+.o-row{display:flex;gap:10px;align-items:flex-start;padding:7px 0;border-bottom:1px dashed #eee;font-size:14.5px}
+.o-row:last-child{border-bottom:0}
+.o-tag{flex:0 0 auto;font:700 12px/1 Consolas,Monaco,monospace;padding:5px 7px;border-radius:5px;color:#fff;background:#111}
+.o-tag.h1{background:#2f7a0c}.o-tag.h2{background:#4fa61d}.o-tag.h3{background:#6cc82a}.o-tag.h4{background:#8a8a8a}.o-tag.h5{background:#a5a5a5}.o-tag.h6{background:#bdbdbd}
+.o-issue{display:inline-block;font-size:12px;color:#d1351f;font-weight:700;margin-left:6px}
+.tgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:18px;margin:30px 0 10px}
+.tcard{border:1px solid var(--line);border-radius:12px;padding:22px;text-decoration:none;display:flex;flex-direction:column;gap:10px;transition:all .15s;background:#fff;color:#111}
+.tcard:hover{border-color:var(--green);box-shadow:0 8px 22px rgba(0,0,0,.07);transform:translateY(-2px)}
+.tbadge{width:48px;height:48px;border-radius:12px;background:#111;color:var(--lime);display:grid;place-items:center;font-weight:800;font-size:16px}
+.tcard h2,.tcard h3{font-size:18px;line-height:1.3;margin:0}
+.tcard p{font-size:14.5px;color:var(--muted);flex:1;line-height:1.55}
+.tcard .go{font-weight:700;color:#3d8f12;font-size:14px}
+.tcard.soon{opacity:.55;pointer-events:none}
+.tcard.soon .tbadge{background:#ddd;color:#777}
+.tcard.soon .go{color:var(--muted)}
+.more-tools{margin-top:10px}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="site-top">
+    <div class="wrap">
+      <div class="site-date" id="siteDate">Today<small>&nbsp;</small></div>
+      <a class="site-logo" href="https://brandella.in/">Brandella <span>Journal</span></a>
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false"><i></i><i></i><i></i></button>
+    </div>
+  </div>
+  <nav class="site-nav" id="siteNav" aria-label="Main">
+    <div class="wrap">
+      <ul>
+        <li><a href="https://brandella.in/">Home</a></li>
+        <li class="has-sub"><a href="https://brandella.in/category/seo/">SEO</a>
+          <ul class="sub">
+            <li><a href="https://brandella.in/category/seo/technical-seo/">Technical SEO</a></li>
+            <li><a href="https://brandella.in/category/seo/local-seo/">Local SEO</a></li>
+            <li><a href="https://brandella.in/category/seo/mobile-seo/">Mobile SEO</a></li>
+            <li><a href="https://brandella.in/category/seo/on-page-seo/">On-Page SEO</a></li>
+            <li><a href="https://brandella.in/category/seo/off-page-seo/">Off-Page SEO</a></li>
+            <li><a href="https://brandella.in/category/seo/seo-tools/">SEO Tools</a></li>
+            <li><a href="https://brandella.in/category/seo/core-web-vitals/">Core Web Vitals</a></li>
+            <li><a href="https://brandella.in/category/seo/keyword-research/">Keyword Research</a></li>
+            <li><a href="https://brandella.in/category/seo/link-building/">Link Building</a></li>
+            <li><a href="https://brandella.in/category/seo/google-search-console/">Google Search Console</a></li>
+            <li><a href="https://brandella.in/category/seo/seo-basics/">SEO Basics</a></li>
+          </ul>
+        </li>
+        <li class="has-sub"><a href="https://brandella.in/category/paid-media/">Paid Media</a>
+          <ul class="sub">
+            <li><a href="https://brandella.in/category/paid-media/display-advertising/">Display Advertising</a></li>
+            <li><a href="https://brandella.in/category/paid-media/google-ads/">Google Ads</a></li>
+            <li><a href="https://brandella.in/category/paid-media/linkedin-ads/">LinkedIn Ads</a></li>
+            <li><a href="https://brandella.in/category/paid-media/meta-ads/">Meta Ads</a></li>
+            <li><a href="https://brandella.in/category/paid-media/paid-media-analytics/">Paid Media Analytics</a></li>
+            <li><a href="https://brandella.in/category/paid-media/ppc-strategy/">PPC Strategy</a></li>
+          </ul>
+        </li>
+        <li><a href="https://brandella.in/category/content/">Content</a></li>
+        <li><a href="https://brandella.in/category/social/">Social</a></li>
+        <li><a href="https://brandella.in/category/digital-marketing/">Digital Marketing</a></li>
+        <li><a href="https://brandella.in/category/artificial-intelligence/">Artificial Intelligence</a></li>
+        <li class="has-sub"><a href="https://brandella.in/category/development/">Development</a>
+          <ul class="sub">
+            <li><a href="https://brandella.in/category/development/php/">PHP</a></li>
+            <li><a href="https://brandella.in/category/development/javascript/">JavaScript</a></li>
+            <li><a href="https://brandella.in/category/development/python/">Python</a></li>
+          </ul>
+        </li>
+        <li class="has-sub"><a class="active" href="https://brandella.in/tools/">Tools</a>
+          <ul class="sub">
+            <li><a href="https://brandella.in/tools/seo-tools/">SEO Tools</a></li>
+            <li><a href="https://brandella.in/tools/schema-generators/">Schema Generators</a></li>
+            <li><a href="https://brandella.in/tools/ppc-calculators/">PPC Calculators</a></li>
+            <li><a href="https://brandella.in/tools/analytics-tools/">Analytics and Tracking Tools</a></li>
+            <li><a href="https://brandella.in/tools/social-media-tools/">Social Media Tools</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<main class="wrap">
+
+  <div class="crumbs"><a href="https://brandella.in/">Home</a> &rsaquo; <a href="https://brandella.in/tools/">Tools</a> &rsaquo; <a href="https://brandella.in/tools/social-media-tools/">Social Media Tools</a> &rsaquo; Bold Text Generator</div>
+
+  <section class="hero">
+    <span class="pill">Free Social Tool</span>
+    <h1>Bold Text Generator</h1>
+    <p>Social apps do not have a bold button, but you can still make words stand out. Wrap words in double stars for bold and single stars for italic, then copy the formatted post, or copy any style from the list below.</p>
+  </section>
+
+  <section class="tool" aria-label="Bold text generator" id="btForm">
+    <div class="card" style="min-width:0">
+      <h2>Your Text</h2>
+      <div class="field"><label for="btText">Text <em>use **bold** and *italic*</em></label><textarea id="btText" spellcheck="false" placeholder="" style="min-height:220px">**3 lessons from 10 years in marketing**
+
+1. *Consistency beats intensity.*
+2. Your audience cares about **their** problems.
+3. Measure what matters, then repeat it.
+
+Which one do you agree with most?</textarea></div>
+      <div class="field"><label for="btFont">Font for Bold and Italic</label><select id="btFont"><option value="sans" selected>Sans serif (matches LinkedIn and Instagram)</option><option value="serif">Serif (classic look)</option></select></div>
+      <div class="actions" style="margin-top:0"><button class="btn" id="btPlain">Remove All Styling</button></div>
+      <div class="stats" style="margin-top:16px"><div class="stat-box"><b id="btN">0</b><span>Styled Letters</span></div><div class="stat-box"><b id="btX">0</b><span>X Count</span></div><div class="stat-box"><b id="btLen">0</b><span>Characters</span></div></div>
+    </div>
+    <div class="card" style="min-width:0">
+      <h2>Formatted Post</h2>
+      <div id="btOut" style="border:1px solid #e5e5e5;border-radius:10px;padding:12px 14px;white-space:pre-wrap;word-break:break-word;font-size:15px;line-height:1.55;min-height:80px"></div>
+      <div class="actions"><button class="btn dark" id="btCopy">Copy Formatted Post</button><span class="toast" id="toast">Copied!</span></div>
+      <div class="kw-result" id="btCheck" style="margin-top:16px"></div>
+      <h2 style="margin-top:6px">Every Style</h2>
+      <div id="btList"></div>
+    </div>
+  </section>
+
+  <div class="bx-ad">
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3931314195561246" data-ad-slot="4249015278" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+
+  <article class="content">
+
+    <h2>What Is a Bold Text Generator?</h2>
+    <p>LinkedIn, Instagram, X and Facebook posts are plain text, with no bold or italic button. A bold text generator gets around this by swapping normal letters for look alike characters from the Unicode <em>Mathematical Alphanumeric Symbols</em> block. They look bold or italic, and because they are real characters, they stay styled wherever you paste them.</p>
+    <p>This tool works like a mini editor. Write your post as usual, wrap words in double stars for bold or single stars for italic, and copy the finished post in one click.</p>
+
+    <h2>How to Use the Bold Text Generator</h2>
+    <ol>
+      <li><strong>Type or paste your post.</strong> Line breaks are kept.</li>
+      <li><strong>Mark words to style.</strong> Use <code>**words**</code> for bold, <code>*words*</code> for italic and <code>***words***</code> for bold italic.</li>
+      <li><strong>Pick a font.</strong> Sans serif blends in with most apps. Serif looks more formal.</li>
+      <li><strong>Copy the formatted post</strong>, or copy a single style from the list for a headline or bio.</li>
+      <li><strong>Changed your mind?</strong> Paste styled text and press Remove All Styling to get plain letters back.</li>
+    </ol>
+
+    <h2>Text Styles You Can Use</h2>
+    <div style="overflow-x:auto"><table class="lim">
+      <thead><tr style="background:#2b2b2b !important;"><th style="background:#2b2b2b !important; color:#ffffff !important;">Style</th><th style="background:#2b2b2b !important; color:#ffffff !important;">Works for</th><th style="background:#2b2b2b !important; color:#ffffff !important;">Best use</th></tr></thead>
+      <tbody>
+        <tr><td>Bold and Sans Bold</td><td>Letters and numbers</td><td>Headlines, key phrases, hooks</td></tr>
+        <tr><td>Italic and Sans Italic</td><td>Letters only</td><td>Quotes, emphasis, titles</td></tr>
+        <tr><td>Bold Italic</td><td>Letters only</td><td>Strong emphasis</td></tr>
+        <tr><td>Script Bold and Gothic Bold</td><td>Letters only</td><td>Bios and decorative names</td></tr>
+        <tr><td>Double Struck and Monospace</td><td>Letters and numbers</td><td>Stats, codes, playful accents</td></tr>
+        <tr><td>Underline and Strikethrough</td><td>Any character</td><td>Price drops, corrections</td></tr>
+      </tbody>
+    </table></div>
+
+    <h2>Tips for Using Styled Text Well</h2>
+    <ul>
+      <li><strong>Style a few words, not whole posts.</strong> Screen readers may read styled letters one at a time or skip them, which shuts out some of your audience.</li>
+      <li><strong>Never style hashtags or names you want found.</strong> Search treats styled letters as different characters, so a styled hashtag will not match.</li>
+      <li><strong>Watch your X count.</strong> X counts each styled letter as 2 characters under its <a href="https://docs.x.com/fundamentals/counting-characters" target="_blank" rel="noopener">counting rules</a>.</li>
+      <li><strong>Keep accents plain.</strong> Letters like é have no styled version, so mixed words can look uneven.</li>
+    </ul>
+
+    <h2>Write Posts People Stop For</h2>
+    <p>Put your formatting to work with our <a href="https://brandella.in/linkedin-marketing-strategy/">LinkedIn marketing strategy</a>, learn how to <a href="https://brandella.in/grow-your-linkedin-company-page/">grow your LinkedIn company page</a>, and avoid common slips in <a href="https://brandella.in/25-content-writing-mistakes/">25 content writing mistakes</a>. Before you post, check the length with the <a href="https://brandella.in/tools/social-media-tools/social-media-character-counter/">social media character counter</a>.</p>
+
+    <div class="bx-ad">
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3931314195561246" data-ad-slot="4249015278" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+
+    <h2>Frequently Asked Questions</h2>
+    <details class="faq-item" open><summary><span class="faq-num">1</span>How do I write in bold on LinkedIn?</summary><p>LinkedIn posts have no bold button. Write your post here, put double stars around the words you want in bold, copy the formatted post and paste it into LinkedIn. The bold letters are Unicode characters, so they stay bold.</p></details>
+    <details class="faq-item" open><summary><span class="faq-num">2</span>Does bold text work on Instagram, X and Facebook?</summary><p>Yes. The styled letters are standard Unicode characters that work in captions, bios, comments and posts on all major apps. A few very old phones may show empty boxes instead.</p></details>
+    <details class="faq-item" open><summary><span class="faq-num">3</span>Is styled text bad for accessibility?</summary><p>It can be. Screen readers may spell out styled letters one by one or skip them entirely. Use styling for a few words of emphasis rather than whole sentences, and never for hashtags.</p></details>
+    <details class="faq-item" open><summary><span class="faq-num">4</span>Is my text saved?</summary><p>No. Everything happens in your browser and nothing you type is uploaded or stored.</p></details>
+
+    <h2>Related Articles</h2>
+    <div class="related">
+      <a href="https://brandella.in/linkedin-marketing-strategy/">LinkedIn Marketing Strategy <span>&rarr;</span></a>
+      <a href="https://brandella.in/grow-your-linkedin-company-page/">Grow Your LinkedIn Company Page <span>&rarr;</span></a>
+      <a href="https://brandella.in/25-content-writing-mistakes/">25 Content Writing Mistakes <span>&rarr;</span></a>
+      <a href="https://brandella.in/instagram-marketing-guide-businesses/">Instagram Marketing Guide <span>&rarr;</span></a>
+    </div>
+  </article>
+
+  <section class="content more-tools" style="max-width:1140px">
+    <h2>More Free Social Media Tools</h2>
+    <div class="tgrid">
+      <a class="tcard" href="https://brandella.in/tools/social-media-tools/social-media-image-resizer/"><div class="tbadge">IR</div><h3>Social Media Image Resizer</h3><p>Resize and crop any photo to the exact size for Instagram, Facebook, LinkedIn, X, YouTube and Pinterest.</p><span class="go">Open tool &rarr;</span></a>
+<a class="tcard" href="https://brandella.in/tools/social-media-tools/open-graph-preview/"><div class="tbadge">OG</div><h3>Open Graph Preview</h3><p>Paste your page head and see how the link will look on Facebook, LinkedIn, X and WhatsApp, with a tag check.</p><span class="go">Open tool &rarr;</span></a>
+<a class="tcard" href="https://brandella.in/tools/social-media-tools/social-media-character-counter/"><div class="tbadge">CH</div><h3>Social Media Character Counter</h3><p>Count characters for X, Instagram, LinkedIn, Threads, TikTok, YouTube and more, the way each app counts.</p><span class="go">Open tool &rarr;</span></a>
+<a class="tcard" href="https://brandella.in/tools/social-media-tools/whatsapp-link-generator/"><div class="tbadge">WA</div><h3>WhatsApp Link Generator</h3><p>Create a wa.me click to chat link with a ready typed message for your website, bio, ads or QR codes.</p><span class="go">Open tool &rarr;</span></a>
+<a class="tcard" href="https://brandella.in/tools/social-media-tools/engagement-rate-calculator/"><div class="tbadge">ER</div><h3>Engagement Rate Calculator</h3><p>Work out engagement rate by followers, reach and impressions for Instagram, LinkedIn, TikTok, Facebook and X.</p><span class="go">Open tool &rarr;</span></a>
+<a class="tcard" href="https://brandella.in/tools/social-media-tools/youtube-chapters-generator/"><div class="tbadge">YC</div><h3>YouTube Chapters Generator</h3><p>Turn rough notes into valid YouTube chapter timestamps, check every rule, and make timestamp links.</p><span class="go">Open tool &rarr;</span></a>
+    </div>
+    <p><a href="https://brandella.in/tools/social-media-tools/">See all social media tools &rarr;</a> &nbsp;|&nbsp; <a href="https://brandella.in/tools/">Browse every free tool &rarr;</a></p>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <ul class="foot-links">
+      <li><a href="https://brandella.in/">Home</a></li>
+      <li><a href="https://brandella.in/about-us/">About Us</a></li>
+      <li><a href="https://brandella.in/contact-us/">Contact Us</a></li>
+      <li><a href="https://brandella.in/privacy-policy/">Privacy Policy</a></li>
+      <li><a href="https://brandella.in/terms-and-conditions/">Terms and Conditions</a></li>
+    </ul>
+    <p class="copy">Copyright &copy; <span id="yr">2026</span> Brandella Journal. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+
+  var d = new Date();
+  var days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+  var months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+  document.getElementById('siteDate').innerHTML = days[d.getDay()] + ',<small>' + months[d.getMonth()] + ' ' + d.getDate() + ', ' + d.getFullYear() + '</small>';
+  document.getElementById('yr').textContent = d.getFullYear();
+  var nav = document.getElementById('siteNav'), mb = document.getElementById('menuBtn');
+  mb.addEventListener('click', function(){ var open = nav.classList.toggle('open'); mb.setAttribute('aria-expanded', open); });
+  var $ = function(id){ return document.getElementById(id); };
+  function esc(s){ return String(s).replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+  function copyText(text, toastId){
+    var done = function(){ var t = $(toastId); if(!t) return; t.classList.add('show'); setTimeout(function(){ t.classList.remove('show'); }, 1600); };
+    if (navigator.clipboard && navigator.clipboard.writeText){ navigator.clipboard.writeText(text).then(done, function(){ fallback(); done(); }); }
+    else { fallback(); done(); }
+    function fallback(){ var ta=document.createElement('textarea'); ta.value=text; document.body.appendChild(ta); ta.select(); try{document.execCommand('copy');}catch(e){} document.body.removeChild(ta); }
+  }
+
+
+  function v(id){ var e = $(id); return e ? String(e.value).trim() : ''; }
+  function say(id, cls, h){ var e = $(id); e.className = 'kw-result' + (cls ? ' ' + cls : ''); e.innerHTML = h; }
+  function issues(id, list, okMsg){
+    var bad = list.filter(function(i){ return i[0] === 'bad'; }), warn = list.filter(function(i){ return i[0] === 'warn'; });
+    var li = function(a){ return '<ul style="margin:6px 0 0 18px">' + a.map(function(i){ return '<li>' + i[1] + '</li>'; }).join('') + '</ul>'; };
+    if (bad.length) say(id, 'bad', '<strong>Fix ' + bad.length + ' issue' + (bad.length > 1 ? 's' : '') + '.</strong>' + li(bad.concat(warn)));
+    else if (warn.length) say(id, 'warn', '<strong>Works, with ' + warn.length + ' suggestion' + (warn.length > 1 ? 's' : '') + '.</strong>' + li(warn));
+    else say(id, 'ok', okMsg);
+  }
+  function c(s){ return '<code>' + esc(s) + '</code>'; }
+  function fmtN(n){ return Number(n).toLocaleString('en-IN'); }
+
+  var SEG = (window.Intl && Intl.Segmenter) ? new Intl.Segmenter('en', {granularity: 'grapheme'}) : null;
+  function graphemes(s){ return SEG ? Array.from(SEG.segment(s), function(x){ return x.segment; }) : Array.from(s); }
+  var PICT = /\p{Extended_Pictographic}/u, RIND = /[\u{1F1E6}-\u{1F1FF}]/u;
+  function isEmoji(g){ return /️|⃣/.test(g) || RIND.test(g) || (PICT.test(g) && g.codePointAt(0) > 0xFF); }
+  function w1(cp){ return cp <= 0x10FF || (cp >= 0x2000 && cp <= 0x200D) || (cp >= 0x2010 && cp <= 0x201F) || (cp >= 0x2032 && cp <= 0x2037); }
+  var TLD = 'com|net|org|in|co|io|ai|app|dev|me|info|biz|uk|us|ly|gg|xyz|blog|shop|store|online|site|tech|news|tv|edu|gov|ca|au|de|fr';
+  var URLRE = new RegExp('(^|[^@\\w./])((?:https?:\\/\\/(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z]{2,24}|(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+(?:' + TLD + ')\\b)(?::\\d+)?(?:\\/[^\\s]*)?)', 'gi');
+  function xWeight(t){
+    t = String(t).normalize('NFC'); var urls = 0;
+    t = t.replace(URLRE, function(m, pre, u){ var tail = (u.match(/[.,!?;:)\]'"]+$/) || [''])[0]; urls++; return pre + tail; });
+    var n = urls * 23;
+    graphemes(t).forEach(function(g){
+      if (isEmoji(g)){ n += 2; return; }
+      for (var ch of g) n += w1(ch.codePointAt(0)) ? 1 : 2;
+    });
+    return {len: n, urls: urls};
+  }
+
+  var ST = [
+    ['Bold', 0x1D400, 0x1D41A, 0x1D7CE, {}], ['Italic', 0x1D434, 0x1D44E, 0, {h: 0x210E}], ['Bold Italic', 0x1D468, 0x1D482, 0, {}],
+    ['Sans Bold', 0x1D5D4, 0x1D5EE, 0x1D7EC, {}], ['Sans Italic', 0x1D608, 0x1D622, 0, {}], ['Sans Bold Italic', 0x1D63C, 0x1D656, 0, {}],
+    ['Script Bold', 0x1D4D0, 0x1D4EA, 0, {}], ['Gothic Bold', 0x1D56C, 0x1D586, 0, {}],
+    ['Double Struck', 0x1D538, 0x1D552, 0x1D7D8, {C: 0x2102, H: 0x210D, N: 0x2115, P: 0x2119, Q: 0x211A, R: 0x211D, Z: 0x2124}],
+    ['Monospace', 0x1D670, 0x1D68A, 0x1D7F6, {}]
+  ];
+  var BY = {}; ST.forEach(function(s){ BY[s[0]] = s; });
+  function sty(t, s){
+    var o = '';
+    for (var ch of t){
+      var cp = ch.codePointAt(0);
+      if (s[4][ch]) o += String.fromCodePoint(s[4][ch]);
+      else if (cp >= 65 && cp <= 90) o += String.fromCodePoint(s[1] + cp - 65);
+      else if (cp >= 97 && cp <= 122) o += String.fromCodePoint(s[2] + cp - 97);
+      else if (cp >= 48 && cp <= 57 && s[3]) o += String.fromCodePoint(s[3] + cp - 48);
+      else o += ch;
+    }
+    return o;
+  }
+  function comb(t, mk){ var o = ''; for (var ch of t){ o += ch; if (!/\s/.test(ch)) o += mk; } return o; }
+  function plain(t){ return String(t).normalize('NFKC').replace(/[̶̲]/g, ''); }
+  function styled(t){ var n = 0; for (var ch of t){ var cp = ch.codePointAt(0); if ((cp >= 0x1D400 && cp <= 0x1D7FF) || [0x210E,0x2102,0x210D,0x2115,0x2119,0x211A,0x211D,0x2124].indexOf(cp) > -1) n++; } return n; }
+  function format(t){
+    var sans = $('btFont').value === 'sans';
+    var b = BY[sans ? 'Sans Bold' : 'Bold'], i = BY[sans ? 'Sans Italic' : 'Italic'], bi = BY[sans ? 'Sans Bold Italic' : 'Bold Italic'];
+    t = t.replace(/\*\*\*([^*\n]+?)\*\*\*/g, function(m, x){ return sty(x, bi); });
+    t = t.replace(/\*\*([^\n]+?)\*\*/g, function(m, x){ return sty(x.replace(/\*([^*\n]+?)\*/g, function(m2, y){ return sty(y, bi); }), b); });
+    t = t.replace(/(^|[^*\w])\*([^*\n]+?)\*(?!\w)/g, function(m, p, x){ return p + sty(x, i); });
+    return t;
+  }
+  var out = '', items = [];
+  function run(){
+    var t = $('btText').value, iss = [];
+    out = format(t);
+    var base = t.replace(/\*+/g, '');
+    $('btOut').textContent = out || 'Your formatted post appears here.';
+    var n = styled(out), xw = xWeight(out).len;
+    $('btN').textContent = n; $('btX').textContent = fmtN(xw); $('btLen').textContent = fmtN(graphemes(out).length);
+    var short = Array.from(base.split('\n').filter(function(l){ return l.trim(); })[0] || 'Your text').slice(0, 60).join('');
+    items = ST.map(function(s){ return [s[0], sty(short, s)]; }).concat([['Underline', comb(short, '̲')], ['Strikethrough', comb(short, '̶')]]);
+    $('btList').innerHTML = items.map(function(it, k){
+      return '<div class="slug-row"><div style="min-width:0"><small style="margin:0 0 2px">' + it[0] + '</small><div style="font-size:16px;word-break:break-word">' + esc(it[1]) + '</div></div><button class="btn btn-sm" data-k="' + k + '">Copy</button></div>';
+    }).join('');
+    if (/[À-ÿĀ-ž]/.test(base)) iss.push(['warn', 'Accented letters such as é have no styled version, so they stay plain.']);
+    if (n > 60) iss.push(['warn', n + ' letters are styled. Screen readers can read styled letters one by one or skip them, so keep styling to a few key words.']);
+    if (xw > 280) iss.push(['warn', 'This post counts as ' + xw + ' on X, over the 280 limit. Styled letters count as 2 each there.']);
+    issues('btCheck', iss, '<strong>Ready to paste.</strong> Styled letters are special Unicode characters, so they work anywhere you can type text.');
+  }
+  $('btList').addEventListener('click', function(e){ var b = e.target.closest('button'); if (b) copyText(items[+b.getAttribute('data-k')][1], 'toast'); });
+  $('btText').addEventListener('input', run); $('btFont').addEventListener('change', run);
+  $('btCopy').onclick = function(){ if (out) copyText(out, 'toast'); };
+  $('btPlain').onclick = function(){ $('btText').value = plain($('btText').value).replace(/\*+/g, ''); run(); };
+  run();
+
+})();
+</script>
+</body>
+</html>
