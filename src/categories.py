@@ -6,6 +6,7 @@ S = 'https://brandella.in/tools/schema-generators/'
 PP = 'https://brandella.in/tools/ppc-calculators/'
 AN = 'https://brandella.in/tools/analytics-tools/'
 SMU = 'https://brandella.in/tools/social-media-tools/'
+TS = 'https://brandella.in/tools/technical-seo-tools/'
 
 CATEGORIES = [
     dict(slug='seo-tools', short='SEO', name='SEO Tools', pill='SEO',
@@ -112,10 +113,22 @@ CATEGORIES = [
                ("Do I need to log in to my social accounts?", "No. The tools never connect to your accounts. You copy the result and paste it into the app yourself."),
                ("Is my data safe?", "Yes. All tools run entirely in your browser. Photos, posts and phone numbers you enter are never uploaded or stored.")]),
     dict(slug='technical-seo-tools', short='TS', name='Technical SEO Tools', pill='Technical SEO',
-         card='Robots.txt, hreflang, XML sitemap, redirect and canonical tools.',
-         hub_title='Free Technical SEO Tools: Robots.txt, Hreflang, Sitemaps',
-         hub_desc='Free technical SEO tools: robots.txt generator and tester, hreflang generator, XML sitemap generator, htaccess redirects and more.',
-         hub_lead='Generate and test the technical files and tags that control how search engines crawl and index your site.'),
+         card='Robots.txt generator and tester, XML sitemaps, hreflang tags and htaccess redirects.',
+         hub_title='Free Technical SEO Tools: Robots.txt, Sitemaps, Hreflang',
+         hub_desc='Free technical SEO tools: robots.txt generator and tester, XML sitemap generator and validator, hreflang generator and checker, and htaccess redirects.',
+         hub_lead='Generate and test the technical files and tags that control how search engines crawl and index your site.',
+         hub_intro=f'''<h2>Which Technical SEO Tool Do You Need?</h2>
+    <ul>
+      <li><strong>Controlling crawlers and AI bots?</strong> Write your file with the <a href="{TS}robots-txt-generator/">Robots.txt Generator</a>, then check URLs with the <a href="{TS}robots-txt-tester/">Robots.txt Tester</a>.</li>
+      <li><strong>Helping Google find your pages?</strong> Build a file with the <a href="{TS}xml-sitemap-generator/">XML Sitemap Generator</a> and check an existing one with the <a href="{TS}xml-sitemap-validator/">XML Sitemap Validator</a>.</li>
+      <li><strong>Running a site in several languages or countries?</strong> Create tags with the <a href="{TS}hreflang-tag-generator/">Hreflang Tag Generator</a> and audit them with the <a href="{TS}hreflang-checker/">Hreflang Checker</a>.</li>
+      <li><strong>Changing URLs or moving to HTTPS?</strong> Create 301 rules with the <a href="{TS}htaccess-redirect-generator/">Htaccess Redirect Generator</a>.</li>
+    </ul>
+    <p>Every tool follows Google's current documentation for robots.txt, sitemaps, hreflang and redirects, and checks your work as you type.</p>
+    <p>New to technical SEO? Read <a href="https://brandella.in/how-google-crawls-websites/">how Google crawls websites</a> and <a href="https://brandella.in/crawl-budget-explained/">crawl budget explained</a>.</p>''',
+         faqs=[("Are these technical SEO tools free?", "Yes. Every tool is free, needs no signup, and has no usage limits."),
+               ("Do the tools crawl or fetch my website?", "No. You paste your file, list or tags and everything is checked inside your browser. That also means the tools work on staging sites that are not public yet."),
+               ("Is my data safe?", "Yes. Nothing you paste is uploaded or stored. URLs, robots.txt files and sitemaps stay on your device.")]),
     dict(slug='google-ads-tools', short='GA', name='Google Ads Tools', pill='Google Ads',
          card='Ad preview, character counter, match type and negative keyword tools.',
          hub_title='Free Google Ads Tools: Ad Preview, Counters and Keywords',

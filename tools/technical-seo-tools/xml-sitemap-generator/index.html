@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>XML Sitemap Generator: Free From a List of URLs</title>
+<meta name="description" content="Free XML sitemap generator. Paste your URLs, add lastmod dates and download a valid sitemap. Large lists are split into files with a sitemap index for you.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://brandella.in/tools/technical-seo-tools/xml-sitemap-generator/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="XML Sitemap Generator: Free From a List of URLs">
+<meta property="og:description" content="Free XML sitemap generator. Paste your URLs, add lastmod dates and download a valid sitemap. Large lists are split into files with a sitemap index for you.">
+<meta property="og:url" content="https://brandella.in/tools/technical-seo-tools/xml-sitemap-generator/">
+<meta property="og:site_name" content="Brandella Journal">
+<meta property="og:image" content="https://brandella.in/tools/assets/og-xml-sitemap-generator.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://brandella.in/tools/assets/og-xml-sitemap-generator.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3931314195561246" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "XML Sitemap Generator",
+      "url": "https://brandella.in/tools/technical-seo-tools/xml-sitemap-generator/",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Any (web browser)",
+      "description": "Free XML sitemap generator. Paste your URLs, add lastmod dates and download a valid sitemap. Large lists are split into files with a sitemap index for you.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Brandella Journal",
+        "url": "https://brandella.in/"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://brandella.in/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Tools",
+          "item": "https://brandella.in/tools/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Technical SEO Tools",
+          "item": "https://brandella.in/tools/technical-seo-tools/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "XML Sitemap Generator",
+          "item": "https://brandella.in/tools/technical-seo-tools/xml-sitemap-generator/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How many URLs can one sitemap hold?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Up to 50,000 URLs and 50 MB uncompressed. For more, split the list into several files and list them in a sitemap index. The generator does this for you."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Should I add priority and changefreq?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You can, but Google ignores both. A correct lastmod date is far more useful, so the generator leaves the other two out unless you turn them on."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Where do I upload my sitemap?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Upload it to the root of your site, such as yourdomain.com/sitemap.xml, add a Sitemap line to your robots.txt file, and submit the URL in Google Search Console."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does a sitemap get my pages indexed?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It helps Google find them, but it is only a hint. Pages still need to be useful, crawlable and not blocked or marked noindex to be indexed."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+<style>
+:root{
+  --green:#6cc82a; --lime:#a6ef39; --ink:#111; --gray:#555; --muted:#6b6b6b;
+  --line:#e3e3e3; --bg:#fff; --soft:#f6faf1; --footer:#0a0a0a;
+  --g-title:#1a0dab; --g-url:#202124; --g-desc:#4d5156;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Open Sans',Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6}
+a{color:inherit}
+.wrap{max-width:1140px;margin:0 auto;padding:0 16px}
+
+/* ===== HEADER ===== */
+.site-top{border-bottom:1px solid #d9d9d9}
+.site-top .wrap{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding-top:34px;padding-bottom:34px}
+.site-date{font-size:20px;font-weight:600;line-height:1.1}
+.site-date small{display:block;font-size:13px;font-weight:600;margin-top:2px}
+.site-logo{font-size:40px;font-weight:700;text-decoration:none;color:#555;letter-spacing:.2px;white-space:nowrap}
+.site-logo span{color:var(--green)}
+.menu-btn{display:none;justify-self:end;background:none;border:0;cursor:pointer;padding:6px}
+.menu-btn i{display:block;width:26px;height:3px;background:#111;margin:5px 0;border-radius:2px}
+
+.site-nav{border-bottom:2px solid var(--lime)}
+.site-nav ul{list-style:none;display:flex;justify-content:center;flex-wrap:wrap;gap:0 4px}
+.site-nav > .wrap > ul > li{position:relative}
+.site-nav a{display:block;padding:12px 13px;font-size:17px;font-weight:700;text-decoration:none;color:#111}
+.site-nav a:hover,.site-nav a.active{color:var(--green)}
+.has-sub > a::after{content:"";display:inline-block;width:6px;height:6px;border-right:1.6px solid currentColor;border-bottom:1.6px solid currentColor;transform:rotate(45deg);margin:0 0 4px 7px}
+.sub{display:none !important;position:absolute;top:100%;left:0;width:240px;background:#fff;border-radius:6px;padding:14px 0;box-shadow:0 10px 30px rgba(0,0,0,.18);z-index:50;flex-direction:column}
+.sub a{font-size:17px;font-weight:700;line-height:1.35;padding:5px 30px;color:#111}
+.sub a:hover{color:var(--green)}
+.has-sub:hover .sub,.has-sub:focus-within .sub{display:flex !important}
+
+/* ===== BREADCRUMB + HERO ===== */
+.crumbs{font-size:13.5px;color:var(--muted);padding:18px 0 0}
+.crumbs a{text-decoration:none;color:var(--muted)}
+.crumbs a:hover{color:var(--green)}
+.hero{text-align:center;padding:26px 0 8px}
+.pill{display:inline-block;background:var(--soft);color:#3d7f12;border:1px solid #cfeab4;font-size:12.5px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;padding:4px 12px;border-radius:20px;margin-bottom:14px}
+.hero h1{font-size:44px;font-weight:300;line-height:1.2}
+.hero p{max-width:760px;margin:14px auto 0;color:var(--muted);font-size:17px}
+
+/* ===== TOOL ===== */
+.tool{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin:34px 0 10px}
+.card{border:1px solid var(--line);border-radius:12px;padding:24px;background:#fff}
+.card h2{font-size:19px;font-weight:700;margin-bottom:16px}
+.field{margin-bottom:18px}
+.field label{display:flex;justify-content:space-between;font-weight:700;font-size:14.5px;margin-bottom:6px}
+.field label em{font-style:normal;font-weight:600;color:var(--muted);font-size:13px}
+.field input,.field textarea{width:100%;border:1px solid #cfcfcf;border-radius:8px;padding:11px 12px;font:inherit;font-size:15px;color:#111;outline:none;transition:border-color .15s}
+.field input:focus,.field textarea:focus{border-color:var(--green);box-shadow:0 0 0 3px rgba(108,200,42,.15)}
+.field textarea{resize:vertical;min-height:96px}
+.meter{height:7px;background:#eee;border-radius:6px;margin-top:8px;overflow:hidden}
+.meter b{display:block;height:100%;width:0;background:var(--green);border-radius:6px;transition:width .15s,background .15s}
+.meter b.warn{background:#f0a020}.meter b.bad{background:#e0442c}
+.stat{font-size:13px;color:var(--muted);margin-top:5px;display:flex;justify-content:space-between}
+.stat .ok{color:#3d8f12;font-weight:700}.stat .warn{color:#c47a00;font-weight:700}.stat .bad{color:#d1351f;font-weight:700}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.check{display:flex;align-items:center;gap:8px;font-size:14.5px;font-weight:600;margin-bottom:6px;cursor:pointer}
+.check input{accent-color:var(--green);width:16px;height:16px}
+
+.tabs{display:inline-flex;border:1px solid #cfcfcf;border-radius:30px;padding:3px;margin-bottom:18px}
+.tabs button{border:0;background:none;font:inherit;font-weight:700;font-size:14px;padding:7px 18px;border-radius:30px;cursor:pointer;color:#333}
+.tabs button.on{background:#111;color:#fff}
+
+/* Google result mock */
+.serp{border:1px solid var(--line);border-radius:10px;padding:20px 18px;background:#fff;font-family:Arial,sans-serif}
+.serp.mobile{max-width:400px;margin:0 auto;border-radius:16px;box-shadow:0 2px 10px rgba(0,0,0,.08)}
+.g-site{display:flex;align-items:center;gap:10px;margin-bottom:6px}
+.g-fav{width:28px;height:28px;border-radius:50%;background:#f1f3f4;border:1px solid #dadce0;display:grid;place-items:center;font-weight:700;font-size:13px;color:var(--green)}
+.g-name{font-size:14px;color:var(--g-url);line-height:1.3}
+.g-url{font-size:12px;color:#4d5156;line-height:1.3;word-break:break-all}
+.g-title{font-size:20px;line-height:1.3;color:var(--g-title);margin:2px 0 4px;font-weight:400;cursor:pointer}
+.g-title:hover{text-decoration:underline}
+.serp.mobile .g-title{font-size:18px;color:#1558d6}
+.g-desc{font-size:14px;line-height:1.58;color:var(--g-desc)}
+.g-desc .g-date{color:#70757a}
+.g-desc strong{color:#5f6368;font-weight:700}
+
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+.btn{border:2px solid var(--green);background:#fff;color:#111;font:inherit;font-weight:700;font-size:14px;padding:9px 18px;border-radius:30px;cursor:pointer;transition:all .15s}
+.btn:hover{background:var(--green);color:#fff}
+.btn.dark{background:#111;border-color:#111;color:#fff}
+.btn.dark:hover{background:var(--green);border-color:var(--green)}
+.code-out{margin-top:14px;background:#1e1e1e;color:#d4d4d4;border-radius:8px;padding:14px;font:14px/1.5 Consolas,Monaco,monospace;white-space:pre-wrap;word-break:break-all;display:none}
+.toast{font-size:13px;color:#3d8f12;font-weight:700;align-self:center;opacity:0;transition:opacity .2s}
+.toast.show{opacity:1}
+
+.tips{margin-top:18px;border-left:4px solid var(--green);background:var(--soft);border-radius:0 8px 8px 0;padding:12px 14px;font-size:14px}
+.tips ul{margin:6px 0 0 18px}
+.tips li{margin:2px 0}
+
+/* ===== CONTENT ===== */
+.content{max-width:820px;margin:40px auto 0}
+.content h2{font-size:28px;font-weight:700;margin:36px 0 12px;line-height:1.3}
+.content h3{font-size:20px;font-weight:700;margin:22px 0 8px}
+.content p{font-size:17px;color:#2c2c2c;margin-bottom:12px}
+.content ol,.content ul{margin:0 0 14px 22px;font-size:17px;color:#2c2c2c}
+.content li{margin:6px 0}
+.content a{color:#3d8f12;font-weight:600}
+.content code{background:#f1f1f1;padding:1px 6px;border-radius:4px;font-size:15px}
+table.lim{width:100%;border-collapse:collapse;margin:10px 0 18px;font-size:15.5px}
+table.lim th{background:#2b2b2b;color:#fff;text-align:left;padding:10px 12px}
+table.lim td{border-bottom:1px solid var(--line);padding:10px 12px}
+
+.faq-item{border:1px solid var(--line);border-radius:10px;margin-bottom:12px;overflow:hidden}
+.faq-item summary{list-style:none;cursor:pointer;padding:14px 16px;font-weight:700;font-size:16.5px;display:flex;gap:12px;align-items:flex-start}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-num{flex:0 0 26px;height:26px;border-radius:50%;background:var(--green);color:#fff;font-size:13px;display:grid;place-items:center}
+.faq-item p{padding:0 16px 14px 54px;color:#3a5a20;font-size:16px;margin:0}
+
+.related{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:12px 0 10px}
+.related a{display:flex;justify-content:space-between;align-items:center;gap:10px;border:1px solid var(--line);border-left:4px solid var(--green);border-radius:8px;padding:13px 14px;text-decoration:none;color:#111 !important;font-weight:700;font-size:15px}
+.related a:hover{border-color:var(--green)}
+
+.bx-ad{margin:34px 0;min-height:90px}
+
+/* ===== FOOTER ===== */
+.site-footer{background:var(--footer);color:#fff;margin-top:70px;padding:52px 0 44px}
+.foot-links{list-style:none;display:flex;flex-wrap:wrap;gap:8px 28px}
+.foot-links a{text-decoration:none;font-weight:700;font-size:14.5px;text-transform:uppercase;color:#fff}
+.foot-links a:hover{color:var(--lime)}
+.copy{color:#a8a8a8;font-size:16px;margin-top:12px}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width:900px){
+  .tool{grid-template-columns:1fr}
+  .hero h1{font-size:34px}
+}
+@media (max-width:760px){
+  .site-top .wrap{grid-template-columns:1fr auto;padding-top:18px;padding-bottom:18px}
+  .site-date{display:none}
+  .site-logo{font-size:28px}
+  .menu-btn{display:block}
+  .site-nav ul{display:none;flex-direction:column}
+  .site-nav.open > .wrap > ul{display:flex}
+  .site-nav a{padding:11px 4px;border-bottom:1px solid #f0f0f0}
+  .sub{position:static;box-shadow:none;border:0;padding-left:14px}
+  .has-sub:hover .sub,.has-sub:focus-within .sub{display:flex !important}
+  .related,.row2{grid-template-columns:1fr}
+  .content h2{font-size:24px}
+}
+
+/* ===== SHARED TOOL EXTRAS ===== */
+.full{grid-column:1/-1}
+.field select{width:100%;border:1px solid #cfcfcf;border-radius:8px;padding:10px 12px;font:inherit;font-size:15px;background:#fff;color:#111}
+.field textarea.big{min-height:230px;font-size:14.5px}
+.mono{font-family:Consolas,Monaco,monospace !important;font-size:13.5px !important}
+.btn-sm{padding:5px 12px;font-size:13px;border-width:1.5px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(105px,1fr));gap:10px;margin-bottom:16px}
+.stat-box{background:var(--soft);border:1px solid #dbefc8;border-radius:10px;padding:10px 8px;text-align:center}
+.stat-box b{display:block;font-size:22px;line-height:1.2}
+.stat-box span{font-size:12.5px;color:var(--muted);font-weight:600}
+.rtable{width:100%;border-collapse:collapse;font-size:14.5px}
+.rtable th{background:#2b2b2b;color:#fff;text-align:left;padding:8px 10px;font-weight:700}
+.rtable td{border-bottom:1px solid var(--line);padding:7px 10px}
+.rtable td.num,.rtable th.num{text-align:right;font-variant-numeric:tabular-nums}
+.rtable tr.hit td{background:#eef8e6;font-weight:700}
+.empty{color:var(--muted);font-size:14.5px;padding:14px 0}
+.kw-result{border-radius:10px;padding:12px 14px;margin-bottom:16px;font-size:14.5px;border:1px solid var(--line);background:#fafafa}
+.kw-result.ok{background:#eef8e6;border-color:#cfeab4}
+.kw-result.warn{background:#fff6e5;border-color:#f3d79b}
+.kw-result.bad{background:#fdecea;border-color:#f5c2bb}
+.slug-row{border:1px solid var(--line);border-radius:8px;padding:10px 12px;margin-bottom:8px;display:flex;justify-content:space-between;gap:10px;align-items:center}
+.slug-row .s{font:600 15px/1.4 Consolas,Monaco,monospace;color:#111;word-break:break-all}
+.slug-row small{display:block;color:var(--muted);font-size:12.5px;word-break:break-all;margin-top:2px}
+.slug-row small.warn{color:#c47a00;font-weight:700}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
+.chip{border:1px solid var(--line);border-radius:20px;padding:4px 12px;font-size:13.5px;font-weight:700;background:#fff}
+.chip.zero{color:#aaa}
+.outline{max-height:460px;overflow:auto;border:1px solid var(--line);border-radius:10px;padding:6px 12px}
+.o-row{display:flex;gap:10px;align-items:flex-start;padding:7px 0;border-bottom:1px dashed #eee;font-size:14.5px}
+.o-row:last-child{border-bottom:0}
+.o-tag{flex:0 0 auto;font:700 12px/1 Consolas,Monaco,monospace;padding:5px 7px;border-radius:5px;color:#fff;background:#111}
+.o-tag.h1{background:#2f7a0c}.o-tag.h2{background:#4fa61d}.o-tag.h3{background:#6cc82a}.o-tag.h4{background:#8a8a8a}.o-tag.h5{background:#a5a5a5}.o-tag.h6{background:#bdbdbd}
+.o-issue{display:inline-block;font-size:12px;color:#d1351f;font-weight:700;margin-left:6px}
+.tgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:18px;margin:30px 0 10px}
+.tcard{border:1px solid var(--line);border-radius:12px;padding:22px;text-decoration:none;display:flex;flex-direction:column;gap:10px;transition:all .15s;background:#fff;color:#111}
+.tcard:hover{border-color:var(--green);box-shadow:0 8px 22px rgba(0,0,0,.07);transform:translateY(-2px)}
+.tbadge{width:48px;height:48px;border-radius:12px;background:#111;color:var(--lime);display:grid;place-items:center;font-weight:800;font-size:16px}
+.tcard h2,.tcard h3{font-size:18px;line-height:1.3;margin:0}
+.tcard p{font-size:14.5px;color:var(--muted);flex:1;line-height:1.55}
+.tcard .go{font-weight:700;color:#3d8f12;font-size:14px}
+.tcard.soon{opacity:.55;pointer-events:none}
+.tcard.soon .tbadge{background:#ddd;color:#777}
+.tcard.soon .go{color:var(--muted)}
+.more-tools{margin-top:10px}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="site-top">
+    <div class="wrap">
+      <div class="site-date" id="siteDate">Today<small>&nbsp;</small></div>
+      <a class="site-logo" href="https://brandella.in/">Brandella <span>Journal</span></a>
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false"><i></i><i></i><i></i></button>
+    </div>
+  </div>
+  <nav class="site-nav" id="siteNav" aria-label="Main">
+    <div class="wrap">
+      <ul>
+        <li><a href="https://brandella.in/">Home</a></li>
+        <li class="has-sub"><a href="https://brandella.in/category/seo/">SEO</a>
+          <ul class="sub">
+            <li><a href="https://brandella.in/category/seo/technical-seo/">Technical SEO</a></li>
+            <li><a href="https://brandella.in/category/seo/local-seo/">Local SEO</a></li>
+            <li><a href="https://brandella.in/category/seo/mobile-seo/">Mobile SEO</a></li>
+            <li><a href="https://brandella.in/category/seo/on-page-seo/">On-Page SEO</a></li>
+            <li><a href="https://brandella.in/category/seo/off-page-seo/">Off-Page SEO</a></li>
+            <li><a href="https://brandella.in/category/seo/seo-tools/">SEO Tools</a></li>
+            <li><a href="https://brandella.in/category/seo/core-web-vitals/">Core Web Vitals</a></li>
+            <li><a href="https://brandella.in/category/seo/keyword-research/">Keyword Research</a></li>
+            <li><a href="https://brandella.in/category/seo/link-building/">Link Building</a></li>
+            <li><a href="https://brandella.in/category/seo/google-search-console/">Google Search Console</a></li>
+            <li><a href="https://brandella.in/category/seo/seo-basics/">SEO Basics</a></li>
+          </ul>
+        </li>
+        <li class="has-sub"><a href="https://brandella.in/category/paid-media/">Paid Media</a>
+          <ul class="sub">
+            <li><a href="https://brandella.in/category/paid-media/display-advertising/">Display Advertising</a></li>
+            <li><a href="https://brandella.in/category/paid-media/google-ads/">Google Ads</a></li>
+            <li><a href="https://brandella.in/category/paid-media/linkedin-ads/">LinkedIn Ads</a></li>
+            <li><a href="https://brandella.in/category/paid-media/meta-ads/">Meta Ads</a></li>
+            <li><a href="https://brandella.in/category/paid-media/paid-media-analytics/">Paid Media Analytics</a></li>
+            <li><a href="https://brandella.in/category/paid-media/ppc-strategy/">PPC Strategy</a></li>
+          </ul>
+        </li>
+        <li><a href="https://brandella.in/category/content/">Content</a></li>
+        <li><a href="https://brandella.in/category/social/">Social</a></li>
+        <li><a href="https://brandella.in/category/digital-marketing/">Digital Marketing</a></li>
+        <li><a href="https://brandella.in/category/artificial-intelligence/">Artificial Intelligence</a></li>
+        <li class="has-sub"><a href="https://brandella.in/category/development/">Development</a>
+          <ul class="sub">
+            <li><a href="https://brandella.in/category/development/php/">PHP</a></li>
+            <li><a href="https://brandella.in/category/development/javascript/">JavaScript</a></li>
+            <li><a href="https://brandella.in/category/development/python/">Python</a></li>
+          </ul>
+        </li>
+        <li class="has-sub"><a class="active" href="https://brandella.in/tools/">Tools</a>
+          <ul class="sub">
+            <li><a href="https://brandella.in/tools/seo-tools/">SEO Tools</a></li>
+            <li><a href="https://brandella.in/tools/schema-generators/">Schema Generators</a></li>
+            <li><a href="https://brandella.in/tools/ppc-calculators/">PPC Calculators</a></li>
+            <li><a href="https://brandella.in/tools/analytics-tools/">Analytics and Tracking Tools</a></li>
+            <li><a href="https://brandella.in/tools/social-media-tools/">Social Media Tools</a></li>
+            <li><a href="https://brandella.in/tools/technical-seo-tools/">Technical SEO Tools</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<main class="wrap">
+
+  <div class="crumbs"><a href="https://brandella.in/">Home</a> &rsaquo; <a href="https://brandella.in/tools/">Tools</a> &rsaquo; <a href="https://brandella.in/tools/technical-seo-tools/">Technical SEO Tools</a> &rsaquo; XML Sitemap Generator</div>
+
+  <section class="hero">
+    <span class="pill">Free Technical SEO Tool</span>
+    <h1>XML Sitemap Generator</h1>
+    <p>Paste the pages you want in Google, one per line, and get a clean XML sitemap that follows the sitemaps.org protocol. Duplicates, fragments and bad URLs are fixed or flagged for you.</p>
+  </section>
+
+  <section class="tool" aria-label="XML sitemap generator" id="xsForm">
+    <div class="card" style="min-width:0">
+      <h2>Your Pages</h2>
+      <div class="field"><label for="xsUrls">URLs <em>one per line, date optional</em></label><textarea id="xsUrls" class="mono" spellcheck="false" placeholder="" style="min-height:270px">https://www.example.com/
+https://www.example.com/about/ 2026-09-14
+https://www.example.com/services/seo-audit/ 2026-10-30
+https://www.example.com/blog/ 2026-11-02
+https://www.example.com/blog/technical-seo-checklist/ 2026-11-02
+/blog/core-web-vitals-guide/ 2026-10-21
+/contact/
+https://www.example.com/shop/?category=shoes&amp;size=9
+https://www.example.com/about/
+https://www.example.com/pricing/#plans</textarea></div>
+      <div class="field"><label for="xsBase">Site Address <em>used for paths like /contact/</em></label><input id="xsBase" class="mono" type="text" autocomplete="off" spellcheck="false" value="https://www.example.com" placeholder=""></div>
+      <div class="row2"><div class="field"><label for="xsLast">Last Modified Date</label><select id="xsLast"><option value="line" selected>Only dates in my list</option><option value="today">Today for URLs without a date</option><option value="none">Leave out lastmod</option></select></div><div class="field"><label for="xsMax">URLs per File</label><input id="xsMax" type="number" autocomplete="off" spellcheck="false" value="50000" placeholder="" min="1" max="50000"></div></div>
+      <label class="check"><input id="xsExtra" type="checkbox"> <span>Add <code>changefreq</code> and <code>priority</code> (Google ignores both)</span></label>
+      <label class="check"><input id="xsQuery" type="checkbox" checked> <span>Keep URLs with query strings like <code>?sort=</code></span></label>
+    </div>
+    <div class="card" style="min-width:0">
+      <h2>Your Sitemap</h2>
+      <div class="stats"><div class="stat-box"><b id="xsCount">0</b><span>URLs</span></div><div class="stat-box"><b id="xsSkip">0</b><span>Skipped</span></div><div class="stat-box"><b id="xsFiles">0</b><span>Files</span></div><div class="stat-box"><b id="xsSize">0</b><span>Size</span></div></div>
+      <div class="kw-result" id="xsCheck"></div>
+      <div class="field" id="xsPickRow" style="display:none"><label for="xsPick">Show File</label><select id="xsPick"></select></div>
+      <pre class="code-out" id="xsOut" style="display:block;margin-top:0;max-height:520px;overflow:auto;word-break:normal;overflow-wrap:anywhere"></pre>
+      <div class="actions"><button class="btn dark" id="xsCopy">Copy XML</button><button class="btn" id="xsDl">Download This File</button><button class="btn" id="xsDlAll" style="display:none">Download All Files</button><span class="toast" id="toast">Copied!</span></div>
+      <div class="tips"><strong>Next steps</strong><ul><li>Upload the file to your site root, for example <code>/sitemap.xml</code></li><li>Add a <code>Sitemap:</code> line to robots.txt</li><li>Submit it in Search Console under Sitemaps</li></ul></div>
+    </div>
+  </section>
+
+  <div class="bx-ad">
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3931314195561246" data-ad-slot="4249015278" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+
+  <article class="content">
+
+    <h2>What Is an XML Sitemap?</h2>
+    <p>An XML sitemap is a file that lists the pages on your site you want search engines to find. It does not guarantee indexing, but it helps Google discover new and updated pages faster, especially on large sites, new sites and pages with few internal links.</p>
+    <p>Most sitemap generators crawl your site from their own servers. This one works the other way: you paste the URLs you already know you want indexed, for example from your CMS, a spreadsheet or a crawl export, and it builds the file in your browser.</p>
+
+    <h2>How to Use the XML Sitemap Generator</h2>
+    <ol>
+      <li><strong>Paste your URLs</strong>, one per line. Add a date after a space if you know when the page last changed, like <code>2026-10-30</code>.</li>
+      <li><strong>Set your site address</strong> so short paths like <code>/contact/</code> become full URLs.</li>
+      <li><strong>Choose how to handle dates.</strong> Only add a date that reflects a real change to the page.</li>
+      <li><strong>Check the warnings</strong> for duplicates, other domains and URLs with parameters.</li>
+      <li><strong>Download the file</strong>, upload it to your site root and submit it in Search Console.</li>
+    </ol>
+
+    <h2>Sitemap Tags and Limits</h2>
+    <div style="overflow-x:auto"><table class="lim">
+      <thead><tr style="background:#2b2b2b !important;"><th style="background:#2b2b2b !important; color:#ffffff !important;">Item</th><th style="background:#2b2b2b !important; color:#ffffff !important;">Rule</th><th style="background:#2b2b2b !important; color:#ffffff !important;">Used by Google</th></tr></thead>
+      <tbody>
+        <tr><td><code>loc</code></td><td>Full URL with https, under 2,048 characters, special characters escaped</td><td>Yes, required</td></tr>
+        <tr><td><code>lastmod</code></td><td>Date in W3C format, like 2026-11-04</td><td>Yes, if it is accurate</td></tr>
+        <tr><td><code>changefreq</code></td><td>always, hourly, daily, weekly, monthly, yearly or never</td><td>No, ignored</td></tr>
+        <tr><td><code>priority</code></td><td>0.0 to 1.0, default 0.5</td><td>No, ignored</td></tr>
+        <tr><td>File size</td><td>Up to 50,000 URLs and 50 MB uncompressed</td><td>Larger files must be split</td></tr>
+      </tbody>
+    </table></div>
+    <p>These limits come from <a href="https://developers.google.com/search/docs/crawling-indexing/sitemaps/build-sitemap" target="_blank" rel="noopener">Google's sitemap guide</a> and the <a href="https://www.sitemaps.org/protocol.html" target="_blank" rel="noopener">sitemaps.org protocol</a>. The generator escapes characters like <code>&amp;</code> for you, which is the most common reason a hand made sitemap fails.</p>
+
+    <h2>Tips for a Better Sitemap</h2>
+    <ul>
+      <li><strong>List canonical URLs only.</strong> Leave out redirects, error pages, noindex pages and filtered duplicates.</li>
+      <li><strong>Be honest with lastmod.</strong> Google stops trusting dates that change on every page every day.</li>
+      <li><strong>Pick one version of your domain.</strong> Do not mix http and https, or www and non www.</li>
+      <li><strong>Split big sites by type</strong>, such as posts, products and categories, so Search Console reports are easier to read.</li>
+    </ul>
+
+    <h2>Learn More About Sitemaps</h2>
+    <p>Read <a href="https://brandella.in/what-is-xml-sitemap-ai-search-era/">what an XML sitemap is in the AI search era</a>, compare <a href="https://brandella.in/html-sitemap-vs-xml-sitemap-difference/">HTML and XML sitemaps</a>, and automate the job with our guide to <a href="https://brandella.in/build-xml-sitemap-generator-php/">building a sitemap generator in PHP</a>. Already have a sitemap? Check it with the <a href="https://brandella.in/tools/technical-seo-tools/xml-sitemap-validator/">XML sitemap validator</a>.</p>
+
+    <div class="bx-ad">
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3931314195561246" data-ad-slot="4249015278" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+
+    <h2>Frequently Asked Questions</h2>
+    <details class="faq-item" open><summary><span class="faq-num">1</span>How many URLs can one sitemap hold?</summary><p>Up to 50,000 URLs and 50 MB uncompressed. For more, split the list into several files and list them in a sitemap index. The generator does this for you.</p></details>
+    <details class="faq-item" open><summary><span class="faq-num">2</span>Should I add priority and changefreq?</summary><p>You can, but Google ignores both. A correct lastmod date is far more useful, so the generator leaves the other two out unless you turn them on.</p></details>
+    <details class="faq-item" open><summary><span class="faq-num">3</span>Where do I upload my sitemap?</summary><p>Upload it to the root of your site, such as yourdomain.com/sitemap.xml, add a Sitemap line to your robots.txt file, and submit the URL in Google Search Console.</p></details>
+    <details class="faq-item" open><summary><span class="faq-num">4</span>Does a sitemap get my pages indexed?</summary><p>It helps Google find them, but it is only a hint. Pages still need to be useful, crawlable and not blocked or marked noindex to be indexed.</p></details>
+
+    <h2>Related Articles</h2>
+    <div class="related">
+      <a href="https://brandella.in/what-is-xml-sitemap-ai-search-era/">What Is an XML Sitemap <span>&rarr;</span></a>
+      <a href="https://brandella.in/html-sitemap-vs-xml-sitemap-difference/">HTML vs XML Sitemap <span>&rarr;</span></a>
+      <a href="https://brandella.in/build-xml-sitemap-generator-php/">Build an XML Sitemap Generator in PHP <span>&rarr;</span></a>
+      <a href="https://brandella.in/large-scale-xml-sitemaps-php-index-files/">Large Scale XML Sitemaps in PHP <span>&rarr;</span></a>
+    </div>
+  </article>
+
+  <section class="content more-tools" style="max-width:1140px">
+    <h2>More Free Technical SEO Tools</h2>
+    <div class="tgrid">
+      <a class="tcard" href="https://brandella.in/tools/technical-seo-tools/robots-txt-generator/"><div class="tbadge">RG</div><h3>Robots.txt Generator</h3><p>Create a clean robots.txt file with blocked folders, sitemaps and AI crawler rules, checked as you type.</p><span class="go">Open tool &rarr;</span></a>
+<a class="tcard" href="https://brandella.in/tools/technical-seo-tools/robots-txt-tester/"><div class="tbadge">RT</div><h3>Robots.txt Tester</h3><p>Paste a robots.txt file and test which URLs Googlebot, Bingbot or AI crawlers may crawl, rule by rule.</p><span class="go">Open tool &rarr;</span></a>
+<a class="tcard" href="https://brandella.in/tools/technical-seo-tools/xml-sitemap-validator/"><div class="tbadge">SV</div><h3>XML Sitemap Validator</h3><p>Paste a sitemap or sitemap index and find XML errors, bad URLs, wrong dates and broken limits.</p><span class="go">Open tool &rarr;</span></a>
+<a class="tcard" href="https://brandella.in/tools/technical-seo-tools/hreflang-tag-generator/"><div class="tbadge">HG</div><h3>Hreflang Tag Generator</h3><p>Build hreflang link tags, sitemap entries or HTTP headers for every language and country version of a page.</p><span class="go">Open tool &rarr;</span></a>
+<a class="tcard" href="https://brandella.in/tools/technical-seo-tools/hreflang-checker/"><div class="tbadge">HC</div><h3>Hreflang Checker</h3><p>Validate hreflang codes, self references, fallback tags and return links from a sitemap, page HTML or header.</p><span class="go">Open tool &rarr;</span></a>
+<a class="tcard" href="https://brandella.in/tools/technical-seo-tools/htaccess-redirect-generator/"><div class="tbadge">HR</div><h3>Htaccess Redirect Generator</h3><p>Turn a list of old and new URLs into 301 redirect rules for Apache, with chain and loop checks.</p><span class="go">Open tool &rarr;</span></a>
+    </div>
+    <p><a href="https://brandella.in/tools/technical-seo-tools/">See all technical seo tools &rarr;</a> &nbsp;|&nbsp; <a href="https://brandella.in/tools/">Browse every free tool &rarr;</a></p>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <ul class="foot-links">
+      <li><a href="https://brandella.in/">Home</a></li>
+      <li><a href="https://brandella.in/about-us/">About Us</a></li>
+      <li><a href="https://brandella.in/contact-us/">Contact Us</a></li>
+      <li><a href="https://brandella.in/privacy-policy/">Privacy Policy</a></li>
+      <li><a href="https://brandella.in/terms-and-conditions/">Terms and Conditions</a></li>
+    </ul>
+    <p class="copy">Copyright &copy; <span id="yr">2026</span> Brandella Journal. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+
+  var d = new Date();
+  var days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+  var months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+  document.getElementById('siteDate').innerHTML = days[d.getDay()] + ',<small>' + months[d.getMonth()] + ' ' + d.getDate() + ', ' + d.getFullYear() + '</small>';
+  document.getElementById('yr').textContent = d.getFullYear();
+  var nav = document.getElementById('siteNav'), mb = document.getElementById('menuBtn');
+  mb.addEventListener('click', function(){ var open = nav.classList.toggle('open'); mb.setAttribute('aria-expanded', open); });
+  var $ = function(id){ return document.getElementById(id); };
+  function esc(s){ return String(s).replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+  function copyText(text, toastId){
+    var done = function(){ var t = $(toastId); if(!t) return; t.classList.add('show'); setTimeout(function(){ t.classList.remove('show'); }, 1600); };
+    if (navigator.clipboard && navigator.clipboard.writeText){ navigator.clipboard.writeText(text).then(done, function(){ fallback(); done(); }); }
+    else { fallback(); done(); }
+    function fallback(){ var ta=document.createElement('textarea'); ta.value=text; document.body.appendChild(ta); ta.select(); try{document.execCommand('copy');}catch(e){} document.body.removeChild(ta); }
+  }
+
+
+  function v(id){ var e = $(id); return e ? String(e.value).trim() : ''; }
+  function say(id, cls, h){ var e = $(id); e.className = 'kw-result' + (cls ? ' ' + cls : ''); e.innerHTML = h; }
+  function issues(id, list, okMsg, max){
+    max = max || 40;
+    var bad = list.filter(function(i){ return i[0] === 'bad'; }), warn = list.filter(function(i){ return i[0] === 'warn'; });
+    var li = function(a){ var more = a.length > max ? '<li>and ' + (a.length - max) + ' more</li>' : '';
+      return '<ul style="margin:6px 0 0 18px">' + a.slice(0, max).map(function(i){ return '<li>' + i[1] + '</li>'; }).join('') + more + '</ul>'; };
+    if (bad.length) say(id, 'bad', '<strong>Fix ' + bad.length + ' issue' + (bad.length > 1 ? 's' : '') + (warn.length ? ', plus ' + warn.length + ' suggestion' + (warn.length > 1 ? 's' : '') : '') + '.</strong>' + li(bad.concat(warn)));
+    else if (warn.length) say(id, 'warn', '<strong>Works, with ' + warn.length + ' suggestion' + (warn.length > 1 ? 's' : '') + '.</strong>' + li(warn));
+    else say(id, 'ok', okMsg);
+  }
+  function c(s){ return '<code>' + esc(s) + '</code>'; }
+  function fmtN(n){ return Number(n).toLocaleString('en-IN'); }
+  function bytes(s){ return new TextEncoder().encode(s).length; }
+  function kb(n){ return n >= 1048576 ? (n / 1048576).toFixed(1) + ' MB' : n >= 1024 ? (n / 1024).toFixed(1) + ' KB' : n + ' B'; }
+  function xesc(s){ return String(s).replace(/[&<>"']/g, function(ch){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&apos;'}[ch]; }); }
+  function download(name, text, type){
+    var a = document.createElement('a'); a.href = URL.createObjectURL(new Blob([text], {type: (type || 'text/plain') + ';charset=utf-8'}));
+    a.download = name; document.body.appendChild(a); a.click(); document.body.removeChild(a);
+    setTimeout(function(){ URL.revokeObjectURL(a.href); }, 4000);
+  }
+  function absUrl(s){ try { var u = new URL(s); return /^https?:$/.test(u.protocol) ? u : null; } catch(e){ return null; } }
+
+  var files = [];
+  function today(){ var d = new Date(); return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0'); }
+  var W3C = /^\d{4}(-(0[1-9]|1[0-2])(-(0[1-9]|[12]\d|3[01])(T([01]\d|2[0-3]):[0-5]\d(:[0-5]\d(\.\d+)?)?(Z|[+-]([01]\d|2[0-3]):[0-5]\d))?)?)?$/;
+  function prio(u){ var depth = u.pathname.split('/').filter(Boolean).length; return depth === 0 ? '1.0' : depth === 1 ? '0.8' : '0.6'; }
+  function build(){
+    var iss = [], seen = {}, list = [], skipped = 0, base = absUrl(v('xsBase')), host = null, protos = {}, mode = $('xsLast').value, extra = $('xsExtra').checked;
+    if (!base) iss.push(['bad', 'The site address must be a full URL, like ' + c('https://www.example.com') + '.']);
+    var frag = 0, dup = 0, qs = 0, badDate = 0;
+    v('xsUrls').split(/\r?\n/).forEach(function(line, i){
+      line = line.trim(); if (!line || line[0] === '#') return;
+      var parts = line.split(/[\s,]+/), raw = parts[0], date = parts[1] || '', u = null;
+      if (/^\//.test(raw) && base) u = absUrl(base.origin + raw);
+      else if (/^https?:\/\//i.test(raw)) u = absUrl(raw);
+      else if (base && /^[\w.-]+\.[a-z]{2,}(\/|$)/i.test(raw)) u = absUrl('https://' + raw);
+      if (!u){ skipped++; iss.push(['bad', 'Line ' + (i + 1) + ': ' + c(line) + ' is not a URL, so it was skipped.']); return; }
+      if (u.hash){ frag++; u.hash = ''; }
+      if (u.search && !$('xsQuery').checked){ skipped++; qs++; return; }
+      if (!host) host = u.host;
+      if (u.host !== host){ skipped++; iss.push(['bad', c(u.href) + ' is on a different host than ' + c(host) + '. One sitemap can only list URLs from one host.']); return; }
+      protos[u.protocol] = 1;
+      var href = u.href;
+      if (href.length > 2048){ skipped++; iss.push(['bad', 'A URL longer than 2,048 characters was skipped.']); return; }
+      if (seen[href]){ dup++; return; }
+      if (date && !W3C.test(date)){ badDate++; iss.push(['warn', 'Line ' + (i + 1) + ': ' + c(date) + ' is not a valid date. Use ' + c('YYYY-MM-DD') + '. The date was left out.']); date = ''; }
+      if (!date && mode === 'today') date = today();
+      if (mode === 'none') date = '';
+      seen[href] = 1; list.push({u: u, href: href, date: date});
+    });
+    if (frag) iss.push(['warn', 'Removed the ' + c('#') + ' part from ' + frag + ' URL' + (frag > 1 ? 's' : '') + '. Search engines ignore fragments.']);
+    if (dup) iss.push(['warn', 'Removed ' + dup + ' duplicate URL' + (dup > 1 ? 's' : '') + '.']);
+    if (qs) iss.push(['warn', 'Skipped ' + qs + ' URL' + (qs > 1 ? 's' : '') + ' with query strings.']);
+    if (Object.keys(protos).length > 1) iss.push(['warn', 'Your list mixes http and https URLs. List only the version you want in search.']);
+    if (base && host && base.host !== host) iss.push(['warn', 'Your URLs are on ' + c(host) + ' but the site address is ' + c(base.host) + '. Check you are using the right domain.']);
+    var withQ = list.filter(function(x){ return x.u.search; }).length;
+    if (withQ) iss.push(['warn', withQ + ' URL' + (withQ > 1 ? 's have' : ' has') + ' a query string. Only list them if they are the canonical version of the page.']);
+    var max = Math.max(1, Math.min(50000, Math.floor(+$('xsMax').value) || 50000));
+    files = [];
+    for (var s = 0; s < list.length; s += max){
+      var chunk = list.slice(s, s + max), L = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'];
+      chunk.forEach(function(x){
+        L.push('  <url>'); L.push('    <loc>' + xesc(x.href) + '</loc>');
+        if (x.date) L.push('    <lastmod>' + x.date + '</lastmod>');
+        if (extra){ L.push('    <changefreq>weekly</changefreq>'); L.push('    <priority>' + prio(x.u) + '</priority>'); }
+        L.push('  </url>');
+      });
+      L.push('</urlset>');
+      files.push({name: list.length > max ? 'sitemap-' + (files.length + 1) + '.xml' : 'sitemap.xml', xml: L.join('\n') + '\n'});
+    }
+    if (files.length > 1 && host){
+      var origin = list[0].u.origin, I = ['<?xml version="1.0" encoding="UTF-8"?>', '<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'];
+      files.forEach(function(f){ I.push('  <sitemap>'); I.push('    <loc>' + xesc(origin + '/' + f.name) + '</loc>'); I.push('    <lastmod>' + today() + '</lastmod>'); I.push('  </sitemap>'); });
+      I.push('</sitemapindex>');
+      files.unshift({name: 'sitemap-index.xml', xml: I.join('\n') + '\n', index: true});
+      iss.push(['warn', 'Your list was split into ' + (files.length - 1) + ' sitemap files. Upload them all to your site root and submit ' + c('sitemap-index.xml') + '.']);
+    }
+    var total = files.reduce(function(a, f){ return a + bytes(f.xml); }, 0);
+    files.forEach(function(f){ if (bytes(f.xml) > 52428800) iss.push(['bad', c(f.name) + ' is larger than 50 MB. Lower the URLs per file.']); });
+    $('xsCount').textContent = fmtN(list.length); $('xsSkip').textContent = skipped; $('xsFiles').textContent = files.length; $('xsSize').textContent = kb(total);
+    var pk = $('xsPick'), prev = pk.value;
+    pk.innerHTML = files.map(function(f, i){ return '<option value="' + i + '">' + esc(f.name) + '</option>'; }).join('');
+    if (prev && files[+prev]) pk.value = prev;
+    $('xsPickRow').style.display = files.length > 1 ? '' : 'none'; $('xsDlAll').style.display = files.length > 1 ? '' : 'none';
+    show();
+    if (!list.length) iss.push(['bad', 'Add at least one URL.']);
+    issues('xsCheck', iss, '<strong>Valid sitemap with ' + fmtN(list.length) + ' URL' + (list.length === 1 ? '' : 's') + '.</strong> Download it, upload it to your site root and submit it in Search Console.');
+  }
+  function show(){ var f = files[+$('xsPick').value || 0]; $('xsOut').textContent = f ? f.xml : ''; }
+  $('xsForm').addEventListener('input', function(e){ if (e.target.id !== 'xsPick') build(); });
+  $('xsForm').addEventListener('change', function(e){ if (e.target.id === 'xsPick') show(); else build(); });
+  $('xsCopy').onclick = function(){ copyText($('xsOut').textContent, 'toast'); };
+  $('xsDl').onclick = function(){ var f = files[+$('xsPick').value || 0]; if (f) download(f.name, f.xml, 'application/xml'); };
+  $('xsDlAll').onclick = function(){ files.forEach(function(f, i){ setTimeout(function(){ download(f.name, f.xml, 'application/xml'); }, i * 400); }); };
+  build();
+
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hreflang Tag Generator: HTML, Sitemap and Header</title>
+<meta name="description" content="Free hreflang tag generator. Add each language and country version of a page and get valid hreflang tags for HTML, XML sitemaps or HTTP headers, with x-default.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://brandella.in/tools/technical-seo-tools/hreflang-tag-generator/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Hreflang Tag Generator: HTML, Sitemap and Header">
+<meta property="og:description" content="Free hreflang tag generator. Add each language and country version of a page and get valid hreflang tags for HTML, XML sitemaps or HTTP headers, with x-default.">
+<meta property="og:url" content="https://brandella.in/tools/technical-seo-tools/hreflang-tag-generator/">
+<meta property="og:site_name" content="Brandella Journal">
+<meta property="og:image" content="https://brandella.in/tools/assets/og-hreflang-tag-generator.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://brandella.in/tools/assets/og-hreflang-tag-generator.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3931314195561246" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "Hreflang Tag Generator",
+      "url": "https://brandella.in/tools/technical-seo-tools/hreflang-tag-generator/",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Any (web browser)",
+      "description": "Free hreflang tag generator. Add each language and country version of a page and get valid hreflang tags for HTML, XML sitemaps or HTTP headers, with x-default.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Brandella Journal",
+        "url": "https://brandella.in/"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://brandella.in/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Tools",
+          "item": "https://brandella.in/tools/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Technical SEO Tools",
+          "item": "https://brandella.in/tools/technical-seo-tools/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Hreflang Tag Generator",
+          "item": "https://brandella.in/tools/technical-seo-tools/hreflang-tag-generator/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Do I need a country code in hreflang?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. A language code alone, like en or hi, is often the best choice. Add a country only when the page is made for that country, for example different prices, currency or spelling."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the x default hreflang value for?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It names the page to show visitors whose language or country matches none of your versions. Many sites use their main English page or a language picker page."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Should a page include a hreflang tag for itself?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Google asks every version to list itself as well as all the other versions. The generator builds one shared block that does this for you."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can hreflang point to another domain?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Versions can live on different domains, such as example.in and example.de, as long as every URL is fully qualified and every page links back."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+<style>
+:root{
+  --green:#6cc82a; --lime:#a6ef39; --ink:#111; --gray:#555; --muted:#6b6b6b;
+  --line:#e3e3e3; --bg:#fff; --soft:#f6faf1; --footer:#0a0a0a;
+  --g-title:#1a0dab; --g-url:#202124; --g-desc:#4d5156;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Open Sans',Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6}
+a{color:inherit}
+.wrap{max-width:1140px;margin:0 auto;padding:0 16px}
+
+/* ===== HEADER ===== */
+.site-top{border-bottom:1px solid #d9d9d9}
+.site-top .wrap{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding-top:34px;padding-bottom:34px}
+.site-date{font-size:20px;font-weight:600;line-height:1.1}
+.site-date small{display:block;font-size:13px;font-weight:600;margin-top:2px}
+.site-logo{font-size:40px;font-weight:700;text-decoration:none;color:#555;letter-spacing:.2px;white-space:nowrap}
+.site-logo span{color:var(--green)}
+.menu-btn{display:none;justify-self:end;background:none;border:0;cursor:pointer;padding:6px}
+.menu-btn i{display:block;width:26px;height:3px;background:#111;margin:5px 0;border-radius:2px}
+
+.site-nav{border-bottom:2px solid var(--lime)}
+.site-nav ul{list-style:none;display:flex;justify-content:center;flex-wrap:wrap;gap:0 4px}
+.site-nav > .wrap > ul > li{position:relative}
+.site-nav a{display:block;padding:12px 13px;font-size:17px;font-weight:700;text-decoration:none;color:#111}
+.site-nav a:hover,.site-nav a.active{color:var(--green)}
+.has-sub > a::after{content:"";display:inline-block;width:6px;height:6px;border-right:1.6px solid currentColor;border-bottom:1.6px solid currentColor;transform:rotate(45deg);margin:0 0 4px 7px}
+.sub{display:none !important;position:absolute;top:100%;left:0;width:240px;background:#fff;border-radius:6px;padding:14px 0;box-shadow:0 10px 30px rgba(0,0,0,.18);z-index:50;flex-direction:column}
+.sub a{font-size:17px;font-weight:700;line-height:1.35;padding:5px 30px;color:#111}
+.sub a:hover{color:var(--green)}
+.has-sub:hover .sub,.has-sub:focus-within .sub{display:flex !important}
+
+/* ===== BREADCRUMB + HERO ===== */
+.crumbs{font-size:13.5px;color:var(--muted);padding:18px 0 0}
+.crumbs a{text-decoration:none;color:var(--muted)}
+.crumbs a:hover{color:var(--green)}
+.hero{text-align:center;padding:26px 0 8px}
+.pill{display:inline-block;background:var(--soft);color:#3d7f12;border:1px solid #cfeab4;font-size:12.5px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;padding:4px 12px;border-radius:20px;margin-bottom:14px}
+.hero h1{font-size:44px;font-weight:300;line-height:1.2}
+.hero p{max-width:760px;margin:14px auto 0;color:var(--muted);font-size:17px}
+
+/* ===== TOOL ===== */
+.tool{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin:34px 0 10px}
+.card{border:1px solid var(--line);border-radius:12px;padding:24px;background:#fff}
+.card h2{font-size:19px;font-weight:700;margin-bottom:16px}
+.field{margin-bottom:18px}
+.field label{display:flex;justify-content:space-between;font-weight:700;font-size:14.5px;margin-bottom:6px}
+.field label em{font-style:normal;font-weight:600;color:var(--muted);font-size:13px}
+.field input,.field textarea{width:100%;border:1px solid #cfcfcf;border-radius:8px;padding:11px 12px;font:inherit;font-size:15px;color:#111;outline:none;transition:border-color .15s}
+.field input:focus,.field textarea:focus{border-color:var(--green);box-shadow:0 0 0 3px rgba(108,200,42,.15)}
+.field textarea{resize:vertical;min-height:96px}
+.meter{height:7px;background:#eee;border-radius:6px;margin-top:8px;overflow:hidden}
+.meter b{display:block;height:100%;width:0;background:var(--green);border-radius:6px;transition:width .15s,background .15s}
+.meter b.warn{background:#f0a020}.meter b.bad{background:#e0442c}
+.stat{font-size:13px;color:var(--muted);margin-top:5px;display:flex;justify-content:space-between}
+.stat .ok{color:#3d8f12;font-weight:700}.stat .warn{color:#c47a00;font-weight:700}.stat .bad{color:#d1351f;font-weight:700}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.check{display:flex;align-items:center;gap:8px;font-size:14.5px;font-weight:600;margin-bottom:6px;cursor:pointer}
+.check input{accent-color:var(--green);width:16px;height:16px}
+
+.tabs{display:inline-flex;border:1px solid #cfcfcf;border-radius:30px;padding:3px;margin-bottom:18px}
+.tabs button{border:0;background:none;font:inherit;font-weight:700;font-size:14px;padding:7px 18px;border-radius:30px;cursor:pointer;color:#333}
+.tabs button.on{background:#111;color:#fff}
+
+/* Google result mock */
+.serp{border:1px solid var(--line);border-radius:10px;padding:20px 18px;background:#fff;font-family:Arial,sans-serif}
+.serp.mobile{max-width:400px;margin:0 auto;border-radius:16px;box-shadow:0 2px 10px rgba(0,0,0,.08)}
+.g-site{display:flex;align-items:center;gap:10px;margin-bottom:6px}
+.g-fav{width:28px;height:28px;border-radius:50%;background:#f1f3f4;border:1px solid #dadce0;display:grid;place-items:center;font-weight:700;font-size:13px;color:var(--green)}
+.g-name{font-size:14px;color:var(--g-url);line-height:1.3}
+.g-url{font-size:12px;color:#4d5156;line-height:1.3;word-break:break-all}
+.g-title{font-size:20px;line-height:1.3;color:var(--g-title);margin:2px 0 4px;font-weight:400;cursor:pointer}
+.g-title:hover{text-decoration:underline}
+.serp.mobile .g-title{font-size:18px;color:#1558d6}
+.g-desc{font-size:14px;line-height:1.58;color:var(--g-desc)}
+.g-desc .g-date{color:#70757a}
+.g-desc strong{color:#5f6368;font-weight:700}
+
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+.btn{border:2px solid var(--green);background:#fff;color:#111;font:inherit;font-weight:700;font-size:14px;padding:9px 18px;border-radius:30px;cursor:pointer;transition:all .15s}
+.btn:hover{background:var(--green);color:#fff}
+.btn.dark{background:#111;border-color:#111;color:#fff}
+.btn.dark:hover{background:var(--green);border-color:var(--green)}
+.code-out{margin-top:14px;background:#1e1e1e;color:#d4d4d4;border-radius:8px;padding:14px;font:14px/1.5 Consolas,Monaco,monospace;white-space:pre-wrap;word-break:break-all;display:none}
+.toast{font-size:13px;color:#3d8f12;font-weight:700;align-self:center;opacity:0;transition:opacity .2s}
+.toast.show{opacity:1}
+
+.tips{margin-top:18px;border-left:4px solid var(--green);background:var(--soft);border-radius:0 8px 8px 0;padding:12px 14px;font-size:14px}
+.tips ul{margin:6px 0 0 18px}
+.tips li{margin:2px 0}
+
+/* ===== CONTENT ===== */
+.content{max-width:820px;margin:40px auto 0}
+.content h2{font-size:28px;font-weight:700;margin:36px 0 12px;line-height:1.3}
+.content h3{font-size:20px;font-weight:700;margin:22px 0 8px}
+.content p{font-size:17px;color:#2c2c2c;margin-bottom:12px}
+.content ol,.content ul{margin:0 0 14px 22px;font-size:17px;color:#2c2c2c}
+.content li{margin:6px 0}
+.content a{color:#3d8f12;font-weight:600}
+.content code{background:#f1f1f1;padding:1px 6px;border-radius:4px;font-size:15px}
+table.lim{width:100%;border-collapse:collapse;margin:10px 0 18px;font-size:15.5px}
+table.lim th{background:#2b2b2b;color:#fff;text-align:left;padding:10px 12px}
+table.lim td{border-bottom:1px solid var(--line);padding:10px 12px}
+
+.faq-item{border:1px solid var(--line);border-radius:10px;margin-bottom:12px;overflow:hidden}
+.faq-item summary{list-style:none;cursor:pointer;padding:14px 16px;font-weight:700;font-size:16.5px;display:flex;gap:12px;align-items:flex-start}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-num{flex:0 0 26px;height:26px;border-radius:50%;background:var(--green);color:#fff;font-size:13px;display:grid;place-items:center}
+.faq-item p{padding:0 16px 14px 54px;color:#3a5a20;font-size:16px;margin:0}
+
+.related{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:12px 0 10px}
+.related a{display:flex;justify-content:space-between;align-items:center;gap:10px;border:1px solid var(--line);border-left:4px solid var(--green);border-radius:8px;padding:13px 14px;text-decoration:none;color:#111 !important;font-weight:700;font-size:15px}
+.related a:hover{border-color:var(--green)}
+
+.bx-ad{margin:34px 0;min-height:90px}
+
+/* ===== FOOTER ===== */
+.site-footer{background:var(--footer);color:#fff;margin-top:70px;padding:52px 0 44px}
+.foot-links{list-style:none;display:flex;flex-wrap:wrap;gap:8px 28px}
+.foot-links a{text-decoration:none;font-weight:700;font-size:14.5px;text-transform:uppercase;color:#fff}
+.foot-links a:hover{color:var(--lime)}
+.copy{color:#a8a8a8;font-size:16px;margin-top:12px}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width:900px){
+  .tool{grid-template-columns:1fr}
+  .hero h1{font-size:34px}
+}
+@media (max-width:760px){
+  .site-top .wrap{grid-template-columns:1fr auto;padding-top:18px;padding-bottom:18px}
+  .site-date{display:none}
+  .site-logo{font-size:28px}
+  .menu-btn{display:block}
+  .site-nav ul{display:none;flex-direction:column}
+  .site-nav.open > .wrap > ul{display:flex}
+  .site-nav a{padding:11px 4px;border-bottom:1px solid #f0f0f0}
+  .sub{position:static;box-shadow:none;border:0;padding-left:14px}
+  .has-sub:hover .sub,.has-sub:focus-within .sub{display:flex !important}
+  .related,.row2{grid-template-columns:1fr}
+  .content h2{font-size:24px}
+}
+
+/* ===== SHARED TOOL EXTRAS ===== */
+.full{grid-column:1/-1}
+.field select{width:100%;border:1px solid #cfcfcf;border-radius:8px;padding:10px 12px;font:inherit;font-size:15px;background:#fff;color:#111}
+.field textarea.big{min-height:230px;font-size:14.5px}
+.mono{font-family:Consolas,Monaco,monospace !important;font-size:13.5px !important}
+.btn-sm{padding:5px 12px;font-size:13px;border-width:1.5px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(105px,1fr));gap:10px;margin-bottom:16px}
+.stat-box{background:var(--soft);border:1px solid #dbefc8;border-radius:10px;padding:10px 8px;text-align:center}
+.stat-box b{display:block;font-size:22px;line-height:1.2}
+.stat-box span{font-size:12.5px;color:var(--muted);font-weight:600}
+.rtable{width:100%;border-collapse:collapse;font-size:14.5px}
+.rtable th{background:#2b2b2b;color:#fff;text-align:left;padding:8px 10px;font-weight:700}
+.rtable td{border-bottom:1px solid var(--line);padding:7px 10px}
+.rtable td.num,.rtable th.num{text-align:right;font-variant-numeric:tabular-nums}
+.rtable tr.hit td{background:#eef8e6;font-weight:700}
+.empty{color:var(--muted);font-size:14.5px;padding:14px 0}
+.kw-result{border-radius:10px;padding:12px 14px;margin-bottom:16px;font-size:14.5px;border:1px solid var(--line);background:#fafafa}
+.kw-result.ok{background:#eef8e6;border-color:#cfeab4}
+.kw-result.warn{background:#fff6e5;border-color:#f3d79b}
+.kw-result.bad{background:#fdecea;border-color:#f5c2bb}
+.slug-row{border:1px solid var(--line);border-radius:8px;padding:10px 12px;margin-bottom:8px;display:flex;justify-content:space-between;gap:10px;align-items:center}
+.slug-row .s{font:600 15px/1.4 Consolas,Monaco,monospace;color:#111;word-break:break-all}
+.slug-row small{display:block;color:var(--muted);font-size:12.5px;word-break:break-all;margin-top:2px}
+.slug-row small.warn{color:#c47a00;font-weight:700}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
+.chip{border:1px solid var(--line);border-radius:20px;padding:4px 12px;font-size:13.5px;font-weight:700;background:#fff}
+.chip.zero{color:#aaa}
+.outline{max-height:460px;overflow:auto;border:1px solid var(--line);border-radius:10px;padding:6px 12px}
+.o-row{display:flex;gap:10px;align-items:flex-start;padding:7px 0;border-bottom:1px dashed #eee;font-size:14.5px}
+.o-row:last-child{border-bottom:0}
+.o-tag{flex:0 0 auto;font:700 12px/1 Consolas,Monaco,monospace;padding:5px 7px;border-radius:5px;color:#fff;background:#111}
+.o-tag.h1{background:#2f7a0c}.o-tag.h2{background:#4fa61d}.o-tag.h3{background:#6cc82a}.o-tag.h4{background:#8a8a8a}.o-tag.h5{background:#a5a5a5}.o-tag.h6{background:#bdbdbd}
+.o-issue{display:inline-block;font-size:12px;color:#d1351f;font-weight:700;margin-left:6px}
+.tgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:18px;margin:30px 0 10px}
+.tcard{border:1px solid var(--line);border-radius:12px;padding:22px;text-decoration:none;display:flex;flex-direction:column;gap:10px;transition:all .15s;background:#fff;color:#111}
+.tcard:hover{border-color:var(--green);box-shadow:0 8px 22px rgba(0,0,0,.07);transform:translateY(-2px)}
+.tbadge{width:48px;height:48px;border-radius:12px;background:#111;color:var(--lime);display:grid;place-items:center;font-weight:800;font-size:16px}
+.tcard h2,.tcard h3{font-size:18px;line-height:1.3;margin:0}
+.tcard p{font-size:14.5px;color:var(--muted);flex:1;line-height:1.55}
+.tcard .go{font-weight:700;color:#3d8f12;font-size:14px}
+.tcard.soon{opacity:.55;pointer-events:none}
+.tcard.soon .tbadge{background:#ddd;color:#777}
+.tcard.soon .go{color:var(--muted)}
+.more-tools{margin-top:10px}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="site-top">
+    <div class="wrap">
+      <div class="site-date" id="siteDate">Today<small>&nbsp;</small></div>
+      <a class="site-logo" href="https://brandella.in/">Brandella <span>Journal</span></a>
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false"><i></i><i></i><i></i></button>
+    </div>
+  </div>
+  <nav class="site-nav" id="siteNav" aria-label="Main">
+    <div class="wrap">
+      <ul>
+        <li><a href="https://brandella.in/">Home</a></li>
+        <li class="has-sub"><a href="https://brandella.in/category/seo/">SEO</a>
+          <ul class="sub">
+            <li><a href="https://brandella.in/category/seo/technical-seo/">Technical SEO</a></li>
+            <li><a href="https://brandella.in/category/seo/local-seo/">Local SEO</a></li>
+            <li><a href="https://brandella.in/category/seo/mobile-seo/">Mobile SEO</a></li>
+            <li><a href="https://brandella.in/category/seo/on-page-seo/">On-Page SEO</a></li>
+            <li><a href="https://brandella.in/category/seo/off-page-seo/">Off-Page SEO</a></li>
+            <li><a href="https://brandella.in/category/seo/seo-tools/">SEO Tools</a></li>
+            <li><a href="https://brandella.in/category/seo/core-web-vitals/">Core Web Vitals</a></li>
+            <li><a href="https://brandella.in/category/seo/keyword-research/">Keyword Research</a></li>
+            <li><a href="https://brandella.in/category/seo/link-building/">Link Building</a></li>
+            <li><a href="https://brandella.in/category/seo/google-search-console/">Google Search Console</a></li>
+            <li><a href="https://brandella.in/category/seo/seo-basics/">SEO Basics</a></li>
+          </ul>
+        </li>
+        <li class="has-sub"><a href="https://brandella.in/category/paid-media/">Paid Media</a>
+          <ul class="sub">
+            <li><a href="https://brandella.in/category/paid-media/display-advertising/">Display Advertising</a></li>
+            <li><a href="https://brandella.in/category/paid-media/google-ads/">Google Ads</a></li>
+            <li><a href="https://brandella.in/category/paid-media/linkedin-ads/">LinkedIn Ads</a></li>
+            <li><a href="https://brandella.in/category/paid-media/meta-ads/">Meta Ads</a></li>
+            <li><a href="https://brandella.in/category/paid-media/paid-media-analytics/">Paid Media Analytics</a></li>
+            <li><a href="https://brandella.in/category/paid-media/ppc-strategy/">PPC Strategy</a></li>
+          </ul>
+        </li>
+        <li><a href="https://brandella.in/category/content/">Content</a></li>
+        <li><a href="https://brandella.in/category/social/">Social</a></li>
+        <li><a href="https://brandella.in/category/digital-marketing/">Digital Marketing</a></li>
+        <li><a href="https://brandella.in/category/artificial-intelligence/">Artificial Intelligence</a></li>
+        <li class="has-sub"><a href="https://brandella.in/category/development/">Development</a>
+          <ul class="sub">
+            <li><a href="https://brandella.in/category/development/php/">PHP</a></li>
+            <li><a href="https://brandella.in/category/development/javascript/">JavaScript</a></li>
+            <li><a href="https://brandella.in/category/development/python/">Python</a></li>
+          </ul>
+        </li>
+        <li class="has-sub"><a class="active" href="https://brandella.in/tools/">Tools</a>
+          <ul class="sub">
+            <li><a href="https://brandella.in/tools/seo-tools/">SEO Tools</a></li>
+            <li><a href="https://brandella.in/tools/schema-generators/">Schema Generators</a></li>
+            <li><a href="https://brandella.in/tools/ppc-calculators/">PPC Calculators</a></li>
+            <li><a href="https://brandella.in/tools/analytics-tools/">Analytics and Tracking Tools</a></li>
+            <li><a href="https://brandella.in/tools/social-media-tools/">Social Media Tools</a></li>
+            <li><a href="https://brandella.in/tools/technical-seo-tools/">Technical SEO Tools</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<main class="wrap">
+
+  <div class="crumbs"><a href="https://brandella.in/">Home</a> &rsaquo; <a href="https://brandella.in/tools/">Tools</a> &rsaquo; <a href="https://brandella.in/tools/technical-seo-tools/">Technical SEO Tools</a> &rsaquo; Hreflang Tag Generator</div>
+
+  <section class="hero">
+    <span class="pill">Free Technical SEO Tool</span>
+    <h1>Hreflang Tag Generator</h1>
+    <p>List every language and country version of a page and get hreflang code that follows Google's rules. Choose HTML tags, XML sitemap entries or an HTTP header, and add a fallback page for everyone else.</p>
+  </section>
+
+  <section class="tool" aria-label="Hreflang tag generator" id="hgForm">
+    <div class="card" style="min-width:0">
+      <h2>Page Versions</h2>
+      <div id="hgRows"></div>
+      <div class="actions" style="margin:0 0 16px"><button type="button" class="btn btn-sm" id="hgAdd">Add a Version</button></div>
+      <div class="field"><label for="hgDef">Fallback Page <em>optional</em></label><input id="hgDef" class="mono" type="text" autocomplete="off" spellcheck="false" value="https://www.example.com/" placeholder=""></div>
+      <div class="tips" style="margin-top:4px"><strong>Codes</strong><ul><li>Language is required, country is optional</li><li>The fallback page becomes the <code>x-default</code> tag for visitors who match no version</li><li>Pick a country only when content differs by country, such as prices or spelling</li></ul></div>
+    </div>
+    <div class="card" style="min-width:0">
+      <h2>Your Hreflang Code</h2>
+      <div class="tabs" id="hgTabs"><button type="button" class="on" data-m="html">HTML Tags</button><button type="button" data-m="xml">XML Sitemap</button><button type="button" data-m="http">HTTP Header</button></div>
+      <div class="kw-result" id="hgCheck"></div>
+      <pre class="code-out" id="hgOut" style="display:block;margin-top:0;max-height:520px;overflow:auto;word-break:normal;overflow-wrap:anywhere"></pre>
+      <div class="actions"><button class="btn dark" id="hgCopy">Copy Code</button><span class="toast" id="toast">Copied!</span></div>
+      <p id="hgWhere" style="font-size:14px;color:#555;margin-top:12px"></p>
+    </div>
+  </section>
+
+  <div class="bx-ad">
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3931314195561246" data-ad-slot="4249015278" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+
+  <article class="content">
+
+    <h2>What Are Hreflang Tags?</h2>
+    <p>Hreflang tags tell Google that several pages are versions of the same content for different languages or countries. Google then shows each searcher the version that fits them best, so a visitor in India sees your English India page while a visitor in Germany sees the German one.</p>
+    <p>The tags do not change rankings by themselves. They stop the wrong version from showing up, and help Google treat similar pages, like English for India and English for the UK, as a related set instead of duplicates.</p>
+
+    <h2>How to Use the Hreflang Generator</h2>
+    <ol>
+      <li><strong>Add one row per version</strong> of the page. Pick the language, and a country only when the content is made for that country.</li>
+      <li><strong>Paste the full URL</strong> of each version, including <code>https://</code>.</li>
+      <li><strong>Set a fallback page</strong> with <code>x-default</code>, such as your main page or a language picker.</li>
+      <li><strong>Choose a format</strong>: HTML tags, XML sitemap entries or an HTTP header.</li>
+      <li><strong>Add the same code to every version.</strong> Each page must list itself and all the others.</li>
+    </ol>
+
+    <h2>Hreflang Rules Google Uses</h2>
+    <div style="overflow-x:auto"><table class="lim">
+      <thead><tr style="background:#2b2b2b !important;"><th style="background:#2b2b2b !important; color:#ffffff !important;">Rule</th><th style="background:#2b2b2b !important; color:#ffffff !important;">Example</th></tr></thead>
+      <tbody>
+        <tr><td>Language first, in ISO 639 1 format</td><td><code>en</code>, <code>hi</code>, <code>de</code></td></tr>
+        <tr><td>Optional country, in ISO 3166 1 format</td><td><code>en-IN</code>, <code>en-GB</code></td></tr>
+        <tr><td>A country alone is not allowed</td><td><code>in</code> or <code>gb</code> on their own are wrong</td></tr>
+        <tr><td>Reserved codes do nothing</td><td>Use <code>en-GB</code>, never <code>en-UK</code></td></tr>
+        <tr><td>Optional script for some languages</td><td><code>zh-Hans</code>, <code>zh-Hant</code></td></tr>
+        <tr><td>Fully qualified URLs only</td><td><code>https://www.example.com/de-de/</code></td></tr>
+        <tr><td>Return links are required</td><td>If A points to B, B must point back to A</td></tr>
+      </tbody>
+    </table></div>
+    <p>These rules come from Google's guide to <a href="https://developers.google.com/search/docs/specialty/international/localized-versions" target="_blank" rel="noopener">localized versions of your pages</a>. Google also says region codes like <code>es-419</code> are not supported, so this generator lists real countries only.</p>
+
+    <h2>Practical Hreflang Tips</h2>
+    <ul>
+      <li><strong>Pick one method.</strong> HTML tags, sitemap entries and headers do the same job. Using more than one only adds room for mistakes.</li>
+      <li><strong>Match your canonicals.</strong> Each version should have a self referencing canonical tag, not one that points to another language.</li>
+      <li><strong>Translate the whole page.</strong> Hreflang works best when the main content, not just the menu, is in the target language.</li>
+      <li><strong>Keep the set identical.</strong> When you add a new language, update the tags on every existing version too.</li>
+    </ul>
+
+    <h2>Learn More About International SEO</h2>
+    <p>Start with <a href="https://brandella.in/hreflang-tags-explained/">hreflang tags explained</a>, then make sure every version has the right <a href="https://brandella.in/canonical-tag-implementation-guide/">canonical tag</a> and a clear <a href="https://brandella.in/url-structure-for-ai-seo/">URL structure</a>. Already live? Test your tags with the <a href="https://brandella.in/tools/technical-seo-tools/hreflang-checker/">hreflang checker</a>.</p>
+
+    <div class="bx-ad">
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3931314195561246" data-ad-slot="4249015278" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+
+    <h2>Frequently Asked Questions</h2>
+    <details class="faq-item" open><summary><span class="faq-num">1</span>Do I need a country code in hreflang?</summary><p>No. A language code alone, like en or hi, is often the best choice. Add a country only when the page is made for that country, for example different prices, currency or spelling.</p></details>
+    <details class="faq-item" open><summary><span class="faq-num">2</span>What is the x default hreflang value for?</summary><p>It names the page to show visitors whose language or country matches none of your versions. Many sites use their main English page or a language picker page.</p></details>
+    <details class="faq-item" open><summary><span class="faq-num">3</span>Should a page include a hreflang tag for itself?</summary><p>Yes. Google asks every version to list itself as well as all the other versions. The generator builds one shared block that does this for you.</p></details>
+    <details class="faq-item" open><summary><span class="faq-num">4</span>Can hreflang point to another domain?</summary><p>Yes. Versions can live on different domains, such as example.in and example.de, as long as every URL is fully qualified and every page links back.</p></details>
+
+    <h2>Related Articles</h2>
+    <div class="related">
+      <a href="https://brandella.in/hreflang-tags-explained/">Hreflang Tags Explained <span>&rarr;</span></a>
+      <a href="https://brandella.in/canonical-tag-implementation-guide/">Canonical Tag Implementation Guide <span>&rarr;</span></a>
+      <a href="https://brandella.in/url-structure-for-ai-seo/">URL Structure for AI SEO <span>&rarr;</span></a>
+      <a href="https://brandella.in/what-is-canonical-tag/">What Is a Canonical Tag <span>&rarr;</span></a>
+    </div>
+  </article>
+
+  <section class="content more-tools" style="max-width:1140px">
+    <h2>More Free Technical SEO Tools</h2>
+    <div class="tgrid">
+      <a class="tcard" href="https://brandella.in/tools/technical-seo-tools/robots-txt-generator/"><div class="tbadge">RG</div><h3>Robots.txt Generator</h3><p>Create a clean robots.txt file with blocked folders, sitemaps and AI crawler rules, checked as you type.</p><span class="go">Open tool &rarr;</span></a>
+<a class="tcard" href="https://brandella.in/tools/technical-seo-tools/robots-txt-tester/"><div class="tbadge">RT</div><h3>Robots.txt Tester</h3><p>Paste a robots.txt file and test which URLs Googlebot, Bingbot or AI crawlers may crawl, rule by rule.</p><span class="go">Open tool &rarr;</span></a>
+<a class="tcard" href="https://brandella.in/tools/technical-seo-tools/xml-sitemap-generator/"><div class="tbadge">XS</div><h3>XML Sitemap Generator</h3><p>Turn a list of URLs into a valid XML sitemap with lastmod dates, split files and a sitemap index.</p><span class="go">Open tool &rarr;</span></a>
+<a class="tcard" href="https://brandella.in/tools/technical-seo-tools/xml-sitemap-validator/"><div class="tbadge">SV</div><h3>XML Sitemap Validator</h3><p>Paste a sitemap or sitemap index and find XML errors, bad URLs, wrong dates and broken limits.</p><span class="go">Open tool &rarr;</span></a>
+<a class="tcard" href="https://brandella.in/tools/technical-seo-tools/hreflang-checker/"><div class="tbadge">HC</div><h3>Hreflang Checker</h3><p>Validate hreflang codes, self references, fallback tags and return links from a sitemap, page HTML or header.</p><span class="go">Open tool &rarr;</span></a>
+<a class="tcard" href="https://brandella.in/tools/technical-seo-tools/htaccess-redirect-generator/"><div class="tbadge">HR</div><h3>Htaccess Redirect Generator</h3><p>Turn a list of old and new URLs into 301 redirect rules for Apache, with chain and loop checks.</p><span class="go">Open tool &rarr;</span></a>
+    </div>
+    <p><a href="https://brandella.in/tools/technical-seo-tools/">See all technical seo tools &rarr;</a> &nbsp;|&nbsp; <a href="https://brandella.in/tools/">Browse every free tool &rarr;</a></p>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <ul class="foot-links">
+      <li><a href="https://brandella.in/">Home</a></li>
+      <li><a href="https://brandella.in/about-us/">About Us</a></li>
+      <li><a href="https://brandella.in/contact-us/">Contact Us</a></li>
+      <li><a href="https://brandella.in/privacy-policy/">Privacy Policy</a></li>
+      <li><a href="https://brandella.in/terms-and-conditions/">Terms and Conditions</a></li>
+    </ul>
+    <p class="copy">Copyright &copy; <span id="yr">2026</span> Brandella Journal. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+
+  var d = new Date();
+  var days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+  var months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+  document.getElementById('siteDate').innerHTML = days[d.getDay()] + ',<small>' + months[d.getMonth()] + ' ' + d.getDate() + ', ' + d.getFullYear() + '</small>';
+  document.getElementById('yr').textContent = d.getFullYear();
+  var nav = document.getElementById('siteNav'), mb = document.getElementById('menuBtn');
+  mb.addEventListener('click', function(){ var open = nav.classList.toggle('open'); mb.setAttribute('aria-expanded', open); });
+  var $ = function(id){ return document.getElementById(id); };
+  function esc(s){ return String(s).replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+  function copyText(text, toastId){
+    var done = function(){ var t = $(toastId); if(!t) return; t.classList.add('show'); setTimeout(function(){ t.classList.remove('show'); }, 1600); };
+    if (navigator.clipboard && navigator.clipboard.writeText){ navigator.clipboard.writeText(text).then(done, function(){ fallback(); done(); }); }
+    else { fallback(); done(); }
+    function fallback(){ var ta=document.createElement('textarea'); ta.value=text; document.body.appendChild(ta); ta.select(); try{document.execCommand('copy');}catch(e){} document.body.removeChild(ta); }
+  }
+
+
+  function v(id){ var e = $(id); return e ? String(e.value).trim() : ''; }
+  function say(id, cls, h){ var e = $(id); e.className = 'kw-result' + (cls ? ' ' + cls : ''); e.innerHTML = h; }
+  function issues(id, list, okMsg, max){
+    max = max || 40;
+    var bad = list.filter(function(i){ return i[0] === 'bad'; }), warn = list.filter(function(i){ return i[0] === 'warn'; });
+    var li = function(a){ var more = a.length > max ? '<li>and ' + (a.length - max) + ' more</li>' : '';
+      return '<ul style="margin:6px 0 0 18px">' + a.slice(0, max).map(function(i){ return '<li>' + i[1] + '</li>'; }).join('') + more + '</ul>'; };
+    if (bad.length) say(id, 'bad', '<strong>Fix ' + bad.length + ' issue' + (bad.length > 1 ? 's' : '') + (warn.length ? ', plus ' + warn.length + ' suggestion' + (warn.length > 1 ? 's' : '') : '') + '.</strong>' + li(bad.concat(warn)));
+    else if (warn.length) say(id, 'warn', '<strong>Works, with ' + warn.length + ' suggestion' + (warn.length > 1 ? 's' : '') + '.</strong>' + li(warn));
+    else say(id, 'ok', okMsg);
+  }
+  function c(s){ return '<code>' + esc(s) + '</code>'; }
+  function fmtN(n){ return Number(n).toLocaleString('en-IN'); }
+  function bytes(s){ return new TextEncoder().encode(s).length; }
+  function kb(n){ return n >= 1048576 ? (n / 1048576).toFixed(1) + ' MB' : n >= 1024 ? (n / 1024).toFixed(1) + ' KB' : n + ' B'; }
+  function xesc(s){ return String(s).replace(/[&<>"']/g, function(ch){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&apos;'}[ch]; }); }
+  function download(name, text, type){
+    var a = document.createElement('a'); a.href = URL.createObjectURL(new Blob([text], {type: (type || 'text/plain') + ';charset=utf-8'}));
+    a.download = name; document.body.appendChild(a); a.click(); document.body.removeChild(a);
+    setTimeout(function(){ URL.revokeObjectURL(a.href); }, 4000);
+  }
+  function absUrl(s){ try { var u = new URL(s); return /^https?:$/.test(u.protocol) ? u : null; } catch(e){ return null; } }
+
+  var LANGS = 'aa ab ae af ak am an ar as av ay az ba be bg bi bm bn bo br bs ca ce ch co cr cs cu cv cy da de dv dz ee el en eo es et eu fa ff fi fj fo fr fy ga gd gl gn gu gv ha he hi ho hr ht hu hy hz ia id ie ig ii ik io is it iu ja jv ka kg ki kj kk kl km kn ko kr ks ku kv kw ky la lb lg li ln lo lt lu lv mg mh mi mk ml mn mr ms mt my na nb nd ne ng nl nn no nr nv ny oc oj om or os pa pi pl ps pt qu rm rn ro ru rw sa sc sd se sg si sk sl sm sn so sq sr ss st su sv sw ta te tg th ti tk tl tn to tr ts tt tw ty ug uk ur uz ve vi vo wa wo xh yi yo za zh zu'.split(' ');
+  var REGIONS = 'AD AE AF AG AI AL AM AO AQ AR AS AT AU AW AX AZ BA BB BD BE BF BG BH BI BJ BL BM BN BO BQ BR BS BT BV BW BY BZ CA CC CD CF CG CH CI CK CL CM CN CO CR CU CV CW CX CY CZ DE DJ DK DM DO DZ EC EE EG EH ER ES ET FI FJ FK FM FO FR GA GB GD GE GF GG GH GI GL GM GN GP GQ GR GS GT GU GW GY HK HM HN HR HT HU ID IE IL IM IN IO IQ IR IS IT JE JM JO JP KE KG KH KI KM KN KP KR KW KY KZ LA LB LC LI LK LR LS LT LU LV LY MA MC MD ME MF MG MH MK ML MM MN MO MP MQ MR MS MT MU MV MW MX MY MZ NA NC NE NF NG NI NL NO NP NR NU NZ OM PA PE PF PG PH PK PL PM PN PR PS PT PW PY QA RE RO RS RU RW SA SB SC SD SE SG SH SI SJ SK SL SM SN SO SR SS ST SV SX SY SZ TC TD TF TG TH TJ TK TL TM TN TO TR TT TV TW TZ UA UG UM US UY UZ VA VC VE VG VI VN VU WF WS YE YT ZA ZM ZW'.split(' ');
+  var SCRIPTS = {Hans: 'Simplified', Hant: 'Traditional', Latn: 'Latin', Cyrl: 'Cyrillic', Arab: 'Arabic', Deva: 'Devanagari', Beng: 'Bengali', Guru: 'Gurmukhi'};
+  var LSET = new Set(LANGS), RSET = new Set(REGIONS);
+  var DNL = null, DNR = null;
+  try { DNL = new Intl.DisplayNames(['en'], {type: 'language'}); DNR = new Intl.DisplayNames(['en'], {type: 'region'}); } catch(e){}
+  function lname(code){ try { return DNL ? DNL.of(code) : code; } catch(e){ return code; } }
+  function rname(code){ try { return DNR ? DNR.of(code) : code; } catch(e){ return code; } }
+  var RESERVED = {UK: 'GB', EU: '', UN: ''};
+  var CONFUSE = {be: 'Belgium', ca: 'Canada', se: 'Sweden', kr: 'South Korea', ch: 'Switzerland', ae: 'the United Arab Emirates', dz: 'Algeria', cr: 'Costa Rica'};
+  // Returns {ok, code, label, err, warn}
+  function checkCode(raw){
+    var s = String(raw || '').trim();
+    if (!s) return {ok: false, err: 'The hreflang value is empty.'};
+    if (/^x-default$/i.test(s)) return {ok: true, code: 'x-default', label: 'Fallback for everyone else'};
+    if (/_/.test(s)) return {ok: false, err: c(s) + ' uses an underscore. Use a hyphen, like ' + c(s.replace(/_/g, '-')) + '.'};
+    var p = s.split('-'), lang = p[0].toLowerCase(), out = {ok: true, code: s};
+    if (!LSET.has(lang)){
+      if (RSET.has(lang.toUpperCase()) || lang === 'uk') return {ok: false, err: c(s) + ' looks like a country code on its own. Google needs a language first, like ' + c('en-' + (RESERVED[lang.toUpperCase()] || lang.toUpperCase())) + '.'};
+      if (lang.length === 3) return {ok: false, err: c(s) + ' uses a three letter language code. Google expects the two letter ISO 639 1 code.'};
+      return {ok: false, err: c(s) + ' is not a valid language code.'};
+    }
+    var label = lname(lang), i = 1;
+    if (p[i] && /^[A-Za-z]{4}$/.test(p[i])){
+      var sc = p[i][0].toUpperCase() + p[i].slice(1).toLowerCase();
+      label += ' (' + (SCRIPTS[sc] || sc) + ')'; i++;
+      if (!SCRIPTS[sc]) out.warn = c(s) + ' uses the script ' + c(sc) + '. Check it is a real ISO 15924 script code.';
+    }
+    if (p[i]){
+      var r = p[i].toUpperCase();
+      if (/^\d{3}$/.test(r)) return {ok: false, err: c(s) + ' uses a numeric region. Google does not support codes like ' + c('es-419') + '. List each country instead, like ' + c('es-MX') + '.'};
+      if (r in RESERVED) return {ok: false, err: c(s) + ' uses the reserved code ' + c(r) + ', which Google ignores.' + (RESERVED[r] ? ' Use ' + c(lang + '-' + RESERVED[r]) + ' for the United Kingdom.' : ' List each country separately.')};
+      if (!RSET.has(r)) return {ok: false, err: c(s) + ' has an unknown country code ' + c(r) + '.'};
+      label += ', ' + rname(r); i++;
+    } else if (CONFUSE[lang]) {
+      out.warn = c(s) + ' means ' + esc(lname(lang)) + ' language, not ' + CONFUSE[lang] + '. If you meant the country, add a language, like ' + c('en-' + lang.toUpperCase()) + '.';
+    }
+    if (p.length > i) return {ok: false, err: c(s) + ' has extra parts Google does not use. Use language, optional script and optional country only.'};
+    out.label = label; return out;
+  }
+
+  var mode = 'html', out = '';
+  var SAMPLE = [['en', '', 'https://www.example.com/'], ['en', 'IN', 'https://www.example.com/en-in/'], ['hi', 'IN', 'https://www.example.com/hi-in/'],
+                ['en', 'GB', 'https://www.example.com/en-gb/'], ['de', 'DE', 'https://www.example.com/de-de/']];
+  var LOPT = LANGS.map(function(l){ return [l, lname(l)]; }).concat([['zh-Hans', 'Chinese (Simplified)'], ['zh-Hant', 'Chinese (Traditional)'], ['sr-Latn', 'Serbian (Latin)'], ['sr-Cyrl', 'Serbian (Cyrillic)']])
+    .sort(function(a, b){ return a[1].localeCompare(b[1]); }).map(function(x){ return '<option value="' + x[0] + '">' + esc(x[1]) + ' (' + x[0] + ')</option>'; }).join('');
+  var ROPT = '<option value="">Any country</option>' + REGIONS.filter(function(r){ return !(r in RESERVED); }).map(function(r){ return [r, rname(r)]; })
+    .sort(function(a, b){ return a[1].localeCompare(b[1]); }).map(function(x){ return '<option value="' + x[0] + '">' + esc(x[1]) + ' (' + x[0] + ')</option>'; }).join('');
+  var rid = 0;
+  function addRow(l, r, u){
+    rid++; var d = document.createElement('div');
+    d.className = 'hgRow'; d.style.cssText = 'border:1px solid #e6e6e6;border-radius:10px;padding:12px 12px 2px;margin-bottom:12px';
+    d.innerHTML = '<div class="row2"><div class="field"><label for="hgL' + rid + '">Language</label><select id="hgL' + rid + '" class="hgL">' + LOPT + '</select></div>'
+      + '<div class="field"><label for="hgR' + rid + '">Country</label><select id="hgR' + rid + '" class="hgR">' + ROPT + '</select></div></div>'
+      + '<div class="field"><label for="hgU' + rid + '">Page URL <button type="button" class="btn btn-sm hgDel" style="float:right;padding:2px 10px">Remove</button></label><input id="hgU' + rid + '" class="hgU mono" type="text" autocomplete="off" spellcheck="false" placeholder="https://www.example.com/fr/"></div>';
+    $('hgRows').appendChild(d);
+    d.querySelector('.hgL').value = l || 'en'; d.querySelector('.hgR').value = r || ''; d.querySelector('.hgU').value = u || '';
+    d.querySelector('.hgDel').onclick = function(){ d.remove(); gen(); };
+  }
+  function rows(){
+    return Array.from(document.querySelectorAll('.hgRow')).map(function(d){
+      var l = d.querySelector('.hgL').value, r = d.querySelector('.hgR').value;
+      return {code: l + (r ? '-' + r : ''), url: d.querySelector('.hgU').value.trim()};
+    });
+  }
+  function gen(){
+    var R = rows(), iss = [], seen = {}, seenU = {}, set = [];
+    R.forEach(function(x, i){
+      if (!x.url){ iss.push(['bad', 'Version ' + (i + 1) + ' (' + c(x.code) + ') has no URL.']); return; }
+      if (!absUrl(x.url)){ iss.push(['bad', c(x.url) + ' must be a full URL with ' + c('https://') + '. Relative URLs are ignored by Google.']); return; }
+      var chk = checkCode(x.code); if (!chk.ok){ iss.push(['bad', chk.err]); return; }
+      if (chk.warn) iss.push(['warn', chk.warn]);
+      if (seen[x.code.toLowerCase()]){ iss.push(['bad', c(x.code) + ' is used twice. Each language and country pair can point to only one URL.']); return; }
+      if (seenU[x.url]) iss.push(['warn', c(x.url) + ' is used for both ' + c(seenU[x.url]) + ' and ' + c(x.code) + '. That is allowed, but check it is what you want.']);
+      seen[x.code.toLowerCase()] = 1; seenU[x.url] = x.code; set.push(x);
+    });
+    var def = v('hgDef');
+    if (def){ if (!absUrl(def)) iss.push(['bad', 'The fallback URL must be a full URL with ' + c('https://') + '.']); else set.push({code: 'x-default', url: def}); }
+    var real = set.filter(function(x){ return x.code !== 'x-default'; });
+    if (real.length < 2) iss.push(['warn', 'Hreflang is for pages with at least two language or country versions. Add another version.']);
+    var langs = {}; real.forEach(function(x){ var l = x.code.split('-')[0]; (langs[l] = langs[l] || []).push(x.code); });
+    Object.keys(langs).forEach(function(l){ if (langs[l].every(function(cd){ return cd.indexOf('-') > -1; }) && langs[l].length > 1) iss.push(['warn', 'Every ' + esc(lname(l)) + ' version targets a country. Consider one plain ' + c(l) + ' version, or the fallback, for ' + esc(lname(l)) + ' speakers elsewhere.']); });
+    var L = [];
+    if (mode === 'html'){
+      set.forEach(function(x){ L.push('<link rel="alternate" hreflang="' + x.code + '" href="' + xesc(x.url) + '" />'); });
+      $('hgWhere').innerHTML = 'Paste the same block inside the ' + c('<head>') + ' of <strong>every</strong> page listed, including the page itself.';
+    } else if (mode === 'xml'){
+      L.push('<?xml version="1.0" encoding="UTF-8"?>');
+      L.push('<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"'); L.push('        xmlns:xhtml="http://www.w3.org/1999/xhtml">');
+      var pages = []; set.forEach(function(x){ if (pages.indexOf(x.url) < 0) pages.push(x.url); });
+      pages.forEach(function(p){
+        L.push('  <url>'); L.push('    <loc>' + xesc(p) + '</loc>');
+        set.forEach(function(x){ L.push('    <xhtml:link rel="alternate" hreflang="' + x.code + '" href="' + xesc(x.url) + '" />'); });
+        L.push('  </url>');
+      });
+      L.push('</urlset>');
+      $('hgWhere').innerHTML = 'Each URL gets its own ' + c('<url>') + ' entry listing every version. Use this instead of HTML tags, not as well as them.';
+    } else {
+      L.push('Link: ' + set.map(function(x){ return '<' + x.url + '>; rel="alternate"; hreflang="' + x.code + '"'; }).join(', '));
+      $('hgWhere').innerHTML = 'Send this same header with every version. It suits files without a ' + c('<head>') + ', such as PDFs.';
+    }
+    out = L.join('\n');
+    $('hgOut').textContent = out;
+    issues('hgCheck', iss, '<strong>Valid hreflang set with ' + real.length + ' versions' + (def ? ' and a fallback' : '') + '.</strong> Every version lists itself and all the others, so the return links are in place.');
+  }
+  SAMPLE.forEach(function(s){ addRow(s[0], s[1], s[2]); });
+  $('hgAdd').onclick = function(){ addRow('fr', 'FR', ''); gen(); var u = document.querySelectorAll('.hgU'); u[u.length - 1].focus(); };
+  document.querySelectorAll('#hgTabs button').forEach(function(b){ b.onclick = function(){
+    document.querySelectorAll('#hgTabs button').forEach(function(x){ x.classList.remove('on'); }); b.classList.add('on'); mode = b.getAttribute('data-m'); gen(); }; });
+  $('hgForm').addEventListener('input', gen); $('hgForm').addEventListener('change', gen);
+  $('hgCopy').onclick = function(){ copyText(out, 'toast'); };
+  gen();
+
+})();
+</script>
+</body>
+</html>

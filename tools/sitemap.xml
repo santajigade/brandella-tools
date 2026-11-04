@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://brandella.in/tools/</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
   </url>
   <url>
     <loc>https://brandella.in/tools/seo-tools/</loc>
@@ -183,5 +183,37 @@
   <url>
     <loc>https://brandella.in/tools/social-media-tools/youtube-chapters-generator/</loc>
     <lastmod>2026-11-03</lastmod>
+  </url>
+  <url>
+    <loc>https://brandella.in/tools/technical-seo-tools/</loc>
+    <lastmod>2026-11-04</lastmod>
+  </url>
+  <url>
+    <loc>https://brandella.in/tools/technical-seo-tools/robots-txt-generator/</loc>
+    <lastmod>2026-11-04</lastmod>
+  </url>
+  <url>
+    <loc>https://brandella.in/tools/technical-seo-tools/robots-txt-tester/</loc>
+    <lastmod>2026-11-04</lastmod>
+  </url>
+  <url>
+    <loc>https://brandella.in/tools/technical-seo-tools/xml-sitemap-generator/</loc>
+    <lastmod>2026-11-04</lastmod>
+  </url>
+  <url>
+    <loc>https://brandella.in/tools/technical-seo-tools/xml-sitemap-validator/</loc>
+    <lastmod>2026-11-04</lastmod>
+  </url>
+  <url>
+    <loc>https://brandella.in/tools/technical-seo-tools/hreflang-tag-generator/</loc>
+    <lastmod>2026-11-04</lastmod>
+  </url>
+  <url>
+    <loc>https://brandella.in/tools/technical-seo-tools/hreflang-checker/</loc>
+    <lastmod>2026-11-04</lastmod>
+  </url>
+  <url>
+    <loc>https://brandella.in/tools/technical-seo-tools/htaccess-redirect-generator/</loc>
+    <lastmod>2026-11-04</lastmod>
   </url>
 </urlset>
