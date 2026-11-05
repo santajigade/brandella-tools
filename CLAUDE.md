@@ -14,6 +14,12 @@ Pushing to `main` runs `.github/workflows/deploy.yml`: SEO check, then lftp uplo
 ## Daily batch (one category per day, 6 to 7 tools)
 1. Pick the first category in `src/categories.py` that has no tools yet. If none is left, build nothing and report that the roadmap is complete, with 3 suggested next categories.
 2. Research demand before choosing tools. Use web search to confirm each candidate is something people actually search for (well known tool queries such as "utm builder", "json formatter", "roas calculator", "faq schema generator"; check that established tool sites rank for it). Pick the 6 or 7 most searched, most useful tools for the category. Skip anything that duplicates an existing tool in any category.
+   **Value test (Santaji, 2026-11-05).** Every tool must pass all four, or replace it:
+   - Solves a real, repeated problem the visitor has today (cleans, converts, checks, calculates or generates something they then use), so they bookmark it and come back.
+   - Gives a result the visitor cannot get faster elsewhere for free, such as inside the platform itself. No mockups or previews of things the platform already previews (lesson: the Google Ads preview tool brings little value).
+   - Has real search demand now and stays useful as search moves to AI. Prefer tools that help with AI era work: AI search visibility, llms.txt, AI crawlers, prompts, tokens, structured content for AI answers, cleaning AI written text.
+   - Is something Santaji would happily link from an article as genuinely useful.
+   Within any category, include AI era tools where they fit the theme.
 3. Every tool must work 100% in the browser: no APIs, no server, no fetching other sites, no API keys. It must do a real job well, not be a thin page.
 4. Verify every fact you state (platform character limits, formulas, schema properties, Google rules) with a current authoritative source via web search. Link 1 or 2 official sources (Google, schema.org, Meta, MDN) in the content where helpful.
 5. Write `src/batch_YYYY_MM_DD_<category-slug>.py` with all tools. Per tool:
