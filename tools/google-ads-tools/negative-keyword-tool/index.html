@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Negative Keyword Tool: Build and Test Your List</title>
+<meta name="description" content="Free negative keyword tool for Google Ads. Add ready made lists, format match types, find negatives that block your own keywords and test real searches.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://brandella.in/tools/google-ads-tools/negative-keyword-tool/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Negative Keyword Tool: Build and Test Your List">
+<meta property="og:description" content="Free negative keyword tool for Google Ads. Add ready made lists, format match types, find negatives that block your own keywords and test real searches.">
+<meta property="og:url" content="https://brandella.in/tools/google-ads-tools/negative-keyword-tool/">
+<meta property="og:site_name" content="Brandella Journal">
+<meta property="og:image" content="https://brandella.in/tools/assets/og-negative-keyword-tool.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://brandella.in/tools/assets/og-negative-keyword-tool.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3931314195561246" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "Negative Keyword Tool",
+      "url": "https://brandella.in/tools/google-ads-tools/negative-keyword-tool/",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Any (web browser)",
+      "description": "Free negative keyword tool for Google Ads. Add ready made lists, format match types, find negatives that block your own keywords and test real searches.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Brandella Journal",
+        "url": "https://brandella.in/"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://brandella.in/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Tools",
+          "item": "https://brandella.in/tools/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Google Ads Tools",
+          "item": "https://brandella.in/tools/google-ads-tools/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Negative Keyword Tool",
+          "item": "https://brandella.in/tools/google-ads-tools/negative-keyword-tool/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Do negative keywords match plurals and misspellings?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Unlike normal keywords, negatives do not match close variants. If you block job, you also need jobs. Google does handle letter case and common misspellings."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which match type should I use for negative keywords?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Phrase match is a safe default for most negatives. Use exact match to block one specific search, and broad match only when every word on its own is clearly irrelevant."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can a negative keyword block my own keyword?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. If your negative appears inside one of your keywords, that keyword stops showing. The conflict check in this tool finds these clashes before you upload."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Where do I add the negative keywords?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "In Google Ads open Keywords, then Negative search keywords, and add them to a campaign or ad group. For several campaigns, create a shared negative keyword list in Tools under Shared library."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+<style>
+:root{
+  --green:#6cc82a; --lime:#a6ef39; --ink:#111; --gray:#555; --muted:#6b6b6b;
+  --line:#e3e3e3; --bg:#fff; --soft:#f6faf1; --footer:#0a0a0a;
+  --g-title:#1a0dab; --g-url:#202124; --g-desc:#4d5156;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Open Sans',Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6}
+a{color:inherit}
+.wrap{max-width:1140px;margin:0 auto;padding:0 16px}
+
+/* ===== HEADER ===== */
+.site-top{border-bottom:1px solid #d9d9d9}
+.site-top .wrap{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding-top:34px;padding-bottom:34px}
+.site-date{font-size:20px;font-weight:600;line-height:1.1}
+.site-date small{display:block;font-size:13px;font-weight:600;margin-top:2px}
+.site-logo{font-size:40px;font-weight:700;text-decoration:none;color:#555;letter-spacing:.2px;white-space:nowrap}
+.site-logo span{color:var(--green)}
+.menu-btn{display:none;justify-self:end;background:none;border:0;cursor:pointer;padding:6px}
+.menu-btn i{display:block;width:26px;height:3px;background:#111;margin:5px 0;border-radius:2px}
+
+.site-nav{border-bottom:2px solid var(--lime)}
+.site-nav ul{list-style:none;display:flex;justify-content:center;flex-wrap:wrap;gap:0 4px}
+.site-nav > .wrap > ul > li{position:relative}
+.site-nav a{display:block;padding:12px 13px;font-size:17px;font-weight:700;text-decoration:none;color:#111}
+.site-nav a:hover,.site-nav a.active{color:var(--green)}
+.has-sub > a::after{content:"";display:inline-block;width:6px;height:6px;border-right:1.6px solid currentColor;border-bottom:1.6px solid currentColor;transform:rotate(45deg);margin:0 0 4px 7px}
+.sub{display:none !important;position:absolute;top:100%;left:0;width:240px;background:#fff;border-radius:6px;padding:14px 0;box-shadow:0 10px 30px rgba(0,0,0,.18);z-index:50;flex-direction:column}
+.sub a{font-size:17px;font-weight:700;line-height:1.35;padding:5px 30px;color:#111}
+.sub a:hover{color:var(--green)}
+.has-sub:hover .sub,.has-sub:focus-within .sub{display:flex !important}
+
+/* ===== BREADCRUMB + HERO ===== */
+.crumbs{font-size:13.5px;color:var(--muted);padding:18px 0 0}
+.crumbs a{text-decoration:none;color:var(--muted)}
+.crumbs a:hover{color:var(--green)}
+.hero{text-align:center;padding:26px 0 8px}
+.pill{display:inline-block;background:var(--soft);color:#3d7f12;border:1px solid #cfeab4;font-size:12.5px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;padding:4px 12px;border-radius:20px;margin-bottom:14px}
+.hero h1{font-size:44px;font-weight:300;line-height:1.2}
+.hero p{max-width:760px;margin:14px auto 0;color:var(--muted);font-size:17px}
+
+/* ===== TOOL ===== */
+.tool{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin:34px 0 10px}
+.card{border:1px solid var(--line);border-radius:12px;padding:24px;background:#fff}
+.card h2{font-size:19px;font-weight:700;margin-bottom:16px}
+.field{margin-bottom:18px}
+.field label{display:flex;justify-content:space-between;font-weight:700;font-size:14.5px;margin-bottom:6px}
+.field label em{font-style:normal;font-weight:600;color:var(--muted);font-size:13px}
+.field input,.field textarea{width:100%;border:1px solid #cfcfcf;border-radius:8px;padding:11px 12px;font:inherit;font-size:15px;color:#111;outline:none;transition:border-color .15s}
+.field input:focus,.field textarea:focus{border-color:var(--green);box-shadow:0 0 0 3px rgba(108,200,42,.15)}
+.field textarea{resize:vertical;min-height:96px}
+.meter{height:7px;background:#eee;border-radius:6px;margin-top:8px;overflow:hidden}
+.meter b{display:block;height:100%;width:0;background:var(--green);border-radius:6px;transition:width .15s,background .15s}
+.meter b.warn{background:#f0a020}.meter b.bad{background:#e0442c}
+.stat{font-size:13px;color:var(--muted);margin-top:5px;display:flex;justify-content:space-between}
+.stat .ok{color:#3d8f12;font-weight:700}.stat .warn{color:#c47a00;font-weight:700}.stat .bad{color:#d1351f;font-weight:700}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.check{display:flex;align-items:center;gap:8px;font-size:14.5px;font-weight:600;margin-bottom:6px;cursor:pointer}
+.check input{accent-color:var(--green);width:16px;height:16px}
+
+.tabs{display:inline-flex;border:1px solid #cfcfcf;border-radius:30px;padding:3px;margin-bottom:18px}
+.tabs button{border:0;background:none;font:inherit;font-weight:700;font-size:14px;padding:7px 18px;border-radius:30px;cursor:pointer;color:#333}
+.tabs button.on{background:#111;color:#fff}
+
+/* Google result mock */
+.serp{border:1px solid var(--line);border-radius:10px;padding:20px 18px;background:#fff;font-family:Arial,sans-serif}
+.serp.mobile{max-width:400px;margin:0 auto;border-radius:16px;box-shadow:0 2px 10px rgba(0,0,0,.08)}
+.g-site{display:flex;align-items:center;gap:10px;margin-bottom:6px}
+.g-fav{width:28px;height:28px;border-radius:50%;background:#f1f3f4;border:1px solid #dadce0;display:grid;place-items:center;font-weight:700;font-size:13px;color:var(--green)}
+.g-name{font-size:14px;color:var(--g-url);line-height:1.3}
+.g-url{font-size:12px;color:#4d5156;line-height:1.3;word-break:break-all}
+.g-title{font-size:20px;line-height:1.3;color:var(--g-title);margin:2px 0 4px;font-weight:400;cursor:pointer}
+.g-title:hover{text-decoration:underline}
+.serp.mobile .g-title{font-size:18px;color:#1558d6}
+.g-desc{font-size:14px;line-height:1.58;color:var(--g-desc)}
+.g-desc .g-date{color:#70757a}
+.g-desc strong{color:#5f6368;font-weight:700}
+
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+.btn{border:2px solid var(--green);background:#fff;color:#111;font:inherit;font-weight:700;font-size:14px;padding:9px 18px;border-radius:30px;cursor:pointer;transition:all .15s}
+.btn:hover{background:var(--green);color:#fff}
+.btn.dark{background:#111;border-color:#111;color:#fff}
+.btn.dark:hover{background:var(--green);border-color:var(--green)}
+.code-out{margin-top:14px;background:#1e1e1e;color:#d4d4d4;border-radius:8px;padding:14px;font:14px/1.5 Consolas,Monaco,monospace;white-space:pre-wrap;word-break:break-all;display:none}
+.toast{font-size:13px;color:#3d8f12;font-weight:700;align-self:center;opacity:0;transition:opacity .2s}
+.toast.show{opacity:1}
+
+.tips{margin-top:18px;border-left:4px solid var(--green);background:var(--soft);border-radius:0 8px 8px 0;padding:12px 14px;font-size:14px}
+.tips ul{margin:6px 0 0 18px}
+.tips li{margin:2px 0}
+
+/* ===== CONTENT ===== */
+.content{max-width:820px;margin:40px auto 0}
+.content h2{font-size:28px;font-weight:700;margin:36px 0 12px;line-height:1.3}
+.content h3{font-size:20px;font-weight:700;margin:22px 0 8px}
+.content p{font-size:17px;color:#2c2c2c;margin-bottom:12px}
+.content ol,.content ul{margin:0 0 14px 22px;font-size:17px;color:#2c2c2c}
+.content li{margin:6px 0}
+.content a{color:#3d8f12;font-weight:600}
+.content code{background:#f1f1f1;padding:1px 6px;border-radius:4px;font-size:15px}
+table.lim{width:100%;border-collapse:collapse;margin:10px 0 18px;font-size:15.5px}
+table.lim th{background:#2b2b2b;color:#fff;text-align:left;padding:10px 12px}
+table.lim td{border-bottom:1px solid var(--line);padding:10px 12px}
+
+.faq-item{border:1px solid var(--line);border-radius:10px;margin-bottom:12px;overflow:hidden}
+.faq-item summary{list-style:none;cursor:pointer;padding:14px 16px;font-weight:700;font-size:16.5px;display:flex;gap:12px;align-items:flex-start}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-num{flex:0 0 26px;height:26px;border-radius:50%;background:var(--green);color:#fff;font-size:13px;display:grid;place-items:center}
+.faq-item p{padding:0 16px 14px 54px;color:#3a5a20;font-size:16px;margin:0}
+
+.related{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:12px 0 10px}
+.related a{display:flex;justify-content:space-between;align-items:center;gap:10px;border:1px solid var(--line);border-left:4px solid var(--green);border-radius:8px;padding:13px 14px;text-decoration:none;color:#111 !important;font-weight:700;font-size:15px}
+.related a:hover{border-color:var(--green)}
+
+.bx-ad{margin:34px 0;min-height:90px}
+
+/* ===== FOOTER ===== */
+.site-footer{background:var(--footer);color:#fff;margin-top:70px;padding:52px 0 44px}
+.foot-links{list-style:none;display:flex;flex-wrap:wrap;gap:8px 28px}
+.foot-links a{text-decoration:none;font-weight:700;font-size:14.5px;text-transform:uppercase;color:#fff}
+.foot-links a:hover{color:var(--lime)}
+.copy{color:#a8a8a8;font-size:16px;margin-top:12px}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width:900px){
+  .tool{grid-template-columns:1fr}
+  .hero h1{font-size:34px}
+}
+@media (max-width:760px){
+  .site-top .wrap{grid-template-columns:1fr auto;padding-top:18px;padding-bottom:18px}
+  .site-date{display:none}
+  .site-logo{font-size:28px}
+  .menu-btn{display:block}
+  .site-nav ul{display:none;flex-direction:column}
+  .site-nav.open > .wrap > ul{display:flex}
+  .site-nav a{padding:11px 4px;border-bottom:1px solid #f0f0f0}
+  .sub{position:static;box-shadow:none;border:0;padding-left:14px}
+  .has-sub:hover .sub,.has-sub:focus-within .sub{display:flex !important}
+  .related,.row2{grid-template-columns:1fr}
+  .content h2{font-size:24px}
+}
+
+/* ===== SHARED TOOL EXTRAS ===== */
+.full{grid-column:1/-1}
+.field select{width:100%;border:1px solid #cfcfcf;border-radius:8px;padding:10px 12px;font:inherit;font-size:15px;background:#fff;color:#111}
+.field textarea.big{min-height:230px;font-size:14.5px}
+.mono{font-family:Consolas,Monaco,monospace !important;font-size:13.5px !important}
+.btn-sm{padding:5px 12px;font-size:13px;border-width:1.5px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(105px,1fr));gap:10px;margin-bottom:16px}
+.stat-box{background:var(--soft);border:1px solid #dbefc8;border-radius:10px;padding:10px 8px;text-align:center}
+.stat-box b{display:block;font-size:22px;line-height:1.2}
+.stat-box span{font-size:12.5px;color:var(--muted);font-weight:600}
+.rtable{width:100%;border-collapse:collapse;font-size:14.5px}
+.rtable th{background:#2b2b2b;color:#fff;text-align:left;padding:8px 10px;font-weight:700}
+.rtable td{border-bottom:1px solid var(--line);padding:7px 10px}
+.rtable td.num,.rtable th.num{text-align:right;font-variant-numeric:tabular-nums}
+.rtable tr.hit td{background:#eef8e6;font-weight:700}
+.empty{color:var(--muted);font-size:14.5px;padding:14px 0}
+.kw-result{border-radius:10px;padding:12px 14px;margin-bottom:16px;font-size:14.5px;border:1px solid var(--line);background:#fafafa}
+.kw-result.ok{background:#eef8e6;border-color:#cfeab4}
+.kw-result.warn{background:#fff6e5;border-color:#f3d79b}
+.kw-result.bad{background:#fdecea;border-color:#f5c2bb}
+.slug-row{border:1px solid var(--line);border-radius:8px;padding:10px 12px;margin-bottom:8px;display:flex;justify-content:space-between;gap:10px;align-items:center}
+.slug-row .s{font:600 15px/1.4 Consolas,Monaco,monospace;color:#111;word-break:break-all}
+.slug-row small{display:block;color:var(--muted);font-size:12.5px;word-break:break-all;margin-top:2px}
+.slug-row small.warn{color:#c47a00;font-weight:700}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
+.chip{border:1px solid var(--line);border-radius:20px;padding:4px 12px;font-size:13.5px;font-weight:700;background:#fff}
+.chip.zero{color:#aaa}
+.outline{max-height:460px;overflow:auto;border:1px solid var(--line);border-radius:10px;padding:6px 12px}
+.o-row{display:flex;gap:10px;align-items:flex-start;padding:7px 0;border-bottom:1px dashed #eee;font-size:14.5px}
+.o-row:last-child{border-bottom:0}
+.o-tag{flex:0 0 auto;font:700 12px/1 Consolas,Monaco,monospace;padding:5px 7px;border-radius:5px;color:#fff;background:#111}
+.o-tag.h1{background:#2f7a0c}.o-tag.h2{background:#4fa61d}.o-tag.h3{background:#6cc82a}.o-tag.h4{background:#8a8a8a}.o-tag.h5{background:#a5a5a5}.o-tag.h6{background:#bdbdbd}
+.o-issue{display:inline-block;font-size:12px;color:#d1351f;font-weight:700;margin-left:6px}
+.tgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:18px;margin:30px 0 10px}
+.tcard{border:1px solid var(--line);border-radius:12px;padding:22px;text-decoration:none;display:flex;flex-direction:column;gap:10px;transition:all .15s;background:#fff;color:#111}
+.tcard:hover{border-color:var(--green);box-shadow:0 8px 22px rgba(0,0,0,.07);transform:translateY(-2px)}
+.tbadge{width:48px;height:48px;border-radius:12px;background:#111;color:var(--lime);display:grid;place-items:center;font-weight:800;font-size:16px}
+.tcard h2,.tcard h3{font-size:18px;line-height:1.3;margin:0}
+.tcard p{font-size:14.5px;color:var(--muted);flex:1;line-height:1.55}
+.tcard .go{font-weight:700;color:#3d8f12;font-size:14px}
+.tcard.soon{opacity:.55;pointer-events:none}
+.tcard.soon .tbadge{background:#ddd;color:#777}
+.tcard.soon .go{color:var(--muted)}
+.more-tools{margin-top:10px}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="site-top">
+    <div class="wrap">
+      <div class="site-date" id="siteDate">Today<small>&nbsp;</small></div>
+      <a class="site-logo" href="https://brandella.in/">Brandella <span>Journal</span></a>
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false"><i></i><i></i><i></i></button>
+    </div>
+  </div>
+  <nav class="site-nav" id="siteNav" aria-label="Main">
+    <div class="wrap">
+      <ul>
+        <li><a href="https://brandella.in/">Home</a></li>
+        <li class="has-sub"><a href="https://brandella.in/category/seo/">SEO</a>
+          <ul class="sub">
+            <li><a href="https://brandella.in/category/seo/technical-seo/">Technical SEO</a></li>
+            <li><a href="https://brandella.in/category/seo/local-seo/">Local SEO</a></li>
+            <li><a href="https://brandella.in/category/seo/mobile-seo/">Mobile SEO</a></li>
+            <li><a href="https://brandella.in/category/seo/on-page-seo/">On-Page SEO</a></li>
+            <li><a href="https://brandella.in/category/seo/off-page-seo/">Off-Page SEO</a></li>
+            <li><a href="https://brandella.in/category/seo/seo-tools/">SEO Tools</a></li>
+            <li><a href="https://brandella.in/category/seo/core-web-vitals/">Core Web Vitals</a></li>
+            <li><a href="https://brandella.in/category/seo/keyword-research/">Keyword Research</a></li>
+            <li><a href="https://brandella.in/category/seo/link-building/">Link Building</a></li>
+            <li><a href="https://brandella.in/category/seo/google-search-console/">Google Search Console</a></li>
+            <li><a href="https://brandella.in/category/seo/seo-basics/">SEO Basics</a></li>
+          </ul>
+        </li>
+        <li class="has-sub"><a href="https://brandella.in/category/paid-media/">Paid Media</a>
+          <ul class="sub">
+            <li><a href="https://brandella.in/category/paid-media/display-advertising/">Display Advertising</a></li>
+            <li><a href="https://brandella.in/category/paid-media/google-ads/">Google Ads</a></li>
+            <li><a href="https://brandella.in/category/paid-media/linkedin-ads/">LinkedIn Ads</a></li>
+            <li><a href="https://brandella.in/category/paid-media/meta-ads/">Meta Ads</a></li>
+            <li><a href="https://brandella.in/category/paid-media/paid-media-analytics/">Paid Media Analytics</a></li>
+            <li><a href="https://brandella.in/category/paid-media/ppc-strategy/">PPC Strategy</a></li>
+          </ul>
+        </li>
+        <li><a href="https://brandella.in/category/content/">Content</a></li>
+        <li><a href="https://brandella.in/category/social/">Social</a></li>
+        <li><a href="https://brandella.in/category/digital-marketing/">Digital Marketing</a></li>
+        <li><a href="https://brandella.in/category/artificial-intelligence/">Artificial Intelligence</a></li>
+        <li class="has-sub"><a href="https://brandella.in/category/development/">Development</a>
+          <ul class="sub">
+            <li><a href="https://brandella.in/category/development/php/">PHP</a></li>
+            <li><a href="https://brandella.in/category/development/javascript/">JavaScript</a></li>
+            <li><a href="https://brandella.in/category/development/python/">Python</a></li>
+          </ul>
+        </li>
+        <li class="has-sub"><a class="active" href="https://brandella.in/tools/">Tools</a>
+          <ul class="sub">
+            <li><a href="https://brandella.in/tools/seo-tools/">SEO Tools</a></li>
+            <li><a href="https://brandella.in/tools/schema-generators/">Schema Generators</a></li>
+            <li><a href="https://brandella.in/tools/ppc-calculators/">PPC Calculators</a></li>
+            <li><a href="https://brandella.in/tools/analytics-tools/">Analytics and Tracking Tools</a></li>
+            <li><a href="https://brandella.in/tools/social-media-tools/">Social Media Tools</a></li>
+            <li><a href="https://brandella.in/tools/technical-seo-tools/">Technical SEO Tools</a></li>
+            <li><a href="https://brandella.in/tools/google-ads-tools/">Google Ads Tools</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<main class="wrap">
+
+  <div class="crumbs"><a href="https://brandella.in/">Home</a> &rsaquo; <a href="https://brandella.in/tools/">Tools</a> &rsaquo; <a href="https://brandella.in/tools/google-ads-tools/">Google Ads Tools</a> &rsaquo; Negative Keyword Tool</div>
+
+  <section class="hero">
+    <span class="pill">Free Google Ads Tool</span>
+    <h1>Negative Keyword Tool</h1>
+    <p>Build a negative keyword list in the right match types, then test it. The tool shows which searches each negative blocks and warns you when a negative would stop your own keywords from showing.</p>
+  </section>
+
+  <section class="tool" aria-label="Negative keyword tool" id="nkForm">
+    <div class="card" style="min-width:0">
+      <h2>Build Your List</h2>
+      <div class="field"><label>Ready Made Lists</label><label class="check"><input type="checkbox" class="nkL" value="jobs" checked> <span>Jobs and careers <em style="font-weight:400;color:#666">job, jobs, career, careers, hiring, vacancy, vacancies, salary, internship, recruitment</em></span></label><label class="check"><input type="checkbox" class="nkL" value="learn" checked> <span>Courses and research <em style="font-weight:400;color:#666">course, courses, training, tutorial, certification, syllabus, pdf, meaning, definition, wikipedia</em></span></label><label class="check"><input type="checkbox" class="nkL" value="used" checked> <span>Used and second hand <em style="font-weight:400;color:#666">used, second hand, secondhand, refurbished, pre owned</em></span></label><label class="check"><input type="checkbox" class="nkL" value="free"> <span>Free stuff <em style="font-weight:400;color:#666">free, freebie, freebies, giveaway, torrent</em></span></label><label class="check"><input type="checkbox" class="nkL" value="diy"> <span>DIY and how to <em style="font-weight:400;color:#666">diy, how to, homemade, do it yourself</em></span></label><label class="check"><input type="checkbox" class="nkL" value="trouble"> <span>Complaints and scams <em style="font-weight:400;color:#666">complaint, complaints, scam, fraud, lawsuit</em></span></label><label class="check"><input type="checkbox" class="nkL" value="media"> <span>Images and downloads <em style="font-weight:400;color:#666">images, pictures, photos, wallpaper, clipart, png, drawing</em></span></label></div>
+      <div class="field"><label for="nkCustom">Your Own Negatives <em>one per line, quotes and brackets allowed</em></label><textarea id="nkCustom" class="mono" spellcheck="false" placeholder="">kids
+&quot;shoe repair&quot;
+formal
+online
+[running shoes free]</textarea></div>
+      <div class="field"><label for="nkMt">Match Type for Plain Words</label><select id="nkMt"><option value="broad">Negative broad: all words, any order</option><option value="phrase" selected>Negative phrase: words in this order</option><option value="exact">Negative exact: this search only</option></select></div>
+      <div class="field"><label for="nkKw">Your Keywords <em>to catch conflicts</em></label><textarea id="nkKw" class="mono" spellcheck="false" placeholder="">running shoes
+[running shoes for men]
+&quot;buy running shoes online&quot;
+trail running shoes
+nike running shoes</textarea></div>
+      <div class="field"><label for="nkTest">Searches to Test <em>one per line, from your search terms report</em></label><textarea id="nkTest" class="mono" spellcheck="false" placeholder="">running shoes jobs
+running shoe repair near me
+best running shoes for men
+kids running shoes
+how to clean running shoes
+second hand running shoes
+nike running shoes sale
+running shoes job
+running shoes free delivery</textarea></div>
+    </div>
+    <div class="card" style="min-width:0">
+      <h2>Your Negative Keywords</h2>
+      <div class="stats"><div class="stat-box"><b id="nkN">0</b><span>Negatives</span></div><div class="stat-box"><b id="nkC">0</b><span>Conflicts</span></div><div class="stat-box"><b id="nkB">0</b><span>Searches Blocked</span></div></div>
+      <div class="kw-result" id="nkCheck"></div>
+      <pre class="code-out" id="nkOut" style="display:block;margin-top:0;max-height:520px;overflow:auto;word-break:normal;overflow-wrap:anywhere;max-height:260px"></pre>
+      <div class="actions"><button class="btn dark" id="nkCopy" type="button">Copy Negatives</button><button class="btn" id="nkPl" type="button">Add Missing Plurals</button><button class="btn" id="nkDl" type="button">Download CSV</button><span class="toast" id="toast">Copied!</span></div>
+      <h3 style="font-size:16px;margin:18px 0 10px">Search Test</h3>
+      <div style="overflow-x:auto;max-height:460px;overflow-y:auto;border:1px solid #e6e6e6;border-radius:10px"><table class="rtable"><thead><tr><th>Search</th><th>Result</th><th>Blocked by</th></tr></thead><tbody id="nkBody"></tbody></table></div>
+    </div>
+  </section>
+
+  <div class="bx-ad">
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3931314195561246" data-ad-slot="4249015278" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+
+  <article class="content">
+
+    <h2>What Is a Negative Keyword Tool?</h2>
+    <p>Negative keywords stop your ads from showing for searches you do not want, like job seekers clicking a shoe ad or students looking for a free PDF. A good list can save a large share of a search budget. A bad one quietly blocks your best searches.</p>
+    <p>This negative keyword tool helps with both sides. It builds a list from common themes and your own terms, writes each one in the right match type, and then tests it. You see exactly which searches get blocked and whether any negative clashes with the keywords you are paying for.</p>
+
+    <h2>How to Use the Negative Keyword Tool</h2>
+    <ol>
+      <li><strong>Tick the ready made lists</strong> that never fit your business, such as jobs or courses.</li>
+      <li><strong>Add your own negatives</strong> from your search terms report. Use quotes for phrase and brackets for exact.</li>
+      <li><strong>Choose a match type</strong> for plain words. Phrase is a safe default.</li>
+      <li><strong>Paste your keywords</strong> so the tool can flag any negative that would block them.</li>
+      <li><strong>Paste real searches</strong> to see which ones your list blocks, then copy the list or download it.</li>
+    </ol>
+
+    <h2>How Negative Match Types Work</h2>
+    <div style="overflow-x:auto"><table class="lim">
+      <thead><tr style="background:#2b2b2b !important;"><th style="background:#2b2b2b !important; color:#ffffff !important;">Negative</th><th style="background:#2b2b2b !important; color:#ffffff !important;">Blocks</th><th style="background:#2b2b2b !important; color:#ffffff !important;">Does not block</th></tr></thead>
+      <tbody>
+        <tr><td>Broad: <code>running shoes</code></td><td>Any search with both words in any order, like "shoes for running"</td><td>"running shoe", because plurals are not matched</td></tr>
+        <tr><td>Phrase: <code>"running shoes"</code></td><td>Searches with the words in that order, like "blue running shoes"</td><td>"shoes running"</td></tr>
+        <tr><td>Exact: <code>[running shoes]</code></td><td>Only the search "running shoes"</td><td>"blue running shoes"</td></tr>
+      </tbody>
+    </table></div>
+    <p>The big difference from normal keywords is that negatives do not match close variants. You have to add plurals, synonyms and other forms yourself, which is why the tool suggests missing plurals. Google explains the rules in <a href="https://support.google.com/google-ads/answer/2453972" target="_blank" rel="noopener">about negative keywords</a>.</p>
+
+    <h2>Tips for a Safe Negative List</h2>
+    <ul>
+      <li><strong>Prefer phrases to single words</strong> when a word has two meanings. The negative <code>free</code> also blocks "free delivery".</li>
+      <li><strong>Use exact negatives</strong> to stop one wasteful search without losing longer, useful ones.</li>
+      <li><strong>Put shared themes in a list.</strong> A shared negative list for jobs or courses can be applied to every campaign.</li>
+      <li><strong>Check after every change.</strong> Run your keywords through the conflict check before you upload.</li>
+    </ul>
+
+    <h2>Cut Wasted Spend</h2>
+    <p>Our full guide to <a href="https://brandella.in/google-ads-negative-keywords/">Google Ads negative keywords</a> covers lists and levels in depth, and <a href="https://brandella.in/25-google-ads-optimization-tips/">Google Ads optimization tips</a> shows where else to save. Not sure which words waste money? Find them with the <a href="https://brandella.in/tools/google-ads-tools/search-term-ngram-analyzer/">search term ngram analyzer</a>.</p>
+
+    <div class="bx-ad">
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3931314195561246" data-ad-slot="4249015278" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+
+    <h2>Frequently Asked Questions</h2>
+    <details class="faq-item" open><summary><span class="faq-num">1</span>Do negative keywords match plurals and misspellings?</summary><p>No. Unlike normal keywords, negatives do not match close variants. If you block job, you also need jobs. Google does handle letter case and common misspellings.</p></details>
+    <details class="faq-item" open><summary><span class="faq-num">2</span>Which match type should I use for negative keywords?</summary><p>Phrase match is a safe default for most negatives. Use exact match to block one specific search, and broad match only when every word on its own is clearly irrelevant.</p></details>
+    <details class="faq-item" open><summary><span class="faq-num">3</span>Can a negative keyword block my own keyword?</summary><p>Yes. If your negative appears inside one of your keywords, that keyword stops showing. The conflict check in this tool finds these clashes before you upload.</p></details>
+    <details class="faq-item" open><summary><span class="faq-num">4</span>Where do I add the negative keywords?</summary><p>In Google Ads open Keywords, then Negative search keywords, and add them to a campaign or ad group. For several campaigns, create a shared negative keyword list in Tools under Shared library.</p></details>
+
+    <h2>Related Articles</h2>
+    <div class="related">
+      <a href="https://brandella.in/google-ads-negative-keywords/">Google Ads Negative Keywords <span>&rarr;</span></a>
+      <a href="https://brandella.in/25-google-ads-optimization-tips/">25 Google Ads Optimization Tips <span>&rarr;</span></a>
+      <a href="https://brandella.in/what-is-search-intent-practical-guide/">What Is Search Intent <span>&rarr;</span></a>
+      <a href="https://brandella.in/search-campaign-vs-performance-max/">Search Campaign vs Performance Max <span>&rarr;</span></a>
+    </div>
+  </article>
+
+  <section class="content more-tools" style="max-width:1140px">
+    <h2>More Free Google Ads Tools</h2>
+    <div class="tgrid">
+      <a class="tcard" href="https://brandella.in/tools/google-ads-tools/google-ads-preview-tool/"><div class="tbadge">AP</div><h3>Google Ads Preview Tool</h3><p>Write a responsive search ad and preview how Google shows it on mobile and desktop, with pins and keyword insertion.</p><span class="go">Open tool &rarr;</span></a>
+<a class="tcard" href="https://brandella.in/tools/google-ads-tools/google-ads-character-counter/"><div class="tbadge">GC</div><h3>Google Ads Character Counter</h3><p>Count every headline, description, path, sitelink, callout and snippet against Google Ads limits in one go.</p><span class="go">Open tool &rarr;</span></a>
+<a class="tcard" href="https://brandella.in/tools/google-ads-tools/keyword-match-type-generator/"><div class="tbadge">MT</div><h3>Keyword Match Type Generator</h3><p>Turn a keyword list into broad, "phrase" and [exact] match, cleaned and ready for Google Ads or Ads Editor.</p><span class="go">Open tool &rarr;</span></a>
+<a class="tcard" href="https://brandella.in/tools/google-ads-tools/search-term-ngram-analyzer/"><div class="tbadge">NG</div><h3>Search Term Ngram Analyzer</h3><p>Paste a search terms report to find the one, two and three word phrases that waste spend or drive sales.</p><span class="go">Open tool &rarr;</span></a>
+<a class="tcard" href="https://brandella.in/tools/google-ads-tools/google-ads-tracking-template-generator/"><div class="tbadge">TT</div><h3>Google Ads Tracking Template Generator</h3><p>Build a final URL suffix or tracking template with UTM tags and ValueTrack parameters, and test a sample click.</p><span class="go">Open tool &rarr;</span></a>
+<a class="tcard" href="https://brandella.in/tools/google-ads-tools/keyword-grouper/"><div class="tbadge">KG</div><h3>Keyword Grouper</h3><p>Group a long keyword list into tight, themed ad groups by shared words, with search volume totals and a CSV export.</p><span class="go">Open tool &rarr;</span></a>
+    </div>
+    <p><a href="https://brandella.in/tools/google-ads-tools/">See all google ads tools &rarr;</a> &nbsp;|&nbsp; <a href="https://brandella.in/tools/">Browse every free tool &rarr;</a></p>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <ul class="foot-links">
+      <li><a href="https://brandella.in/">Home</a></li>
+      <li><a href="https://brandella.in/about-us/">About Us</a></li>
+      <li><a href="https://brandella.in/contact-us/">Contact Us</a></li>
+      <li><a href="https://brandella.in/privacy-policy/">Privacy Policy</a></li>
+      <li><a href="https://brandella.in/terms-and-conditions/">Terms and Conditions</a></li>
+    </ul>
+    <p class="copy">Copyright &copy; <span id="yr">2026</span> Brandella Journal. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+
+  var d = new Date();
+  var days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+  var months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+  document.getElementById('siteDate').innerHTML = days[d.getDay()] + ',<small>' + months[d.getMonth()] + ' ' + d.getDate() + ', ' + d.getFullYear() + '</small>';
+  document.getElementById('yr').textContent = d.getFullYear();
+  var nav = document.getElementById('siteNav'), mb = document.getElementById('menuBtn');
+  mb.addEventListener('click', function(){ var open = nav.classList.toggle('open'); mb.setAttribute('aria-expanded', open); });
+  var $ = function(id){ return document.getElementById(id); };
+  function esc(s){ return String(s).replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+  function copyText(text, toastId){
+    var done = function(){ var t = $(toastId); if(!t) return; t.classList.add('show'); setTimeout(function(){ t.classList.remove('show'); }, 1600); };
+    if (navigator.clipboard && navigator.clipboard.writeText){ navigator.clipboard.writeText(text).then(done, function(){ fallback(); done(); }); }
+    else { fallback(); done(); }
+    function fallback(){ var ta=document.createElement('textarea'); ta.value=text; document.body.appendChild(ta); ta.select(); try{document.execCommand('copy');}catch(e){} document.body.removeChild(ta); }
+  }
+
+
+  function v(id){ var e = $(id); return e ? String(e.value).trim() : ''; }
+  function say(id, cls, h){ var e = $(id); e.className = 'kw-result' + (cls ? ' ' + cls : ''); e.innerHTML = h; }
+  function issues(id, list, okMsg, max){
+    max = max || 40;
+    var bad = list.filter(function(i){ return i[0] === 'bad'; }), warn = list.filter(function(i){ return i[0] === 'warn'; });
+    var li = function(a){ var more = a.length > max ? '<li>and ' + (a.length - max) + ' more</li>' : '';
+      return '<ul style="margin:6px 0 0 18px">' + a.slice(0, max).map(function(i){ return '<li>' + i[1] + '</li>'; }).join('') + more + '</ul>'; };
+    if (bad.length) say(id, 'bad', '<strong>Fix ' + bad.length + ' issue' + (bad.length > 1 ? 's' : '') + (warn.length ? ', plus ' + warn.length + ' suggestion' + (warn.length > 1 ? 's' : '') : '') + '.</strong>' + li(bad.concat(warn)));
+    else if (warn.length) say(id, 'warn', '<strong>Looks good, with ' + warn.length + ' suggestion' + (warn.length > 1 ? 's' : '') + '.</strong>' + li(warn));
+    else say(id, 'ok', okMsg);
+  }
+  function c(s){ return '<code>' + esc(s) + '</code>'; }
+  function fmtN(n){ return Number(n).toLocaleString('en-IN'); }
+  function lines(id){ return String($(id).value).split(/\r?\n/).map(function(s){ return s.trim(); }).filter(Boolean); }
+  function download(name, text, type){
+    var a = document.createElement('a'); a.href = URL.createObjectURL(new Blob([text], {type: (type || 'text/plain') + ';charset=utf-8'}));
+    a.download = name; document.body.appendChild(a); a.click(); document.body.removeChild(a);
+    setTimeout(function(){ URL.revokeObjectURL(a.href); }, 4000);
+  }
+  function csvCell(s){ s = String(s); return /[",\n]/.test(s) ? '"' + s.replace(/"/g, '""') + '"' : s; }
+  // Google Ads counts double width characters (Chinese, Japanese, Korean) as 2
+  function wide(cp){ return (cp >= 0x1100 && cp <= 0x115F) || (cp >= 0x2E80 && cp <= 0xA4CF) || (cp >= 0xAC00 && cp <= 0xD7A3) || (cp >= 0xF900 && cp <= 0xFAFF) || (cp >= 0xFE30 && cp <= 0xFE4F) || (cp >= 0xFF00 && cp <= 0xFF60) || (cp >= 0xFFE0 && cp <= 0xFFE6) || (cp >= 0x20000 && cp <= 0x3FFFD); }
+  function glen(s){ var n = 0; for (var ch of String(s)) n += wide(ch.codePointAt(0)) ? 2 : 1; return n; }
+  // Keyword insertion: {keyword:default text}
+  var DKI = /\{(keyword):([^{}]*)\}/gi, DKI1 = /\{keyword:[^{}]*\}/i;
+  function dkiDefault(s){ return String(s).replace(DKI, function(m, k, d){ return d; }); }
+  function capWord(w){ return w ? w.charAt(0).toUpperCase() + w.slice(1).toLowerCase() : w; }
+  function dkiStyle(k, kw){
+    var w = kw.toLowerCase().split(/\s+/).filter(Boolean);
+    if (k === 'keyword') return w.join(' ');
+    if (k === 'Keyword') return w.length ? capWord(w[0]) + (w.length > 1 ? ' ' + w.slice(1).join(' ') : '') : '';
+    if (k === 'KeyWord') return w.map(capWord).join(' ');
+    if (k === 'KEYWord') return w.map(function(x, i){ return i === 0 ? x.toUpperCase() : capWord(x); }).join(' ');
+    if (k === 'KeyWORD') return w.map(function(x, i){ return i === 0 ? capWord(x) : x.toUpperCase(); }).join(' ');
+    return w.map(capWord).join(' ');
+  }
+  function dkiFill(s, kw, limit){
+    if (!DKI1.test(s)) return s;
+    if (!kw) return dkiDefault(s);
+    var out = String(s).replace(DKI, function(m, k){ return dkiStyle(k, kw); });
+    return glen(out) <= limit ? out : dkiDefault(s);
+  }
+  function dkiCheck(s){
+    var bad = [];
+    String(s).replace(DKI, function(m, k){ if (['keyword', 'Keyword', 'KeyWord', 'KEYWord', 'KeyWORD'].indexOf(k) < 0) bad.push(k); return m; });
+    if (/\{[^}]*$/.test(s) || /\{(?!keyword:)[^}]*\}/i.test(s)) bad.push('syntax');
+    return bad;
+  }
+  var ACRO = /^(UK|USA|UAE|EMI|GST|COD|SUV|LED|HD|PDF|SEO|PPC|CRM|SAAS|NASA|ISO|IIT|MBA|BBA|NEET|JEE|ICSE|CBSE|IELTS|GMAT|ASAP|FAQ|ATM|AC|TV|PC|USB|DSLR|OLED|QLED|SIM|UPI|EV|NGO|HR|IT|AI|API|CEO|SME|MSME|ISI|BIS|FSSAI|HDFC|ICICI|SBI|IKEA|LG|BMW|ASICS)$/;
+  // Editorial checks Google applies to ad text
+  function policy(s){
+    var out = [];
+    if (/([!?.,;:])\1/.test(s)) out.push('repeats punctuation, like ' + c((s.match(/([!?.,;:])\1+/) || [''])[0]) + ', which Google disapproves');
+    if (/\p{Extended_Pictographic}/u.test(s)) out.push('contains an emoji or symbol Google does not support in ad text');
+    if (/\s{2,}/.test(s)) out.push('has extra spaces between words');
+    var caps = (dkiDefault(s).match(/\b[A-Z]{4,}\b/g) || []).filter(function(w){ return !ACRO.test(w); });
+    if (caps.length) out.push('uses ' + c(caps[0]) + ' in capitals. Google only allows this for acronyms and brand names');
+    if (/[a-z][@$][a-z]|[a-z][013][a-z]{2}/i.test(s)) out.push('may use numbers or symbols in place of letters');
+    var bad = dkiCheck(s);
+    if (bad.length) out.push('has keyword insertion code Google may not read. Use ' + c('{KeyWord:Default text}'));
+    return out;
+  }
+
+  var LISTS = {jobs: 'job,jobs,career,careers,hiring,vacancy,vacancies,salary,internship,recruitment', learn: 'course,courses,training,tutorial,certification,syllabus,pdf,meaning,definition,wikipedia',
+    used: 'used,second hand,secondhand,refurbished,pre owned', free: 'free,freebie,freebies,giveaway,torrent', diy: 'diy,how to,homemade,do it yourself',
+    trouble: 'complaint,complaints,scam,fraud,lawsuit', media: 'images,pictures,photos,wallpaper,clipart,png,drawing'};
+  var BADSYM = /[,!@%^()={};~`<>?\\|]/, negs = [], missing = [];
+  function norm(s){ return String(s).toLowerCase().replace(/\./g, '').replace(/\s+/g, ' ').trim(); }
+  function parse(raw, def){
+    var s = raw.trim().replace(/^-\s*/, ''), t = def;
+    if (/^\[.*\]$/.test(s)){ t = 'exact'; s = s.slice(1, -1); } else if (/^".*"$/.test(s)){ t = 'phrase'; s = s.slice(1, -1); }
+    return {t: t, k: norm(s), raw: raw};
+  }
+  function blocks(n, search){
+    var q = norm(search).split(' '), w = n.k.split(' ');
+    if (n.t === 'exact') return q.join(' ') === n.k;
+    if (n.t === 'broad') return w.every(function(x){ return q.indexOf(x) > -1; });
+    for (var i = 0; i + w.length <= q.length; i++){ if (w.every(function(x, j){ return q[i + j] === x; })) return true; }
+    return false;
+  }
+  function fmt(n){ return n.t === 'exact' ? '[' + n.k + ']' : n.t === 'phrase' ? '"' + n.k + '"' : n.k; }
+  function run(){
+    var iss = [], seen = {}, def = $('nkMt').value; negs = []; missing = [];
+    function addNeg(n, custom){
+      if (!n.k) return;
+      if (BADSYM.test(n.k)){ iss.push(['bad', c(n.raw) + ' contains a symbol Google does not accept in negative keywords, such as ' + c((n.k.match(BADSYM) || [''])[0]) + '.']); return; }
+      if (/\s-\S/.test(n.k)) iss.push(['warn', c(n.raw) + ' has a minus sign inside it. Google ignores the word after it, so put each negative on its own line.']);
+      if (/(^|\s)\+/.test(n.k)) iss.push(['warn', c(n.raw) + ' has a plus sign. Google ignores it in negatives.']);
+      var key = n.t + '|' + n.k; if (seen[key]) return; seen[key] = 1; n.custom = custom; negs.push(n);
+    }
+    document.querySelectorAll('.nkL:checked').forEach(function(x){ LISTS[x.value].split(',').forEach(function(w){ addNeg({t: def, k: w, raw: w}, false); }); });
+    lines('nkCustom').forEach(function(r){ addNeg(parse(r, def), true); });
+    var all = {}; negs.forEach(function(n){ all[n.k] = 1; });
+    negs.forEach(function(n){
+      if (!n.custom || n.t === 'exact' || / /.test(n.k) || n.k.length < 3) return;
+      var alt = /[^s]s$/.test(n.k) ? n.k.slice(0, -1) : /(al|ic|ed|ing|ly|ne|ful|ous|ive|y|s|x|sh|ch)$/.test(n.k) ? '' : n.k + 's';
+      if (alt && !all[alt]){ missing.push({t: n.t, k: alt, raw: alt}); all[alt] = 1; }
+    });
+    if (missing.length) iss.push(['warn', 'Negatives do not match plurals or close variants. Consider adding ' + missing.slice(0, 6).map(function(m){ return c(fmt(m)); }).join(', ') + '.']);
+    var conf = 0;
+    lines('nkKw').forEach(function(r){
+      var k = parse(r, 'broad'); if (!k.k) return;
+      negs.forEach(function(n){ if (blocks(n, k.k)){ conf++; iss.push(['bad', 'The negative ' + c(fmt(n)) + ' blocks your keyword ' + c(r) + '. Remove it or make it more specific.']); } });
+    });
+    if (negs.some(function(n){ return n.k === 'free'; })) iss.push(['warn', 'The negative ' + c('free') + ' also blocks searches like "free delivery". Use phrases like ' + c('"free download"') + ' if you offer free delivery.']);
+    var blocked = 0, rows = lines('nkTest').map(function(q){
+      var by = negs.filter(function(n){ return blocks(n, q); });
+      if (by.length) blocked++;
+      return '<tr' + (by.length ? '' : ' class="hit"') + '><td>' + esc(q) + '</td><td style="font-weight:700;color:' + (by.length ? '#d1351f' : '#3d8f12') + '">' + (by.length ? 'Blocked' : 'Ad can show') + '</td><td>' + by.slice(0, 3).map(function(n){ return esc(fmt(n)); }).join(', ') + '</td></tr>';
+    });
+    $('nkBody').innerHTML = rows.join('') || '<tr><td colspan="3" class="empty">Paste searches to test them.</td></tr>';
+    $('nkOut').textContent = negs.map(fmt).join('\n') || 'Your negative keywords appear here.';
+    $('nkN').textContent = negs.length; $('nkC').textContent = conf; $('nkB').textContent = blocked;
+    $('nkPl').style.display = missing.length ? '' : 'none';
+    issues('nkCheck', iss, '<strong>' + negs.length + ' negatives ready</strong> and none of them block your keywords.');
+  }
+  $('nkForm').addEventListener('input', run); $('nkForm').addEventListener('change', run);
+  $('nkCopy').onclick = function(){ copyText(negs.map(fmt).join('\n'), 'toast'); };
+  $('nkPl').onclick = function(){ var ta = $('nkCustom'); ta.value = ta.value.replace(/\s*$/, '') + '\n' + missing.map(fmt).join('\n'); run(); };
+  $('nkDl').onclick = function(){ var m = {broad: 'Negative Broad', phrase: 'Negative Phrase', exact: 'Negative Exact'};
+    download('negative-keywords.csv', 'Keyword,Criterion Type\n' + negs.map(function(n){ return csvCell(n.k) + ',' + m[n.t]; }).join('\n'), 'text/csv'); };
+  run();
+
+})();
+</script>
+</body>
+</html>

@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://brandella.in/tools/</loc>
-    <lastmod>2026-11-04</lastmod>
+    <lastmod>2026-11-05</lastmod>
   </url>
   <url>
     <loc>https://brandella.in/tools/seo-tools/</loc>
@@ -215,5 +215,37 @@
   <url>
     <loc>https://brandella.in/tools/technical-seo-tools/htaccess-redirect-generator/</loc>
     <lastmod>2026-11-04</lastmod>
+  </url>
+  <url>
+    <loc>https://brandella.in/tools/google-ads-tools/</loc>
+    <lastmod>2026-11-05</lastmod>
+  </url>
+  <url>
+    <loc>https://brandella.in/tools/google-ads-tools/google-ads-preview-tool/</loc>
+    <lastmod>2026-11-05</lastmod>
+  </url>
+  <url>
+    <loc>https://brandella.in/tools/google-ads-tools/google-ads-character-counter/</loc>
+    <lastmod>2026-11-05</lastmod>
+  </url>
+  <url>
+    <loc>https://brandella.in/tools/google-ads-tools/keyword-match-type-generator/</loc>
+    <lastmod>2026-11-05</lastmod>
+  </url>
+  <url>
+    <loc>https://brandella.in/tools/google-ads-tools/negative-keyword-tool/</loc>
+    <lastmod>2026-11-05</lastmod>
+  </url>
+  <url>
+    <loc>https://brandella.in/tools/google-ads-tools/search-term-ngram-analyzer/</loc>
+    <lastmod>2026-11-05</lastmod>
+  </url>
+  <url>
+    <loc>https://brandella.in/tools/google-ads-tools/google-ads-tracking-template-generator/</loc>
+    <lastmod>2026-11-05</lastmod>
+  </url>
+  <url>
+    <loc>https://brandella.in/tools/google-ads-tools/keyword-grouper/</loc>
+    <lastmod>2026-11-05</lastmod>
   </url>
 </urlset>

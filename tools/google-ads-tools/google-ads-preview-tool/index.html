@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Google Ads Preview Tool: Responsive Search Ad Mockup</title>
+<meta name="description" content="Free Google Ads preview tool. Write up to 15 headlines and 4 descriptions, pin assets, test keyword insertion and see your ad on mobile and desktop.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://brandella.in/tools/google-ads-tools/google-ads-preview-tool/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Google Ads Preview Tool: Responsive Search Ad Mockup">
+<meta property="og:description" content="Free Google Ads preview tool. Write up to 15 headlines and 4 descriptions, pin assets, test keyword insertion and see your ad on mobile and desktop.">
+<meta property="og:url" content="https://brandella.in/tools/google-ads-tools/google-ads-preview-tool/">
+<meta property="og:site_name" content="Brandella Journal">
+<meta property="og:image" content="https://brandella.in/tools/assets/og-google-ads-preview-tool.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://brandella.in/tools/assets/og-google-ads-preview-tool.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3931314195561246" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "Google Ads Preview Tool",
+      "url": "https://brandella.in/tools/google-ads-tools/google-ads-preview-tool/",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Any (web browser)",
+      "description": "Free Google Ads preview tool. Write up to 15 headlines and 4 descriptions, pin assets, test keyword insertion and see your ad on mobile and desktop.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Brandella Journal",
+        "url": "https://brandella.in/"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://brandella.in/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Tools",
+          "item": "https://brandella.in/tools/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Google Ads Tools",
+          "item": "https://brandella.in/tools/google-ads-tools/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Google Ads Preview Tool",
+          "item": "https://brandella.in/tools/google-ads-tools/google-ads-preview-tool/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is this the same as the Google Ads Ad Preview and Diagnosis tool?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Google's own tool shows whether a live ad is showing for a search. This tool is a mockup for ads you are still writing, so you can check the copy before it goes live."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why does my ad show only two headlines?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Google shows up to three headlines, but often drops the third one on smaller screens or when space is tight. That is why Headline 3 is never guaranteed."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does pinning lower Ad Strength?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, it usually does. Pinning reduces the combinations Google can test. Pin only text that must always appear, such as a brand name or a legal line."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why does the preview show my default text instead of the keyword?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Keyword insertion falls back to the default text when the keyword would make the headline longer than 30 characters. Use a shorter keyword or shorter text around it."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+<style>
+:root{
+  --green:#6cc82a; --lime:#a6ef39; --ink:#111; --gray:#555; --muted:#6b6b6b;
+  --line:#e3e3e3; --bg:#fff; --soft:#f6faf1; --footer:#0a0a0a;
+  --g-title:#1a0dab; --g-url:#202124; --g-desc:#4d5156;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Open Sans',Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6}
+a{color:inherit}
+.wrap{max-width:1140px;margin:0 auto;padding:0 16px}
+
+/* ===== HEADER ===== */
+.site-top{border-bottom:1px solid #d9d9d9}
+.site-top .wrap{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding-top:34px;padding-bottom:34px}
+.site-date{font-size:20px;font-weight:600;line-height:1.1}
+.site-date small{display:block;font-size:13px;font-weight:600;margin-top:2px}
+.site-logo{font-size:40px;font-weight:700;text-decoration:none;color:#555;letter-spacing:.2px;white-space:nowrap}
+.site-logo span{color:var(--green)}
+.menu-btn{display:none;justify-self:end;background:none;border:0;cursor:pointer;padding:6px}
+.menu-btn i{display:block;width:26px;height:3px;background:#111;margin:5px 0;border-radius:2px}
+
+.site-nav{border-bottom:2px solid var(--lime)}
+.site-nav ul{list-style:none;display:flex;justify-content:center;flex-wrap:wrap;gap:0 4px}
+.site-nav > .wrap > ul > li{position:relative}
+.site-nav a{display:block;padding:12px 13px;font-size:17px;font-weight:700;text-decoration:none;color:#111}
+.site-nav a:hover,.site-nav a.active{color:var(--green)}
+.has-sub > a::after{content:"";display:inline-block;width:6px;height:6px;border-right:1.6px solid currentColor;border-bottom:1.6px solid currentColor;transform:rotate(45deg);margin:0 0 4px 7px}
+.sub{display:none !important;position:absolute;top:100%;left:0;width:240px;background:#fff;border-radius:6px;padding:14px 0;box-shadow:0 10px 30px rgba(0,0,0,.18);z-index:50;flex-direction:column}
+.sub a{font-size:17px;font-weight:700;line-height:1.35;padding:5px 30px;color:#111}
+.sub a:hover{color:var(--green)}
+.has-sub:hover .sub,.has-sub:focus-within .sub{display:flex !important}
+
+/* ===== BREADCRUMB + HERO ===== */
+.crumbs{font-size:13.5px;color:var(--muted);padding:18px 0 0}
+.crumbs a{text-decoration:none;color:var(--muted)}
+.crumbs a:hover{color:var(--green)}
+.hero{text-align:center;padding:26px 0 8px}
+.pill{display:inline-block;background:var(--soft);color:#3d7f12;border:1px solid #cfeab4;font-size:12.5px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;padding:4px 12px;border-radius:20px;margin-bottom:14px}
+.hero h1{font-size:44px;font-weight:300;line-height:1.2}
+.hero p{max-width:760px;margin:14px auto 0;color:var(--muted);font-size:17px}
+
+/* ===== TOOL ===== */
+.tool{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin:34px 0 10px}
+.card{border:1px solid var(--line);border-radius:12px;padding:24px;background:#fff}
+.card h2{font-size:19px;font-weight:700;margin-bottom:16px}
+.field{margin-bottom:18px}
+.field label{display:flex;justify-content:space-between;font-weight:700;font-size:14.5px;margin-bottom:6px}
+.field label em{font-style:normal;font-weight:600;color:var(--muted);font-size:13px}
+.field input,.field textarea{width:100%;border:1px solid #cfcfcf;border-radius:8px;padding:11px 12px;font:inherit;font-size:15px;color:#111;outline:none;transition:border-color .15s}
+.field input:focus,.field textarea:focus{border-color:var(--green);box-shadow:0 0 0 3px rgba(108,200,42,.15)}
+.field textarea{resize:vertical;min-height:96px}
+.meter{height:7px;background:#eee;border-radius:6px;margin-top:8px;overflow:hidden}
+.meter b{display:block;height:100%;width:0;background:var(--green);border-radius:6px;transition:width .15s,background .15s}
+.meter b.warn{background:#f0a020}.meter b.bad{background:#e0442c}
+.stat{font-size:13px;color:var(--muted);margin-top:5px;display:flex;justify-content:space-between}
+.stat .ok{color:#3d8f12;font-weight:700}.stat .warn{color:#c47a00;font-weight:700}.stat .bad{color:#d1351f;font-weight:700}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.check{display:flex;align-items:center;gap:8px;font-size:14.5px;font-weight:600;margin-bottom:6px;cursor:pointer}
+.check input{accent-color:var(--green);width:16px;height:16px}
+
+.tabs{display:inline-flex;border:1px solid #cfcfcf;border-radius:30px;padding:3px;margin-bottom:18px}
+.tabs button{border:0;background:none;font:inherit;font-weight:700;font-size:14px;padding:7px 18px;border-radius:30px;cursor:pointer;color:#333}
+.tabs button.on{background:#111;color:#fff}
+
+/* Google result mock */
+.serp{border:1px solid var(--line);border-radius:10px;padding:20px 18px;background:#fff;font-family:Arial,sans-serif}
+.serp.mobile{max-width:400px;margin:0 auto;border-radius:16px;box-shadow:0 2px 10px rgba(0,0,0,.08)}
+.g-site{display:flex;align-items:center;gap:10px;margin-bottom:6px}
+.g-fav{width:28px;height:28px;border-radius:50%;background:#f1f3f4;border:1px solid #dadce0;display:grid;place-items:center;font-weight:700;font-size:13px;color:var(--green)}
+.g-name{font-size:14px;color:var(--g-url);line-height:1.3}
+.g-url{font-size:12px;color:#4d5156;line-height:1.3;word-break:break-all}
+.g-title{font-size:20px;line-height:1.3;color:var(--g-title);margin:2px 0 4px;font-weight:400;cursor:pointer}
+.g-title:hover{text-decoration:underline}
+.serp.mobile .g-title{font-size:18px;color:#1558d6}
+.g-desc{font-size:14px;line-height:1.58;color:var(--g-desc)}
+.g-desc .g-date{color:#70757a}
+.g-desc strong{color:#5f6368;font-weight:700}
+
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+.btn{border:2px solid var(--green);background:#fff;color:#111;font:inherit;font-weight:700;font-size:14px;padding:9px 18px;border-radius:30px;cursor:pointer;transition:all .15s}
+.btn:hover{background:var(--green);color:#fff}
+.btn.dark{background:#111;border-color:#111;color:#fff}
+.btn.dark:hover{background:var(--green);border-color:var(--green)}
+.code-out{margin-top:14px;background:#1e1e1e;color:#d4d4d4;border-radius:8px;padding:14px;font:14px/1.5 Consolas,Monaco,monospace;white-space:pre-wrap;word-break:break-all;display:none}
+.toast{font-size:13px;color:#3d8f12;font-weight:700;align-self:center;opacity:0;transition:opacity .2s}
+.toast.show{opacity:1}
+
+.tips{margin-top:18px;border-left:4px solid var(--green);background:var(--soft);border-radius:0 8px 8px 0;padding:12px 14px;font-size:14px}
+.tips ul{margin:6px 0 0 18px}
+.tips li{margin:2px 0}
+
+/* ===== CONTENT ===== */
+.content{max-width:820px;margin:40px auto 0}
+.content h2{font-size:28px;font-weight:700;margin:36px 0 12px;line-height:1.3}
+.content h3{font-size:20px;font-weight:700;margin:22px 0 8px}
+.content p{font-size:17px;color:#2c2c2c;margin-bottom:12px}
+.content ol,.content ul{margin:0 0 14px 22px;font-size:17px;color:#2c2c2c}
+.content li{margin:6px 0}
+.content a{color:#3d8f12;font-weight:600}
+.content code{background:#f1f1f1;padding:1px 6px;border-radius:4px;font-size:15px}
+table.lim{width:100%;border-collapse:collapse;margin:10px 0 18px;font-size:15.5px}
+table.lim th{background:#2b2b2b;color:#fff;text-align:left;padding:10px 12px}
+table.lim td{border-bottom:1px solid var(--line);padding:10px 12px}
+
+.faq-item{border:1px solid var(--line);border-radius:10px;margin-bottom:12px;overflow:hidden}
+.faq-item summary{list-style:none;cursor:pointer;padding:14px 16px;font-weight:700;font-size:16.5px;display:flex;gap:12px;align-items:flex-start}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-num{flex:0 0 26px;height:26px;border-radius:50%;background:var(--green);color:#fff;font-size:13px;display:grid;place-items:center}
+.faq-item p{padding:0 16px 14px 54px;color:#3a5a20;font-size:16px;margin:0}
+
+.related{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:12px 0 10px}
+.related a{display:flex;justify-content:space-between;align-items:center;gap:10px;border:1px solid var(--line);border-left:4px solid var(--green);border-radius:8px;padding:13px 14px;text-decoration:none;color:#111 !important;font-weight:700;font-size:15px}
+.related a:hover{border-color:var(--green)}
+
+.bx-ad{margin:34px 0;min-height:90px}
+
+/* ===== FOOTER ===== */
+.site-footer{background:var(--footer);color:#fff;margin-top:70px;padding:52px 0 44px}
+.foot-links{list-style:none;display:flex;flex-wrap:wrap;gap:8px 28px}
+.foot-links a{text-decoration:none;font-weight:700;font-size:14.5px;text-transform:uppercase;color:#fff}
+.foot-links a:hover{color:var(--lime)}
+.copy{color:#a8a8a8;font-size:16px;margin-top:12px}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width:900px){
+  .tool{grid-template-columns:1fr}
+  .hero h1{font-size:34px}
+}
+@media (max-width:760px){
+  .site-top .wrap{grid-template-columns:1fr auto;padding-top:18px;padding-bottom:18px}
+  .site-date{display:none}
+  .site-logo{font-size:28px}
+  .menu-btn{display:block}
+  .site-nav ul{display:none;flex-direction:column}
+  .site-nav.open > .wrap > ul{display:flex}
+  .site-nav a{padding:11px 4px;border-bottom:1px solid #f0f0f0}
+  .sub{position:static;box-shadow:none;border:0;padding-left:14px}
+  .has-sub:hover .sub,.has-sub:focus-within .sub{display:flex !important}
+  .related,.row2{grid-template-columns:1fr}
+  .content h2{font-size:24px}
+}
+
+/* ===== SHARED TOOL EXTRAS ===== */
+.full{grid-column:1/-1}
+.field select{width:100%;border:1px solid #cfcfcf;border-radius:8px;padding:10px 12px;font:inherit;font-size:15px;background:#fff;color:#111}
+.field textarea.big{min-height:230px;font-size:14.5px}
+.mono{font-family:Consolas,Monaco,monospace !important;font-size:13.5px !important}
+.btn-sm{padding:5px 12px;font-size:13px;border-width:1.5px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(105px,1fr));gap:10px;margin-bottom:16px}
+.stat-box{background:var(--soft);border:1px solid #dbefc8;border-radius:10px;padding:10px 8px;text-align:center}
+.stat-box b{display:block;font-size:22px;line-height:1.2}
+.stat-box span{font-size:12.5px;color:var(--muted);font-weight:600}
+.rtable{width:100%;border-collapse:collapse;font-size:14.5px}
+.rtable th{background:#2b2b2b;color:#fff;text-align:left;padding:8px 10px;font-weight:700}
+.rtable td{border-bottom:1px solid var(--line);padding:7px 10px}
+.rtable td.num,.rtable th.num{text-align:right;font-variant-numeric:tabular-nums}
+.rtable tr.hit td{background:#eef8e6;font-weight:700}
+.empty{color:var(--muted);font-size:14.5px;padding:14px 0}
+.kw-result{border-radius:10px;padding:12px 14px;margin-bottom:16px;font-size:14.5px;border:1px solid var(--line);background:#fafafa}
+.kw-result.ok{background:#eef8e6;border-color:#cfeab4}
+.kw-result.warn{background:#fff6e5;border-color:#f3d79b}
+.kw-result.bad{background:#fdecea;border-color:#f5c2bb}
+.slug-row{border:1px solid var(--line);border-radius:8px;padding:10px 12px;margin-bottom:8px;display:flex;justify-content:space-between;gap:10px;align-items:center}
+.slug-row .s{font:600 15px/1.4 Consolas,Monaco,monospace;color:#111;word-break:break-all}
+.slug-row small{display:block;color:var(--muted);font-size:12.5px;word-break:break-all;margin-top:2px}
+.slug-row small.warn{color:#c47a00;font-weight:700}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
+.chip{border:1px solid var(--line);border-radius:20px;padding:4px 12px;font-size:13.5px;font-weight:700;background:#fff}
+.chip.zero{color:#aaa}
+.outline{max-height:460px;overflow:auto;border:1px solid var(--line);border-radius:10px;padding:6px 12px}
+.o-row{display:flex;gap:10px;align-items:flex-start;padding:7px 0;border-bottom:1px dashed #eee;font-size:14.5px}
+.o-row:last-child{border-bottom:0}
+.o-tag{flex:0 0 auto;font:700 12px/1 Consolas,Monaco,monospace;padding:5px 7px;border-radius:5px;color:#fff;background:#111}
+.o-tag.h1{background:#2f7a0c}.o-tag.h2{background:#4fa61d}.o-tag.h3{background:#6cc82a}.o-tag.h4{background:#8a8a8a}.o-tag.h5{background:#a5a5a5}.o-tag.h6{background:#bdbdbd}
+.o-issue{display:inline-block;font-size:12px;color:#d1351f;font-weight:700;margin-left:6px}
+.tgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:18px;margin:30px 0 10px}
+.tcard{border:1px solid var(--line);border-radius:12px;padding:22px;text-decoration:none;display:flex;flex-direction:column;gap:10px;transition:all .15s;background:#fff;color:#111}
+.tcard:hover{border-color:var(--green);box-shadow:0 8px 22px rgba(0,0,0,.07);transform:translateY(-2px)}
+.tbadge{width:48px;height:48px;border-radius:12px;background:#111;color:var(--lime);display:grid;place-items:center;font-weight:800;font-size:16px}
+.tcard h2,.tcard h3{font-size:18px;line-height:1.3;margin:0}
+.tcard p{font-size:14.5px;color:var(--muted);flex:1;line-height:1.55}
+.tcard .go{font-weight:700;color:#3d8f12;font-size:14px}
+.tcard.soon{opacity:.55;pointer-events:none}
+.tcard.soon .tbadge{background:#ddd;color:#777}
+.tcard.soon .go{color:var(--muted)}
+.more-tools{margin-top:10px}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="site-top">
+    <div class="wrap">
+      <div class="site-date" id="siteDate">Today<small>&nbsp;</small></div>
+      <a class="site-logo" href="https://brandella.in/">Brandella <span>Journal</span></a>
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false"><i></i><i></i><i></i></button>
+    </div>
+  </div>
+  <nav class="site-nav" id="siteNav" aria-label="Main">
+    <div class="wrap">
+      <ul>
+        <li><a href="https://brandella.in/">Home</a></li>
+        <li class="has-sub"><a href="https://brandella.in/category/seo/">SEO</a>
+          <ul class="sub">
+            <li><a href="https://brandella.in/category/seo/technical-seo/">Technical SEO</a></li>
+            <li><a href="https://brandella.in/category/seo/local-seo/">Local SEO</a></li>
+            <li><a href="https://brandella.in/category/seo/mobile-seo/">Mobile SEO</a></li>
+            <li><a href="https://brandella.in/category/seo/on-page-seo/">On-Page SEO</a></li>
+            <li><a href="https://brandella.in/category/seo/off-page-seo/">Off-Page SEO</a></li>
+            <li><a href="https://brandella.in/category/seo/seo-tools/">SEO Tools</a></li>
+            <li><a href="https://brandella.in/category/seo/core-web-vitals/">Core Web Vitals</a></li>
+            <li><a href="https://brandella.in/category/seo/keyword-research/">Keyword Research</a></li>
+            <li><a href="https://brandella.in/category/seo/link-building/">Link Building</a></li>
+            <li><a href="https://brandella.in/category/seo/google-search-console/">Google Search Console</a></li>
+            <li><a href="https://brandella.in/category/seo/seo-basics/">SEO Basics</a></li>
+          </ul>
+        </li>
+        <li class="has-sub"><a href="https://brandella.in/category/paid-media/">Paid Media</a>
+          <ul class="sub">
+            <li><a href="https://brandella.in/category/paid-media/display-advertising/">Display Advertising</a></li>
+            <li><a href="https://brandella.in/category/paid-media/google-ads/">Google Ads</a></li>
+            <li><a href="https://brandella.in/category/paid-media/linkedin-ads/">LinkedIn Ads</a></li>
+            <li><a href="https://brandella.in/category/paid-media/meta-ads/">Meta Ads</a></li>
+            <li><a href="https://brandella.in/category/paid-media/paid-media-analytics/">Paid Media Analytics</a></li>
+            <li><a href="https://brandella.in/category/paid-media/ppc-strategy/">PPC Strategy</a></li>
+          </ul>
+        </li>
+        <li><a href="https://brandella.in/category/content/">Content</a></li>
+        <li><a href="https://brandella.in/category/social/">Social</a></li>
+        <li><a href="https://brandella.in/category/digital-marketing/">Digital Marketing</a></li>
+        <li><a href="https://brandella.in/category/artificial-intelligence/">Artificial Intelligence</a></li>
+        <li class="has-sub"><a href="https://brandella.in/category/development/">Development</a>
+          <ul class="sub">
+            <li><a href="https://brandella.in/category/development/php/">PHP</a></li>
+            <li><a href="https://brandella.in/category/development/javascript/">JavaScript</a></li>
+            <li><a href="https://brandella.in/category/development/python/">Python</a></li>
+          </ul>
+        </li>
+        <li class="has-sub"><a class="active" href="https://brandella.in/tools/">Tools</a>
+          <ul class="sub">
+            <li><a href="https://brandella.in/tools/seo-tools/">SEO Tools</a></li>
+            <li><a href="https://brandella.in/tools/schema-generators/">Schema Generators</a></li>
+            <li><a href="https://brandella.in/tools/ppc-calculators/">PPC Calculators</a></li>
+            <li><a href="https://brandella.in/tools/analytics-tools/">Analytics and Tracking Tools</a></li>
+            <li><a href="https://brandella.in/tools/social-media-tools/">Social Media Tools</a></li>
+            <li><a href="https://brandella.in/tools/technical-seo-tools/">Technical SEO Tools</a></li>
+            <li><a href="https://brandella.in/tools/google-ads-tools/">Google Ads Tools</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<main class="wrap">
+
+  <div class="crumbs"><a href="https://brandella.in/">Home</a> &rsaquo; <a href="https://brandella.in/tools/">Tools</a> &rsaquo; <a href="https://brandella.in/tools/google-ads-tools/">Google Ads Tools</a> &rsaquo; Google Ads Preview Tool</div>
+
+  <section class="hero">
+    <span class="pill">Free Google Ads Tool</span>
+    <h1>Google Ads Preview Tool</h1>
+    <p>Type your headlines and descriptions to see how your responsive search ad can look in Google on mobile and desktop. Shuffle through combinations, test pins and keyword insertion, and catch policy problems before you publish.</p>
+  </section>
+
+  <section class="tool" aria-label="Google Ads preview tool" id="apForm">
+    <div class="card" style="min-width:0">
+      <h2>Your Ad</h2>
+      <div class="field"><label for="apUrl">Final URL</label><input id="apUrl" class="mono" type="text" autocomplete="off" spellcheck="false" value="https://www.example.in/running-shoes/" placeholder=""></div>
+      <div class="row2"><div class="field"><label for="apP1">Path 1 <em>15 max</em></label><input id="apP1" type="text" autocomplete="off" spellcheck="false" value="Running" placeholder=""></div><div class="field"><label for="apP2">Path 2 <em>15 max</em></label><input id="apP2" type="text" autocomplete="off" spellcheck="false" value="Shoes" placeholder=""></div></div>
+      <div class="row2"><div class="field"><label for="apBiz">Business Name <em>25 max</em></label><input id="apBiz" type="text" autocomplete="off" spellcheck="false" value="Stride Sports" placeholder=""></div><div class="field"><label for="apKw">Test Keyword <em>for keyword insertion</em></label><input id="apKw" type="text" autocomplete="off" spellcheck="false" value="running shoes for men" placeholder=""></div></div>
+      <div class="field"><label>Headlines <em>30 characters, 3 to 15</em></label><div style="display:grid;grid-template-columns:1fr 64px 46px;gap:6px;align-items:center;margin-bottom:6px"><input id="apH0" class="apF" type="text" autocomplete="off" aria-label="Headline 1" placeholder="Headline 1" value="{KeyWord:Running Shoes} Sale" style="width:100%;border:1px solid #cfcfcf;border-radius:8px;padding:8px 10px;font:inherit;font-size:14.5px;min-width:0"><select id="apHP0" class="apF" aria-label="Pin headline 1" style="border:1px solid #cfcfcf;border-radius:8px;padding:8px 4px;font:inherit;font-size:13px;background:#fff"><option value="">Any</option><option value="1">H1</option><option value="2">H2</option><option value="3">H3</option></select><small id="apHC0" style="font-size:12.5px;font-weight:700;text-align:right;color:#6b6b6b">0</small></div><div style="display:grid;grid-template-columns:1fr 64px 46px;gap:6px;align-items:center;margin-bottom:6px"><input id="apH1" class="apF" type="text" autocomplete="off" aria-label="Headline 2" placeholder="Headline 2" value="Free Delivery Across India" style="width:100%;border:1px solid #cfcfcf;border-radius:8px;padding:8px 10px;font:inherit;font-size:14.5px;min-width:0"><select id="apHP1" class="apF" aria-label="Pin headline 2" style="border:1px solid #cfcfcf;border-radius:8px;padding:8px 4px;font:inherit;font-size:13px;background:#fff"><option value="">Any</option><option value="1">H1</option><option value="2">H2</option><option value="3">H3</option></select><small id="apHC1" style="font-size:12.5px;font-weight:700;text-align:right;color:#6b6b6b">0</small></div><div style="display:grid;grid-template-columns:1fr 64px 46px;gap:6px;align-items:center;margin-bottom:6px"><input id="apH2" class="apF" type="text" autocomplete="off" aria-label="Headline 3" placeholder="Headline 3" value="Up to 40% Off Top Brands" style="width:100%;border:1px solid #cfcfcf;border-radius:8px;padding:8px 10px;font:inherit;font-size:14.5px;min-width:0"><select id="apHP2" class="apF" aria-label="Pin headline 3" style="border:1px solid #cfcfcf;border-radius:8px;padding:8px 4px;font:inherit;font-size:13px;background:#fff"><option value="">Any</option><option value="1">H1</option><option value="2">H2</option><option value="3">H3</option></select><small id="apHC2" style="font-size:12.5px;font-weight:700;text-align:right;color:#6b6b6b">0</small></div><div style="display:grid;grid-template-columns:1fr 64px 46px;gap:6px;align-items:center;margin-bottom:6px"><input id="apH3" class="apF" type="text" autocomplete="off" aria-label="Headline 4" placeholder="Headline 4" value="Easy 30 Day Returns" style="width:100%;border:1px solid #cfcfcf;border-radius:8px;padding:8px 10px;font:inherit;font-size:14.5px;min-width:0"><select id="apHP3" class="apF" aria-label="Pin headline 4" style="border:1px solid #cfcfcf;border-radius:8px;padding:8px 4px;font:inherit;font-size:13px;background:#fff"><option value="">Any</option><option value="1">H1</option><option value="2">H2</option><option value="3">H3</option></select><small id="apHC3" style="font-size:12.5px;font-weight:700;text-align:right;color:#6b6b6b">0</small></div><div style="display:grid;grid-template-columns:1fr 64px 46px;gap:6px;align-items:center;margin-bottom:6px"><input id="apH4" class="apF" type="text" autocomplete="off" aria-label="Headline 5" placeholder="Headline 5" value="Shop Nike, Puma and Asics" style="width:100%;border:1px solid #cfcfcf;border-radius:8px;padding:8px 10px;font:inherit;font-size:14.5px;min-width:0"><select id="apHP4" class="apF" aria-label="Pin headline 5" style="border:1px solid #cfcfcf;border-radius:8px;padding:8px 4px;font:inherit;font-size:13px;background:#fff"><option value="">Any</option><option value="1">H1</option><option value="2">H2</option><option value="3">H3</option></select><small id="apHC4" style="font-size:12.5px;font-weight:700;text-align:right;color:#6b6b6b">0</small></div><div style="display:grid;grid-template-columns:1fr 64px 46px;gap:6px;align-items:center;margin-bottom:6px"><input id="apH5" class="apF" type="text" autocomplete="off" aria-label="Headline 6" placeholder="Headline 6" value="Cash on Delivery Available" style="width:100%;border:1px solid #cfcfcf;border-radius:8px;padding:8px 10px;font:inherit;font-size:14.5px;min-width:0"><select id="apHP5" class="apF" aria-label="Pin headline 6" style="border:1px solid #cfcfcf;border-radius:8px;padding:8px 4px;font:inherit;font-size:13px;background:#fff"><option value="">Any</option><option value="1">H1</option><option value="2">H2</option><option value="3">H3</option></select><small id="apHC5" style="font-size:12.5px;font-weight:700;text-align:right;color:#6b6b6b">0</small></div><div style="display:grid;grid-template-columns:1fr 64px 46px;gap:6px;align-items:center;margin-bottom:6px"><input id="apH6" class="apF" type="text" autocomplete="off" aria-label="Headline 7" placeholder="Headline 7" value="Stride Sports Official Store" style="width:100%;border:1px solid #cfcfcf;border-radius:8px;padding:8px 10px;font:inherit;font-size:14.5px;min-width:0"><select id="apHP6" class="apF" aria-label="Pin headline 7" style="border:1px solid #cfcfcf;border-radius:8px;padding:8px 4px;font:inherit;font-size:13px;background:#fff"><option value="">Any</option><option value="1">H1</option><option value="2">H2</option><option value="3">H3</option></select><small id="apHC6" style="font-size:12.5px;font-weight:700;text-align:right;color:#6b6b6b">0</small></div><div style="display:grid;grid-template-columns:1fr 64px 46px;gap:6px;align-items:center;margin-bottom:6px"><input id="apH7" class="apF" type="text" autocomplete="off" aria-label="Headline 8" placeholder="Headline 8" value="New Arrivals Every Week" style="width:100%;border:1px solid #cfcfcf;border-radius:8px;padding:8px 10px;font:inherit;font-size:14.5px;min-width:0"><select id="apHP7" class="apF" aria-label="Pin headline 8" style="border:1px solid #cfcfcf;border-radius:8px;padding:8px 4px;font:inherit;font-size:13px;background:#fff"><option value="">Any</option><option value="1">H1</option><option value="2">H2</option><option value="3">H3</option></select><small id="apHC7" style="font-size:12.5px;font-weight:700;text-align:right;color:#6b6b6b">0</small></div><div style="display:grid;grid-template-columns:1fr 64px 46px;gap:6px;align-items:center;margin-bottom:6px"><input id="apH8" class="apF" type="text" autocomplete="off" aria-label="Headline 9" placeholder="Headline 9" value="Cushioned Shoes for Daily Runs" style="width:100%;border:1px solid #cfcfcf;border-radius:8px;padding:8px 10px;font:inherit;font-size:14.5px;min-width:0"><select id="apHP8" class="apF" aria-label="Pin headline 9" style="border:1px solid #cfcfcf;border-radius:8px;padding:8px 4px;font:inherit;font-size:13px;background:#fff"><option value="">Any</option><option value="1">H1</option><option value="2">H2</option><option value="3">H3</option></select><small id="apHC8" style="font-size:12.5px;font-weight:700;text-align:right;color:#6b6b6b">0</small></div><div style="display:grid;grid-template-columns:1fr 64px 46px;gap:6px;align-items:center;margin-bottom:6px"><input id="apH9" class="apF" type="text" autocomplete="off" aria-label="Headline 10" placeholder="Headline 10" value="Sizes UK 6 to 12 in Stock" style="width:100%;border:1px solid #cfcfcf;border-radius:8px;padding:8px 10px;font:inherit;font-size:14.5px;min-width:0"><select id="apHP9" class="apF" aria-label="Pin headline 10" style="border:1px solid #cfcfcf;border-radius:8px;padding:8px 4px;font:inherit;font-size:13px;background:#fff"><option value="">Any</option><option value="1">H1</option><option value="2">H2</option><option value="3">H3</option></select><small id="apHC9" style="font-size:12.5px;font-weight:700;text-align:right;color:#6b6b6b">0</small></div><div style="display:grid;grid-template-columns:1fr 64px 46px;gap:6px;align-items:center;margin-bottom:6px"><input id="apH10" class="apF" type="text" autocomplete="off" aria-label="Headline 11" placeholder="Headline 11" value="" style="width:100%;border:1px solid #cfcfcf;border-radius:8px;padding:8px 10px;font:inherit;font-size:14.5px;min-width:0"><select id="apHP10" class="apF" aria-label="Pin headline 11" style="border:1px solid #cfcfcf;border-radius:8px;padding:8px 4px;font:inherit;font-size:13px;background:#fff"><option value="">Any</option><option value="1">H1</option><option value="2">H2</option><option value="3">H3</option></select><small id="apHC10" style="font-size:12.5px;font-weight:700;text-align:right;color:#6b6b6b">0</small></div><div style="display:grid;grid-template-columns:1fr 64px 46px;gap:6px;align-items:center;margin-bottom:6px"><input id="apH11" class="apF" type="text" autocomplete="off" aria-label="Headline 12" placeholder="Headline 12" value="" style="width:100%;border:1px solid #cfcfcf;border-radius:8px;padding:8px 10px;font:inherit;font-size:14.5px;min-width:0"><select id="apHP11" class="apF" aria-label="Pin headline 12" style="border:1px solid #cfcfcf;border-radius:8px;padding:8px 4px;font:inherit;font-size:13px;background:#fff"><option value="">Any</option><option value="1">H1</option><option value="2">H2</option><option value="3">H3</option></select><small id="apHC11" style="font-size:12.5px;font-weight:700;text-align:right;color:#6b6b6b">0</small></div><div style="display:grid;grid-template-columns:1fr 64px 46px;gap:6px;align-items:center;margin-bottom:6px"><input id="apH12" class="apF" type="text" autocomplete="off" aria-label="Headline 13" placeholder="Headline 13" value="" style="width:100%;border:1px solid #cfcfcf;border-radius:8px;padding:8px 10px;font:inherit;font-size:14.5px;min-width:0"><select id="apHP12" class="apF" aria-label="Pin headline 13" style="border:1px solid #cfcfcf;border-radius:8px;padding:8px 4px;font:inherit;font-size:13px;background:#fff"><option value="">Any</option><option value="1">H1</option><option value="2">H2</option><option value="3">H3</option></select><small id="apHC12" style="font-size:12.5px;font-weight:700;text-align:right;color:#6b6b6b">0</small></div><div style="display:grid;grid-template-columns:1fr 64px 46px;gap:6px;align-items:center;margin-bottom:6px"><input id="apH13" class="apF" type="text" autocomplete="off" aria-label="Headline 14" placeholder="Headline 14" value="" style="width:100%;border:1px solid #cfcfcf;border-radius:8px;padding:8px 10px;font:inherit;font-size:14.5px;min-width:0"><select id="apHP13" class="apF" aria-label="Pin headline 14" style="border:1px solid #cfcfcf;border-radius:8px;padding:8px 4px;font:inherit;font-size:13px;background:#fff"><option value="">Any</option><option value="1">H1</option><option value="2">H2</option><option value="3">H3</option></select><small id="apHC13" style="font-size:12.5px;font-weight:700;text-align:right;color:#6b6b6b">0</small></div><div style="display:grid;grid-template-columns:1fr 64px 46px;gap:6px;align-items:center;margin-bottom:6px"><input id="apH14" class="apF" type="text" autocomplete="off" aria-label="Headline 15" placeholder="Headline 15" value="" style="width:100%;border:1px solid #cfcfcf;border-radius:8px;padding:8px 10px;font:inherit;font-size:14.5px;min-width:0"><select id="apHP14" class="apF" aria-label="Pin headline 15" style="border:1px solid #cfcfcf;border-radius:8px;padding:8px 4px;font:inherit;font-size:13px;background:#fff"><option value="">Any</option><option value="1">H1</option><option value="2">H2</option><option value="3">H3</option></select><small id="apHC14" style="font-size:12.5px;font-weight:700;text-align:right;color:#6b6b6b">0</small></div></div>
+      <div class="field"><label>Descriptions <em>90 characters, 2 to 4</em></label><div style="display:grid;grid-template-columns:1fr 64px 46px;gap:6px;align-items:start;margin-bottom:6px"><textarea id="apD0" class="apF" aria-label="Description 1" placeholder="Description 1" spellcheck="false" style="width:100%;border:1px solid #cfcfcf;border-radius:8px;padding:8px 10px;font:inherit;font-size:14.5px;min-height:62px;resize:vertical;min-width:0">Shop running shoes from top brands with free delivery, easy returns and cash on delivery.</textarea><select id="apDP0" class="apF" aria-label="Pin description 1" style="border:1px solid #cfcfcf;border-radius:8px;padding:8px 4px;font:inherit;font-size:13px;background:#fff"><option value="">Any</option><option value="1">D1</option><option value="2">D2</option></select><small id="apDC0" style="font-size:12.5px;font-weight:700;text-align:right;color:#6b6b6b;padding-top:9px">0</small></div><div style="display:grid;grid-template-columns:1fr 64px 46px;gap:6px;align-items:start;margin-bottom:6px"><textarea id="apD1" class="apF" aria-label="Description 2" placeholder="Description 2" spellcheck="false" style="width:100%;border:1px solid #cfcfcf;border-radius:8px;padding:8px 10px;font:inherit;font-size:14.5px;min-height:62px;resize:vertical;min-width:0">Light, cushioned shoes for road and trail. Find your perfect size and order today.</textarea><select id="apDP1" class="apF" aria-label="Pin description 2" style="border:1px solid #cfcfcf;border-radius:8px;padding:8px 4px;font:inherit;font-size:13px;background:#fff"><option value="">Any</option><option value="1">D1</option><option value="2">D2</option></select><small id="apDC1" style="font-size:12.5px;font-weight:700;text-align:right;color:#6b6b6b;padding-top:9px">0</small></div><div style="display:grid;grid-template-columns:1fr 64px 46px;gap:6px;align-items:start;margin-bottom:6px"><textarea id="apD2" class="apF" aria-label="Description 3" placeholder="Description 3" spellcheck="false" style="width:100%;border:1px solid #cfcfcf;border-radius:8px;padding:8px 10px;font:inherit;font-size:14.5px;min-height:62px;resize:vertical;min-width:0">Over 500 styles in stock. Get expert fit advice from our team on chat, 7 days a week.</textarea><select id="apDP2" class="apF" aria-label="Pin description 3" style="border:1px solid #cfcfcf;border-radius:8px;padding:8px 4px;font:inherit;font-size:13px;background:#fff"><option value="">Any</option><option value="1">D1</option><option value="2">D2</option></select><small id="apDC2" style="font-size:12.5px;font-weight:700;text-align:right;color:#6b6b6b;padding-top:9px">0</small></div><div style="display:grid;grid-template-columns:1fr 64px 46px;gap:6px;align-items:start;margin-bottom:6px"><textarea id="apD3" class="apF" aria-label="Description 4" placeholder="Description 4" spellcheck="false" style="width:100%;border:1px solid #cfcfcf;border-radius:8px;padding:8px 10px;font:inherit;font-size:14.5px;min-height:62px;resize:vertical;min-width:0"></textarea><select id="apDP3" class="apF" aria-label="Pin description 4" style="border:1px solid #cfcfcf;border-radius:8px;padding:8px 4px;font:inherit;font-size:13px;background:#fff"><option value="">Any</option><option value="1">D1</option><option value="2">D2</option></select><small id="apDC3" style="font-size:12.5px;font-weight:700;text-align:right;color:#6b6b6b;padding-top:9px">0</small></div></div>
+      <div class="field"><label for="apSl">Sitelinks <em>one per line, 25 max</em></label><textarea id="apSl" spellcheck="false" placeholder="">Men&#x27;s Running Shoes
+Women&#x27;s Running Shoes
+Trail Shoes
+Sale Under 2999</textarea></div>
+    </div>
+    <div class="card" style="min-width:0">
+      <h2>Ad Preview</h2>
+      <div class="tabs" id="apTabs"><button type="button" class="on" data-d="m">Mobile</button><button type="button" data-d="d">Desktop</button></div>
+      <div class="serp mobile" id="apSerp">
+        <div style="font-size:14px;font-weight:700;color:#202124;margin-bottom:8px">Sponsored</div>
+        <div class="g-site"><div class="g-fav" id="apFav">S</div><div style="min-width:0"><div class="g-name" id="apName"></div><div class="g-url" id="apDisp"></div></div></div>
+        <div class="g-title" id="apTitle"></div>
+        <div class="g-desc" id="apDesc"></div>
+        <div id="apLinks" style="display:flex;flex-wrap:wrap;gap:6px 16px;margin-top:10px;font-size:14px"></div>
+      </div>
+      <div class="actions"><button class="btn dark" id="apShuffle" type="button">Show Another Combination</button><button class="btn" id="apCopy" type="button">Copy Ad Text</button><span class="toast" id="toast">Copied!</span></div>
+      <div class="stats" style="margin-top:18px"><div class="stat-box"><b id="apHn">0</b><span>Headlines</span></div><div class="stat-box"><b id="apDn">0</b><span>Descriptions</span></div><div class="stat-box"><b id="apCombo">0</b><span>Combinations</span></div></div>
+      <div class="kw-result" id="apCheck"></div>
+      <div class="tips"><strong>What Google guarantees</strong><ul><li>Headline 1 and Description 1 usually show</li><li>Headline 3 and Description 2 may not show, so keep key details out of them</li><li>Text pinned to Headline 1, Headline 2 or Description 1 always shows</li></ul></div>
+    </div>
+  </section>
+
+  <div class="bx-ad">
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3931314195561246" data-ad-slot="4249015278" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+
+  <article class="content">
+
+    <h2>What Is a Google Ads Preview Tool?</h2>
+    <p>A responsive search ad is a set of up to 15 headlines and 4 descriptions. Google mixes them into different combinations for each search, so you never write one fixed ad. That makes it hard to picture what people will actually see.</p>
+    <p>This Google Ads preview tool builds a realistic mockup of a sponsored result on mobile and desktop. Click to shuffle through the combinations Google could show, test pins and keyword insertion, and fix limits and policy issues before your ad goes for review.</p>
+
+    <h2>How to Use the Google Ads Preview Tool</h2>
+    <ol>
+      <li><strong>Add your final URL</strong> and up to two display paths. The domain comes from your URL.</li>
+      <li><strong>Write at least 3 headlines and 2 descriptions.</strong> The counter beside each one turns red if it is over the limit.</li>
+      <li><strong>Pin only when you must.</strong> Choose H1, H2 or H3 for a headline, or D1 or D2 for a description.</li>
+      <li><strong>Type a test keyword</strong> to see how keyword insertion fills in your ad.</li>
+      <li><strong>Click Show Another Combination</strong> a few times and read every version out loud. Each one must make sense.</li>
+    </ol>
+
+    <h2>Responsive Search Ad Limits</h2>
+    <div style="overflow-x:auto"><table class="lim">
+      <thead><tr style="background:#2b2b2b !important;"><th style="background:#2b2b2b !important; color:#ffffff !important;">Asset</th><th style="background:#2b2b2b !important; color:#ffffff !important;">Limit</th><th style="background:#2b2b2b !important; color:#ffffff !important;">How many</th></tr></thead>
+      <tbody>
+        <tr><td>Headline</td><td>30 characters</td><td>3 to 15, up to 3 shown at once</td></tr>
+        <tr><td>Description</td><td>90 characters</td><td>2 to 4, up to 2 shown at once</td></tr>
+        <tr><td>Display path</td><td>15 characters each</td><td>2 paths</td></tr>
+        <tr><td>Business name</td><td>25 characters</td><td>1</td></tr>
+        <tr><td>Sitelink text</td><td>25 characters</td><td>Up to 4 on mobile</td></tr>
+      </tbody>
+    </table></div>
+    <p>Chinese, Japanese and Korean characters count as two each. You can read the full rules in Google's guide <a href="https://support.google.com/google-ads/answer/7684791" target="_blank" rel="noopener">about responsive search ads</a>.</p>
+
+    <h3>How Keyword Insertion Works</h3>
+    <p>Write <code>{KeyWord:Running Shoes}</code> and Google swaps in the keyword that matched the search. <code>{keyword:...}</code> keeps it in lower case, <code>{Keyword:...}</code> capitalizes the first word and <code>{KeyWord:...}</code> capitalizes every word. If the keyword would push the headline over 30 characters, Google shows your default text instead, and so does this preview.</p>
+
+    <h2>Tips for Better Responsive Search Ads</h2>
+    <ul>
+      <li><strong>Make every headline stand alone.</strong> Any headline can appear next to any other, so avoid ones that only work as a pair.</li>
+      <li><strong>Mix the angles.</strong> Write some headlines about the product, some about offers and some about trust, like delivery or returns.</li>
+      <li><strong>Keep musts in guaranteed spots.</strong> Headline 3 and Description 2 do not always show, so never rely on them for prices or legal text.</li>
+      <li><strong>Pin sparingly.</strong> Each pin cuts the number of combinations Google can test. If you pin, give that spot 2 or 3 options.</li>
+    </ul>
+
+    <h2>Learn More About Ad Copy</h2>
+    <p>See how ads are ranked in <a href="https://brandella.in/how-google-ads-auction-works/">how the Google Ads auction works</a>, learn how relevance lifts your <a href="https://brandella.in/google-ads-quality-score-explained/">Quality Score</a>, and plan fair tests with <a href="https://brandella.in/ppc-ad-copy-testing/">PPC ad copy testing</a>. Want to check every asset in one go? Paste them into the <a href="https://brandella.in/tools/google-ads-tools/google-ads-character-counter/">Google Ads character counter</a>.</p>
+
+    <div class="bx-ad">
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3931314195561246" data-ad-slot="4249015278" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+
+    <h2>Frequently Asked Questions</h2>
+    <details class="faq-item" open><summary><span class="faq-num">1</span>Is this the same as the Google Ads Ad Preview and Diagnosis tool?</summary><p>No. Google&#x27;s own tool shows whether a live ad is showing for a search. This tool is a mockup for ads you are still writing, so you can check the copy before it goes live.</p></details>
+    <details class="faq-item" open><summary><span class="faq-num">2</span>Why does my ad show only two headlines?</summary><p>Google shows up to three headlines, but often drops the third one on smaller screens or when space is tight. That is why Headline 3 is never guaranteed.</p></details>
+    <details class="faq-item" open><summary><span class="faq-num">3</span>Does pinning lower Ad Strength?</summary><p>Yes, it usually does. Pinning reduces the combinations Google can test. Pin only text that must always appear, such as a brand name or a legal line.</p></details>
+    <details class="faq-item" open><summary><span class="faq-num">4</span>Why does the preview show my default text instead of the keyword?</summary><p>Keyword insertion falls back to the default text when the keyword would make the headline longer than 30 characters. Use a shorter keyword or shorter text around it.</p></details>
+
+    <h2>Related Articles</h2>
+    <div class="related">
+      <a href="https://brandella.in/google-ads-quality-score-explained/">Google Ads Quality Score Explained <span>&rarr;</span></a>
+      <a href="https://brandella.in/ppc-ad-copy-testing/">PPC Ad Copy Testing <span>&rarr;</span></a>
+      <a href="https://brandella.in/25-google-ads-optimization-tips/">25 Google Ads Optimization Tips <span>&rarr;</span></a>
+      <a href="https://brandella.in/how-google-ads-auction-works/">How the Google Ads Auction Works <span>&rarr;</span></a>
+    </div>
+  </article>
+
+  <section class="content more-tools" style="max-width:1140px">
+    <h2>More Free Google Ads Tools</h2>
+    <div class="tgrid">
+      <a class="tcard" href="https://brandella.in/tools/google-ads-tools/google-ads-character-counter/"><div class="tbadge">GC</div><h3>Google Ads Character Counter</h3><p>Count every headline, description, path, sitelink, callout and snippet against Google Ads limits in one go.</p><span class="go">Open tool &rarr;</span></a>
+<a class="tcard" href="https://brandella.in/tools/google-ads-tools/keyword-match-type-generator/"><div class="tbadge">MT</div><h3>Keyword Match Type Generator</h3><p>Turn a keyword list into broad, "phrase" and [exact] match, cleaned and ready for Google Ads or Ads Editor.</p><span class="go">Open tool &rarr;</span></a>
+<a class="tcard" href="https://brandella.in/tools/google-ads-tools/negative-keyword-tool/"><div class="tbadge">NK</div><h3>Negative Keyword Tool</h3><p>Build a clean negative keyword list from ready made lists, then test it against your keywords and real searches.</p><span class="go">Open tool &rarr;</span></a>
+<a class="tcard" href="https://brandella.in/tools/google-ads-tools/search-term-ngram-analyzer/"><div class="tbadge">NG</div><h3>Search Term Ngram Analyzer</h3><p>Paste a search terms report to find the one, two and three word phrases that waste spend or drive sales.</p><span class="go">Open tool &rarr;</span></a>
+<a class="tcard" href="https://brandella.in/tools/google-ads-tools/google-ads-tracking-template-generator/"><div class="tbadge">TT</div><h3>Google Ads Tracking Template Generator</h3><p>Build a final URL suffix or tracking template with UTM tags and ValueTrack parameters, and test a sample click.</p><span class="go">Open tool &rarr;</span></a>
+<a class="tcard" href="https://brandella.in/tools/google-ads-tools/keyword-grouper/"><div class="tbadge">KG</div><h3>Keyword Grouper</h3><p>Group a long keyword list into tight, themed ad groups by shared words, with search volume totals and a CSV export.</p><span class="go">Open tool &rarr;</span></a>
+    </div>
+    <p><a href="https://brandella.in/tools/google-ads-tools/">See all google ads tools &rarr;</a> &nbsp;|&nbsp; <a href="https://brandella.in/tools/">Browse every free tool &rarr;</a></p>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <ul class="foot-links">
+      <li><a href="https://brandella.in/">Home</a></li>
+      <li><a href="https://brandella.in/about-us/">About Us</a></li>
+      <li><a href="https://brandella.in/contact-us/">Contact Us</a></li>
+      <li><a href="https://brandella.in/privacy-policy/">Privacy Policy</a></li>
+      <li><a href="https://brandella.in/terms-and-conditions/">Terms and Conditions</a></li>
+    </ul>
+    <p class="copy">Copyright &copy; <span id="yr">2026</span> Brandella Journal. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+
+  var d = new Date();
+  var days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+  var months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+  document.getElementById('siteDate').innerHTML = days[d.getDay()] + ',<small>' + months[d.getMonth()] + ' ' + d.getDate() + ', ' + d.getFullYear() + '</small>';
+  document.getElementById('yr').textContent = d.getFullYear();
+  var nav = document.getElementById('siteNav'), mb = document.getElementById('menuBtn');
+  mb.addEventListener('click', function(){ var open = nav.classList.toggle('open'); mb.setAttribute('aria-expanded', open); });
+  var $ = function(id){ return document.getElementById(id); };
+  function esc(s){ return String(s).replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+  function copyText(text, toastId){
+    var done = function(){ var t = $(toastId); if(!t) return; t.classList.add('show'); setTimeout(function(){ t.classList.remove('show'); }, 1600); };
+    if (navigator.clipboard && navigator.clipboard.writeText){ navigator.clipboard.writeText(text).then(done, function(){ fallback(); done(); }); }
+    else { fallback(); done(); }
+    function fallback(){ var ta=document.createElement('textarea'); ta.value=text; document.body.appendChild(ta); ta.select(); try{document.execCommand('copy');}catch(e){} document.body.removeChild(ta); }
+  }
+
+
+  function v(id){ var e = $(id); return e ? String(e.value).trim() : ''; }
+  function say(id, cls, h){ var e = $(id); e.className = 'kw-result' + (cls ? ' ' + cls : ''); e.innerHTML = h; }
+  function issues(id, list, okMsg, max){
+    max = max || 40;
+    var bad = list.filter(function(i){ return i[0] === 'bad'; }), warn = list.filter(function(i){ return i[0] === 'warn'; });
+    var li = function(a){ var more = a.length > max ? '<li>and ' + (a.length - max) + ' more</li>' : '';
+      return '<ul style="margin:6px 0 0 18px">' + a.slice(0, max).map(function(i){ return '<li>' + i[1] + '</li>'; }).join('') + more + '</ul>'; };
+    if (bad.length) say(id, 'bad', '<strong>Fix ' + bad.length + ' issue' + (bad.length > 1 ? 's' : '') + (warn.length ? ', plus ' + warn.length + ' suggestion' + (warn.length > 1 ? 's' : '') : '') + '.</strong>' + li(bad.concat(warn)));
+    else if (warn.length) say(id, 'warn', '<strong>Looks good, with ' + warn.length + ' suggestion' + (warn.length > 1 ? 's' : '') + '.</strong>' + li(warn));
+    else say(id, 'ok', okMsg);
+  }
+  function c(s){ return '<code>' + esc(s) + '</code>'; }
+  function fmtN(n){ return Number(n).toLocaleString('en-IN'); }
+  function lines(id){ return String($(id).value).split(/\r?\n/).map(function(s){ return s.trim(); }).filter(Boolean); }
+  function download(name, text, type){
+    var a = document.createElement('a'); a.href = URL.createObjectURL(new Blob([text], {type: (type || 'text/plain') + ';charset=utf-8'}));
+    a.download = name; document.body.appendChild(a); a.click(); document.body.removeChild(a);
+    setTimeout(function(){ URL.revokeObjectURL(a.href); }, 4000);
+  }
+  function csvCell(s){ s = String(s); return /[",\n]/.test(s) ? '"' + s.replace(/"/g, '""') + '"' : s; }
+  // Google Ads counts double width characters (Chinese, Japanese, Korean) as 2
+  function wide(cp){ return (cp >= 0x1100 && cp <= 0x115F) || (cp >= 0x2E80 && cp <= 0xA4CF) || (cp >= 0xAC00 && cp <= 0xD7A3) || (cp >= 0xF900 && cp <= 0xFAFF) || (cp >= 0xFE30 && cp <= 0xFE4F) || (cp >= 0xFF00 && cp <= 0xFF60) || (cp >= 0xFFE0 && cp <= 0xFFE6) || (cp >= 0x20000 && cp <= 0x3FFFD); }
+  function glen(s){ var n = 0; for (var ch of String(s)) n += wide(ch.codePointAt(0)) ? 2 : 1; return n; }
+  // Keyword insertion: {keyword:default text}
+  var DKI = /\{(keyword):([^{}]*)\}/gi, DKI1 = /\{keyword:[^{}]*\}/i;
+  function dkiDefault(s){ return String(s).replace(DKI, function(m, k, d){ return d; }); }
+  function capWord(w){ return w ? w.charAt(0).toUpperCase() + w.slice(1).toLowerCase() : w; }
+  function dkiStyle(k, kw){
+    var w = kw.toLowerCase().split(/\s+/).filter(Boolean);
+    if (k === 'keyword') return w.join(' ');
+    if (k === 'Keyword') return w.length ? capWord(w[0]) + (w.length > 1 ? ' ' + w.slice(1).join(' ') : '') : '';
+    if (k === 'KeyWord') return w.map(capWord).join(' ');
+    if (k === 'KEYWord') return w.map(function(x, i){ return i === 0 ? x.toUpperCase() : capWord(x); }).join(' ');
+    if (k === 'KeyWORD') return w.map(function(x, i){ return i === 0 ? capWord(x) : x.toUpperCase(); }).join(' ');
+    return w.map(capWord).join(' ');
+  }
+  function dkiFill(s, kw, limit){
+    if (!DKI1.test(s)) return s;
+    if (!kw) return dkiDefault(s);
+    var out = String(s).replace(DKI, function(m, k){ return dkiStyle(k, kw); });
+    return glen(out) <= limit ? out : dkiDefault(s);
+  }
+  function dkiCheck(s){
+    var bad = [];
+    String(s).replace(DKI, function(m, k){ if (['keyword', 'Keyword', 'KeyWord', 'KEYWord', 'KeyWORD'].indexOf(k) < 0) bad.push(k); return m; });
+    if (/\{[^}]*$/.test(s) || /\{(?!keyword:)[^}]*\}/i.test(s)) bad.push('syntax');
+    return bad;
+  }
+  var ACRO = /^(UK|USA|UAE|EMI|GST|COD|SUV|LED|HD|PDF|SEO|PPC|CRM|SAAS|NASA|ISO|IIT|MBA|BBA|NEET|JEE|ICSE|CBSE|IELTS|GMAT|ASAP|FAQ|ATM|AC|TV|PC|USB|DSLR|OLED|QLED|SIM|UPI|EV|NGO|HR|IT|AI|API|CEO|SME|MSME|ISI|BIS|FSSAI|HDFC|ICICI|SBI|IKEA|LG|BMW|ASICS)$/;
+  // Editorial checks Google applies to ad text
+  function policy(s){
+    var out = [];
+    if (/([!?.,;:])\1/.test(s)) out.push('repeats punctuation, like ' + c((s.match(/([!?.,;:])\1+/) || [''])[0]) + ', which Google disapproves');
+    if (/\p{Extended_Pictographic}/u.test(s)) out.push('contains an emoji or symbol Google does not support in ad text');
+    if (/\s{2,}/.test(s)) out.push('has extra spaces between words');
+    var caps = (dkiDefault(s).match(/\b[A-Z]{4,}\b/g) || []).filter(function(w){ return !ACRO.test(w); });
+    if (caps.length) out.push('uses ' + c(caps[0]) + ' in capitals. Google only allows this for acronyms and brand names');
+    if (/[a-z][@$][a-z]|[a-z][013][a-z]{2}/i.test(s)) out.push('may use numbers or symbols in place of letters');
+    var bad = dkiCheck(s);
+    if (bad.length) out.push('has keyword insertion code Google may not read. Use ' + c('{KeyWord:Default text}'));
+    return out;
+  }
+
+  var device = 'm', seed = 7, shown = {h: [], d: []};
+  function rnd(n){ seed = (seed * 9301 + 49297) % 233280; return Math.floor(seed / 233280 * n); }
+  function assets(kind, n, limit){
+    var out = [];
+    for (var i = 0; i < n; i++){
+      var t = $('ap' + kind + i).value.replace(/^\s+|\s+$/g, ''), pin = $('ap' + kind + 'P' + i).value;
+      var len = glen(dkiDefault(t)), cEl = $('ap' + kind + 'C' + i);
+      cEl.textContent = t ? len + '/' + limit : '';
+      cEl.style.color = len > limit ? '#d1351f' : len > limit - 3 ? '#c47a00' : '#3d8f12';
+      if (t) out.push({t: t, pin: pin, i: i, len: len});
+    }
+    return out;
+  }
+  function perm(n, k){ var r = 1; for (var i = 0; i < k; i++) r *= Math.max(n - i, 0); return r; }
+  function slots(list, count){
+    var res = [], used = {}, free = list.filter(function(a){ return !a.pin; });
+    for (var p = 1; p <= count; p++){
+      var pinned = list.filter(function(a){ return a.pin === String(p); });
+      var pool = pinned.length ? pinned : free.filter(function(a){ return !used[a.i]; });
+      if (!pool.length) continue;
+      var a = pool[rnd(pool.length)]; used[a.i] = 1; res.push(a);
+    }
+    return res;
+  }
+  function combos(list, count){
+    var total = 1, freeSlots = 0;
+    for (var p = 1; p <= count; p++){ var k = list.filter(function(a){ return a.pin === String(p); }).length; if (k) total *= k; else freeSlots++; }
+    var free = list.filter(function(a){ return !a.pin; }).length;
+    return total * perm(free, Math.min(freeSlots, free));
+  }
+  function render(){
+    var H = assets('H', 15, 30), D = assets('D', 4, 90), iss = [], kw = v('apKw');
+    var u = null; try { u = new URL(v('apUrl')); } catch(e){}
+    if (!u || !/^https?:$/.test(u.protocol)) iss.push(['bad', 'Add a full final URL starting with ' + c('https://') + '.']);
+    var host = u ? u.hostname : 'www.example.com', p1 = v('apP1'), p2 = v('apP2'), biz = v('apBiz');
+    [['Path 1', p1, 15], ['Path 2', p2, 15], ['Business name', biz, 25]].forEach(function(x){ if (glen(dkiDefault(x[1])) > x[2]) iss.push(['bad', x[0] + ' is ' + glen(dkiDefault(x[1])) + ' characters. The limit is ' + x[2] + '.']); });
+    if (p2 && !p1) iss.push(['bad', 'Fill in Path 1 before Path 2.']);
+    if (/\s/.test(p1 + p2)) iss.push(['warn', 'Display paths read best without spaces. Try ' + c((p1 || p2).replace(/\s+/g, '')) + '.']);
+    if (H.length < 3) iss.push(['bad', 'Add at least 3 headlines. Google needs 3 to save the ad.']);
+    if (D.length < 2) iss.push(['bad', 'Add at least 2 descriptions. Google needs 2 to save the ad.']);
+    H.concat(D).forEach(function(a){
+      var lim = H.indexOf(a) > -1 ? 30 : 90, name = (lim === 30 ? 'Headline ' : 'Description ') + (a.i + 1);
+      if (a.len > lim) iss.push(['bad', name + ' is ' + a.len + ' characters. Cut ' + (a.len - lim) + ' to fit the ' + lim + ' limit.']);
+      policy(a.t).forEach(function(m){ iss.push(['warn', name + ' ' + m + '.']); });
+    });
+    var seen = {};
+    H.concat(D).forEach(function(a){ var k = dkiDefault(a.t).toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim(); if (seen[k]) iss.push(['warn', c(a.t) + ' repeats another asset. Duplicates add no new combinations.']); seen[k] = 1; });
+    [1, 2, 3].forEach(function(p){ var k = H.filter(function(a){ return a.pin === String(p); }).length; if (k === 1) iss.push(['warn', 'Only one headline is pinned to position ' + p + '. Google suggests 2 or 3 options per pinned spot.']); });
+    if (H.length && [1, 2, 3].every(function(p){ return H.some(function(a){ return a.pin === String(p); }); }) && H.some(function(a){ return !a.pin; }))
+      iss.push(['warn', 'Every headline position is pinned, so your unpinned headlines will never show.']);
+    if (H.some(function(a){ return a.pin === '3'; }) && !H.some(function(a){ return a.pin === '1' || a.pin === '2'; })) iss.push(['warn', 'Headline 3 is not guaranteed to show. Pin must show text to position 1 or 2.']);
+    if (kw){
+      var k = kw.toLowerCase(), hit = H.some(function(a){ return DKI1.test(a.t) || dkiDefault(a.t).toLowerCase().indexOf(k) > -1; });
+      if (!hit) iss.push(['warn', 'No headline contains ' + c(kw) + '. Using the keyword in at least one headline makes the ad more relevant.']);
+      H.forEach(function(a){ if (DKI1.test(a.t)){ var f = dkiFill(a.t, kw, 30); if (f === dkiDefault(a.t)) iss.push(['warn', 'In Headline ' + (a.i + 1) + ', ' + c(kw) + ' is too long to insert, so Google shows the default text ' + c(f) + '.']); } });
+    }
+    if (H.length < 8 && H.length >= 3) iss.push(['warn', 'You have ' + H.length + ' headlines. Adding more unique ones gives Google more combinations to test.']);
+    // build preview
+    var hs = slots(H, 3), ds = slots(D, 2);
+    if (device === 'm'){ hs = hs.slice(0, 3); }
+    shown = {h: hs.map(function(a){ return dkiFill(a.t, kw, 30); }), d: ds.map(function(a){ return dkiFill(a.t, kw, 90); })};
+    $('apTitle').textContent = shown.h.join(' | ') || 'Your headline here';
+    $('apDesc').textContent = shown.d.join(' ') || 'Your description here.';
+    $('apName').textContent = biz || host.replace(/^www\./, '');
+    $('apFav').textContent = (biz || host.replace(/^www\./, '')).charAt(0).toUpperCase();
+    var path = [dkiFill(p1, kw, 15), dkiFill(p2, kw, 15)].filter(Boolean).join('/');
+    $('apDisp').textContent = host + (path ? '/' + path : '');
+    var sl = lines('apSl');
+    sl.forEach(function(s){ if (glen(s) > 25) iss.push(['bad', 'Sitelink ' + c(s) + ' is ' + glen(s) + ' characters. The limit is 25.']); });
+    $('apLinks').innerHTML = sl.slice(0, device === 'm' ? 4 : 6).map(function(s){ return '<span style="color:' + (device === 'm' ? '#1558d6' : '#1a0dab') + '">' + esc(s) + '</span>'; }).join('');
+    $('apSerp').className = 'serp' + (device === 'm' ? ' mobile' : '');
+    $('apHn').textContent = H.length + '/15'; $('apDn').textContent = D.length + '/4';
+    var cb = combos(H, 3) * combos(D, 2); $('apCombo').textContent = cb > 99999 ? '99,999+' : fmtN(cb);
+    issues('apCheck', iss, '<strong>Your ad is ready.</strong> Every asset fits its limit and passes the quick policy checks.');
+  }
+  $('apForm').addEventListener('input', render); $('apForm').addEventListener('change', render);
+  document.querySelectorAll('#apTabs button').forEach(function(b){ b.addEventListener('click', function(){
+    document.querySelectorAll('#apTabs button').forEach(function(x){ x.classList.remove('on'); }); b.classList.add('on'); device = b.getAttribute('data-d'); render(); }); });
+  $('apShuffle').onclick = function(){ seed = (seed + 1 + Math.floor(Math.random() * 1000)) % 233280; render(); };
+  $('apCopy').onclick = function(){
+    var H = assets('H', 15, 30), D = assets('D', 4, 90);
+    copyText('Headlines\n' + H.map(function(a){ return a.t + (a.pin ? '  (pinned to H' + a.pin + ')' : ''); }).join('\n') + '\n\nDescriptions\n' + D.map(function(a){ return a.t + (a.pin ? '  (pinned to D' + a.pin + ')' : ''); }).join('\n'), 'toast');
+  };
+  render();
+
+})();
+</script>
+</body>
+</html>

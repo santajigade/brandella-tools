@@ -7,6 +7,7 @@ PP = 'https://brandella.in/tools/ppc-calculators/'
 AN = 'https://brandella.in/tools/analytics-tools/'
 SMU = 'https://brandella.in/tools/social-media-tools/'
 TS = 'https://brandella.in/tools/technical-seo-tools/'
+GA = 'https://brandella.in/tools/google-ads-tools/'
 
 CATEGORIES = [
     dict(slug='seo-tools', short='SEO', name='SEO Tools', pill='SEO',
@@ -130,10 +131,22 @@ CATEGORIES = [
                ("Do the tools crawl or fetch my website?", "No. You paste your file, list or tags and everything is checked inside your browser. That also means the tools work on staging sites that are not public yet."),
                ("Is my data safe?", "Yes. Nothing you paste is uploaded or stored. URLs, robots.txt files and sitemaps stay on your device.")]),
     dict(slug='google-ads-tools', short='GA', name='Google Ads Tools', pill='Google Ads',
-         card='Ad preview, character counter, match type and negative keyword tools.',
-         hub_title='Free Google Ads Tools: Ad Preview, Counters and Keywords',
-         hub_desc='Free Google Ads tools: responsive search ad preview, headline character counter, match type converter, negative keyword builder and more.',
-         hub_lead='Write, preview and organise Google Ads campaigns faster, with tools that follow the platform\'s real limits.'),
+         card='Ad preview, character counter, match types, negative keywords, ngram analysis, tracking templates and keyword grouping.',
+         hub_title='Free Google Ads Tools: Ad Preview, Keywords and Tracking',
+         hub_desc='Free Google Ads tools: ad preview, character counter, match type generator, negative keyword tool, ngram analyzer, tracking templates and keyword grouper.',
+         hub_lead='Write, preview and organise Google Ads campaigns faster, with tools that follow the platform\'s real limits and rules.',
+         hub_intro=f'''<h2>Which Google Ads Tool Do You Need?</h2>
+    <ul>
+      <li><strong>Writing a new ad?</strong> See it as a real result with the <a href="{GA}google-ads-preview-tool/">Google Ads Preview Tool</a> and check every asset with the <a href="{GA}google-ads-character-counter/">Google Ads Character Counter</a>.</li>
+      <li><strong>Building keyword lists?</strong> Sort them into ad groups with the <a href="{GA}keyword-grouper/">Keyword Grouper</a>, then add quotes and brackets with the <a href="{GA}keyword-match-type-generator/">Keyword Match Type Generator</a>.</li>
+      <li><strong>Cutting wasted spend?</strong> Find costly words with the <a href="{GA}search-term-ngram-analyzer/">Search Term Ngram Analyzer</a> and test your list in the <a href="{GA}negative-keyword-tool/">Negative Keyword Tool</a>.</li>
+      <li><strong>Setting up tracking?</strong> Create UTM tags and ValueTrack parameters with the <a href="{GA}google-ads-tracking-template-generator/">Google Ads Tracking Template Generator</a>.</li>
+    </ul>
+    <p>Every tool follows Google's current help pages for responsive search ads, keyword match types, negative keywords and ValueTrack, and checks your work as you type.</p>
+    <p>New to paid search? Read <a href="https://brandella.in/how-google-ads-auction-works/">how the Google Ads auction works</a> and our guide to <a href="https://brandella.in/google-ads-negative-keywords/">Google Ads negative keywords</a>.</p>''',
+         faqs=[("Are these Google Ads tools free?", "Yes. Every tool is free, needs no signup, and has no usage limits."),
+               ("Do I need to connect my Google Ads account?", "No. The tools never log in to Google Ads. You paste your text, keywords or reports, then copy the result back into Google Ads or Google Ads Editor."),
+               ("Is my campaign data safe?", "Yes. All tools run entirely in your browser. Ad copy, keywords, costs and search terms you paste are never uploaded or stored.")]),
     dict(slug='developer-tools', short='DEV', name='Developer Tools', pill='Developer',
          card='JSON formatter, HTML and CSS minifier, Base64, URL encoder and more.',
          hub_title='Free Developer Tools: JSON Formatter, Minifiers and More',
