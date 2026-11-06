@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://brandella.in/tools/</loc>
-    <lastmod>2026-11-05</lastmod>
+    <lastmod>2026-11-06</lastmod>
   </url>
   <url>
     <loc>https://brandella.in/tools/seo-tools/</loc>
@@ -247,5 +247,37 @@
   <url>
     <loc>https://brandella.in/tools/google-ads-tools/keyword-grouper/</loc>
     <lastmod>2026-11-05</lastmod>
+  </url>
+  <url>
+    <loc>https://brandella.in/tools/ai-tools/</loc>
+    <lastmod>2026-11-06</lastmod>
+  </url>
+  <url>
+    <loc>https://brandella.in/tools/ai-tools/llms-txt-generator/</loc>
+    <lastmod>2026-11-06</lastmod>
+  </url>
+  <url>
+    <loc>https://brandella.in/tools/ai-tools/ai-crawler-log-analyzer/</loc>
+    <lastmod>2026-11-06</lastmod>
+  </url>
+  <url>
+    <loc>https://brandella.in/tools/ai-tools/ai-token-counter/</loc>
+    <lastmod>2026-11-06</lastmod>
+  </url>
+  <url>
+    <loc>https://brandella.in/tools/ai-tools/ai-text-cleaner/</loc>
+    <lastmod>2026-11-06</lastmod>
+  </url>
+  <url>
+    <loc>https://brandella.in/tools/ai-tools/ai-prompt-generator/</loc>
+    <lastmod>2026-11-06</lastmod>
+  </url>
+  <url>
+    <loc>https://brandella.in/tools/ai-tools/html-to-markdown-converter/</loc>
+    <lastmod>2026-11-06</lastmod>
+  </url>
+  <url>
+    <loc>https://brandella.in/tools/ai-tools/markdown-to-html-converter/</loc>
+    <lastmod>2026-11-06</lastmod>
   </url>
 </urlset>

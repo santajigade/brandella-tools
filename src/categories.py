@@ -8,6 +8,7 @@ AN = 'https://brandella.in/tools/analytics-tools/'
 SMU = 'https://brandella.in/tools/social-media-tools/'
 TS = 'https://brandella.in/tools/technical-seo-tools/'
 GA = 'https://brandella.in/tools/google-ads-tools/'
+AI = 'https://brandella.in/tools/ai-tools/'
 
 CATEGORIES = [
     dict(slug='seo-tools', short='SEO', name='SEO Tools', pill='SEO',
@@ -148,10 +149,24 @@ CATEGORIES = [
                ("Do I need to connect my Google Ads account?", "No. The tools never log in to Google Ads. You paste your text, keywords or reports, then copy the result back into Google Ads or Google Ads Editor."),
                ("Is my campaign data safe?", "Yes. All tools run entirely in your browser. Ad copy, keywords, costs and search terms you paste are never uploaded or stored.")]),
     dict(slug='ai-tools', short='AI', name='AI Tools', pill='AI',
-         card='llms.txt generator, AI crawler checker, token counter, prompt builder and AI text cleaner.',
+         card='llms.txt generator, AI crawler log analyzer, token counter, prompt generator, AI text cleaner and Markdown converters.',
          hub_title='Free AI Tools for Marketers: llms.txt, Prompts and Tokens',
-         hub_desc='Free AI tools for marketers: llms.txt generator, AI crawler checker, token counter, prompt builder and AI text cleaner. Private and browser based.',
-         hub_lead='Practical tools for the AI search era: get found by AI assistants, write better prompts and clean up AI written text, all in your browser.'),
+         hub_desc='Free AI tools for marketers: llms.txt generator, AI crawler log analyzer, token counter, prompt generator, AI text cleaner and Markdown converters.',
+         hub_lead='Practical tools for the AI search era: get found by AI assistants, write better prompts and clean up AI written text, all in your browser.',
+         hub_intro=f'''<h2>Which AI Tool Do You Need?</h2>
+    <ul>
+      <li><strong>Want AI assistants to find your best pages?</strong> Build a file with the <a href="{AI}llms-txt-generator/">llms.txt Generator</a>.</li>
+      <li><strong>Wondering if GPTBot or ClaudeBot visit you?</strong> Paste your server log into the <a href="{AI}ai-crawler-log-analyzer/">AI Crawler Log Analyzer</a>.</li>
+      <li><strong>Getting vague answers from ChatGPT?</strong> Structure your request with the <a href="{AI}ai-prompt-generator/">AI Prompt Generator</a>.</li>
+      <li><strong>Working with long documents or the API?</strong> Check size, cost and chunks with the <a href="{AI}ai-token-counter/">AI Token Counter</a>.</li>
+      <li><strong>Publishing AI assisted text?</strong> Strip hidden characters and filler with the <a href="{AI}ai-text-cleaner/">AI Text Cleaner</a>, or keep the formatting with the <a href="{AI}markdown-to-html-converter/">Markdown to HTML Converter</a>.</li>
+      <li><strong>Feeding a web page to an AI?</strong> Shrink it first with the <a href="{AI}html-to-markdown-converter/">HTML to Markdown Converter</a>.</li>
+    </ul>
+    <p>Every tool runs entirely in your browser. Nothing you paste is sent to an AI model, to us or to anyone else.</p>
+    <p>New to AI search? Read <a href="https://brandella.in/aeo-vs-seo-vs-geo-difference-2026/">AEO vs SEO vs GEO</a> and our guide on <a href="https://brandella.in/how-to-increase-ai-search-citations/">how to increase AI search citations</a>.</p>''',
+         faqs=[("Are these AI tools free?", "Yes. Every tool is free, needs no signup, and has no usage limits."),
+               ("Do these tools send my text to ChatGPT or another AI?", "No. They do not call any AI model or API. Prompts, logs and text you paste are processed in your browser and never leave your device."),
+               ("Will llms.txt or these tools improve my Google rankings?", "Not directly. Google says its search features do not use llms.txt. The tools help you understand AI crawlers, write better prompts and publish cleaner content, which supports visibility in AI assistants and search alike.")]),
     dict(slug='developer-tools', short='DEV', name='Developer Tools', pill='Developer',
          card='JSON formatter, HTML and CSS minifier, Base64, URL encoder and more.',
          hub_title='Free Developer Tools: JSON Formatter, Minifiers and More',
