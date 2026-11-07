@@ -16,7 +16,7 @@ const pages = [];
       const out = [], w = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
       while (w.nextNode()) {
         const n = w.currentNode, el = n.parentElement;
-        if (el.closest('code,pre,script,style,nav,textarea,select,input,.slug-row,.g-url,.o-row,.rtable,.code-out')) continue;
+        if (el.closest('.site-header,.site-footer,code,pre,script,style,nav,textarea,select,input,.slug-row,.g-url,.o-row,.rtable,.code-out')) continue;
         (n.textContent.match(/\S*[—–]\S*|\b[A-Za-z]+-[A-Za-z]+\b/g) || []).forEach(x => out.push(x));
       }
       return out;

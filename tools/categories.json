@@ -1,0 +1,38 @@
+[
+ {
+  "slug": "seo-tools",
+  "name": "SEO Tools"
+ },
+ {
+  "slug": "schema-generators",
+  "name": "Schema Generators"
+ },
+ {
+  "slug": "ppc-calculators",
+  "name": "PPC Calculators"
+ },
+ {
+  "slug": "analytics-tools",
+  "name": "Analytics and Tracking Tools"
+ },
+ {
+  "slug": "social-media-tools",
+  "name": "Social Media Tools"
+ },
+ {
+  "slug": "technical-seo-tools",
+  "name": "Technical SEO Tools"
+ },
+ {
+  "slug": "google-ads-tools",
+  "name": "Google Ads Tools"
+ },
+ {
+  "slug": "ai-tools",
+  "name": "AI Tools"
+ },
+ {
+  "slug": "developer-tools",
+  "name": "Developer Tools"
+ }
+]

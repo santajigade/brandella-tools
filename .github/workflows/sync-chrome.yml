@@ -1,0 +1,48 @@
+name: Sync header and footer from brandella.in
+
+# Copies the main site's header, footer and their CSS (https://brandella.in/shared-chrome/)
+# onto every tools page, so /tools/ always shows the same menu as the rest of brandella.in.
+# Runs after each daily news publish, and can be started by hand.
+on:
+  schedule:
+    - cron: '50 4 * * *'   # 10:20 IST
+    - cron: '50 12 * * *'  # 18:20 IST
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: sync-chrome
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+
+      - name: Copy header and footer from brandella.in
+        run: python3 src/sync_chrome.py --apply
+
+      - name: SEO check
+        run: python3 src/seo_check.py tools
+
+      - name: Commit and deploy if anything changed
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if git diff --quiet; then echo "No changes"; exit 0; fi
+          git config user.name "Brandella Journal"
+          git config user.email "santaji.gade@gmail.com"
+          git add src/site_chrome.json tools
+          git commit -m "Sync header and footer from brandella.in"
+          git pull --rebase origin main
+          git push origin HEAD:main
+          # pushes made with the workflow token do not start other workflows, so start the deploy here
+          gh workflow run deploy.yml --ref main

@@ -54,6 +54,7 @@ for dp,_,fs in os.walk(ROOT):
     for f in fs:
         if not f.endswith('.html'): continue
         path=os.path.join(dp,f); src=open(path).read(); p=P(); p.feed(src)
+        pi=P(); pi.feed(re.sub(r'<!--chrome:(header|footer)-->.*?<!--/chrome:\1-->', '', src, flags=re.S))  # images in the shared header and footer are checked by the main site
         rel=os.path.relpath(path, os.path.dirname(ROOT))
         url='https://brandella.in/'+os.path.dirname(rel)+'/'
         R=[]
@@ -81,7 +82,7 @@ for dp,_,fs in os.walk(ROOT):
         chk(words>=300 or rel.count('/')<=2, f'Visible word count {words} (300+ on tool pages)', 'WARN')
         internal=[l for l in p.links if 'brandella.in' in l]
         chk(len(set(internal))>=8, f'Internal links {len(set(internal))}')
-        chk(all(i.get('alt') for i in p.imgs), 'All images have alt')
+        chk(all(i.get('alt') for i in pi.imgs), 'All images have alt')
         bl = bad_links(src)
         chk(not bl, f'All brandella.in links in main point to real pages {bl[:4] if bl else ""}')
         vis=' '.join(p.text); dash=re.findall(r'\w[—–]\w|\w—|—\w|\b[a-z]+-[a-z]+\b', vis)

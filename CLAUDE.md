@@ -10,6 +10,8 @@ Pushing to `main` runs `.github/workflows/deploy.yml`: SEO check, then lftp uplo
 - `src/seo_check.py tools`: 20 checks per page. Must end with `TOTAL FAILS: 0`.
 - `src/browser_test.js tools`: Chromium check for JS errors, mobile overflow and dashes. Must end with `0 with problems`.
 - `docs/article-slugs.txt`: the only valid brandella.in article slugs. Never link to anything else.
+- Header, footer and their CSS are NOT designed here. They are copied from the main site (https://brandella.in/shared-chrome/, built from santajigade/brandella `Header.astro`, `Footer.astro`, `src/styles/chrome.css`) by `src/sync_chrome.py` into `src/site_chrome.json`, so both sites always show the same menu. To change the menu, change the main site. `.github/workflows/sync-chrome.yml` re-syncs twice a day and deploys. Never hand edit `site_chrome.json` or anything between the `<!--chrome:...-->` markers.
+- `build.py` also writes `tools/categories.json`; the main site reads it at build time, so a new tool category shows in the brandella.in menu automatically.
 
 ## Daily batch (one category per day, 6 to 7 tools)
 1. Pick the first category in `src/categories.py` that has no tools yet. If none is left, build nothing and report that the roadmap is complete, with 3 suggested next categories.
@@ -30,13 +32,13 @@ Pushing to `main` runs `.github/workflows/deploy.yml`: SEO check, then lftp uplo
    - `faqs`: exactly 4 genuinely useful Q and A pairs. `related`: 4 (title, slug) pairs from `docs/article-slugs.txt`.
    - Tool pages load with a realistic sample already filled in, so the tool shows a result immediately.
 6. House style for all visible text: plain, friendly, short paragraphs. NO dashes or hyphens in visible text (write "long tail", "A to Z", "built in"). Literal code, tag names and attributes go inside `<code>`. Headings never contain hyphens.
-7. Build and test:
+7. Build and test (first try `python3 src/sync_chrome.py` to refresh the header; if brandella.in cannot be reached, the saved copy is used):
    `python3 src/build.py && python3 src/seo_check.py tools && node src/browser_test.js tools`
    Then write a short Playwright script that drives each new tool (type input, click buttons, read output) and confirm the output is correct. Fix every bug found.
 8. Commit with a clear message and push to `main`. Watch the run (`gh run list -R santajigade/brandella-tools -L 1`). If it fails, read the failing step, fix, push again.
-9. Report to Santaji (use SendUserMessage): category name, each tool with its live URL, and these two reminders:
-   - WordPress: Appearance > Menus > add Custom Link `https://brandella.in/tools/<category-slug>/` under "Tools".
+9. Report to Santaji (use SendUserMessage): category name, each tool with its live URL, and this reminder:
    - Search Console: resubmit `tools/sitemap.xml`.
+   The new category appears in the site menu by itself at the next brandella.in build (news runs twice a day). No menu edit is needed.
 
 ## Never
 - Rename or delete a live tool or category slug (they are indexed URLs).
