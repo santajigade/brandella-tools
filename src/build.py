@@ -10,6 +10,140 @@ CSS = src.split('<style>')[1].split('</style>')[0]
 HEADER = '<header>' + src.split('<header>')[1].split('</header>')[0] + '</header>'
 FOOTER = '<footer class="site-footer">' + src.split('<footer class="site-footer">')[1].split('</footer>')[0] + '</footer>'
 
+# ===== New Brandella Journal design (2026-11-07): top bar, logo + inline nav, column footer =====
+_C = 'https://brandella.in/category/'
+NAV = [
+    ('SEO', _C + 'seo/', [('Technical SEO', 'seo/technical-seo/'), ('On Page SEO', 'seo/on-page-seo/'), ('Off Page SEO', 'seo/off-page-seo/'),
+        ('Local SEO', 'seo/local-seo/'), ('Mobile SEO', 'seo/mobile-seo/'), ('Core Web Vitals', 'seo/core-web-vitals/'),
+        ('Keyword Research', 'seo/keyword-research/'), ('Link Building', 'seo/link-building/'), ('Google Search Console', 'seo/google-search-console/'),
+        ('SEO Tools', 'seo/seo-tools/'), ('SEO Basics', 'seo/seo-basics/')]),
+    ('Paid Media', _C + 'paid-media/', [('Google Ads', 'paid-media/google-ads/'), ('Meta Ads', 'paid-media/meta-ads/'), ('LinkedIn Ads', 'paid-media/linkedin-ads/'),
+        ('Display Advertising', 'paid-media/display-advertising/'), ('PPC Strategy', 'paid-media/ppc-strategy/'), ('Paid Media Analytics', 'paid-media/paid-media-analytics/')]),
+    ('Content', _C + 'content/', []),
+    ('Social', _C + 'social/', []),
+    ('Digital Marketing', _C + 'digital-marketing/', []),
+    ('AI', _C + 'artificial-intelligence/', []),
+    ('Development', _C + 'development/', [('GTM', 'development/gtm/'), ('HTML', 'development/html/'), ('HTML CSS', 'development/html_css/'),
+        ('HTML JS', 'development/html_js/'), ('JavaScript', 'development/javascript/'), ('PHP', 'development/php/'), ('Python', 'development/python/')]),
+]
+LOGO_SVG = ('<svg class="bj-mark" viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" rx="9" fill="#6cc82a"/>'
+            '<path d="M12 9h10.2c4.6 0 7.4 2.3 7.4 5.9 0 2.4-1.3 4.1-3.4 4.8 2.7.6 4.3 2.6 4.3 5.4 0 4-3.1 6.4-8 6.4H12z'
+            'M17.4 13.4v5h4.1c1.8 0 2.8-.9 2.8-2.5s-1-2.5-2.8-2.5zm0 9.1v5.6h4.6c2 0 3.2-1 3.2-2.8s-1.2-2.8-3.2-2.8z" fill="#fff"/>'
+            '<circle cx="33" cy="33" r="4.2" fill="#a6ef39" stroke="#6cc82a" stroke-width="1.6"/></svg>')
+CHEV = '<svg class="chev" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>'
+
+def nav_html(tool_cats):
+    li = ''
+    for name, url, kids in NAV:
+        if kids:
+            sub = ''.join(f'<li><a href="{_C}{u}">{n}</a></li>' for n, u in kids)
+            li += f'<li class="bj-has"><a href="{url}">{name}{CHEV}</a><ul class="bj-sub">{sub}</ul></li>'
+        else:
+            li += f'<li><a href="{url}">{name}</a></li>'
+    sub = ''.join(f'<li><a href="{u}">{n}</a></li>' for n, u in tool_cats) + '<li class="all"><a href="https://brandella.in/tools/">All free tools</a></li>'
+    li += f'<li class="bj-has"><a class="active" href="https://brandella.in/tools/">Free Tools{CHEV}</a><ul class="bj-sub">{sub}</ul></li>'
+    return li
+
+def header_html(tool_cats):
+    return f'''<header class="bj-header">
+  <div class="bj-top"><div class="wrap">
+    <p>SEO, paid media, AI search and web development, explained.</p>
+    <ul><li><a href="https://brandella.in/about-us/">About</a></li><li><a href="https://brandella.in/contact-page/">Contact</a></li><li><a href="https://brandella.in/tools/">Free Tools</a></li><li><a href="https://brandella.in/feed/">RSS</a></li></ul>
+  </div></div>
+  <div class="bj-bar"><div class="wrap">
+    <a class="bj-logo" href="https://brandella.in/">{LOGO_SVG}<span>Brandella <b>Journal</b></span></a>
+    <button class="bj-menu" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="siteNav"><i></i><i></i><i></i></button>
+    <nav class="bj-nav" id="siteNav" aria-label="Main"><ul>{nav_html(tool_cats)}</ul></nav>
+  </div></div>
+</header>'''
+
+def footer_html(tool_cats):
+    topics = ''.join(f'<li><a href="{u}">{n}</a></li>' for n, u, _ in NAV)
+    tools = ''.join(f'<li><a href="{u}">{n}</a></li>' for n, u in tool_cats)
+    return f'''<footer class="bj-foot">
+  <div class="wrap">
+    <div class="bj-cols">
+      <div class="bj-about">
+        <a class="bj-logo light" href="https://brandella.in/">{LOGO_SVG}<span>Brandella <b>Journal</b></span></a>
+        <p>Practical guides on SEO, paid media, AI search, analytics and web development, plus free tools that run right in your browser.</p>
+      </div>
+      <div><h2>Topics</h2><ul>{topics}</ul></div>
+      <div><h2>Free Tools</h2><ul>{tools}<li><a href="https://brandella.in/tools/">All free tools</a></li></ul></div>
+      <div><h2>Company</h2><ul><li><a href="https://brandella.in/about-us/">About Us</a></li><li><a href="https://brandella.in/contact-page/">Contact Us</a></li><li><a href="https://brandella.in/privacy-policy/">Privacy Policy</a></li><li><a href="https://brandella.in/terms-and-conditions/">Terms and Conditions</a></li><li><a href="https://brandella.in/feed/">RSS Feed</a></li></ul></div>
+    </div>
+    <p class="copy">Copyright &copy; <span id="yr">2026</span> Brandella Journal. All rights reserved.</p>
+  </div>
+</footer>'''
+
+NEW_CSS = r'''
+/* ===== NEW SITE HEADER ===== */
+.bj-top{background:#111;color:#e8e8e8;font-size:13px}
+.bj-top .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;min-height:40px}
+.bj-top p{margin:0}
+.bj-top ul{list-style:none;display:flex;gap:22px}
+.bj-top a{color:#e8e8e8;text-decoration:none}
+.bj-top a:hover{color:var(--lime)}
+.bj-bar{background:#fff;border-bottom:1px solid var(--line);position:relative;z-index:40}
+.bj-bar .wrap{display:flex;align-items:center;gap:28px;min-height:60px}
+.bj-logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:#111;flex:0 0 auto}
+.bj-mark{width:30px;height:30px;flex:0 0 auto}
+.bj-logo span{font-size:19px;font-weight:800;letter-spacing:-.2px;white-space:nowrap}
+.bj-logo b{font-weight:400;color:var(--green)}
+.bj-nav{margin-left:auto}
+.bj-nav > ul{list-style:none;display:flex;align-items:center;gap:2px}
+.bj-nav > ul > li{position:relative}
+.bj-nav a{display:flex;align-items:center;gap:6px;padding:18px 9px;font-size:14px;font-weight:700;color:#111;text-decoration:none;white-space:nowrap}
+.bj-nav a:hover,.bj-nav a.active{color:var(--green)}
+.bj-nav .chev{width:9px;height:6px;color:#8a8a8a}
+.bj-nav a.active .chev,.bj-nav a:hover .chev{color:var(--green)}
+.bj-nav .bj-sub{display:none;list-style:none;position:absolute;top:100%;left:0;min-width:230px;background:#fff;border:1px solid var(--line);border-top:3px solid var(--green);border-radius:0 0 8px 8px;padding:8px 0;box-shadow:0 14px 30px rgba(0,0,0,.12);z-index:60}
+.bj-nav > ul > li:last-child .bj-sub{left:auto;right:0}
+.bj-nav .bj-sub a{padding:7px 18px;font-weight:600;font-size:14px;border:0}
+.bj-nav .bj-sub a:hover{background:var(--soft)}
+.bj-nav .bj-sub li.all{border-top:1px solid var(--line);margin-top:6px;padding-top:6px}
+.bj-nav .bj-sub li.all a{color:#3d8f12;font-weight:700}
+.bj-nav .bj-has:hover .bj-sub,.bj-nav .bj-has:focus-within .bj-sub{display:block}
+.bj-menu{display:none;margin-left:auto;background:none;border:0;cursor:pointer;padding:8px}
+.bj-menu i{display:block;width:24px;height:2.5px;background:#111;margin:5px 0;border-radius:2px}
+.hero h1{font-weight:800;letter-spacing:-.5px}
+
+/* ===== NEW SITE FOOTER ===== */
+.bj-foot{background:var(--footer);color:#cfcfcf;margin-top:70px;padding:56px 0 30px;font-size:14px}
+.bj-cols{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:36px}
+.bj-foot .bj-logo{color:#fff;margin-bottom:14px}
+.bj-foot p{color:#a8a8a8;line-height:1.65;max-width:340px}
+.bj-foot h2{color:#fff;font-size:13px;font-weight:800;letter-spacing:.8px;text-transform:uppercase;margin-bottom:14px;padding-bottom:10px;border-bottom:2px solid var(--green);display:inline-block}
+.bj-foot ul{list-style:none}
+.bj-foot li{margin-bottom:8px}
+.bj-foot ul a{color:#cfcfcf;text-decoration:none}
+.bj-foot ul a:hover{color:var(--lime)}
+.bj-foot .copy{border-top:1px solid #262626;margin-top:40px;padding-top:22px;font-size:13.5px;max-width:none;color:#8f8f8f}
+
+@media (max-width:1100px){
+  .bj-nav a{padding:18px 6px;font-size:13.5px}
+  .bj-bar .wrap{gap:16px}
+}
+@media (max-width:980px){
+  .bj-top p{display:none}
+  .bj-top .wrap{justify-content:flex-end}
+  .bj-menu{display:block}
+  .bj-bar .wrap{flex-wrap:wrap;gap:0}
+  .bj-nav{display:none;flex-basis:100%;margin:0 0 10px}
+  .bj-nav.open{display:block}
+  .bj-nav > ul{flex-direction:column;align-items:stretch}
+  .bj-nav a{padding:12px 4px;border-bottom:1px solid #f0f0f0;justify-content:space-between}
+  .bj-nav .bj-sub{position:static;display:none;box-shadow:none;border:0;border-radius:0;padding:0 0 6px 14px;min-width:0}
+  .bj-nav .bj-has:hover .bj-sub{display:none}
+  .bj-nav .bj-has.open .bj-sub{display:block}
+  .bj-cols{grid-template-columns:1fr 1fr}
+  .bj-about{grid-column:1/-1}
+}
+@media (max-width:520px){
+  .bj-cols{grid-template-columns:1fr}
+  .bj-top ul{gap:16px}
+}
+'''
+
 EXTRA_CSS = r'''
 /* ===== SHARED TOOL EXTRAS ===== */
 .full{grid-column:1/-1}
@@ -56,16 +190,19 @@ EXTRA_CSS = r'''
 .tcard.soon .go{color:var(--muted)}
 .more-tools{margin-top:10px}
 '''
-CSS_ALL = CSS + EXTRA_CSS
+CSS_ALL = CSS + EXTRA_CSS + NEW_CSS
 
 BASE_JS = r'''
   var d = new Date();
-  var days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
-  var months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
-  document.getElementById('siteDate').innerHTML = days[d.getDay()] + ',<small>' + months[d.getMonth()] + ' ' + d.getDate() + ', ' + d.getFullYear() + '</small>';
   document.getElementById('yr').textContent = d.getFullYear();
   var nav = document.getElementById('siteNav'), mb = document.getElementById('menuBtn');
   mb.addEventListener('click', function(){ var open = nav.classList.toggle('open'); mb.setAttribute('aria-expanded', open); });
+  nav.querySelectorAll('.bj-has > a').forEach(function(a){
+    a.addEventListener('click', function(e){
+      if (window.innerWidth > 980) return;
+      var li = a.parentNode; if (!li.classList.contains('open')){ e.preventDefault(); li.classList.add('open'); }
+    });
+  });
   var $ = function(id){ return document.getElementById(id); };
   function esc(s){ return String(s).replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
   function copyText(text, toastId){
@@ -780,7 +917,9 @@ def turl(t): return caturl(t['cat']) + t['slug'] + '/'
 
 # Tools dropdown in header lists every live category
 _sub = ''.join(f'\n            <li><a href="{caturl(c["slug"])}">{c["name"]}</a></li>' for c in LIVE)
-HEADER = re.sub(r'(<a class="active" href="https://brandella.in/tools/">Tools</a>\s*<ul class="sub">).*?(\n\s*</ul>)', lambda m: m.group(1) + _sub + m.group(2), HEADER, flags=re.S)
+_tc = [(c['name'], caturl(c['slug'])) for c in LIVE]
+HEADER = header_html(_tc)
+FOOTER = footer_html(_tc)
 
 def card(t, h='h3'):
     return f'<a class="tcard" href="{turl(t)}"><div class="tbadge">{t["short"]}</div><{h}>{t["name"]}</{h}><p>{t["card"]}</p><span class="go">Open tool &rarr;</span></a>'
