@@ -32,6 +32,9 @@ LOGO_SVG = ('<svg class="bj-mark" viewBox="0 0 40 40" aria-hidden="true"><rect w
             '<circle cx="33" cy="33" r="4.2" fill="#a6ef39" stroke="#6cc82a" stroke-width="1.6"/></svg>')
 CHEV = '<svg class="chev" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>'
 
+SOCIAL = [('LinkedIn', 'https://www.linkedin.com/company/brandellajournal/'), ('Facebook', 'https://www.facebook.com/brandellajournal/'), ('Instagram', 'https://www.instagram.com/brandellajournal/')]
+def social_links(): return ''.join(f'<li><a href="{u}" target="_blank" rel="noopener">{n}</a></li>' for n, u in SOCIAL)
+
 def nav_html(tool_cats):
     li = ''
     for name, url, kids in NAV:
@@ -49,6 +52,7 @@ def header_html(tool_cats):
   <div class="bj-top"><div class="wrap">
     <p>SEO, paid media, AI search and web development, explained.</p>
     <ul><li><a href="https://brandella.in/about-us/">About</a></li><li><a href="https://brandella.in/contact-page/">Contact</a></li><li><a href="https://brandella.in/tools/">Free Tools</a></li><li><a href="https://brandella.in/feed/">RSS</a></li></ul>
+    <ul class="bj-social" aria-label="Follow Brandella Journal">{social_links()}</ul>
   </div></div>
   <div class="bj-bar"><div class="wrap">
     <a class="bj-logo" href="https://brandella.in/">{LOGO_SVG}<span>Brandella <b>Journal</b></span></a>
@@ -66,6 +70,7 @@ def footer_html(tool_cats):
       <div class="bj-about">
         <a class="bj-logo light" href="https://brandella.in/">{LOGO_SVG}<span>Brandella <b>Journal</b></span></a>
         <p>Practical guides on SEO, paid media, AI search, analytics and web development, plus free tools that run right in your browser.</p>
+        <ul class="bj-follow" aria-label="Follow Brandella Journal">{social_links()}</ul>
       </div>
       <div><h2>Topics</h2><ul>{topics}</ul></div>
       <div><h2>Free Tools</h2><ul>{tools}<li><a href="https://brandella.in/tools/">All free tools</a></li></ul></div>
@@ -83,6 +88,8 @@ NEW_CSS = r'''
 .bj-top ul{list-style:none;display:flex;gap:22px}
 .bj-top a{color:#e8e8e8;text-decoration:none}
 .bj-top a:hover{color:var(--lime)}
+.bj-top .wrap > ul:first-of-type{margin-left:auto}
+.bj-top .bj-social{border-left:1px solid #3a3a3a;padding-left:18px;gap:16px}
 .bj-bar{background:#fff;border-bottom:1px solid var(--line);position:relative;z-index:40}
 .bj-bar .wrap{display:flex;align-items:center;gap:28px;min-height:60px}
 .bj-logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:#111;flex:0 0 auto}
@@ -117,6 +124,10 @@ NEW_CSS = r'''
 .bj-foot li{margin-bottom:8px}
 .bj-foot ul a{color:#cfcfcf;text-decoration:none}
 .bj-foot ul a:hover{color:var(--lime)}
+.bj-foot .bj-follow{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.bj-foot .bj-follow li{margin:0}
+.bj-foot .bj-follow a{display:inline-block;border:1px solid #3a3a3a;border-radius:20px;padding:6px 14px;font-size:13px;font-weight:700;color:#fff}
+.bj-foot .bj-follow a:hover{border-color:var(--green);color:var(--lime)}
 .bj-foot .copy{border-top:1px solid #262626;margin-top:40px;padding-top:22px;font-size:13.5px;max-width:none;color:#8f8f8f}
 
 @media (max-width:1100px){
@@ -140,7 +151,8 @@ NEW_CSS = r'''
 }
 @media (max-width:520px){
   .bj-cols{grid-template-columns:1fr}
-  .bj-top ul{gap:16px}
+  .bj-top ul{gap:12px}
+  .bj-top .bj-social{display:none}
 }
 '''
 
@@ -943,7 +955,7 @@ def build_tool(t):
         {"@type": "SoftwareApplication", "name": t['name'], "url": url, "applicationCategory": c.get('app_category', 'BusinessApplication'),
          "operatingSystem": "Any (web browser)", "description": t['desc'],
          "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
-         "publisher": {"@type": "Organization", "name": "Brandella Journal", "url": BASE + '/'}},
+         "publisher": {"@type": "Organization", "name": "Brandella Journal", "url": BASE + '/', "sameAs": [u for _, u in SOCIAL]}},
         bc_schema(bc), faq_schema(t['faqs'])]}
     main = f"""
   {crumbs([(n, u) for n, u in bc[:-1]] + [(t['name'], None)])}
