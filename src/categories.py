@@ -9,6 +9,7 @@ SMU = 'https://brandella.in/tools/social-media-tools/'
 TS = 'https://brandella.in/tools/technical-seo-tools/'
 GA = 'https://brandella.in/tools/google-ads-tools/'
 AI = 'https://brandella.in/tools/ai-tools/'
+DV = 'https://brandella.in/tools/developer-tools/'
 
 CATEGORIES = [
     dict(slug='seo-tools', short='SEO', name='SEO Tools', pill='SEO',
@@ -168,10 +169,20 @@ CATEGORIES = [
                ("Do these tools send my text to ChatGPT or another AI?", "No. They do not call any AI model or API. Prompts, logs and text you paste are processed in your browser and never leave your device."),
                ("Will llms.txt or these tools improve my Google rankings?", "Not directly. Google says its search features do not use llms.txt. The tools help you understand AI crawlers, write better prompts and publish cleaner content, which supports visibility in AI assistants and search alike.")]),
     dict(slug='developer-tools', short='DEV', name='Developer Tools', pill='Developer',
-         card='JSON formatter, HTML and CSS minifier, Base64, URL encoder and more.',
-         hub_title='Free Developer Tools: JSON Formatter, Minifiers and More',
-         hub_desc='Free online developer tools: JSON formatter and validator, HTML, CSS and JS minifier, Base64 and URL encoder, regex tester and more.',
+         card='JSON formatter and validator, URL encoder and decoder, with more everyday developer utilities on the way.',
+         hub_title='Free Developer Tools: JSON Formatter, URL Encoder and More',
+         hub_desc='Free online developer tools: JSON formatter and validator with AI output repair, and a URL encoder and decoder that fixes double encoded links.',
          hub_lead='Everyday web developer utilities that run instantly in your browser, with nothing uploaded to a server.',
+         hub_intro=f'''<h2>Which Developer Tool Do You Need?</h2>
+    <ul>
+      <li><strong>Reading an API response or fixing broken JSON from an AI tool?</strong> Use the <a href="{DV}json-formatter/">JSON Formatter and Validator</a>.</li>
+      <li><strong>Checking a tracking link or building a redirect URL?</strong> Use the <a href="{DV}url-encoder-decoder/">URL Encoder and Decoder</a>.</li>
+    </ul>
+    <p>Every tool follows the official standards, such as RFC 8259 for JSON and RFC 3986 for URLs, and gives the same result your code would. More developer tools are added regularly.</p>
+    <p>Building something yourself? Read <a href="https://brandella.in/rest-api-in-php-without-a-framework/">how to build a REST API in PHP</a> and <a href="https://brandella.in/gtm-data-layer-explained/">the GTM data layer explained</a>.</p>''',
+         faqs=[("Are these developer tools free?", "Yes. Every tool is free, needs no signup, and has no usage limits."),
+               ("Is my code or data uploaded anywhere?", "No. All tools run entirely in your browser. JSON, URLs and text you paste never leave your device, so it is safe to use them with private API data."),
+               ("Do the tools work offline?", "Once a tool page has loaded, it keeps working without a connection, because all the processing happens in your browser.")],
          app_category='DeveloperApplication'),
     dict(slug='email-marketing-tools', short='EM', name='Email Marketing Tools', pill='Email',
          card='Subject line tester, preheader preview and signature generator.',
