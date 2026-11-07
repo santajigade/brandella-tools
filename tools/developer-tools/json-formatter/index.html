@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>JSON Formatter and Validator: Beautify and Fix JSON</title>
+<meta name="description" content="Free JSON formatter and validator. Beautify or minify JSON, find the exact line and column of errors, and repair trailing commas and broken AI output.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://brandella.in/tools/developer-tools/json-formatter/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="JSON Formatter and Validator: Beautify and Fix JSON">
+<meta property="og:description" content="Free JSON formatter and validator. Beautify or minify JSON, find the exact line and column of errors, and repair trailing commas and broken AI output.">
+<meta property="og:url" content="https://brandella.in/tools/developer-tools/json-formatter/">
+<meta property="og:site_name" content="Brandella Journal">
+<meta property="og:image" content="https://brandella.in/tools/assets/og-json-formatter.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://brandella.in/tools/assets/og-json-formatter.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3931314195561246" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "JSON Formatter and Validator",
+      "url": "https://brandella.in/tools/developer-tools/json-formatter/",
+      "applicationCategory": "DeveloperApplication",
+      "operatingSystem": "Any (web browser)",
+      "description": "Free JSON formatter and validator. Beautify or minify JSON, find the exact line and column of errors, and repair trailing commas and broken AI output.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Brandella Journal",
+        "url": "https://brandella.in/"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://brandella.in/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Tools",
+          "item": "https://brandella.in/tools/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Developer Tools",
+          "item": "https://brandella.in/tools/developer-tools/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "JSON Formatter and Validator",
+          "item": "https://brandella.in/tools/developer-tools/json-formatter/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Why is my JSON invalid when it looks fine?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The usual causes are a trailing comma after the last item, single or curly quotes, a missing comma between items, or an unescaped line break inside a string. The validator shows the exact line and column, with a marker under the character that breaks it."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I fix broken JSON from ChatGPT?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Paste the whole answer here, including the code fence. The tool strips the text around it, removes comments and trailing commas, fixes quotes and Python style True, False and None, then shows valid JSON with a list of every change it made."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does formatting change my data?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Only spaces and line breaks change. Keys stay in the same order unless you tick Sort keys, and numbers are kept exactly as written, so long IDs keep every digit."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is it safe to paste private JSON here?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. The formatter runs entirely in your browser. Nothing you paste is uploaded, logged or stored, so API responses, tokens and customer data stay on your device."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+<style>
+:root{
+  --green:#6cc82a; --lime:#a6ef39; --ink:#111; --gray:#555; --muted:#6b6b6b;
+  --line:#e3e3e3; --bg:#fff; --soft:#f6faf1; --footer:#0a0a0a;
+  --g-title:#1a0dab; --g-url:#202124; --g-desc:#4d5156;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Open Sans',Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6}
+a{color:inherit}
+.wrap{max-width:1140px;margin:0 auto;padding:0 16px}
+
+/* ===== HEADER ===== */
+.site-top{border-bottom:1px solid #d9d9d9}
+.site-top .wrap{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding-top:34px;padding-bottom:34px}
+.site-date{font-size:20px;font-weight:600;line-height:1.1}
+.site-date small{display:block;font-size:13px;font-weight:600;margin-top:2px}
+.site-logo{font-size:40px;font-weight:700;text-decoration:none;color:#555;letter-spacing:.2px;white-space:nowrap}
+.site-logo span{color:var(--green)}
+.menu-btn{display:none;justify-self:end;background:none;border:0;cursor:pointer;padding:6px}
+.menu-btn i{display:block;width:26px;height:3px;background:#111;margin:5px 0;border-radius:2px}
+
+.site-nav{border-bottom:2px solid var(--lime)}
+.site-nav ul{list-style:none;display:flex;justify-content:center;flex-wrap:wrap;gap:0 4px}
+.site-nav > .wrap > ul > li{position:relative}
+.site-nav a{display:block;padding:12px 13px;font-size:17px;font-weight:700;text-decoration:none;color:#111}
+.site-nav a:hover,.site-nav a.active{color:var(--green)}
+.has-sub > a::after{content:"";display:inline-block;width:6px;height:6px;border-right:1.6px solid currentColor;border-bottom:1.6px solid currentColor;transform:rotate(45deg);margin:0 0 4px 7px}
+.sub{display:none !important;position:absolute;top:100%;left:0;width:240px;background:#fff;border-radius:6px;padding:14px 0;box-shadow:0 10px 30px rgba(0,0,0,.18);z-index:50;flex-direction:column}
+.sub a{font-size:17px;font-weight:700;line-height:1.35;padding:5px 30px;color:#111}
+.sub a:hover{color:var(--green)}
+.has-sub:hover .sub,.has-sub:focus-within .sub{display:flex !important}
+
+/* ===== BREADCRUMB + HERO ===== */
+.crumbs{font-size:13.5px;color:var(--muted);padding:18px 0 0}
+.crumbs a{text-decoration:none;color:var(--muted)}
+.crumbs a:hover{color:var(--green)}
+.hero{text-align:center;padding:26px 0 8px}
+.pill{display:inline-block;background:var(--soft);color:#3d7f12;border:1px solid #cfeab4;font-size:12.5px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;padding:4px 12px;border-radius:20px;margin-bottom:14px}
+.hero h1{font-size:44px;font-weight:300;line-height:1.2}
+.hero p{max-width:760px;margin:14px auto 0;color:var(--muted);font-size:17px}
+
+/* ===== TOOL ===== */
+.tool{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin:34px 0 10px}
+.card{border:1px solid var(--line);border-radius:12px;padding:24px;background:#fff}
+.card h2{font-size:19px;font-weight:700;margin-bottom:16px}
+.field{margin-bottom:18px}
+.field label{display:flex;justify-content:space-between;font-weight:700;font-size:14.5px;margin-bottom:6px}
+.field label em{font-style:normal;font-weight:600;color:var(--muted);font-size:13px}
+.field input,.field textarea{width:100%;border:1px solid #cfcfcf;border-radius:8px;padding:11px 12px;font:inherit;font-size:15px;color:#111;outline:none;transition:border-color .15s}
+.field input:focus,.field textarea:focus{border-color:var(--green);box-shadow:0 0 0 3px rgba(108,200,42,.15)}
+.field textarea{resize:vertical;min-height:96px}
+.meter{height:7px;background:#eee;border-radius:6px;margin-top:8px;overflow:hidden}
+.meter b{display:block;height:100%;width:0;background:var(--green);border-radius:6px;transition:width .15s,background .15s}
+.meter b.warn{background:#f0a020}.meter b.bad{background:#e0442c}
+.stat{font-size:13px;color:var(--muted);margin-top:5px;display:flex;justify-content:space-between}
+.stat .ok{color:#3d8f12;font-weight:700}.stat .warn{color:#c47a00;font-weight:700}.stat .bad{color:#d1351f;font-weight:700}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.check{display:flex;align-items:center;gap:8px;font-size:14.5px;font-weight:600;margin-bottom:6px;cursor:pointer}
+.check input{accent-color:var(--green);width:16px;height:16px}
+
+.tabs{display:inline-flex;border:1px solid #cfcfcf;border-radius:30px;padding:3px;margin-bottom:18px}
+.tabs button{border:0;background:none;font:inherit;font-weight:700;font-size:14px;padding:7px 18px;border-radius:30px;cursor:pointer;color:#333}
+.tabs button.on{background:#111;color:#fff}
+
+/* Google result mock */
+.serp{border:1px solid var(--line);border-radius:10px;padding:20px 18px;background:#fff;font-family:Arial,sans-serif}
+.serp.mobile{max-width:400px;margin:0 auto;border-radius:16px;box-shadow:0 2px 10px rgba(0,0,0,.08)}
+.g-site{display:flex;align-items:center;gap:10px;margin-bottom:6px}
+.g-fav{width:28px;height:28px;border-radius:50%;background:#f1f3f4;border:1px solid #dadce0;display:grid;place-items:center;font-weight:700;font-size:13px;color:var(--green)}
+.g-name{font-size:14px;color:var(--g-url);line-height:1.3}
+.g-url{font-size:12px;color:#4d5156;line-height:1.3;word-break:break-all}
+.g-title{font-size:20px;line-height:1.3;color:var(--g-title);margin:2px 0 4px;font-weight:400;cursor:pointer}
+.g-title:hover{text-decoration:underline}
+.serp.mobile .g-title{font-size:18px;color:#1558d6}
+.g-desc{font-size:14px;line-height:1.58;color:var(--g-desc)}
+.g-desc .g-date{color:#70757a}
+.g-desc strong{color:#5f6368;font-weight:700}
+
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+.btn{border:2px solid var(--green);background:#fff;color:#111;font:inherit;font-weight:700;font-size:14px;padding:9px 18px;border-radius:30px;cursor:pointer;transition:all .15s}
+.btn:hover{background:var(--green);color:#fff}
+.btn.dark{background:#111;border-color:#111;color:#fff}
+.btn.dark:hover{background:var(--green);border-color:var(--green)}
+.code-out{margin-top:14px;background:#1e1e1e;color:#d4d4d4;border-radius:8px;padding:14px;font:14px/1.5 Consolas,Monaco,monospace;white-space:pre-wrap;word-break:break-all;display:none}
+.toast{font-size:13px;color:#3d8f12;font-weight:700;align-self:center;opacity:0;transition:opacity .2s}
+.toast.show{opacity:1}
+
+.tips{margin-top:18px;border-left:4px solid var(--green);background:var(--soft);border-radius:0 8px 8px 0;padding:12px 14px;font-size:14px}
+.tips ul{margin:6px 0 0 18px}
+.tips li{margin:2px 0}
+
+/* ===== CONTENT ===== */
+.content{max-width:820px;margin:40px auto 0}
+.content h2{font-size:28px;font-weight:700;margin:36px 0 12px;line-height:1.3}
+.content h3{font-size:20px;font-weight:700;margin:22px 0 8px}
+.content p{font-size:17px;color:#2c2c2c;margin-bottom:12px}
+.content ol,.content ul{margin:0 0 14px 22px;font-size:17px;color:#2c2c2c}
+.content li{margin:6px 0}
+.content a{color:#3d8f12;font-weight:600}
+.content code{background:#f1f1f1;padding:1px 6px;border-radius:4px;font-size:15px}
+table.lim{width:100%;border-collapse:collapse;margin:10px 0 18px;font-size:15.5px}
+table.lim th{background:#2b2b2b;color:#fff;text-align:left;padding:10px 12px}
+table.lim td{border-bottom:1px solid var(--line);padding:10px 12px}
+
+.faq-item{border:1px solid var(--line);border-radius:10px;margin-bottom:12px;overflow:hidden}
+.faq-item summary{list-style:none;cursor:pointer;padding:14px 16px;font-weight:700;font-size:16.5px;display:flex;gap:12px;align-items:flex-start}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-num{flex:0 0 26px;height:26px;border-radius:50%;background:var(--green);color:#fff;font-size:13px;display:grid;place-items:center}
+.faq-item p{padding:0 16px 14px 54px;color:#3a5a20;font-size:16px;margin:0}
+
+.related{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:12px 0 10px}
+.related a{display:flex;justify-content:space-between;align-items:center;gap:10px;border:1px solid var(--line);border-left:4px solid var(--green);border-radius:8px;padding:13px 14px;text-decoration:none;color:#111 !important;font-weight:700;font-size:15px}
+.related a:hover{border-color:var(--green)}
+
+.bx-ad{margin:34px 0;min-height:90px}
+
+/* ===== FOOTER ===== */
+.site-footer{background:var(--footer);color:#fff;margin-top:70px;padding:52px 0 44px}
+.foot-links{list-style:none;display:flex;flex-wrap:wrap;gap:8px 28px}
+.foot-links a{text-decoration:none;font-weight:700;font-size:14.5px;text-transform:uppercase;color:#fff}
+.foot-links a:hover{color:var(--lime)}
+.copy{color:#a8a8a8;font-size:16px;margin-top:12px}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width:900px){
+  .tool{grid-template-columns:1fr}
+  .hero h1{font-size:34px}
+}
+@media (max-width:760px){
+  .site-top .wrap{grid-template-columns:1fr auto;padding-top:18px;padding-bottom:18px}
+  .site-date{display:none}
+  .site-logo{font-size:28px}
+  .menu-btn{display:block}
+  .site-nav ul{display:none;flex-direction:column}
+  .site-nav.open > .wrap > ul{display:flex}
+  .site-nav a{padding:11px 4px;border-bottom:1px solid #f0f0f0}
+  .sub{position:static;box-shadow:none;border:0;padding-left:14px}
+  .has-sub:hover .sub,.has-sub:focus-within .sub{display:flex !important}
+  .related,.row2{grid-template-columns:1fr}
+  .content h2{font-size:24px}
+}
+
+/* ===== SHARED TOOL EXTRAS ===== */
+.full{grid-column:1/-1}
+.field select{width:100%;border:1px solid #cfcfcf;border-radius:8px;padding:10px 12px;font:inherit;font-size:15px;background:#fff;color:#111}
+.field textarea.big{min-height:230px;font-size:14.5px}
+.mono{font-family:Consolas,Monaco,monospace !important;font-size:13.5px !important}
+.btn-sm{padding:5px 12px;font-size:13px;border-width:1.5px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(105px,1fr));gap:10px;margin-bottom:16px}
+.stat-box{background:var(--soft);border:1px solid #dbefc8;border-radius:10px;padding:10px 8px;text-align:center}
+.stat-box b{display:block;font-size:22px;line-height:1.2}
+.stat-box span{font-size:12.5px;color:var(--muted);font-weight:600}
+.rtable{width:100%;border-collapse:collapse;font-size:14.5px}
+.rtable th{background:#2b2b2b;color:#fff;text-align:left;padding:8px 10px;font-weight:700}
+.rtable td{border-bottom:1px solid var(--line);padding:7px 10px}
+.rtable td.num,.rtable th.num{text-align:right;font-variant-numeric:tabular-nums}
+.rtable tr.hit td{background:#eef8e6;font-weight:700}
+.empty{color:var(--muted);font-size:14.5px;padding:14px 0}
+.kw-result{border-radius:10px;padding:12px 14px;margin-bottom:16px;font-size:14.5px;border:1px solid var(--line);background:#fafafa}
+.kw-result.ok{background:#eef8e6;border-color:#cfeab4}
+.kw-result.warn{background:#fff6e5;border-color:#f3d79b}
+.kw-result.bad{background:#fdecea;border-color:#f5c2bb}
+.slug-row{border:1px solid var(--line);border-radius:8px;padding:10px 12px;margin-bottom:8px;display:flex;justify-content:space-between;gap:10px;align-items:center}
+.slug-row .s{font:600 15px/1.4 Consolas,Monaco,monospace;color:#111;word-break:break-all}
+.slug-row small{display:block;color:var(--muted);font-size:12.5px;word-break:break-all;margin-top:2px}
+.slug-row small.warn{color:#c47a00;font-weight:700}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
+.chip{border:1px solid var(--line);border-radius:20px;padding:4px 12px;font-size:13.5px;font-weight:700;background:#fff}
+.chip.zero{color:#aaa}
+.outline{max-height:460px;overflow:auto;border:1px solid var(--line);border-radius:10px;padding:6px 12px}
+.o-row{display:flex;gap:10px;align-items:flex-start;padding:7px 0;border-bottom:1px dashed #eee;font-size:14.5px}
+.o-row:last-child{border-bottom:0}
+.o-tag{flex:0 0 auto;font:700 12px/1 Consolas,Monaco,monospace;padding:5px 7px;border-radius:5px;color:#fff;background:#111}
+.o-tag.h1{background:#2f7a0c}.o-tag.h2{background:#4fa61d}.o-tag.h3{background:#6cc82a}.o-tag.h4{background:#8a8a8a}.o-tag.h5{background:#a5a5a5}.o-tag.h6{background:#bdbdbd}
+.o-issue{display:inline-block;font-size:12px;color:#d1351f;font-weight:700;margin-left:6px}
+.tgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:18px;margin:30px 0 10px}
+.tcard{border:1px solid var(--line);border-radius:12px;padding:22px;text-decoration:none;display:flex;flex-direction:column;gap:10px;transition:all .15s;background:#fff;color:#111}
+.tcard:hover{border-color:var(--green);box-shadow:0 8px 22px rgba(0,0,0,.07);transform:translateY(-2px)}
+.tbadge{width:48px;height:48px;border-radius:12px;background:#111;color:var(--lime);display:grid;place-items:center;font-weight:800;font-size:16px}
+.tcard h2,.tcard h3{font-size:18px;line-height:1.3;margin:0}
+.tcard p{font-size:14.5px;color:var(--muted);flex:1;line-height:1.55}
+.tcard .go{font-weight:700;color:#3d8f12;font-size:14px}
+.tcard.soon{opacity:.55;pointer-events:none}
+.tcard.soon .tbadge{background:#ddd;color:#777}
+.tcard.soon .go{color:var(--muted)}
+.more-tools{margin-top:10px}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="site-top">
+    <div class="wrap">
+      <div class="site-date" id="siteDate">Today<small>&nbsp;</small></div>
+      <a class="site-logo" href="https://brandella.in/">Brandella <span>Journal</span></a>
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false"><i></i><i></i><i></i></button>
+    </div>
+  </div>
+  <nav class="site-nav" id="siteNav" aria-label="Main">
+    <div class="wrap">
+      <ul>
+        <li><a href="https://brandella.in/">Home</a></li>
+        <li class="has-sub"><a href="https://brandella.in/category/seo/">SEO</a>
+          <ul class="sub">
+            <li><a href="https://brandella.in/category/seo/technical-seo/">Technical SEO</a></li>
+            <li><a href="https://brandella.in/category/seo/local-seo/">Local SEO</a></li>
+            <li><a href="https://brandella.in/category/seo/mobile-seo/">Mobile SEO</a></li>
+            <li><a href="https://brandella.in/category/seo/on-page-seo/">On-Page SEO</a></li>
+            <li><a href="https://brandella.in/category/seo/off-page-seo/">Off-Page SEO</a></li>
+            <li><a href="https://brandella.in/category/seo/seo-tools/">SEO Tools</a></li>
+            <li><a href="https://brandella.in/category/seo/core-web-vitals/">Core Web Vitals</a></li>
+            <li><a href="https://brandella.in/category/seo/keyword-research/">Keyword Research</a></li>
+            <li><a href="https://brandella.in/category/seo/link-building/">Link Building</a></li>
+            <li><a href="https://brandella.in/category/seo/google-search-console/">Google Search Console</a></li>
+            <li><a href="https://brandella.in/category/seo/seo-basics/">SEO Basics</a></li>
+          </ul>
+        </li>
+        <li class="has-sub"><a href="https://brandella.in/category/paid-media/">Paid Media</a>
+          <ul class="sub">
+            <li><a href="https://brandella.in/category/paid-media/display-advertising/">Display Advertising</a></li>
+            <li><a href="https://brandella.in/category/paid-media/google-ads/">Google Ads</a></li>
+            <li><a href="https://brandella.in/category/paid-media/linkedin-ads/">LinkedIn Ads</a></li>
+            <li><a href="https://brandella.in/category/paid-media/meta-ads/">Meta Ads</a></li>
+            <li><a href="https://brandella.in/category/paid-media/paid-media-analytics/">Paid Media Analytics</a></li>
+            <li><a href="https://brandella.in/category/paid-media/ppc-strategy/">PPC Strategy</a></li>
+          </ul>
+        </li>
+        <li><a href="https://brandella.in/category/content/">Content</a></li>
+        <li><a href="https://brandella.in/category/social/">Social</a></li>
+        <li><a href="https://brandella.in/category/digital-marketing/">Digital Marketing</a></li>
+        <li><a href="https://brandella.in/category/artificial-intelligence/">Artificial Intelligence</a></li>
+        <li class="has-sub"><a href="https://brandella.in/category/development/">Development</a>
+          <ul class="sub">
+            <li><a href="https://brandella.in/category/development/php/">PHP</a></li>
+            <li><a href="https://brandella.in/category/development/javascript/">JavaScript</a></li>
+            <li><a href="https://brandella.in/category/development/python/">Python</a></li>
+          </ul>
+        </li>
+        <li class="has-sub"><a class="active" href="https://brandella.in/tools/">Tools</a>
+          <ul class="sub">
+            <li><a href="https://brandella.in/tools/seo-tools/">SEO Tools</a></li>
+            <li><a href="https://brandella.in/tools/schema-generators/">Schema Generators</a></li>
+            <li><a href="https://brandella.in/tools/ppc-calculators/">PPC Calculators</a></li>
+            <li><a href="https://brandella.in/tools/analytics-tools/">Analytics and Tracking Tools</a></li>
+            <li><a href="https://brandella.in/tools/social-media-tools/">Social Media Tools</a></li>
+            <li><a href="https://brandella.in/tools/technical-seo-tools/">Technical SEO Tools</a></li>
+            <li><a href="https://brandella.in/tools/google-ads-tools/">Google Ads Tools</a></li>
+            <li><a href="https://brandella.in/tools/ai-tools/">AI Tools</a></li>
+            <li><a href="https://brandella.in/tools/developer-tools/">Developer Tools</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<main class="wrap">
+
+  <div class="crumbs"><a href="https://brandella.in/">Home</a> &rsaquo; <a href="https://brandella.in/tools/">Tools</a> &rsaquo; <a href="https://brandella.in/tools/developer-tools/">Developer Tools</a> &rsaquo; JSON Formatter and Validator</div>
+
+  <section class="hero">
+    <span class="pill">Free Developer Tool</span>
+    <h1>JSON Formatter and Validator</h1>
+    <p>Paste any JSON to beautify it, check it against the official standard and see exactly where it breaks. Broken JSON from ChatGPT, APIs or config files is repaired in one step, without changing your data.</p>
+  </section>
+
+  <section class="tool" aria-label="JSON formatter and validator" id="jfForm">
+    <div class="card" style="min-width:0">
+      <h2>Your JSON</h2>
+      <div class="field"><label for="jfIn">Paste JSON <em>from an API, a file, schema markup or an AI chat</em></label><textarea id="jfIn" class="mono" spellcheck="false" placeholder="" style="min-height:320px">Here is the JSON you asked for:
+```json
+{&quot;@context&quot;:&quot;https://schema.org&quot;,&quot;@type&quot;:&quot;Product&quot;,&quot;name&quot;:&quot;Organic Green Tea, 100 Bags&quot;,&quot;sku&quot;:&quot;GT-100&quot;,&quot;gtin13&quot;:&quot;8901234567890&quot;,&quot;image&quot;:[&quot;https://example.com/img/green-tea.jpg&quot;],&quot;offers&quot;:{&quot;@type&quot;:&quot;Offer&quot;,&quot;price&quot;:&quot;349.00&quot;,&quot;priceCurrency&quot;:&quot;INR&quot;,&quot;availability&quot;:&quot;https://schema.org/InStock&quot;,},&quot;aggregateRating&quot;:{&quot;@type&quot;:&quot;AggregateRating&quot;,&quot;ratingValue&quot;:4.6,&quot;reviewCount&quot;:128},&#x27;inStockOnline&#x27;: True}
+```</textarea></div>
+      <div class="row2"><div class="field"><label for="jfInd">Indent</label><select id="jfInd"><option value="2" selected>2 spaces</option><option value="4">4 spaces</option><option value="tab">Tabs</option><option value="0">Minify (one line)</option></select></div><div class="field"><label>Options</label><label class="check"><input id="jfSort" type="checkbox"> <span>Sort keys A to Z</span></label><label class="check"><input id="jfAscii" type="checkbox"> <span>Escape non English characters</span></label></div></div>
+      <div class="actions" style="margin:0 0 6px"><button type="button" class="btn btn-sm" id="jfUse">Replace Input With Result</button><button type="button" class="btn btn-sm" id="jfClear">Clear</button></div>
+    </div>
+    <div class="card" style="min-width:0">
+      <h2>Result</h2>
+      <div class="stats"><div class="stat-box"><b id="jfKeys">0</b><span>Keys</span></div><div class="stat-box"><b id="jfDepth">0</b><span>Max Depth</span></div><div class="stat-box"><b id="jfSize">0</b><span>Size</span></div></div>
+      <div class="kw-result" id="jfCheck"></div>
+      <pre class="code-out" id="jfOut" style="display:block;margin-top:0;max-height:520px;overflow:auto;word-break:normal;overflow-wrap:anywhere;white-space:pre-wrap"></pre>
+      <div class="actions"><button class="btn dark" id="jfCopy">Copy JSON</button><button class="btn" id="jfDl">Download .json</button><span class="toast" id="toast">Copied!</span></div>
+    </div>
+  </section>
+
+  <div class="bx-ad">
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3931314195561246" data-ad-slot="4249015278" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+
+  <article class="content">
+
+    <h2>What Is a JSON Formatter and Validator?</h2>
+    <p>JSON is the plain text format that APIs, apps, schema markup, Google Tag Manager and AI tools use to pass data around. It is easy for machines to read, but a single missing quote or extra comma breaks the whole thing, and long JSON on one line is almost impossible for people to read.</p>
+    <p>This tool does three jobs at once. It <strong>formats</strong> JSON with clean indentation, <strong>validates</strong> it against the official <a href="https://www.rfc-editor.org/rfc/rfc8259" target="_blank" rel="noopener">JSON standard (RFC 8259)</a> and points to the exact line and column of any error, and <strong>repairs</strong> the most common problems, such as the broken JSON that ChatGPT and other AI tools often return. Everything runs in your browser, so private data never leaves your device.</p>
+
+    <h2>How to Use the JSON Formatter</h2>
+    <ol>
+      <li><strong>Paste your JSON</strong> into the box. You can paste a whole AI answer, including the code fence and the text around it.</li>
+      <li><strong>Read the check.</strong> Green means valid. Red shows the line, column and a marker under the problem. Amber means the tool repaired it and lists every fix.</li>
+      <li><strong>Pick an indent</strong> of 2 spaces, 4 spaces or tabs, or choose Minify to put it all on one line for production.</li>
+      <li><strong>Tick Sort keys</strong> to order keys A to Z, which makes two versions easy to compare.</li>
+      <li><strong>Copy or download</strong> the result, or press Replace Input With Result to keep working on the fixed version.</li>
+    </ol>
+
+    <h2>Common JSON Errors and What the Tool Does</h2>
+    <div style="overflow-x:auto"><table class="lim">
+      <thead><tr style="background:#2b2b2b !important;"><th style="background:#2b2b2b !important; color:#ffffff !important;">Problem</th><th style="background:#2b2b2b !important; color:#ffffff !important;">Example</th><th style="background:#2b2b2b !important; color:#ffffff !important;">What happens</th></tr></thead>
+      <tbody>
+        <tr><td>Trailing comma</td><td><code>{"a": 1,}</code></td><td>Flagged, then removed</td></tr>
+        <tr><td>Single or curly quotes</td><td><code>{'name': 'Tea'}</code></td><td>Changed to straight double quotes</td></tr>
+        <tr><td>Keys without quotes</td><td><code>{name: "Tea"}</code></td><td>Quotes added around the key</td></tr>
+        <tr><td>Python style values</td><td><code>True</code>, <code>False</code>, <code>None</code></td><td>Changed to <code>true</code>, <code>false</code>, <code>null</code></td></tr>
+        <tr><td>Comments</td><td><code>// note</code> or <code>/* note */</code></td><td>Removed, since JSON has no comments</td></tr>
+        <tr><td>Code fence and chat text</td><td><code>```json</code> with text around it</td><td>Only the JSON is kept</td></tr>
+        <tr><td>Missing bracket or quote</td><td><code>{"a": [1, 2}</code></td><td>Exact line and column shown so you can fix it</td></tr>
+        <tr><td>Duplicate keys</td><td><code>{"id": 1, "id": 2}</code></td><td>Warning, as most parsers keep only the last one</td></tr>
+      </tbody>
+    </table></div>
+    <p>Repairs never guess at your data. Numbers are kept exactly as written, so long IDs and prices do not lose digits the way they can in some online formatters.</p>
+
+    <h2>Tips for Working With JSON</h2>
+    <ul>
+      <li><strong>Ask AI tools for JSON only.</strong> Add "Return only valid JSON, no extra text" to your prompt. If it still adds a comment or a trailing comma, paste it here.</li>
+      <li><strong>Minify for production, format for people.</strong> Minified JSON is smaller to send, while formatted JSON is easier to review in a pull request.</li>
+      <li><strong>Validate schema markup before testing it.</strong> A syntax error stops Google from reading your JSON LD at all, so fix syntax here first, then run Google's Rich Results Test.</li>
+      <li><strong>Save files as UTF 8.</strong> The standard requires it when JSON moves between systems, and it keeps accents and Indian scripts intact.</li>
+    </ul>
+
+    <h2>Put Your JSON to Work</h2>
+    <p>Add structured data with <a href="https://brandella.in/how-to-add-schema-markup-json-ld/">how to add schema markup with JSON LD</a>, push clean events with <a href="https://brandella.in/gtm-data-layer-explained/">the GTM data layer explained</a>, or return JSON from your own backend with <a href="https://brandella.in/rest-api-in-php-without-a-framework/">a REST API in PHP without a framework</a>. Need to send JSON inside a link? Encode it with the <a href="https://brandella.in/tools/developer-tools/url-encoder-decoder/">URL encoder and decoder</a>.</p>
+
+    <div class="bx-ad">
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3931314195561246" data-ad-slot="4249015278" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+
+    <h2>Frequently Asked Questions</h2>
+    <details class="faq-item" open><summary><span class="faq-num">1</span>Why is my JSON invalid when it looks fine?</summary><p>The usual causes are a trailing comma after the last item, single or curly quotes, a missing comma between items, or an unescaped line break inside a string. The validator shows the exact line and column, with a marker under the character that breaks it.</p></details>
+    <details class="faq-item" open><summary><span class="faq-num">2</span>How do I fix broken JSON from ChatGPT?</summary><p>Paste the whole answer here, including the code fence. The tool strips the text around it, removes comments and trailing commas, fixes quotes and Python style True, False and None, then shows valid JSON with a list of every change it made.</p></details>
+    <details class="faq-item" open><summary><span class="faq-num">3</span>Does formatting change my data?</summary><p>No. Only spaces and line breaks change. Keys stay in the same order unless you tick Sort keys, and numbers are kept exactly as written, so long IDs keep every digit.</p></details>
+    <details class="faq-item" open><summary><span class="faq-num">4</span>Is it safe to paste private JSON here?</summary><p>Yes. The formatter runs entirely in your browser. Nothing you paste is uploaded, logged or stored, so API responses, tokens and customer data stay on your device.</p></details>
+
+    <h2>Related Articles</h2>
+    <div class="related">
+      <a href="https://brandella.in/how-to-add-schema-markup-json-ld/">How to Add Schema Markup With JSON LD <span>&rarr;</span></a>
+      <a href="https://brandella.in/gtm-data-layer-explained/">GTM Data Layer Explained <span>&rarr;</span></a>
+      <a href="https://brandella.in/rest-api-in-php-without-a-framework/">REST API in PHP Without a Framework <span>&rarr;</span></a>
+      <a href="https://brandella.in/build-ai-chatbot-openai-api/">Build an AI Chatbot With the OpenAI API <span>&rarr;</span></a>
+    </div>
+  </article>
+
+  <section class="content more-tools" style="max-width:1140px">
+    <h2>More Free Developer Tools</h2>
+    <div class="tgrid">
+      <a class="tcard" href="https://brandella.in/tools/developer-tools/url-encoder-decoder/"><div class="tbadge">UE</div><h3>URL Encoder and Decoder</h3><p>Encode or decode URLs and query strings, unwrap double encoding and see every parameter in a clean table.</p><span class="go">Open tool &rarr;</span></a>
+<a class="tcard" href="https://brandella.in/tools/seo-tools/serp-snippet-preview/"><div class="tbadge">SP</div><h3>SERP Snippet Preview</h3><p>See how your title and meta description look in Google on desktop and mobile, with real pixel width limits.</p><span class="go">Open tool &rarr;</span></a>
+<a class="tcard" href="https://brandella.in/tools/seo-tools/keyword-density-checker/"><div class="tbadge">KD</div><h3>Keyword Density Checker</h3><p>Paste any text or HTML and see the most used 1, 2 and 3 word phrases with their exact density.</p><span class="go">Open tool &rarr;</span></a>
+    </div>
+    <p><a href="https://brandella.in/tools/developer-tools/">See all developer tools &rarr;</a> &nbsp;|&nbsp; <a href="https://brandella.in/tools/">Browse every free tool &rarr;</a></p>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <ul class="foot-links">
+      <li><a href="https://brandella.in/">Home</a></li>
+      <li><a href="https://brandella.in/about-us/">About Us</a></li>
+      <li><a href="https://brandella.in/contact-us/">Contact Us</a></li>
+      <li><a href="https://brandella.in/privacy-policy/">Privacy Policy</a></li>
+      <li><a href="https://brandella.in/terms-and-conditions/">Terms and Conditions</a></li>
+    </ul>
+    <p class="copy">Copyright &copy; <span id="yr">2026</span> Brandella Journal. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+
+  var d = new Date();
+  var days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+  var months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+  document.getElementById('siteDate').innerHTML = days[d.getDay()] + ',<small>' + months[d.getMonth()] + ' ' + d.getDate() + ', ' + d.getFullYear() + '</small>';
+  document.getElementById('yr').textContent = d.getFullYear();
+  var nav = document.getElementById('siteNav'), mb = document.getElementById('menuBtn');
+  mb.addEventListener('click', function(){ var open = nav.classList.toggle('open'); mb.setAttribute('aria-expanded', open); });
+  var $ = function(id){ return document.getElementById(id); };
+  function esc(s){ return String(s).replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+  function copyText(text, toastId){
+    var done = function(){ var t = $(toastId); if(!t) return; t.classList.add('show'); setTimeout(function(){ t.classList.remove('show'); }, 1600); };
+    if (navigator.clipboard && navigator.clipboard.writeText){ navigator.clipboard.writeText(text).then(done, function(){ fallback(); done(); }); }
+    else { fallback(); done(); }
+    function fallback(){ var ta=document.createElement('textarea'); ta.value=text; document.body.appendChild(ta); ta.select(); try{document.execCommand('copy');}catch(e){} document.body.removeChild(ta); }
+  }
+
+
+  function say(id, cls, h){ var e = $(id); e.className = 'kw-result' + (cls ? ' ' + cls : ''); e.innerHTML = h; }
+  function c(s){ return '<code>' + esc(s) + '</code>'; }
+  function fmtN(n){ return Number(n).toLocaleString('en-IN'); }
+  function bytes(s){ return new Blob([s]).size; }
+  function fmtB(n){ return n < 1024 ? n + ' B' : n < 1048576 ? (n / 1024).toFixed(1) + ' KB' : (n / 1048576).toFixed(2) + ' MB'; }
+  function download(name, text, type){
+    var a = document.createElement('a'); a.href = URL.createObjectURL(new Blob([text], {type: (type || 'text/plain') + ';charset=utf-8'}));
+    a.download = name; document.body.appendChild(a); a.click(); document.body.removeChild(a);
+    setTimeout(function(){ URL.revokeObjectURL(a.href); }, 4000);
+  }
+
+  function JP(src, lenient){
+    var i = 0, fixes = [], dups = [], n = src.length;
+    function fix(m){ if (fixes.indexOf(m) < 0) fixes.push(m); }
+    function lc(p){ var pre = src.slice(0, p).split('\n'); return {line: pre.length, col: pre[pre.length - 1].length + 1}; }
+    function fail(m, p){ var e = new Error(m); e.pos = p === undefined ? i : p; throw e; }
+    function ws(){
+      for (;;){
+        while (i < n && /[ \t\n\r]/.test(src[i])) i++;
+        if (i < n && /[\u00a0\u200b\ufeff\u2028\u2029]/.test(src[i])){ if (!lenient) fail('Hidden or non standard space character (' + 'U+' + src.charCodeAt(i).toString(16).toUpperCase() + '). JSON only allows normal spaces, tabs and line breaks here.'); fix('Removed hidden space characters'); i++; continue; }
+        if (src[i] === '/' && (src[i + 1] === '/' || src[i + 1] === '*')){
+          if (!lenient) fail('Comments are not allowed in JSON.');
+          if (src[i + 1] === '/'){ while (i < n && src[i] !== '\n') i++; }
+          else { var e = src.indexOf('*/', i + 2); i = e < 0 ? n : e + 2; }
+          fix('Removed comments'); continue;
+        }
+        break;
+      }
+    }
+    var Q = {'"': '"', "'": "'", '\u201c': '\u201d', '\u201d': '\u201d', '\u2018': '\u2019', '\u2019': '\u2019'};
+    function str(){
+      var open = src[i], close = Q[open], out = '', st = i;
+      if (open !== '"'){ if (!lenient) fail(open === "'" ? 'Strings and keys must use double quotes, not single quotes.' : 'Curly or smart quotes are not valid in JSON. Use straight double quotes.'); fix(open === "'" ? 'Changed single quotes to double quotes' : 'Changed curly quotes to straight quotes'); }
+      i++;
+      for (;;){
+        if (i >= n) fail('This string is never closed. Add the missing closing quote.', st);
+        var ch = src[i];
+        if (ch === close || (close !== '"' && close !== "'" && (ch === '\u201c' || ch === '\u201d') && close === '\u201d')){ i++; return out; }
+        if (ch === '\\'){
+          var e = src[i + 1];
+          if (e === 'u'){ var hx = src.substr(i + 2, 4); if (!/^[0-9a-fA-F]{4}$/.test(hx)) fail('Bad unicode escape. Use \\u followed by 4 hex digits.'); out += String.fromCharCode(parseInt(hx, 16)); i += 6; continue; }
+          var m = {'"': '"', '\\': '\\', '/': '/', b: '\b', f: '\f', n: '\n', r: '\r', t: '\t'};
+          if (e in m){ out += m[e]; i += 2; continue; }
+          if (lenient && e === "'"){ out += "'"; i += 2; fix('Fixed invalid escape characters'); continue; }
+          if (!lenient) fail('Invalid escape \\' + (e || '') + ' inside a string. Allowed escapes are \\" \\\\ \\/ \\b \\f \\n \\r \\t and \\u.');
+          out += e; i += 2; fix('Fixed invalid escape characters'); continue;
+        }
+        if (ch.charCodeAt(0) < 32){ if (!lenient) fail('Unescaped line break or control character inside a string. Write it as \\n or \\t.'); fix('Escaped raw line breaks inside strings'); out += ch; i++; continue; }
+        out += ch; i++;
+      }
+    }
+    function num(){
+      var st = i, m = src.slice(i).match(/^[+-]?(\d+\.?\d*|\.\d+)([eE][+-]?\d+)?/);
+      if (!m) fail('Unexpected character ' + JSON.stringify(src[i]) + '.');
+      var raw = m[0]; i += raw.length;
+      if (/^-?(0|[1-9]\d*)(\.\d+)?([eE][+-]?\d+)?$/.test(raw)) return {t: 'n', v: raw};
+      if (!lenient) fail('Invalid number ' + raw + '. JSON numbers cannot have a plus sign, leading zeros or a dot at the start or end.', st);
+      fix('Fixed number formats');
+      return {t: 'n', v: String(Number(raw))};
+    }
+    function word(){
+      var m = src.slice(i).match(/^[A-Za-z_$][\w$]*/);
+      if (!m) return null;
+      var w = m[0], map = {'true': true, 'false': false, 'null': null};
+      if (w in map){ i += w.length; return {t: 'l', v: w}; }
+      var L = {True: 'true', False: 'false', None: 'null', TRUE: 'true', FALSE: 'false', NULL: 'null', Null: 'null', undefined: 'null', NaN: 'null', Infinity: 'null'};
+      if (w in L){ if (!lenient) fail(w + ' is not valid JSON. Use lowercase true, false or null.'); i += w.length; fix('Changed ' + w + ' to ' + L[w]); return {t: 'l', v: L[w]}; }
+      return null;
+    }
+    function val(depth){
+      ws(); if (i >= n) fail('The JSON ends too early. Something is missing at the end.');
+      var ch = src[i];
+      if (ch === '{') return obj(depth + 1);
+      if (ch === '[') return arr(depth + 1);
+      if (ch in Q) return {t: 's', v: str()};
+      if (/[-+\d.]/.test(ch)) return num();
+      var w = word(); if (w) return w;
+      fail('Unexpected character ' + JSON.stringify(ch) + '. A value must be a string, number, object, array, true, false or null.');
+    }
+    function sep(close, what){
+      ws();
+      if (src[i] === ','){ var p = i; i++; ws();
+        if (src[i] === close){ if (!lenient) fail('Trailing comma before ' + close + '. Remove the last comma.', p); fix('Removed trailing commas'); return false; }
+        if (src[i] === ','){ if (!lenient) fail('Two commas in a row.', i); while (src[i] === ','){ i++; ws(); } fix('Removed extra commas'); if (src[i] === close) return false; }
+        return true; }
+      if (src[i] === close) return false;
+      if (i >= n) fail('Missing ' + close + ' at the end. The ' + what + ' is never closed.');
+      if (lenient && (src[i] in Q || /[\w{\[\-]/.test(src[i]))){ fix('Added missing commas'); return true; }
+      fail('Expected a comma or ' + close + ' here.');
+    }
+    function obj(depth){
+      var o = {t: 'o', k: [], v: [], d: depth}, seen = {}; i++; ws();
+      if (src[i] === '}'){ i++; return o; }
+      for (;;){
+        ws(); var key, kp = i;
+        if (src[i] in Q) key = str();
+        else { var m = src.slice(i).match(/^[A-Za-z_$@][\w$@\-]*/);
+          if (!m) fail(src[i] === '}' ? 'Trailing comma before }.' : 'Expected a key in double quotes.');
+          if (!lenient) fail('Keys must be in double quotes, like "' + m[0] + '".'); key = m[0]; i += m[0].length; fix('Added quotes around keys'); }
+        ws(); if (src[i] !== ':'){ if (lenient && src[i] === '='){ fix('Changed = to :'); } else fail('Expected a colon after the key "' + key + '".'); }
+        i++;
+        if (Object.prototype.hasOwnProperty.call(seen, key)) dups.push([key, lc(kp).line]);
+        seen[key] = 1;
+        o.k.push(key); o.v.push(val(depth));
+        if (!sep('}', 'object')) break;
+      }
+      i++; return o;
+    }
+    function arr(depth){
+      var a = {t: 'a', v: [], d: depth}; i++; ws();
+      if (src[i] === ']'){ i++; return a; }
+      for (;;){ ws(); a.v.push(val(depth)); if (!sep(']', 'array')) break; }
+      i++; return a;
+    }
+    try {
+      ws(); if (i >= n) fail('There is no JSON here yet.');
+      var root = val(0); ws();
+      if (i < n){ if (!lenient) fail('Extra text after the end of the JSON. Only one value is allowed.'); fix('Removed extra text after the JSON'); }
+      return {ok: true, v: root, fixes: fixes, dups: dups};
+    } catch (e){ var p = lc(e.pos); return {ok: false, msg: e.message, pos: e.pos, line: p.line, col: p.col}; }
+  }
+  function unwrap(s){
+    var f = [], t = s, m = t.match(/```[ \t]*(?:json5?|javascript|js)?[ \t]*\r?\n([\s\S]*?)```/i);
+    if (m){ t = m[1]; f.push('Removed the Markdown code fence'); }
+    var a = t.search(/[\[{]/), ob = t.lastIndexOf('}'), cb = t.lastIndexOf(']'), z = Math.max(ob, cb);
+    if (a > 0 && /\S/.test(t.slice(0, a)) && !/^\s*["\d\-tfn]/.test(t)){ t = t.slice(a); z -= a; f.push('Removed text before the JSON'); }
+    if (a >= 0 && z >= 0 && /[A-Za-z]/.test(t.slice(z + 1))){ t = t.slice(0, z + 1); f.push('Removed text after the JSON'); }
+    return {t: t, f: f};
+  }
+  function ser(x, ind, lvl, sort, ascii){
+    var q = function(s){ var j = JSON.stringify(s); return ascii ? j.replace(/[\u007f-\uffff]/g, function(ch){ return '\\u' + ('000' + ch.charCodeAt(0).toString(16)).slice(-4); }) : j; };
+    if (x.t === 's') return q(x.v);
+    if (x.t === 'n' || x.t === 'l') return String(x.v);
+    var nl = ind ? '\n' : '', pad = ind ? new Array(lvl + 2).join(ind) : '', pad0 = ind ? new Array(lvl + 1).join(ind) : '', colon = ind ? ': ' : ':';
+    if (x.t === 'a'){ if (!x.v.length) return '[]'; return '[' + nl + x.v.map(function(y){ return pad + ser(y, ind, lvl + 1, sort, ascii); }).join(',' + nl) + nl + pad0 + ']'; }
+    if (!x.k.length) return '{}';
+    var idx = x.k.map(function(_, j){ return j; });
+    if (sort) idx.sort(function(a, b){ return x.k[a] < x.k[b] ? -1 : x.k[a] > x.k[b] ? 1 : 0; });
+    return '{' + nl + idx.map(function(j){ return pad + q(x.k[j]) + colon + ser(x.v[j], ind, lvl + 1, sort, ascii); }).join(',' + nl) + nl + pad0 + '}';
+  }
+  function walk(x, s){ if (x.t === 'o'){ s.keys += x.k.length; s.depth = Math.max(s.depth, x.d); x.v.forEach(function(y){ walk(y, s); }); } else if (x.t === 'a'){ s.depth = Math.max(s.depth, x.d); x.v.forEach(function(y){ walk(y, s); }); } return s; }
+  var last = '';
+  function run(){
+    var raw = $('jfIn').value, iv = $('jfInd').value, ind = iv === 'tab' ? '\t' : iv === '0' ? '' : new Array(+iv + 1).join(' ');
+    if (!raw.trim()){ last = ''; $('jfOut').textContent = ''; $('jfKeys').textContent = '0'; $('jfDepth').textContent = '0'; $('jfSize').textContent = '0 B'; say('jfCheck', '', 'Paste JSON on the left to format and validate it.'); return ''; }
+    var strict = JP(raw, false), res = strict, fixes = [];
+    if (!strict.ok){
+      var u = unwrap(raw), len = JP(u.t, true);
+      if (len.ok){ res = len; fixes = u.f.concat(len.fixes); }
+    }
+    if (!res.ok){
+      last = '';
+      var lines = raw.split('\n'), L = strict.line, from = Math.max(0, L - 3), snip = [];
+      for (var k = from; k < Math.min(lines.length, L + 1); k++){
+        var t = lines[k].length > 160 ? lines[k].slice(Math.max(0, (k === L - 1 ? strict.col : 1) - 80), Math.max(0, (k === L - 1 ? strict.col : 1) - 80) + 160) : lines[k];
+        snip.push(String(k + 1).padStart(4, ' ') + ' | ' + t);
+        if (k === L - 1){ var off = lines[k].length > 160 ? Math.min(strict.col - 1, 79) : strict.col - 1; snip.push('       ' + new Array(off + 1).join(' ') + '^'); }
+      }
+      $('jfOut').textContent = snip.join('\n');
+      $('jfKeys').textContent = '0'; $('jfDepth').textContent = '0'; $('jfSize').textContent = fmtB(bytes(raw));
+      say('jfCheck', 'bad', '<strong>Invalid JSON at line ' + strict.line + ', column ' + strict.col + '.</strong> ' + esc(strict.msg) + ' The marker below points to the spot.');
+      return '';
+    }
+    var out = ser(res.v, ind, 0, $('jfSort').checked, $('jfAscii').checked), st = walk(res.v, {keys: 0, depth: 0});
+    last = out;
+    $('jfOut').textContent = out;
+    $('jfKeys').textContent = fmtN(st.keys); $('jfDepth').textContent = st.depth; $('jfSize').textContent = fmtB(bytes(out));
+    var dup = res.dups.length ? '<li>Duplicate key ' + res.dups.slice(0, 5).map(function(d){ return c(d[0]) + ' on line ' + d[1]; }).join(', ') + (res.dups.length > 5 ? ' and ' + (res.dups.length - 5) + ' more' : '') + '. Most parsers keep only the last value, so check which one you meant.</li>' : '';
+    if (!strict.ok){
+      say('jfCheck', 'warn', '<strong>Your input was not valid JSON (line ' + strict.line + ', column ' + strict.col + ': ' + esc(strict.msg) + ') so it was repaired.</strong><ul style="margin:6px 0 0 18px">' + fixes.map(function(f){ return '<li>' + esc(f) + '</li>'; }).join('') + dup + '</ul>The result below is valid JSON. Check it, then copy it or press Replace Input With Result.');
+    } else if (dup){
+      say('jfCheck', 'warn', '<strong>Valid JSON, with a warning.</strong><ul style="margin:6px 0 0 18px">' + dup + '</ul>');
+    } else {
+      var kind = res.v.t === 'o' ? 'an object' : res.v.t === 'a' ? 'an array of ' + res.v.v.length + ' item' + (res.v.v.length === 1 ? '' : 's') : 'a single value';
+      say('jfCheck', 'ok', '<strong>Valid JSON.</strong> The top level is ' + kind + (st.keys ? ', with ' + fmtN(st.keys) + ' key' + (st.keys === 1 ? '' : 's') + ' in total' : '') + '. Minified it is ' + fmtB(bytes(ser(res.v, '', 0, false, false))) + '.');
+    }
+    return out;
+  }
+  var tm; $('jfIn').addEventListener('input', function(){ clearTimeout(tm); tm = setTimeout(run, $('jfIn').value.length > 200000 ? 400 : 60); });
+  ['jfInd', 'jfSort', 'jfAscii'].forEach(function(id){ $(id).addEventListener('change', run); });
+  $('jfUse').addEventListener('click', function(){ if (run()){ $('jfIn').value = last; run(); } });
+  $('jfClear').addEventListener('click', function(){ $('jfIn').value = ''; run(); $('jfIn').focus(); });
+  $('jfCopy').addEventListener('click', function(){ var o = run(); if (o) copyText(o, 'toast'); });
+  $('jfDl').addEventListener('click', function(){ var o = run(); if (o) download('data.json', o, 'application/json'); });
+  run();
+
+})();
+</script>
+</body>
+</html>

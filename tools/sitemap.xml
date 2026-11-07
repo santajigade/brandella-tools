@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://brandella.in/tools/</loc>
-    <lastmod>2026-11-06</lastmod>
+    <lastmod>2026-11-07</lastmod>
   </url>
   <url>
     <loc>https://brandella.in/tools/seo-tools/</loc>
@@ -279,5 +279,17 @@
   <url>
     <loc>https://brandella.in/tools/ai-tools/markdown-to-html-converter/</loc>
     <lastmod>2026-11-06</lastmod>
+  </url>
+  <url>
+    <loc>https://brandella.in/tools/developer-tools/</loc>
+    <lastmod>2026-11-07</lastmod>
+  </url>
+  <url>
+    <loc>https://brandella.in/tools/developer-tools/json-formatter/</loc>
+    <lastmod>2026-11-07</lastmod>
+  </url>
+  <url>
+    <loc>https://brandella.in/tools/developer-tools/url-encoder-decoder/</loc>
+    <lastmod>2026-11-07</lastmod>
   </url>
 </urlset>
