@@ -4,12 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Free Developer Tools: JSON Formatter, URL Encoder and More</title>
-<meta name="description" content="Free online developer tools: JSON formatter and validator with AI output repair, and a URL encoder and decoder that fixes double encoded links.">
+<meta name="description" content="Free online developer tools: JSON formatter and validator, URL encoder and decoder, diff checker to compare text, and a Base64 encoder with JWT decoding.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://brandella.in/tools/developer-tools/">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Free Developer Tools: JSON Formatter, URL Encoder and More">
-<meta property="og:description" content="Free online developer tools: JSON formatter and validator with AI output repair, and a URL encoder and decoder that fixes double encoded links.">
+<meta property="og:description" content="Free online developer tools: JSON formatter and validator, URL encoder and decoder, diff checker to compare text, and a Base64 encoder with JWT decoding.">
 <meta property="og:url" content="https://brandella.in/tools/developer-tools/">
 <meta property="og:site_name" content="Brandella Journal">
 <meta property="og:image" content="https://brandella.in/tools/assets/og-cat-developer-tools.png">
@@ -29,7 +29,7 @@
       "@type": "CollectionPage",
       "name": "Free Developer Tools",
       "url": "https://brandella.in/tools/developer-tools/",
-      "description": "Free online developer tools: JSON formatter and validator with AI output repair, and a URL encoder and decoder that fixes double encoded links.",
+      "description": "Free online developer tools: JSON formatter and validator, URL encoder and decoder, diff checker to compare text, and a Base64 encoder with JWT decoding.",
       "mainEntity": {
         "@type": "ItemList",
         "itemListElement": [
@@ -44,6 +44,18 @@
             "position": 2,
             "name": "URL Encoder and Decoder",
             "url": "https://brandella.in/tools/developer-tools/url-encoder-decoder/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Diff Checker",
+            "url": "https://brandella.in/tools/developer-tools/diff-checker/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 4,
+            "name": "Base64 Encoder and Decoder",
+            "url": "https://brandella.in/tools/developer-tools/base64-encoder-decoder/"
           }
         ]
       }
@@ -87,7 +99,7 @@
           "name": "Is my code or data uploaded anywhere?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "No. All tools run entirely in your browser. JSON, URLs and text you paste never leave your device, so it is safe to use them with private API data."
+            "text": "No. All tools run entirely in your browser. JSON, URLs, tokens, files and text you paste never leave your device, so it is safe to use them with private API data."
           }
         },
         {
@@ -438,6 +450,8 @@ body.no-scroll { overflow: hidden; }
   <div class="tgrid">
     <a class="tcard" href="https://brandella.in/tools/developer-tools/json-formatter/"><div class="tbadge">JF</div><h2>JSON Formatter and Validator</h2><p>Format, validate, minify and repair JSON, with the exact line of every error and fixes for broken AI output.</p><span class="go">Open tool &rarr;</span></a>
 <a class="tcard" href="https://brandella.in/tools/developer-tools/url-encoder-decoder/"><div class="tbadge">UE</div><h2>URL Encoder and Decoder</h2><p>Encode or decode URLs and query strings, unwrap double encoding and see every parameter in a clean table.</p><span class="go">Open tool &rarr;</span></a>
+<a class="tcard" href="https://brandella.in/tools/developer-tools/diff-checker/"><div class="tbadge">DC</div><h2>Diff Checker</h2><p>Compare two texts or code files and see every added, removed and changed line and word, side by side.</p><span class="go">Open tool &rarr;</span></a>
+<a class="tcard" href="https://brandella.in/tools/developer-tools/base64-encoder-decoder/"><div class="tbadge">B64</div><h2>Base64 Encoder and Decoder</h2><p>Encode and decode Base64 and base64url, read JWT tokens, and turn images into data URIs, with full UTF 8 support.</p><span class="go">Open tool &rarr;</span></a>
   </div>
 
   <div class="bx-ad">
@@ -450,13 +464,15 @@ body.no-scroll { overflow: hidden; }
     <ul>
       <li><strong>Reading an API response or fixing broken JSON from an AI tool?</strong> Use the <a href="https://brandella.in/tools/developer-tools/json-formatter/">JSON Formatter and Validator</a>.</li>
       <li><strong>Checking a tracking link or building a redirect URL?</strong> Use the <a href="https://brandella.in/tools/developer-tools/url-encoder-decoder/">URL Encoder and Decoder</a>.</li>
+      <li><strong>Want to see what changed between two versions, or what an AI edit really did?</strong> Use the <a href="https://brandella.in/tools/developer-tools/diff-checker/">Diff Checker</a>.</li>
+      <li><strong>Reading a JWT token or turning an image into a data URI?</strong> Use the <a href="https://brandella.in/tools/developer-tools/base64-encoder-decoder/">Base64 Encoder and Decoder</a>.</li>
     </ul>
-    <p>Every tool follows the official standards, such as RFC 8259 for JSON and RFC 3986 for URLs, and gives the same result your code would. More developer tools are added regularly.</p>
+    <p>Every tool follows the official standards, such as RFC 8259 for JSON, RFC 3986 for URLs and RFC 4648 for Base64, and gives the same result your code would. More developer tools are added regularly.</p>
     <p>Building something yourself? Read <a href="https://brandella.in/rest-api-in-php-without-a-framework/">how to build a REST API in PHP</a> and <a href="https://brandella.in/gtm-data-layer-explained/">the GTM data layer explained</a>.</p>
 
     <h2>Frequently Asked Questions</h2>
     <details class="faq-item" open><summary><span class="faq-num">1</span>Are these developer tools free?</summary><p>Yes. Every tool is free, needs no signup, and has no usage limits.</p></details>
-    <details class="faq-item" open><summary><span class="faq-num">2</span>Is my code or data uploaded anywhere?</summary><p>No. All tools run entirely in your browser. JSON, URLs and text you paste never leave your device, so it is safe to use them with private API data.</p></details>
+    <details class="faq-item" open><summary><span class="faq-num">2</span>Is my code or data uploaded anywhere?</summary><p>No. All tools run entirely in your browser. JSON, URLs, tokens, files and text you paste never leave your device, so it is safe to use them with private API data.</p></details>
     <details class="faq-item" open><summary><span class="faq-num">3</span>Do the tools work offline?</summary><p>Once a tool page has loaded, it keeps working without a connection, because all the processing happens in your browser.</p></details>
   </article>
 
