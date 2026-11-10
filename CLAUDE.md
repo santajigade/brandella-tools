@@ -13,7 +13,7 @@ Pushing to `main` runs `.github/workflows/deploy.yml`: SEO check, then lftp uplo
 - Header, footer and their CSS are NOT designed here. They are copied from the main site (https://brandella.in/shared-chrome/, built from santajigade/brandella `Header.astro`, `Footer.astro`, `src/styles/chrome.css`) by `src/sync_chrome.py` into `src/site_chrome.json`, so both sites always show the same menu. To change the menu, change the main site. `.github/workflows/sync-chrome.yml` re-syncs twice a day and deploys. Never hand edit `site_chrome.json` or anything between the `<!--chrome:...-->` markers.
 - `build.py` also writes `tools/categories.json`; the main site reads it at build time, so a new tool category shows in the brandella.in menu automatically.
 
-## Daily batch (one category per day, 6 to 7 tools)
+## Daily batch (1 tool per day, Santaji 2026-11-10; a category holds 6 to 7 tools)
 1. Pick the first category in `src/categories.py` that has no tools yet. If none is left, build nothing and report that the roadmap is complete, with 3 suggested next categories.
 2. Research demand before choosing tools. Use web search to confirm each candidate is something people actually search for (well known tool queries such as "utm builder", "json formatter", "roas calculator", "faq schema generator"; check that established tool sites rank for it). Pick the 6 or 7 most searched, most useful tools for the category. Skip anything that duplicates an existing tool in any category.
    **Value test (Santaji, 2026-11-05).** Every tool must pass all four, or replace it:
@@ -44,4 +44,4 @@ Pushing to `main` runs `.github/workflows/deploy.yml`: SEO check, then lftp uplo
 - Rename or delete a live tool or category slug (they are indexed URLs).
 - Edit `.github/workflows/deploy.yml` unless the deploy itself is broken.
 - Add trackers, external scripts, or anything that sends user input off the page.
-- Build more than 7 tools in one day.
+- Build more than 1 tool in one day (Santaji, 2026-11-10).
