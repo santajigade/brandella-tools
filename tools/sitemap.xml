@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://brandella.in/tools/</loc>
-    <lastmod>2026-11-09</lastmod>
+    <lastmod>2026-11-10</lastmod>
   </url>
   <url>
     <loc>https://brandella.in/tools/seo-tools/</loc>
@@ -307,5 +307,17 @@
   <url>
     <loc>https://brandella.in/tools/developer-tools/csv-to-json-converter/</loc>
     <lastmod>2026-11-09</lastmod>
+  </url>
+  <url>
+    <loc>https://brandella.in/tools/email-marketing-tools/</loc>
+    <lastmod>2026-11-10</lastmod>
+  </url>
+  <url>
+    <loc>https://brandella.in/tools/email-marketing-tools/email-subject-line-tester/</loc>
+    <lastmod>2026-11-10</lastmod>
+  </url>
+  <url>
+    <loc>https://brandella.in/tools/email-marketing-tools/dmarc-record-generator/</loc>
+    <lastmod>2026-11-10</lastmod>
   </url>
 </urlset>
