@@ -190,16 +190,17 @@ CATEGORIES = [
                ("Do the tools work offline?", "Once a tool page has loaded, it keeps working without a connection, because all the processing happens in your browser.")],
          app_category='DeveloperApplication'),
     dict(slug='email-marketing-tools', short='EM', name='Email Marketing Tools', pill='Email',
-         card='Email subject line tester and DMARC record generator, with more email tools on the way.',
-         hub_title='Free Email Marketing Tools: Subject Lines and DMARC',
-         hub_desc='Free email marketing tools: subject line tester with spam word check, DMARC record generator and checker, and more. No signup, all in your browser.',
+         card='Email subject line tester, SPF record generator and DMARC record generator, with more email tools on the way.',
+         hub_title='Free Email Marketing Tools: Subject Lines, SPF and DMARC',
+         hub_desc='Free email marketing tools: subject line tester with spam word check, SPF and DMARC record generators and checkers. No signup, all in your browser.',
          hub_lead='Write subject lines that get opened and set up your domain so your emails reach the inbox.',
          hub_intro=f'''<h2>Which Email Tool Do You Need?</h2>
     <ul>
       <li><strong>Writing a campaign?</strong> Score your subject line and preheader with the <a href="{EM}email-subject-line-tester/">Email Subject Line Tester</a>, and rank several ideas at once.</li>
+      <li><strong>Adding a new email service, or seeing SPF errors?</strong> Combine every sender into one record, count DNS lookups and merge duplicates with the <a href="{EM}spf-record-generator/">SPF Record Generator and Checker</a>.</li>
       <li><strong>Emails landing in spam, or sending to Gmail in bulk?</strong> Build or check your record with the <a href="{EM}dmarc-record-generator/">DMARC Record Generator and Checker</a>.</li>
     </ul>
-    <p>Every tool follows current mailbox rules, such as the Google email sender guidelines and RFC 9989 for DMARC, and runs entirely in your browser. More email tools are added regularly.</p>
+    <p>Every tool follows current mailbox rules, such as the Google email sender guidelines, RFC 7208 for SPF and RFC 9989 for DMARC, and runs entirely in your browser. More email tools are added regularly.</p>
     <p>Planning your emails? Read our <a href="https://brandella.in/email-marketing-strategy/">email marketing strategy guide</a> and <a href="https://brandella.in/how-to-generate-high-quality-leads-2026/">how to generate high quality leads</a>.</p>''',
          faqs=[("Are these email marketing tools free?", "Yes. Every tool is free, needs no signup, and has no usage limits."),
                ("Do you see my subject lines or domain settings?", "No. All tools run entirely in your browser. Subject lines, records and email addresses you enter never leave your device."),
