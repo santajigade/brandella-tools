@@ -190,9 +190,9 @@ CATEGORIES = [
                ("Do the tools work offline?", "Once a tool page has loaded, it keeps working without a connection, because all the processing happens in your browser.")],
          app_category='DeveloperApplication'),
     dict(slug='email-marketing-tools', short='EM', name='Email Marketing Tools', pill='Email',
-         card='Email subject line tester, email list cleaner, email header analyzer, SPF and DMARC record generators, with more email tools on the way.',
-         hub_title='Free Email Marketing Tools: List Cleaner, SPF and DMARC',
-         hub_desc='Free email marketing tools: subject line tester, email list cleaner, email header analyzer, SPF and DMARC record generators. No signup, all in your browser.',
+         card='Email subject line tester, email list cleaner, email header analyzer, and SPF, DKIM and DMARC record generators.',
+         hub_title='Free Email Marketing Tools: List Cleaner, SPF, DKIM, DMARC',
+         hub_desc='Free email marketing tools: subject line tester, email list cleaner, email header analyzer, and SPF, DKIM and DMARC record generators. All in your browser.',
          hub_lead='Write subject lines that get opened, clean your list, and set up your domain so your emails reach the inbox.',
          hub_intro=f'''<h2>Which Email Tool Do You Need?</h2>
     <ul>
@@ -200,9 +200,10 @@ CATEGORIES = [
       <li><strong>Importing a new list?</strong> Remove duplicates, typos, broken and throwaway addresses with the <a href="{EM}email-list-cleaner/">Email List Cleaner</a>, then download a clean CSV.</li>
       <li><strong>Email landed in spam or arrived late?</strong> Paste its headers into the <a href="{EM}email-header-analyzer/">Email Header Analyzer</a> to see SPF, DKIM and DMARC results and every delivery hop.</li>
       <li><strong>Adding a new email service, or seeing SPF errors?</strong> Combine every sender into one record, count DNS lookups and merge duplicates with the <a href="{EM}spf-record-generator/">SPF Record Generator and Checker</a>.</li>
+      <li><strong>Running your own mail server or Amazon SES?</strong> Create a private key and the matching TXT record, or check an existing record and its key size, with the <a href="{EM}dkim-record-generator/">DKIM Record Generator and Checker</a>.</li>
       <li><strong>Emails landing in spam, or sending to Gmail in bulk?</strong> Build or check your record with the <a href="{EM}dmarc-record-generator/">DMARC Record Generator and Checker</a>.</li>
     </ul>
-    <p>Every tool follows current mailbox rules, such as the Google email sender guidelines, RFC 7208 for SPF, RFC 9989 for DMARC and RFC 8601 for authentication results, and runs entirely in your browser. More email tools are added regularly.</p>
+    <p>Every tool follows current mailbox rules, such as the Google email sender guidelines, RFC 7208 for SPF, RFC 6376 and RFC 8301 for DKIM, RFC 9989 for DMARC and RFC 8601 for authentication results, and runs entirely in your browser. More email tools are added regularly.</p>
     <p>Planning your emails? Read our <a href="https://brandella.in/email-marketing-strategy/">email marketing strategy guide</a> and <a href="https://brandella.in/how-to-generate-high-quality-leads-2026/">how to generate high quality leads</a>.</p>''',
          faqs=[("Are these email marketing tools free?", "Yes. Every tool is free, needs no signup, and has no usage limits."),
                ("Do you see my subject lines, lists or domain settings?", "No. All tools run entirely in your browser. Subject lines, records and email lists you enter never leave your device."),
