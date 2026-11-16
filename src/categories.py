@@ -210,13 +210,14 @@ CATEGORIES = [
                ("Do you see my subject lines, lists or domain settings?", "No. All tools run entirely in your browser. Subject lines, records and email lists you enter never leave your device."),
                ("Do these tools send test emails?", "No. They check and build things in your browser without sending any email, so nothing reaches your list by accident.")]),
     dict(slug='content-writing-tools', short='CW', name='Content Writing Tools', pill='Content',
-         card='Headline analyzer with word balance, clickbait checks, Google cut off and a ranked comparison of ideas.',
-         hub_title='Free Content Writing Tools: Headline Analyzer and More',
-         hub_desc='Free content writing tools: a headline analyzer that scores length, power and emotional words, clickbait and Google cut off. Runs in your browser.',
+         card='Headline analyzer and AI words checker: score titles, then find and fix the words that make text sound like ChatGPT.',
+         hub_title='Free Content Writing Tools: Headline Analyzer, AI Words',
+         hub_desc='Free content writing tools: a headline analyzer for titles and an AI words checker that finds and fixes overused ChatGPT words. Runs in your browser.',
          hub_lead='Small, focused tools that help you plan, write and polish content faster.',
          hub_intro=f'''<h2>Which Writing Tool Do You Need?</h2>
     <ul>
       <li><strong>Choosing a title for a post, page or video?</strong> Score it and rank several ideas with the <a href="{CW}headline-analyzer/">Headline Analyzer</a>.</li>
+      <li><strong>Editing a draft written with ChatGPT or another AI?</strong> Find words like delve and testament, and swap them for plain English, with the <a href="{CW}ai-words-checker/">AI Words Checker</a>.</li>
       <li><strong>Checking how easy your text is to read?</strong> Use the <a href="{H}readability-score-checker/">Readability Score Checker</a>.</li>
       <li><strong>Counting words or formatting a title?</strong> Try the <a href="{H}word-character-counter/">Word and Character Counter</a> and the <a href="{H}title-case-converter/">Title Case Converter</a>.</li>
       <li><strong>Publishing AI assisted text?</strong> Strip hidden characters and filler with the <a href="{AI}ai-text-cleaner/">AI Text Cleaner</a>.</li>
@@ -224,7 +225,7 @@ CATEGORIES = [
     <p>Every tool follows Google's current guidance on titles and helpful content, and runs entirely in your browser. More writing tools are added regularly.</p>
     <p>Want to write better? Read <a href="https://brandella.in/10-easy-tips-for-effective-content-writing/">10 easy tips for effective content writing</a> and <a href="https://brandella.in/25-content-writing-mistakes/">25 content writing mistakes</a>.</p>''',
          faqs=[("Are these content writing tools free?", "Yes. Every tool is free, needs no signup, and has no usage limits."),
-               ("Do these tools use AI or send my text anywhere?", "No. They do not call any AI model or server. Headlines and text you type are checked in your browser and never leave your device."),
+               ("Do these tools use AI or send my text anywhere?", "No. They do not call any AI model or server. Headlines, drafts and text you type are checked in your browser and never leave your device."),
                ("Will a higher headline score guarantee more clicks?", "No tool can promise that. The score points out common problems, such as length, clickbait and missing keywords, so you start from a stronger headline. Your own click data is the final test.")]),
     dict(slug='business-calculators', short='BC', name='Business Calculators', pill='Business',
          card='Marketing ROI, customer lifetime value, CRO and pricing calculators.',
