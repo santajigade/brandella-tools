@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://brandella.in/tools/</loc>
-    <lastmod>2026-11-16</lastmod>
+    <lastmod>2026-11-17</lastmod>
   </url>
   <url>
     <loc>https://brandella.in/tools/seo-tools/</loc>
@@ -338,7 +338,7 @@
   </url>
   <url>
     <loc>https://brandella.in/tools/content-writing-tools/</loc>
-    <lastmod>2026-11-16</lastmod>
+    <lastmod>2026-11-17</lastmod>
   </url>
   <url>
     <loc>https://brandella.in/tools/content-writing-tools/headline-analyzer/</loc>
@@ -347,5 +347,9 @@
   <url>
     <loc>https://brandella.in/tools/content-writing-tools/ai-words-checker/</loc>
     <lastmod>2026-11-16</lastmod>
+  </url>
+  <url>
+    <loc>https://brandella.in/tools/content-writing-tools/text-similarity-checker/</loc>
+    <lastmod>2026-11-17</lastmod>
   </url>
 </urlset>
