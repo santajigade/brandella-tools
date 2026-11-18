@@ -210,15 +210,16 @@ CATEGORIES = [
                ("Do you see my subject lines, lists or domain settings?", "No. All tools run entirely in your browser. Subject lines, records and email lists you enter never leave your device."),
                ("Do these tools send test emails?", "No. They check and build things in your browser without sending any email, so nothing reaches your list by accident.")]),
     dict(slug='content-writing-tools', short='CW', name='Content Writing Tools', pill='Content',
-         card='Headline analyzer, AI words checker and text similarity checker: score titles, fix ChatGPT words and catch copied text.',
-         hub_title='Free Content Writing Tools: Headlines, AI Words, Similarity',
-         hub_desc='Free content writing tools: headline analyzer, AI words checker for overused ChatGPT words, and a text similarity checker to compare two texts.',
+         card='Headline analyzer, AI words checker, text similarity checker and American to British English converter.',
+         hub_title='Free Content Writing Tools: Headlines, AI Words, UK Spelling',
+         hub_desc='Free content writing tools: headline analyzer, AI words checker, text similarity checker and an American to British English spelling converter.',
          hub_lead='Small, focused tools that help you plan, write and polish content faster.',
          hub_intro=f'''<h2>Which Writing Tool Do You Need?</h2>
     <ul>
       <li><strong>Choosing a title for a post, page or video?</strong> Score it and rank several ideas with the <a href="{CW}headline-analyzer/">Headline Analyzer</a>.</li>
       <li><strong>Editing a draft written with ChatGPT or another AI?</strong> Find words like delve and testament, and swap them for plain English, with the <a href="{CW}ai-words-checker/">AI Words Checker</a>.</li>
       <li><strong>Checking a rewrite, guest post or essay for copying?</strong> Compare it with the source and see every shared passage in the <a href="{CW}text-similarity-checker/">Text Similarity Checker</a>.</li>
+      <li><strong>Writing for readers in the UK or India?</strong> Switch US spelling to British, or back, with the <a href="{CW}american-to-british-english-converter/">American to British English Converter</a>.</li>
       <li><strong>Checking how easy your text is to read?</strong> Use the <a href="{H}readability-score-checker/">Readability Score Checker</a>.</li>
       <li><strong>Counting words or formatting a title?</strong> Try the <a href="{H}word-character-counter/">Word and Character Counter</a> and the <a href="{H}title-case-converter/">Title Case Converter</a>.</li>
       <li><strong>Publishing AI assisted text?</strong> Strip hidden characters and filler with the <a href="{AI}ai-text-cleaner/">AI Text Cleaner</a>.</li>
