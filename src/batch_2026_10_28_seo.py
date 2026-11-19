@@ -376,7 +376,7 @@ in pune</textarea>
         h1='Internal Link Checker',
         lead='Paste a page\'s HTML to see every internal and external link, the anchor text used, and which links need attention.',
         tool=r'''<section class="tool" aria-label="Internal link checker">
-    <div class="card">
+    <div class="card" style="min-width:0">
       <h2>Paste Page HTML</h2>
       <div class="field">
         <label for="ilDomain">Your Domain</label>
@@ -393,7 +393,7 @@ in pune</textarea>
       <div class="tips"><strong>Tip</strong><ul><li>Paste only the article HTML to skip menu and footer links.</li></ul></div>
     </div>
 
-    <div class="card">
+    <div class="card" style="min-width:0">
       <h2>Link Report</h2>
       <div class="stats">
         <div class="stat-box"><b id="ilTotal">0</b><span>Links</span></div>
