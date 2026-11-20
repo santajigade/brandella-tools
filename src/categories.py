@@ -210,9 +210,9 @@ CATEGORIES = [
                ("Do you see my subject lines, lists or domain settings?", "No. All tools run entirely in your browser. Subject lines, records and email lists you enter never leave your device."),
                ("Do these tools send test emails?", "No. They check and build things in your browser without sending any email, so nothing reaches your list by accident.")]),
     dict(slug='content-writing-tools', short='CW', name='Content Writing Tools', pill='Content',
-         card='Headline analyzer, AI words checker, text similarity checker, US to UK spelling converter and passive voice checker.',
+         card='Headline analyzer, AI words checker, text similarity checker, US to UK spelling, passive voice checker and line break remover.',
          hub_title='Free Content Writing Tools: Headlines, Passive Voice, More',
-         hub_desc='Free content writing tools: headline analyzer, AI words checker, text similarity checker, US to UK spelling converter and passive voice checker.',
+         hub_desc='Free content writing tools: headline analyzer, AI words checker, similarity checker, US to UK spelling, passive voice checker and line break remover.',
          hub_lead='Small, focused tools that help you plan, write and polish content faster.',
          hub_intro=f'''<h2>Which Writing Tool Do You Need?</h2>
     <ul>
@@ -221,6 +221,7 @@ CATEGORIES = [
       <li><strong>Checking a rewrite, guest post or essay for copying?</strong> Compare it with the source and see every shared passage in the <a href="{CW}text-similarity-checker/">Text Similarity Checker</a>.</li>
       <li><strong>Writing for readers in the UK or India?</strong> Switch US spelling to British, or back, with the <a href="{CW}american-to-british-english-converter/">American to British English Converter</a>.</li>
       <li><strong>Draft feels slow or vague?</strong> Highlight every passive sentence and see your passive percentage with the <a href="{CW}passive-voice-checker/">Passive Voice Checker</a>.</li>
+      <li><strong>Pasted text from a PDF or email full of broken lines?</strong> Join wrapped lines, keep paragraphs and lists, or make a comma list with <a href="{CW}remove-line-breaks/">Remove Line Breaks</a>.</li>
       <li><strong>Checking how easy your text is to read?</strong> Use the <a href="{H}readability-score-checker/">Readability Score Checker</a>.</li>
       <li><strong>Counting words or formatting a title?</strong> Try the <a href="{H}word-character-counter/">Word and Character Counter</a> and the <a href="{H}title-case-converter/">Title Case Converter</a>.</li>
       <li><strong>Publishing AI assisted text?</strong> Strip hidden characters and filler with the <a href="{AI}ai-text-cleaner/">AI Text Cleaner</a>.</li>
