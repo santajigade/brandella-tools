@@ -12,6 +12,7 @@ AI = 'https://brandella.in/tools/ai-tools/'
 DV = 'https://brandella.in/tools/developer-tools/'
 EM = 'https://brandella.in/tools/email-marketing-tools/'
 CW = 'https://brandella.in/tools/content-writing-tools/'
+BC = 'https://brandella.in/tools/business-calculators/'
 
 CATEGORIES = [
     dict(slug='seo-tools', short='SEO', name='SEO Tools', pill='SEO',
@@ -232,8 +233,18 @@ CATEGORIES = [
                ("Do these tools use AI or send my text anywhere?", "No. They do not call any AI model or server. Headlines, drafts and texts you compare are checked in your browser and never leave your device."),
                ("Will a higher headline score guarantee more clicks?", "No tool can promise that. The score points out common problems, such as length, clickbait and missing keywords, so you start from a stronger headline. Your own click data is the final test.")]),
     dict(slug='business-calculators', short='BC', name='Business Calculators', pill='Business',
-         card='Marketing ROI, customer lifetime value, CRO and pricing calculators.',
-         hub_title='Free Marketing Business Calculators: ROI, CLV and More',
-         hub_desc='Free business calculators for marketers: marketing ROI, customer lifetime value, CAC, conversion rate uplift, GST and pricing.',
-         hub_lead='Turn marketing numbers into business decisions with simple, clear calculators.'),
+         card='GST calculator with CGST, SGST and IGST split and full invoices. More business calculators are on the way.',
+         hub_title='Free Business Calculators: GST Calculator and More',
+         hub_desc='Free business calculators for Indian businesses and marketers, starting with a GST calculator for the new 5%, 18% and 40% rates, CGST, SGST and IGST.',
+         hub_lead='Turn prices, taxes and marketing numbers into clear business decisions with simple, accurate calculators.',
+         hub_intro=f'''<h2>Which Business Calculator Do You Need?</h2>
+    <ul>
+      <li><strong>Adding GST to a price, or finding the GST inside a bill?</strong> Use the <a href="{BC}gst-calculator/">GST Calculator</a>. It splits CGST, SGST and IGST, and totals a full invoice with several items and rates.</li>
+      <li><strong>Checking whether your ads pay for themselves?</strong> Try the <a href="{PP}roas-calculator/">ROAS Calculator</a> and the <a href="{PP}break-even-roas-calculator/">Break Even ROAS Calculator</a>.</li>
+    </ul>
+    <p>Every calculator follows current official rules, such as the GST rates notified after the 56th GST Council meeting, and runs entirely in your browser. More business calculators are added regularly.</p>
+    <p>Growing your business online? Read our <a href="https://brandella.in/digital-marketing-tips-2026/">digital marketing tips for 2026</a> and <a href="https://brandella.in/how-to-generate-high-quality-leads-2026/">how to generate high quality leads</a>.</p>''',
+         faqs=[("Are these business calculators free?", "Yes. Every calculator is free, needs no signup, and has no usage limits."),
+               ("Are my prices and invoice details uploaded anywhere?", "No. All calculators run entirely in your browser. Amounts, items and rates you enter never leave your device."),
+               ("Are the GST rates up to date?", "Yes. The GST calculator uses the rate structure in force since 22 September 2025, with 5% and 18% as the main rates and 40% for sin and luxury goods. Always confirm the rate for your exact HSN or SAC code.")]),
 ]
