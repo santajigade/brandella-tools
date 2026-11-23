@@ -233,17 +233,18 @@ CATEGORIES = [
                ("Do these tools use AI or send my text anywhere?", "No. They do not call any AI model or server. Headlines, drafts and texts you compare are checked in your browser and never leave your device."),
                ("Will a higher headline score guarantee more clicks?", "No tool can promise that. The score points out common problems, such as length, clickbait and missing keywords, so you start from a stronger headline. Your own click data is the final test.")]),
     dict(slug='business-calculators', short='BC', name='Business Calculators', pill='Business',
-         card='GST calculator with CGST, SGST and IGST split, and a profit margin calculator for margin, markup and pricing.',
-         hub_title='Free Business Calculators: GST and Profit Margin',
-         hub_desc='Free business calculators for Indian businesses and marketers: a GST calculator for the new 5%, 18% and 40% rates, and a profit margin and markup calculator.',
+         card='GST calculator with CGST, SGST and IGST split, a profit margin calculator, and a break even calculator with ad cost per sale.',
+         hub_title='Free Business Calculators: GST, Margin and Break Even',
+         hub_desc='Free business calculators for Indian businesses and marketers: GST for the 5%, 18% and 40% rates, profit margin and markup, and break even point.',
          hub_lead='Turn prices, taxes and marketing numbers into clear business decisions with simple, accurate calculators.',
          hub_intro=f'''<h2>Which Business Calculator Do You Need?</h2>
     <ul>
       <li><strong>Adding GST to a price, or finding the GST inside a bill?</strong> Use the <a href="{BC}gst-calculator/">GST Calculator</a>. It splits CGST, SGST and IGST, and totals a full invoice with several items and rates.</li>
       <li><strong>Setting a price, or checking what you keep from each sale?</strong> Use the <a href="{BC}profit-margin-calculator/">Profit Margin Calculator</a>. It shows margin and markup, finds the price for a target margin, and keeps GST out of your profit.</li>
+      <li><strong>Working out how much you must sell each month?</strong> Use the <a href="{BC}break-even-calculator/">Break Even Calculator</a>. It counts your ad cost per sale, and shows your margin of safety, target profit units and payback time.</li>
       <li><strong>Checking whether your ads pay for themselves?</strong> Try the <a href="{PP}roas-calculator/">ROAS Calculator</a> and the <a href="{PP}break-even-roas-calculator/">Break Even ROAS Calculator</a>.</li>
     </ul>
-    <p>Every calculator follows current official rules, such as the GST rates notified after the 56th GST Council meeting and the standard margin and markup formulas, and runs entirely in your browser. More business calculators are added regularly.</p>
+    <p>Every calculator follows current official rules, such as the GST rates notified after the 56th GST Council meeting and the standard margin, markup and break even formulas, and runs entirely in your browser. More business calculators are added regularly.</p>
     <p>Growing your business online? Read our <a href="https://brandella.in/digital-marketing-tips-2026/">digital marketing tips for 2026</a> and <a href="https://brandella.in/how-to-generate-high-quality-leads-2026/">how to generate high quality leads</a>.</p>''',
          faqs=[("Are these business calculators free?", "Yes. Every calculator is free, needs no signup, and has no usage limits."),
                ("Are my prices and invoice details uploaded anywhere?", "No. All calculators run entirely in your browser. Amounts, items and rates you enter never leave your device."),
