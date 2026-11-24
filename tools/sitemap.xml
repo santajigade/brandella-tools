@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://brandella.in/tools/</loc>
-    <lastmod>2026-11-23</lastmod>
+    <lastmod>2026-11-24</lastmod>
   </url>
   <url>
     <loc>https://brandella.in/tools/seo-tools/</loc>
@@ -366,7 +366,7 @@
   </url>
   <url>
     <loc>https://brandella.in/tools/business-calculators/</loc>
-    <lastmod>2026-11-23</lastmod>
+    <lastmod>2026-11-24</lastmod>
   </url>
   <url>
     <loc>https://brandella.in/tools/business-calculators/gst-calculator/</loc>
@@ -379,5 +379,9 @@
   <url>
     <loc>https://brandella.in/tools/business-calculators/break-even-calculator/</loc>
     <lastmod>2026-11-23</lastmod>
+  </url>
+  <url>
+    <loc>https://brandella.in/tools/business-calculators/customer-lifetime-value-calculator/</loc>
+    <lastmod>2026-11-24</lastmod>
   </url>
 </urlset>
